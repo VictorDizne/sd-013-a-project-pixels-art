@@ -9,28 +9,28 @@ for (let index = 0; index < elementLiPaleta.length; index += 1){
   elementLiPaleta[index].addEventListener('click', function(event) {
       switch (index) {
         case 0:
-          elementLiPaleta[0].className = "color colorblack selected";
-          elementLiPaleta[1].className = "color colorred";
-          elementLiPaleta[2].className = "color colorblue";
-          elementLiPaleta[3].className = "color coloryellow";
+          elementLiPaleta[0].id = "selected";
+          elementLiPaleta[1].id = "unset";
+          elementLiPaleta[2].id = "unset";
+          elementLiPaleta[3].id = "unset";
           break;
         case 1:
-          elementLiPaleta[0].className = "color colorblack";
-          elementLiPaleta[1].className = "color colorred selected";
-          elementLiPaleta[2].className = "color colorblue";
-          elementLiPaleta[3].className = "color coloryellow";
+          elementLiPaleta[0].id = "unset";
+          elementLiPaleta[1].id = "selected";
+          elementLiPaleta[2].id = "unset";
+          elementLiPaleta[3].id = "unset";
           break;
         case 2:
-          elementLiPaleta[0].className = "color colorblack";
-          elementLiPaleta[1].className = "color colorred";
-          elementLiPaleta[2].className = "color colorblue selected";
-          elementLiPaleta[3].className = "color coloryellow";
+          elementLiPaleta[0].id = "unset";
+          elementLiPaleta[1].id = "unset";
+          elementLiPaleta[2].id = "selected";
+          elementLiPaleta[3].id = "unset";
           break;
         case 3:
-          elementLiPaleta[0].className = "color colorblack";
-          elementLiPaleta[1].className = "color colorred";
-          elementLiPaleta[2].className = "color colorblue";
-          elementLiPaleta[3].className = "color coloryellow selected";
+          elementLiPaleta[0].id = "unset";
+          elementLiPaleta[1].id = "unset";
+          elementLiPaleta[2].id = "unset";
+          elementLiPaleta[3].id = "selected";
           break;
       }
     }
@@ -55,17 +55,31 @@ for (let index = 0; index < elementLiQuadro.length; index += 1){
       //Se o id que foi alterado para selected for igual ao que será modificando,
       //então, ele não faz nada, só altera quando não tiver id igual
       if (elementLiQuadro[index].id !== elementPixelSelected[index2].id) {
-        console.log("É diferente")
         elementPixelSelected[index2].className = "pixel";
       }
     }
+    const elementSelectedPaleta = document.querySelector('#selected');
+    const elementSelectedQuadro = document.getElementsByClassName('pixel selectedPixel');
+    console.log(elementSelectedPaleta.className)
+    //console.log(elementSelectedQuadro[0])
+    let corPaleta = 'white'
+    switch (elementSelectedPaleta.className){
+      case 'color colorblack':
+        corPaleta = 'black';
+        break;
+      case 'color colorred':
+        corPaleta = 'red';
+        break;
+      case 'color colorblue':
+        corPaleta = 'blue';
+        break;
+      case 'color coloryellow':
+        corPaleta = 'yellow';
+        break;
+    }
+    console.log("Cor: " + corPaleta)
+    elementSelectedQuadro[0].style.backgroundColor = corPaleta
   })
 }
 
-
-//Altera cor do Elemento Li
-function alteraCorDoPixel (){
-  const elementSelectedPaleta = document.querySelector('.selected');
-  const elementSelectedQuadro = document.querySelector('.pixel selected');
-  elementSelectedQuadro.style.backgroundColor = elementSelectedPaleta.style.backgroundColor
-}
+const elementButtonClear = document.
