@@ -30,7 +30,7 @@ for (let index = 0; index < elementLiPaleta.length; index += 1){
           elementLiPaleta[0].id = "unset";
           elementLiPaleta[1].id = "unset";
           elementLiPaleta[2].id = "unset";
-          elementLiPaleta[3].id = "selected";
+          elementLiPaleta[3].id = "selected"
           break;
       }
     }
