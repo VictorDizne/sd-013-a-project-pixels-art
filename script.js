@@ -37,12 +37,22 @@ for (let index = 0; index < elementLiPaleta.length; index += 1){
   )
 }  
 
-
 //Altera cor do Elemento Li
+const elementSelected = document.querySelector('.selected');
+
 for (let index = 0; index < elementLiQuadro.length; index += 1){
-  elementLiQuadro[index].addEventListener("click", function(event) {
-    alteraCor(event.target.backgroundColor)
+  elementLiQuadro[index].addEventListener('click', function(event) {
+    elementLiQuadro[index].style.backgroundColor = elementSelected.style.backgroundColor
   })
 }
 
-
+console.log(elementLiQuadro)
+for (let index = 0; index < elementLiQuadro.length; index += 1){
+  elementLiQuadro[index].addEventListener('click', function(event) {
+    elementLiQuadro[index].className = "pixel selectedPixel";
+    const elementPixelSelected = document.querySelectorAll('.selectedPixel')
+    console.log(elementPixelSelected)
+    //elementPixelSelected[0].className = "pixel"
+  })
+}
+console.log("Text: " + elementPixelSelected)
