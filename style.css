@@ -1,0 +1,49 @@
+#title {
+  text-align: center;
+}
+#color-palette {
+  text-align: center;
+}
+
+
+.color {
+  border: solid 1px black; /*Coloca uma borda simples preta*/
+  display: inline-block; /*Coloca os li alinhado em blocos*/
+  height: 40px; /*Configura a altura*/
+  width: 40px; /*Configura a largura*/
+}
+
+.colorblack {
+  background-color: black;
+}
+.colorblue {
+  background-color: blue;
+}
+.colorred {
+  background-color: red;
+}
+.coloryellow {
+  background-color: yellow;
+}
+
+.pixel {
+  background-color: white;
+  border: solid 1px black; /*Coloca uma borda simples preta*/
+  display: inline-block; /*Coloca os li alinhado em blocos*/
+  height: 40px; /*Configura a altura*/
+  width: 40px; /*Configura a largura*/
+  margin: -3px;
+}
+.linha {
+  margin: 0px;
+}
+
+#pixel-board {
+  text-align: center;
+  margin: 20px auto;
+  background-color: white;
+}
+
+#color-palette {
+  margin: 0 auto;
+}
