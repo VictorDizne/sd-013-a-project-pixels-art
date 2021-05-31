@@ -37,22 +37,35 @@ for (let index = 0; index < elementLiPaleta.length; index += 1){
   )
 }  
 
-//Altera cor do Elemento Li
-const elementSelected = document.querySelector('.selected');
-
-for (let index = 0; index < elementLiQuadro.length; index += 1){
-  elementLiQuadro[index].addEventListener('click', function(event) {
-    elementLiQuadro[index].style.backgroundColor = elementSelected.style.backgroundColor
-  })
+//Dou um nome id para cada quadrante
+const elementLiNomes = document.getElementsByClassName('pixel')
+for (let index = 0; index < elementLiNomes.length; index += 1) {
+  elementLiNomes[index].id = index +1;
 }
 
-console.log(elementLiQuadro)
+//Lê todos os pixels e adiciona o evento click nelas
 for (let index = 0; index < elementLiQuadro.length; index += 1){
   elementLiQuadro[index].addEventListener('click', function(event) {
+    //Muda a classe para selecionada quando houver o click
     elementLiQuadro[index].className = "pixel selectedPixel";
-    const elementPixelSelected = document.querySelectorAll('.selectedPixel')
-    console.log(elementPixelSelected)
-    //elementPixelSelected[0].className = "pixel"
+    //Busca/Puxa todas as classes selecionadas
+    const elementPixelSelected = document.getElementsByClassName('pixel selectedPixel')
+    //Lê todas os elementos selecionados
+    for (index2 = 0; index2 < elementPixelSelected.length; index2 += 1){
+      //Se o id que foi alterado para selected for igual ao que será modificando,
+      //então, ele não faz nada, só altera quando não tiver id igual
+      if (elementLiQuadro[index].id !== elementPixelSelected[index2].id) {
+        console.log("É diferente")
+        elementPixelSelected[index2].className = "pixel";
+      }
+    }
   })
 }
-console.log("Text: " + elementPixelSelected)
+
+
+//Altera cor do Elemento Li
+function alteraCorDoPixel (){
+  const elementSelectedPaleta = document.querySelector('.selected');
+  const elementSelectedQuadro = document.querySelector('.pixel selected');
+  elementSelectedQuadro.style.backgroundColor = elementSelectedPaleta.style.backgroundColor
+}
