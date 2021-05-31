@@ -82,4 +82,20 @@ for (let index = 0; index < elementLiQuadro.length; index += 1){
   })
 }
 
-const elementButtonClear = document.
+//Cria o botão Clear - requisito 9
+ const colorPalette = document.querySelector('#color-palette')
+ const elementButtonClear = document.createElement('button')
+ elementButtonClear.id = 'clear-board';
+ elementButtonClear.style.height = '20px';
+ elementButtonClear.style.width = '80px';
+ elementButtonClear.style.marginLeft = '40px';
+ elementButtonClear.innerText = 'Limpar';
+ colorPalette.append(elementButtonClear)
+ //Executa o clear ao clicar
+ elementButtonClear.addEventListener('click', 'clearPixels')
+ function clearPixels() {
+   const buscaPixels = document.querySelectorAll('.pixel')
+   for (let index = 0; index < buscaPixels.length; index += 1) {
+     buscaPixels[index].style.backgroundColor = 'white';
+   }
+ }
