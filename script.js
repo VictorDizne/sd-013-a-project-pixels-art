@@ -2,7 +2,6 @@
 const elementLiPaleta = document.querySelectorAll('.color')
 const elementLiQuadro = document.querySelectorAll('.pixel')
 
-
 // Eventos
 //Marca a cor na paleta
 for (let index = 0; index < elementLiPaleta.length; index += 1){
