@@ -1,0 +1,25 @@
+#color-palette {
+  padding: auto;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5%;
+}
+
+#cBlack {
+  background-color: black;
+}
+
+#cRed {
+  background-color: red;
+}
+
+#cPink {
+  background-color: pink;
+}
+
+#cBlue {
+  background-color: blue;
+}
