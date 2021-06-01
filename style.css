@@ -1,0 +1,32 @@
+#color-palette {
+    display: table;
+    padding: 5px;
+}
+
+.tr {
+    display: table-row;
+    padding: 5px;
+}
+
+.color {
+    display: table-cell;
+    padding: 30px;
+    border: black solid 1px;
+    margin: 10px;
+}
+
+#blackColor {
+  background-color: black;
+}
+
+#redColor {
+  background-color: red;
+}
+
+#blueColor {
+  background-color: blue;
+}
+
+#greenColor {
+  background-color: green;
+}
