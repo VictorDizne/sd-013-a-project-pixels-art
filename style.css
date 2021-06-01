@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+};
+
+#title{
+    text-align: center;
+};
+
+.color{
+    border: solid 1px;
+    border-color: black;
+    display: inline-block;
+}
+
+#color-palette{
+    text-align: center;
+}
+
+#black{
+    background-color: black;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#red{
+    background-color: red;
+}
+
+#green{
+    background-color: green;
+}
