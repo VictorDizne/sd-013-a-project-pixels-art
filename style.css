@@ -1,9 +1,10 @@
 .color {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: 1px solid black;
   float: left;
   margin-right: 8px;
+  margin-bottom: 12px;
 }
 
 .black {
@@ -20,4 +21,17 @@
 
 .red {
   background-color: red;
+}
+
+#pixel-board {
+  margin-top: 12px;
+  width: 300px;
+}
+
+.pixel {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  float: left;
 }
