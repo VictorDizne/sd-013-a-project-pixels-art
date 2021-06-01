@@ -53,11 +53,16 @@ let listDivsColorsPalette = document.querySelector('#color-palette');
 
 listDivsColorsPalette.addEventListener('click', function(elemento) {
   document.getElementsByClassName('color selected')[0].className = 'color';
-  strColorSelected = elemento.target.style.backgroundColor;
+  let strColorSelected = elemento.target.style.backgroundColor;
   elemento.target.className = 'color selected';
   sessionStorage.setItem('Color Selected', strColorSelected);
 });
 
-  
+let divPixel = document.getElementsByClassName('pixel');
 
-
+for (let elemento of divPixel) {
+  elemento.addEventListener('click', function(elementoDiv) {
+    let strColorToApply = sessionStorage.getItem('Color Selected');
+    elementoDiv.target.style.backgroundColor = strColorToApply;
+  })
+}
