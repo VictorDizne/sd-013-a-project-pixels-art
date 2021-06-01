@@ -1,7 +1,7 @@
 
 function fncCreateHexColor(nCharacters) {
-  let strLettersAndNumbers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-  let arrLettersAndNumbers = strLettersAndNumbers.split();
+  let strLettersAndNumbers = "ABCDEF0123456789"
+  let arrLettersAndNumbers = strLettersAndNumbers.split('');
   let strHexaColor = "#";
   for (let index = 0; index < nCharacters; index += 1) {
     let i = parseInt(Math.random() * (arrLettersAndNumbers.length - 1));
@@ -10,6 +10,8 @@ function fncCreateHexColor(nCharacters) {
   }
   return strHexaColor;
 }
+
+// console.log(fncCreateHexColor(6)); 
 
 function createColorPalette (QuantidadeDeCores) {  
   //Selecao e criacao de Elementos HTML    
