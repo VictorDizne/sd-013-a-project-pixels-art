@@ -32,7 +32,6 @@ cypress/screenshots/project.spec.js/10 - Faça o quadro de pixels ter seu tamanh
 cypress/screenshots/project.spec.js/10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário -- Verifica se o botão contém o texto 'VQV' (failed).png
 cypress/screenshots/project.spec.js/10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário -- Verifica se o input só aceita número maiores que zero. Essa restrição deve ser feita usando os atributos do elemento `input` (failed).png
 cypress/screenshots/project.spec.js/10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário -- Verifica se o input está posicionado entre a paleta de cores e o quadro de pixels (failed).png
-.gitignore
 cypress/reports/mochawesome.json
 cypress/screenshots/project.spec.js/10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário -- Verifica se ao clicar no botão com um valor preenchido, o tamanho do board muda (failed).png
 cypress/screenshots/project.spec.js/10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário -- Verifica se nenhum valor for colocado no input ao clicar no botão, um `alert` é exibido com o texto 'Board inválido!' (failed).png
