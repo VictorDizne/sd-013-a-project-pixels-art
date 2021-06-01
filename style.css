@@ -1,0 +1,32 @@
+#title {
+  text-align: center;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid;
+  border-color: black;
+}
+
+#green {
+  background-color: #2a5f14;
+}
+
+#blue {
+  background-color: #37a8fb;
+}
+
+#blue-sky {
+  background-color: #50becd;
+}
+
+#sand {
+  background-color: #e5c59f;
+}
+
