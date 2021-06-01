@@ -20,3 +20,13 @@
 #blue{
   background-color: blue;
 }
+
+.pixel{
+  border: 1px solid black;
+  padding: 40px;
+  background-color: white;
+}
+
+#pixel-board{
+  margin: 30px;
+}
