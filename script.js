@@ -30,18 +30,30 @@ for (let index = 0; index < elementLiPaleta.length; index += 1){
           elementLiPaleta[0].id = "unset";
           elementLiPaleta[1].id = "unset";
           elementLiPaleta[2].id = "unset";
-          elementLiPaleta[3].id = "selected"
+          elementLiPaleta[3].id = "selected";
           break;
       }
     }
   )
 }  
 
-//Dou um nome id para cada quadrante
-const elementLiNomes = document.getElementsByClassName('pixel')
-for (let index = 0; index < elementLiNomes.length; index += 1) {
-  elementLiNomes[index].id = index +1;
+function darNomeAosQuadrantes() {
+  //Dou um nome id para cada quadrante
+  const elementLiNomes = document.getElementsByClassName('pixel')
+  for (let index = 0; index < elementLiNomes.length; index += 1) {
+    elementLiNomes[index].id = index +1;
+  }
 }
+darNomeAosQuadrantes();
+
+function darNomeAsLinhas() {
+  //Dou um nome id para cada linha
+  const elementUlNomes = document.getElementsByClassName('linha')
+  for (let index = 0; index < elementUlNomes.length; index += 1) {
+    elementUlNomes[index].id = index +1;
+  }
+}
+darNomeAsLinhas();
 
 //Lê todos os pixels e adiciona o evento click nelas
 for (let index = 0; index < elementLiQuadro.length; index += 1){
@@ -83,19 +95,86 @@ for (let index = 0; index < elementLiQuadro.length; index += 1){
 }
 
 //Cria o botão Clear - requisito 9
- const colorPalette = document.querySelector('#color-palette')
- const elementButtonClear = document.createElement('button')
- elementButtonClear.id = 'clear-board';
- elementButtonClear.style.height = '20px';
- elementButtonClear.style.width = '80px';
- elementButtonClear.style.marginLeft = '40px';
- elementButtonClear.innerText = 'Limpar';
- colorPalette.append(elementButtonClear)
- //Executa o clear ao clicar
- elementButtonClear.addEventListener('click', 'clearPixels')
- function clearPixels() {
-   const buscaPixels = document.querySelectorAll('.pixel')
-   for (let index = 0; index < buscaPixels.length; index += 1) {
-     buscaPixels[index].style.backgroundColor = 'white';
-   }
- }
+const colorPalette = document.querySelector('#color-palette')
+const elementButtonClear = document.createElement('button')
+elementButtonClear.id = 'clear-board';
+elementButtonClear.style.height = '20px';
+elementButtonClear.style.width = '80px';
+elementButtonClear.style.marginLeft = '40px';
+elementButtonClear.innerText = 'Limpar';
+colorPalette.append(elementButtonClear)
+//Executa o clear ao clicar
+elementButtonClear.addEventListener('click', clearPixels);
+function clearPixels() {
+  const buscaPixels = document.querySelectorAll('.pixel')
+  for (let index = 0; index < buscaPixels.length; index += 1) {
+    buscaPixels[index].style.backgroundColor = 'white';
+  }
+}
+
+//Preparando estrutura do Botão de Input
+const elementInput = document.createElement('input')
+elementInput.id = 'board-size';
+elementInput.style.marginTop = '15px';
+elementInput.style.marginLeft = '45px';
+elementInput.style.width = '40px'
+elementInput.style.backgroundColor = 'rgb(238,238,238)'
+elementInput.value = '25'
+elementInput.min = '1';
+colorPalette.append(elementInput)
+const elementButtonInput = document.createElement('button')
+elementButtonInput.id = 'generate-board';
+elementButtonInput.innerText = 'VQV'
+elementButtonInput.style.marginTop = '15px';
+elementButtonInput.style.height = '20px';
+elementButtonInput.style.width = '80px';
+elementButtonInput.style.marginLeft = '2px';
+colorPalette.append(elementButtonInput);
+
+elementButtonInput.addEventListener('click', estruturaPainel)
+//33
+
+function limpaPainel() {
+  const elementUlParaLimpar = document.querySelectorAll('.linha')
+  for (let index = 0; index < elementUlParaLimpar.length; index += 1) {
+    elementUlParaLimpar[index].remove()
+  }
+}
+
+function montaPainel(quantidade) {
+  const elementPixelBoard = document.querySelector('#pixel-board');
+  for (let indexLinha = 0; indexLinha < quantidade; indexLinha += 1){
+    const elementLinha = document.createElement('ul')
+    elementLinha.className = 'linha'
+    elementPixelBoard.appendChild(elementLinha);
+    for (let indexColuna = 0; indexColuna < quantidade; indexColuna += 1) {
+      const elementLinha = document.getElementsByClassName('linha');
+      const elementPixels = document.createElement('li');
+      elementPixels.className = 'pixel'
+      elementLinha[indexLinha].appendChild(elementPixels);
+    }
+  }
+  darNomeAsLinhas();
+  darNomeAosQuadrantes();
+}
+
+function estruturaPainel() {
+  const inputQuantidade = document.querySelector('#board-size')
+  let quantidade = inputQuantidade.value;
+  if (quantidade === '') {
+    alert('Board inválido!');
+  } else {
+    if (quantidade > 50) {
+      quantidade = 50;
+    } else if (quantidade < 5) {
+      quantidade = 5;
+    }
+    inputQuantidade.value = '';
+  }
+  const quantidadeFinal = quantidade
+  limpaPainel();
+  console.log("Passo 01");
+  console.log("quantidade: " + quantidadeFinal)
+  montaPainel(quantidadeFinal);
+  console.log("Passo 02");
+}
