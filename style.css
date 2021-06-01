@@ -1,4 +1,4 @@
-#color-pallate {
+.color-pallate {
   display: table;
   padding: 5px;
 }
@@ -9,8 +9,8 @@
 .color {
   display: table-cell;
   padding: 5px;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border: #000000 solid 1px;
   margin: 5px;
 }
@@ -44,8 +44,9 @@
 .pixel {
   display: table-cell;
   padding: 5px;
-  height: 150px;
-  width: 150px;
+  height: 40px;
+  width: 40px;
   border: #000000 solid 1px;
+  background-color: white;
   margin: 5px;
 }
