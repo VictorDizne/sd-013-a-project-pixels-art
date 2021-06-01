@@ -20,3 +20,25 @@
 #color-palette .color:nth-child(4) {
   background-color: green;
 }
+
+
+#pixel-board {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+#pixel-board .pixel {
+  background-color: white;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: -4px;
+  margin-bottom: -4px;
+}
+
+
