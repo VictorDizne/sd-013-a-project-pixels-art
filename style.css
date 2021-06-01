@@ -1,8 +1,13 @@
+body {
+  text-align: center;
+}
+
+/*Paleta de cores*/
 .color {
   display: inline-block;
   width: 30px;
   height: 30px;
-  margin-right: 20px;
+  margin: 20px;
   border-radius: 3px;
   border: 1px solid black;
 }
@@ -23,17 +28,22 @@
   background-color: green;
 }
 
+/*quadro de pixels*/
 #pixel-board {
-  display: table;
+  border: 3px solid black;
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: center;
 }
 
 .pixel {
-  display: table-cell;
+  display: inline-block;
   width: 40px;
   height: 40px;
   border: 1px solid black;
+  margin: 0;
 }
 
 .line {
-  display: table-row;
+  height: 40px;
 }
