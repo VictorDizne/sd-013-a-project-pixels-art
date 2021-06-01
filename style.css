@@ -11,6 +11,10 @@ h1 {
   display: inline-block;
 }
 
+.black {
+  background-color: black;
+}
+
 .yellow {
   background-color: yellow;
 }
