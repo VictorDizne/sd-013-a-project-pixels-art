@@ -7,7 +7,7 @@ function selector() {
 
 let palletBlocs = document.getElementById("color-palette");
 
-let inputColor = ""
+let inputColor = "#000"
 
 palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
     let colors = document.getElementsByClassName("color");
