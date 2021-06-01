@@ -21,11 +21,7 @@
   background-color: red;
 }
 
-#color-palette .color:nth-child(5) {
-  background-color: orange;
-}
-
-pixel-board {
+.pixel-board {
   display: table;
   width: 25px;
   height: 25px;
