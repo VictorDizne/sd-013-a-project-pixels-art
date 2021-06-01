@@ -1,0 +1,19 @@
+.color {
+  border: black, solid, 1px;
+}
+
+.color black{
+  background-color: black;
+}
+
+.color red{
+  background-color: red;
+}
+
+.color yellow{
+  background-color: yellow;
+}
+
+.color green{
+  background-color: green;
+}
