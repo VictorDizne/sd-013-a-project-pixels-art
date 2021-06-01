@@ -33,8 +33,6 @@ h1 {
 
 #pixel-board {
   display: table;
-  width: 25px;
-  height: 25px;
 }
 
 .tr {
@@ -44,4 +42,10 @@ h1 {
 .td {
   display: table-cell;
   background-color: white;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
 }
