@@ -47,3 +47,15 @@ header {
   background-color: rgb(251, 124, 124);
   height: 5vh;
 }
+
+.tabela{
+  display: flex;
+  justify-content: center;
+}
+
+.pixel {
+  width:40px;
+  height:40px;
+  background-color:white;
+  border:1px solid rgb(0, 0, 0)
+}
