@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 25px;
+  margin: 15px 5px;
+}
+
+#table {
+  display: flex;
+  justify-content: center;
+}
+
+.tr {
+  display: table-row;
+}
+
+.td {
+  /* display: table-cell; */
+  margin: 0.5px;
+}
+
+.pixel {
+  border: 1px solid black;
+  padding: 20px;
+}
