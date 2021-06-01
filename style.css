@@ -1,5 +1,10 @@
-#title {
+#header {
     text-align: center;
+    padding-bottom: 3em;
+}
+
+#color-palette {
+    display: inline;
 }
 
 .color {
@@ -9,18 +14,35 @@
     height: 50px;
 }
 
-.colorBlack {
+.color:nth-child(1) {
     background: black;
 }
 
-.colorRed {
+.color:nth-child(2) {
     background: red;
 }
 
-.colorYellow {
+.color:nth-child(3) {
     background: yellow;
 }
 
-.colorBlue {
+.color:nth-child(4) {
     background: blue;
+}
+
+#body {
+    text-align: center;
+}
+
+#pixel-board {
+    border-collapse: collapse;
+    display: inline;
+}
+
+.pixel {
+    background: white;
+    border: solid 1px black;
+    /* display: inline-block; */
+    width: 41px;
+    height: 41px;
 }
