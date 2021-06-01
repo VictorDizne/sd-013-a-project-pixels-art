@@ -1,14 +1,13 @@
 window.onload = function() {
 
-  const color_palette = document.getElementsByClassName('color');
-  const color_board = document.getElementsByClassName('pixel');
+  const colorPalette = document.getElementsByClassName('color');
+  const colorBoard = document.getElementsByClassName('pixel');
+  const pixelBoardBody = document.querySelector('.pixel-board-body');
   var linhasColunas = 5;
 
   criarPixelBoard(linhasColunas);
 
   function criarPixelBoard(tamanho) {
-    let pixelBoardBody = document.querySelector('.pixel-board-body');
-
     for (let i = 0; i < tamanho; i += 1) {
       let row = document.createElement('tr');
       pixelBoardBody.appendChild(row);
@@ -18,8 +17,8 @@ window.onload = function() {
       }
     }
 
-    for (let pixel_board of color_board) {
-      pixel_board.addEventListener('click', pintaPixelBoard);
+    for (let pixelBoard of colorBoard) {
+      pixelBoard.addEventListener('click', pintaPixelBoard);
     }
   }
 
@@ -66,12 +65,12 @@ window.onload = function() {
   coresPaletaDeCores();
 
   function coresPaletaDeCores() {
-    color_palette[0].style.backgroundColor = 'rgb(0, 0, 0)';
+    colorPalette[0].style.backgroundColor = 'rgb(0, 0, 0)';
     sessionStorage.setItem('selecionado', 'rgb(0, 0, 0)');
 
     let randomColors = randomColor();
-    for (let index = 1; index < color_palette.length; index += 1) {
-      color_palette[index].style.backgroundColor = `rgb(${randomColors[index].r}, ${randomColors[index].g}, ${randomColors[index].b})`;
+    for (let index = 1; index < colorPalette.length; index += 1) {
+      colorPalette[index].style.backgroundColor = `rgb(${randomColors[index].r}, ${randomColors[index].g}, ${randomColors[index].b})`;
     }
   }
 
@@ -84,16 +83,16 @@ window.onload = function() {
     return array_color;
   }
 
-  for (let cor_selecionada of color_palette) {
+  for (let cor_selecionada of colorPalette) {
     cor_selecionada.addEventListener('click', setCorSelecionada);
   }
 
   function setCorSelecionada(e) {
     sessionStorage.setItem('selecionado', `${e.target.style.backgroundColor}`)
-    for (let i in color_palette) {
-      color_palette[i].className = 'color'
+    for (let i in colorPalette) {
+      colorPalette[i].className = 'color';
     }
-    e.target.className = 'color selected'
+    e.target.className = 'color selected';
   }
 
   function pintaPixelBoard(e) {
@@ -103,7 +102,7 @@ window.onload = function() {
   document.querySelector('#clear-board').addEventListener('click', limpaBoard);
 
   function limpaBoard() {
-    for (let pixel of color_board) {
+    for (let pixel of colorBoard) {
       pixel.style.backgroundColor = 'rgb(255, 255, 255)';
     }
   }
