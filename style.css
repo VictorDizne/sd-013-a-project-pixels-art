@@ -1,24 +1,12 @@
-.color{
+.color {
   border: 1px solid black;
   width: 40px;
   height: 40px;
   display: inline-block;
 }
 
-.color:nth-of-type(1) {
+.color:nth-of-type( 1 ) {
   background-color: black;
-}
-
-.color:nth-of-type(2) {
-  background-color: blue;
-}
-
-.color:nth-of-type(3) {
-  background-color: red;
-}
-
-.color:nth-of-type(4) {
-  background-color: yellow;
 }
 
 #clear-board {
@@ -29,7 +17,7 @@
   width: 300px;
   margin-bottom: 15px;
 }
-/*TESTES VISUAIS*/
+
 #pixel-board {
   border: 1px solid black;
 }
