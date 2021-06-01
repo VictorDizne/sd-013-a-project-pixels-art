@@ -1,0 +1,56 @@
+#color-palette {
+  width: 100%;
+}
+
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-color: black;
+}
+
+#black {
+  background-color: black;
+}
+
+#green {
+  background-color: green;
+}
+
+#yellow {
+  background-color: rgb(230, 230, 2);
+}
+
+#red {
+  background-color: red;
+}
+
+#pixel-board {
+  border-spacing: 0;
+  display: table;
+  border: 1px solid;
+  border-color: black;
+}
+
+.pixel-row {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-color: black;
+  margin: 0;
+  padding: 0;
+  border-collapse: separate;
+  border: 1px solid;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid;
+  margin-bottom: 5px;
+}
