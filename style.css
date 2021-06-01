@@ -24,6 +24,7 @@
     height: 40px;
     display: inline-block;
     background-color:white;
-    border: solid black;
-    border-width: 1px;
+    outline-color: black;    
+    outline-style: solid;
+    outline-width: 1px;
 }
