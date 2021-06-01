@@ -3,7 +3,10 @@
 //   elementocriado.className = classeElemento;
 //   elementoPai.appendChild(elementocriado);
 // }
+
 const paletaCores = document.querySelectorAll('.color');
+const pixels = document.querySelectorAll('.pixel');
+
 function selectedActive() {
   for (let i = 0; i < paletaCores.length; i += 1) {
     paletaCores[i].classList.remove('selected');
@@ -23,7 +26,12 @@ function addEvents(arrayPixel, evento, funcao) {
     arrayPixel[i].addEventListener(evento, funcao);
   }
 }
+function addCollor(event) {
+  const elemComCor = document.querySelector('.selected');
+  const cor = window.getComputedStyle(elemComCor, null).getPropertyValue('background-color');
+  event.target.style.backgroundColor = cor;
+}
 
 window.document.onload = selectedActive();
-
+addEvents(pixels, 'click', addCollor);
 addEvents(paletaCores, 'click', sectorColor);
