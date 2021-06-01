@@ -50,3 +50,7 @@ img {
 	height: 40px;
 	color: black;
 }
+.pixel {
+	background-color: white;
+	border: 1px solid black;
+}
