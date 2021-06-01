@@ -20,3 +20,13 @@
 .color:nth-of-type(4) {
   background-color: yellow;
 }
+/*TESTES VISUAIS*/
+#pixel-board {
+  border: 1px solid black;
+}
+
+.pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
