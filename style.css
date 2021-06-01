@@ -1,0 +1,8 @@
+.color {
+  width: 40px;
+  height: 40px;
+  line-height: 200px;
+  text-align: center;
+  display: inline-block;
+  border: black solid 1px;
+}
