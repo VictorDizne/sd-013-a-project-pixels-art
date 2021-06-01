@@ -66,3 +66,16 @@ for (let elemento of divPixel) {
     elementoDiv.target.style.backgroundColor = strColorToApply;
   })
 }
+
+btnClearBoard = document.createElement('button');
+btnClearBoard.id = 'clear-board';
+btnClearBoard.innerHTML = 'Limpar';
+btnClearBoard.style.margin = '0px 0px 15px 0px'
+document.getElementById('btn-place').appendChild(btnClearBoard);
+
+btnClearBoard.addEventListener('click', function() {
+  let divPixel = document.getElementsByClassName('pixel');
+  for (let elemento of divPixel) {      
+    elemento.style.backgroundColor = 'rgb(255,255,255)';
+  }
+})
