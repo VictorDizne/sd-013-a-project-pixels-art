@@ -19,20 +19,16 @@ function createBoard() {
 createBoard();
 
 function initBlack() {
-  for (let index = 0; index < classColor.length; index += 1) {
-    const styleColor = classColor[index].getAttribute('style');
-    if (classColor[0].classList[1] === undefined) {
-      classColor[0].className += ' selected';
-      colorPixelBoard(styleColor);
-    }
-  }
+  const styleColor = classColor[0].getAttribute('style');
+  classColor[0].className += ' selected';
+  colorPixelBoard(styleColor);
 }
 initBlack();
 
 function getColor() {
   for (let index = 0; index < classColor.length; index += 1) {
     const styleColor = classColor[index].getAttribute('style');
-    classColor[index].addEventListener('click', function() {
+    classColor[index].addEventListener('click', () => {
       if (classColor[index].classList[1] === 'selected') {
         classColor[index].className = 'color';
       } else {
@@ -47,7 +43,7 @@ getColor();
 function colorPixelBoard(styleValue) {
   const pixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener('click',function() {
+    pixel[index].addEventListener('click', () => {
       pixel[index].style.cssText = styleValue;
     });
   }
