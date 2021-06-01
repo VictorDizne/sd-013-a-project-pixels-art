@@ -1,6 +1,5 @@
 // Constante de Elementos
 const elementLiPaleta = document.querySelectorAll('.color')
-const elementLiQuadro = document.querySelectorAll('.pixel')
 
 
 // Eventos
@@ -56,53 +55,58 @@ function darNomeAsLinhas() {
 darNomeAsLinhas();
 
 //Lê todos os pixels e adiciona o evento click nelas
-for (let index = 0; index < elementLiQuadro.length; index += 1){
-  elementLiQuadro[index].addEventListener('click', function(event) {
-    //Muda a classe para selecionada quando houver o click
-    elementLiQuadro[index].className = "pixel selectedPixel";
-    //Busca/Puxa todas as classes selecionadas
-    const elementPixelSelected = document.getElementsByClassName('pixel selectedPixel')
-    //Lê todas os elementos selecionados
-    for (index2 = 0; index2 < elementPixelSelected.length; index2 += 1){
-      //Se o id que foi alterado para selected for igual ao que será modificando,
-      //então, ele não faz nada, só altera quando não tiver id igual
-      if (elementLiQuadro[index].id !== elementPixelSelected[index2].id) {
-        elementPixelSelected[index2].className = "pixel";
+function darVidaAosPixels() {
+  const elementLiQuadro = document.querySelectorAll('.pixel')
+  for (let index = 0; index < elementLiQuadro.length; index += 1){
+    elementLiQuadro[index].addEventListener('click', function(event) {
+      //Muda a classe para selecionada quando houver o click
+      elementLiQuadro[index].className = "pixel selectedPixel";
+      //Busca/Puxa todas as classes selecionadas
+      const elementPixelSelected = document.getElementsByClassName('pixel selectedPixel')
+      //Lê todas os elementos selecionados
+      for (index2 = 0; index2 < elementPixelSelected.length; index2 += 1){
+        //Se o id que foi alterado para selected for igual ao que será modificando,
+        //então, ele não faz nada, só altera quando não tiver id igual
+        if (elementLiQuadro[index].id !== elementPixelSelected[index2].id) {
+          elementPixelSelected[index2].className = "pixel";
+        }
       }
-    }
-    const elementSelectedPaleta = document.querySelector('#selected');
-    const elementSelectedQuadro = document.getElementsByClassName('pixel selectedPixel');
-    console.log(elementSelectedPaleta.className)
-    //console.log(elementSelectedQuadro[0])
-    let corPaleta = 'white'
-    switch (elementSelectedPaleta.className){
-      case 'color colorblack':
-        corPaleta = 'black';
-        break;
-      case 'color colorred':
-        corPaleta = 'red';
-        break;
-      case 'color colorblue':
-        corPaleta = 'blue';
-        break;
-      case 'color coloryellow':
-        corPaleta = 'yellow';
-        break;
-    }
-    console.log("Cor: " + corPaleta)
-    elementSelectedQuadro[0].style.backgroundColor = corPaleta
-  })
+      const elementSelectedPaleta = document.querySelector('#selected');
+      const elementSelectedQuadro = document.getElementsByClassName('pixel selectedPixel');
+      console.log(elementSelectedPaleta.className)
+      //console.log(elementSelectedQuadro[0])
+      let corPaleta = 'white'
+      switch (elementSelectedPaleta.className){
+        case 'color colorblack':
+          corPaleta = 'black';
+          break;
+        case 'color colorred':
+          corPaleta = 'red';
+          break;
+        case 'color colorblue':
+          corPaleta = 'blue';
+          break;
+        case 'color coloryellow':
+          corPaleta = 'yellow';
+          break;
+      }
+      console.log("Cor: " + corPaleta)
+      elementSelectedQuadro[0].style.backgroundColor = corPaleta
+    })
+  }
 }
+darVidaAosPixels();
 
 //Cria o botão Clear - requisito 9
-const colorPalette = document.querySelector('#color-palette')
+const elementConfig = document.querySelector('#configuracao')
+//const colorPalette = document.querySelector('#color-palette')
 const elementButtonClear = document.createElement('button')
 elementButtonClear.id = 'clear-board';
 elementButtonClear.style.height = '20px';
 elementButtonClear.style.width = '80px';
 elementButtonClear.style.marginLeft = '40px';
 elementButtonClear.innerText = 'Limpar';
-colorPalette.append(elementButtonClear)
+elementConfig.append(elementButtonClear)
 //Executa o clear ao clicar
 elementButtonClear.addEventListener('click', clearPixels);
 function clearPixels() {
@@ -111,7 +115,6 @@ function clearPixels() {
     buscaPixels[index].style.backgroundColor = 'white';
   }
 }
-
 //Preparando estrutura do Botão de Input
 const elementInput = document.createElement('input')
 elementInput.id = 'board-size';
@@ -119,17 +122,18 @@ elementInput.style.marginTop = '15px';
 elementInput.style.marginLeft = '45px';
 elementInput.style.width = '40px'
 elementInput.style.backgroundColor = 'rgb(238,238,238)'
-elementInput.value = '25'
+elementInput.value = '5'
 elementInput.min = '1';
-colorPalette.append(elementInput)
+elementConfig.append(elementInput)
 const elementButtonInput = document.createElement('button')
 elementButtonInput.id = 'generate-board';
+elementButtonInput.style.alignItems = 'center';
 elementButtonInput.innerText = 'VQV'
 elementButtonInput.style.marginTop = '15px';
 elementButtonInput.style.height = '20px';
 elementButtonInput.style.width = '80px';
 elementButtonInput.style.marginLeft = '2px';
-colorPalette.append(elementButtonInput);
+elementConfig.append(elementButtonInput);
 
 elementButtonInput.addEventListener('click', estruturaPainel)
 //33
@@ -156,6 +160,7 @@ function montaPainel(quantidade) {
   }
   darNomeAsLinhas();
   darNomeAosQuadrantes();
+  darVidaAosPixels();
 }
 
 function estruturaPainel() {
@@ -169,7 +174,7 @@ function estruturaPainel() {
     } else if (quantidade < 5) {
       quantidade = 5;
     }
-    inputQuantidade.value = '';
+    //inputQuantidade.value = '';
   }
   const quantidadeFinal = quantidade
   limpaPainel();
