@@ -40,3 +40,9 @@ div .color {
 .td {
   display: table-cell;
 }
+
+#clear-board {
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 170px;
+}

@@ -31,7 +31,12 @@ function addCollor(event) {
   const cor = window.getComputedStyle(elemComCor, null).getPropertyValue('background-color');
   event.target.style.backgroundColor = cor;
 }
-
+function clearPixels() {
+  for(let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
 window.document.onload = selectedActive();
 addEvents(pixels, 'click', addCollor);
 addEvents(paletaCores, 'click', sectorColor);
+document.getElementById('clear-board').addEventListener('click', clearPixels);
