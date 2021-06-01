@@ -41,3 +41,20 @@ function sempreBlack() {
   cor1.classList.add('selected');
 }
 sempreBlack();
+
+/* selecionar outras cores
+?
+*/
+
+const cores = document.getElementsByClassName("color");
+
+for (let i = 0; i < cores.length; i+=1) {
+  cores[i].addEventListener('click', selecionar);
+}
+
+function selecionar(event) {
+  const selecionado = document.querySelector('.selected');
+  selecionado.classList.remove('selected')
+  event.target.classList.add('selected')
+}
+
