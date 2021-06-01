@@ -4,37 +4,40 @@ const elementLiPaleta = document.querySelectorAll('.color')
 
 // Eventos
 //Marca a cor na paleta
-for (let index = 0; index < elementLiPaleta.length; index += 1){
-  elementLiPaleta[index].addEventListener('click', function(event) {
-      switch (index) {
-        case 0:
-          elementLiPaleta[0].id = "selected";
-          elementLiPaleta[1].id = "unset";
-          elementLiPaleta[2].id = "unset";
-          elementLiPaleta[3].id = "unset";
-          break;
-        case 1:
-          elementLiPaleta[0].id = "unset";
-          elementLiPaleta[1].id = "selected";
-          elementLiPaleta[2].id = "unset";
-          elementLiPaleta[3].id = "unset";
-          break;
-        case 2:
-          elementLiPaleta[0].id = "unset";
-          elementLiPaleta[1].id = "unset";
-          elementLiPaleta[2].id = "selected";
-          elementLiPaleta[3].id = "unset";
-          break;
-        case 3:
-          elementLiPaleta[0].id = "unset";
-          elementLiPaleta[1].id = "unset";
-          elementLiPaleta[2].id = "unset";
-          elementLiPaleta[3].id = "selected";
-          break;
+function setaPaleta() {
+  for (let index = 0; index < elementLiPaleta.length; index += 1){
+    elementLiPaleta[index].addEventListener('click', function(event) {
+        switch (index) {
+          case 0:
+            elementLiPaleta[0].id = "selected";
+            elementLiPaleta[1].id = "unset";
+            elementLiPaleta[2].id = "unset";
+            elementLiPaleta[3].id = "unset";
+            break;
+          case 1:
+            elementLiPaleta[0].id = "unset";
+            elementLiPaleta[1].id = "selected";
+            elementLiPaleta[2].id = "unset";
+            elementLiPaleta[3].id = "unset";
+            break;
+          case 2:
+            elementLiPaleta[0].id = "unset";
+            elementLiPaleta[1].id = "unset";
+            elementLiPaleta[2].id = "selected";
+            elementLiPaleta[3].id = "unset";
+            break;
+          case 3:
+            elementLiPaleta[0].id = "unset";
+            elementLiPaleta[1].id = "unset";
+            elementLiPaleta[2].id = "unset";
+            elementLiPaleta[3].id = "selected";
+            break;
+        }
       }
-    }
-  )
-}  
+    )
+  }  
+}
+setaPaleta();
 
 function darNomeAosQuadrantes() {
   //Dou um nome id para cada quadrante
@@ -97,46 +100,50 @@ function darVidaAosPixels() {
 }
 darVidaAosPixels();
 
-//Cria o botão Clear - requisito 9
-const elementConfig = document.querySelector('#configuracao')
-//const colorPalette = document.querySelector('#color-palette')
-const elementButtonClear = document.createElement('button')
-elementButtonClear.id = 'clear-board';
-elementButtonClear.style.height = '20px';
-elementButtonClear.style.width = '80px';
-elementButtonClear.style.marginLeft = '40px';
-elementButtonClear.innerText = 'Limpar';
-elementConfig.append(elementButtonClear)
-//Executa o clear ao clicar
-elementButtonClear.addEventListener('click', clearPixels);
-function clearPixels() {
-  const buscaPixels = document.querySelectorAll('.pixel')
-  for (let index = 0; index < buscaPixels.length; index += 1) {
-    buscaPixels[index].style.backgroundColor = 'white';
+function criaBotaoClear() {
+  //Cria o botão Clear - requisito 9
+  const elementConfig = document.querySelector('#configuracao')
+  //const colorPalette = document.querySelector('#color-palette')
+  const elementButtonClear = document.createElement('button')
+  elementButtonClear.id = 'clear-board';
+  elementButtonClear.style.height = '20px';
+  elementButtonClear.style.width = '80px';
+  elementButtonClear.style.marginLeft = '40px';
+  elementButtonClear.innerText = 'Limpar';
+  elementConfig.appendChild(elementButtonClear)
+  //Executa o clear ao clicar
+  elementButtonClear.addEventListener('click', clearPixels);
+  function clearPixels() {
+    const buscaPixels = document.querySelectorAll('.pixel')
+    for (let index = 0; index < buscaPixels.length; index += 1) {
+      buscaPixels[index].style.backgroundColor = 'white';
+    }
   }
 }
-//Preparando estrutura do Botão de Input
-const elementInput = document.createElement('input')
-elementInput.id = 'board-size';
-elementInput.style.marginTop = '15px';
-elementInput.style.marginLeft = '45px';
-elementInput.style.width = '40px'
-elementInput.style.backgroundColor = 'rgb(238,238,238)'
-elementInput.value = '5'
-elementInput.min = '1';
-elementConfig.append(elementInput)
-const elementButtonInput = document.createElement('button')
-elementButtonInput.id = 'generate-board';
-elementButtonInput.style.alignItems = 'center';
-elementButtonInput.innerText = 'VQV'
-elementButtonInput.style.marginTop = '15px';
-elementButtonInput.style.height = '20px';
-elementButtonInput.style.width = '80px';
-elementButtonInput.style.marginLeft = '2px';
-elementConfig.append(elementButtonInput);
+criaBotaoClear()
 
-elementButtonInput.addEventListener('click', estruturaPainel)
-//33
+function criaBotaoInput() {
+  //Preparando estrutura do Botão de Input
+  const elementConfig = document.querySelector('#configuracao')
+  const elementInput = document.createElement('input')
+  elementInput.id = 'board-size';
+  elementInput.style.marginTop = '15px';
+  elementInput.style.marginLeft = '45px';
+  elementInput.style.width = '40px'
+  elementInput.style.backgroundColor = 'rgb(238,238,238)'
+  elementInput.value = '5'
+  elementInput.min = '1';
+  elementConfig.appendChild(elementInput)
+  const elementButtonInput = document.createElement('button')
+  elementButtonInput.id = 'generate-board';
+  elementButtonInput.innerText = 'VQV'
+  elementButtonInput.style.marginTop = '15px';
+  elementButtonInput.style.height = '20px';
+  elementButtonInput.style.width = '80px';
+  elementConfig.appendChild(elementButtonInput);
+  elementButtonInput.addEventListener('click', estruturaPainel)
+}
+criaBotaoInput();
 
 function limpaPainel() {
   const elementUlParaLimpar = document.querySelectorAll('.linha')
