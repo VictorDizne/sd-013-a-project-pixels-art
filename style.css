@@ -22,3 +22,18 @@
 .green {
   background-color: green;
 }
+
+#pixel-board {
+  display: table;
+}
+
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.line {
+  display: table-row;
+}
