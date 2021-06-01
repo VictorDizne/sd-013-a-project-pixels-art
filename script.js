@@ -7,13 +7,24 @@ azul.style.backgroundColor = 'blue'
 const verde = document.querySelector('.green')
 verde.style.backgroundColor = 'green'
 
-var corAtual = "";
+const pixel = document.querySelectorAll('.pixel')
+
+var corAtual = "black";
+
+selecionarPixel();
 
 vermelho.addEventListener('click', selecionarVermelho)
 preto.addEventListener('click', selecionarPreto)
 azul.addEventListener('click', selecionarAzul)
 verde.addEventListener('click', selecionarVerde)
-console.log(vermelho.style.backgroundColor)
+
+function selecionarPixel() {
+  for (let index = 0; index < pixel.length; index++) {
+    pixel[index].addEventListener('click', function () {
+      pixel[index].style.backgroundColor = corAtual
+    })
+  }
+}
 
 function selecionarVermelho(event) {
   vermelho.classList.remove('selected')
