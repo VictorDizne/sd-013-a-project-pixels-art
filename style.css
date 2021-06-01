@@ -1,7 +1,7 @@
 .color {
   border: black solid 1px;
   display: inline-block;
-  padding: 50px; 
+  padding: 50px;
 }
 
 .one {
@@ -9,7 +9,7 @@
 }
 
 .two {
-  background-color:greenyellow;
+  background-color: greenyellow;
 }
 
 .three {
@@ -19,4 +19,3 @@
 .four {
   background-color: lightslategrey;
 }
-
