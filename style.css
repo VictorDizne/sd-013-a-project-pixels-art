@@ -2,7 +2,7 @@ body {
   text-align: center;
 }
 
-/*Paleta de cores*/
+/* Paleta de cores */
 .color {
   display: inline-block;
   width: 30px;
@@ -28,7 +28,7 @@ body {
   background-color: green;
 }
 
-/*quadro de pixels*/
+/* quadro de pixels */
 #pixel-board {
   border: 3px solid black;
   box-sizing: border-box;
@@ -42,6 +42,7 @@ body {
   height: 40px;
   border: 1px solid black;
   margin: 0;
+  background-color: white;
 }
 
 .line {
