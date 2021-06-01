@@ -1,0 +1,31 @@
+#color-palette {
+ 
+}
+
+.color {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+#colorBlack {
+  background-color: black;
+
+}
+
+#colorRed {
+  background-color: red;
+
+}
+
+#colorYellow {
+  background-color: yellow;
+
+}
+
+#colorBlue {
+  background-color: blue;
+
+}
+
