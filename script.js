@@ -41,7 +41,17 @@ function selectColor() {
 
   for (const color of colors) {
     color.addEventListener('click', event => {
-      event.target.classList.toggle('selected', removeSelected);
+      event.target.classList.toggle('selected', removeSelected(event));
     })
+  }
+}
+
+function removeSelected(selected) {
+  const colors = document.querySelectorAll('.color');
+
+  for (const color of colors) {
+    if (selected.target !== color) {
+      color.classList.remove('selected')
+    }
   }
 }
