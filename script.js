@@ -20,7 +20,8 @@ palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
   let newSelected = clickEvent.target
   newSelected.classList.add("selected")
   console.log(newSelected);
-  };
+  }
 );
+
 
 
