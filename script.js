@@ -16,20 +16,16 @@ palletBlocs.addEventListener('click', function selectedBlock(clickEvent) {
   newSelected.classList.add('selected');
   if (newSelected === document.getElementsByClassName('color')[0]) {
     inputColor = '#000';
-  }
-  else if (newSelected === document.getElementsByClassName('color')[1]) {
+  } else if (newSelected === document.getElementsByClassName('color')[1]) {
     inputColor = '#0000ff';
-  }
-  else if (newSelected === document.getElementsByClassName('color')[2]) {
+  } else if (newSelected === document.getElementsByClassName('color')[2]) {
     inputColor = '#ff0000';
-  }
-  else if (newSelected === document.getElementsByClassName('color')[3]) {
+  } else if (newSelected === document.getElementsByClassName('color')[3]) {
     inputColor = '#ffff00';
   }
-},);
+});
 const painting = document.getElementById('pixel-board');
-painting.addEventListener('click' ,function paintingBlocks(secondClick) {
+painting.addEventListener('click', function paintingBlocks(secondClick) {
   const paintingBlock = secondClick.target;
   paintingBlock.style.backgroundColor = inputColor;
-
 });
