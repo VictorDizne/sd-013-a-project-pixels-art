@@ -54,4 +54,34 @@ window.onload = function() {
       pixelCell[i].style.backgroundColor = 'white';
     }
   });
+  /*
+  for (let i = 5; i <= 50; i+= 1) {
+    let option = document.createElement('option')
+    option.value = i.toString();
+    if (i % 5 == 0) {
+      option.label = i.toString();
+    }
+    document.getElementById('tick').appendChild(option)
+  }
+  */
+  document.getElementById('generate-board').addEventListener('click', function () {
+    let size = document.getElementById('board-size').value;
+    if (size == '') {
+      window.alert('Board inválido!');
+    } 
+    else {
+      if (size > 50) {
+        size = 50
+        document.getElementById('pixel-board').innerHTML = '';
+        fillPixelBoard(size);
+      } else if (size < 5) {
+        size = 5
+        document.getElementById('pixel-board').innerHTML = '';
+        fillPixelBoard(size);
+      } else {
+        document.getElementById('pixel-board').innerHTML = '';
+        fillPixelBoard(size);
+      }
+    }
+  });
 }

@@ -20,6 +20,15 @@
 .color:nth-of-type(4) {
   background-color: yellow;
 }
+
+#clear-board {
+  display: block;
+}
+
+#board-size {
+  width: 300px;
+  margin-bottom: 15px;
+}
 /*TESTES VISUAIS*/
 #pixel-board {
   border: 1px solid black;
