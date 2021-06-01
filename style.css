@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap') ;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Bebas Neue, cursive;
+}
+
+body {
+  background-color: #ffe1ff;
+
+
+}
+
+header {
+  width: 100vw;
+  height: 30vh;
+}
+
+header h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#color-palette {
+  height: 20vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 0;
+}
+
+.color {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.selection:hover {
+  border: 5px solid #4eee94;
+  transform: scale(1.2);
+}
+
+#one {
+  background-color: black;
+}
+
+#two {
+  background-color: red;
+  color: red;
+}
+
+#three {
+  background-color: blue;
+  color: blue;
+}
+
+#four {
+  background-color: green;
+  color: green;
+}
+
+section {
+  width: 100vw;
+  height: 65.4vh;
+}
+
+#pixel-board {
+  display: table;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tr {
+  display: table-row;
+  padding: 5px;
+}
+
+.pixel {
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+  border: black solid 1px;
+  background-color: white;
+}
+
+#clear-board {
+  padding: 10px;
+  margin-left: 48.5vw;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+#clear-board:hover {
+  border: 5px solid #4eee94;
+  transform: scale(1.2);
+}
