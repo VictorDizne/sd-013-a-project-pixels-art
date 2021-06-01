@@ -13,19 +13,19 @@ body {
 }
 
 #cBlack {
-  background-color: #000;
+  background-color: black;
 }
 
 #cRed {
-  background-color: #ff0000;
+  background-color: red;
 }
 
 #cYellow {
-  background-color: #ffff00;
+  background-color: yellow;
 }
 
 #cBlue {
-  background-color: #0000ff;
+  background-color: blue;
 }
 
 #pixel-board {
