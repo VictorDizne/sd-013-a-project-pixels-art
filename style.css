@@ -29,3 +29,29 @@
   background-color: green;
   margin: 1%;
 }
+
+#pixel-board {
+  display: table;
+  padding: 5px;
+  position: absolute;
+  margin-top: 5%;
+}
+
+.tr {
+  display: table-row;
+  padding: 5px;
+}
+
+.pixel {
+  display: table-cell;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border: #000000 solid 1px;
+  background-color: white;
+
+}
+
+#clear-board {
+  margin-right: 3%;
+}
