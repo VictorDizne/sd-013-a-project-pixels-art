@@ -1,3 +1,9 @@
+const colors = document.querySelectorAll('.color');
+
+window.onload = function() {
+  colors[0].classList.add('selected');
+}
+
 const pixelBoard = document.querySelector('#pixel-board');
 
 function createPixels(number) {
