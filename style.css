@@ -14,19 +14,19 @@
   border-color: black;
 }
 
+#black {
+  background-color: black;
+}
+
+#pink {
+  background-color: #e54a79;
+}
+
+#purple {
+  background-color: #293b79;
+}
+
 #green {
-  background-color: #2a5f14;
-}
-
-#blue {
-  background-color: #37a8fb;
-}
-
-#blue-sky {
-  background-color: #50becd;
-}
-
-#sand {
-  background-color: #e5c59f;
+  background-color: #86ae35;
 }
 
