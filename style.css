@@ -21,3 +21,16 @@
 #fourth {
   background-color: yellow;
 }
+
+.line {
+  margin-left: 15px;
+  line-height: 0px;
+}
+
+.pixel{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px black solid;
+  background-color: white;
+}
