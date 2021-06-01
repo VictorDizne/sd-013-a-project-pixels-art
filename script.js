@@ -1,6 +1,6 @@
 window.onload = function () {
 
-  //Cria a linhas já com os pixel que preenchem o board, ou seja, cria o board.
+  // Cria a linhas já com os pixel que preenchem o board, ou seja, cria o board.
   function boardMaker() {
     let pixelBoard = document.getElementById('pixel-board');
 
@@ -13,7 +13,7 @@ window.onload = function () {
   }
   boardMaker();
 
-  //Cria os pixels do board.
+  // Cria os pixels do board.
   function pixelMaker(line) {
 
     for (let i = 0; i < 5; i += 1) {
@@ -23,14 +23,14 @@ window.onload = function () {
     }
   }
 
-  //Define a cor preta como selecionada inicialmente.
+  // Define a cor preta como selecionada inicialmente.
   function startBlack() {
     let colorBlack = document.getElementsByClassName('color')[0];
     colorBlack.classList.add('selected')
   }
   startBlack();
 
-  //Cria o evento de seleção de cores.
+  // Cria o evento de seleção de cores.
   function colorSelect() {
     let selected = document.getElementsByClassName('selected');
     document.addEventListener('click', function (event) {
@@ -45,7 +45,7 @@ window.onload = function () {
   }
   colorSelect();
 
-  //Cria o evento de colorir os
+  // Cria a função de colorir os pixels
   function coloredPixels() {
 
     document.addEventListener('click', function (event) {
@@ -58,5 +58,18 @@ window.onload = function () {
     })
   }
   coloredPixels();
+
+  // Cria a função de limpar o pixel board
+  function boardCleaner() {
+    let clearButton = document.getElementsByTagName('button')[0];
+    let pixels = document.getElementsByClassName('pixel');
+
+    clearButton.addEventListener('click', function () {
+      for (let element of pixels) {
+        element.style.backgroundColor = 'white';
+      }
+    })
+  }
+  boardCleaner();
 
 }
