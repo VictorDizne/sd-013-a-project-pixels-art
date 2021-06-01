@@ -23,10 +23,12 @@
 
 .pixel{
   border: 1px solid black;
-  padding: 40px;
+  width: 40px;
+  height: 40px;
   background-color: white;
+
 }
 
 #pixel-board{
-  margin: 30px;
+  margin: 40px;
 }
