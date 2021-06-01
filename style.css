@@ -22,22 +22,6 @@ box-sizing: border-box;
   background-color: white;
 }
 
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
-.black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
 .paletas {
   display: flex;
   justify-content: center;
