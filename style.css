@@ -7,31 +7,35 @@
   margin-bottom: 12px;
 }
 
-.black {
+#black {
   background-color: black;
 }
 
-.blue {
+#blue {
   background-color: blue;
 }
 
-.green {
+#green {
   background-color: green;
 }
 
-.red {
+#red {
   background-color: red;
-}
-
-#pixel-board {
-  margin-top: 12px;
-  width: 300px;
 }
 
 .pixel {
   border: 1px solid black;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: white;
-  float: left;
+}
+
+table {
+  clear: both;
+  column-span: unset;
+  border-collapse: collapse;
+}
+
+.selected {
+  background-color: black;
 }
