@@ -1,0 +1,31 @@
+#color-palette {
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+#color1 {
+  background-color: black;
+  margin: 1%;
+}
+
+#color2 {
+  background-color: yellow;
+  margin: 1%;
+}
+
+#color3 {
+  background-color: red;
+  margin: 1%;
+}
+
+#color4 {
+  background-color: green;
+  margin: 1%;
+}
