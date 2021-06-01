@@ -6,12 +6,21 @@ titulo.id = 'title';
 
 /* 2 - Adicione à página uma paleta de quatro cores distintas.*/
 
-let coresPaleta = 4;
+let coresPaleta = 3;
+
 
 let criaSection = document.createElement('section');
 document.querySelector('body').appendChild(criaSection);
 criaSection.className = 'sectionClass';
 criaSection.id = 'color-palette'
+
+let div = document.createElement('div');
+  div.style.display = 'inline-block';
+  div.style.padding = '15px';
+  div.className = 'color';
+  div.style.margin = '2px';
+  div.style.backgroundColor = 'black'
+  criaSection.appendChild(div);
 
 for( let index = 0; index < coresPaleta; index += 1){
   let div = document.createElement('div');
