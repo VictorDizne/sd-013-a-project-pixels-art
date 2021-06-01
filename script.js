@@ -3,7 +3,11 @@ let colors = ['black', 'blue', 'green', 'red'];
 function createBoxPalette(){
   for ( let i = 0; i < 4; i += 1){
     let div = document.createElement('div');
-    div.className = 'color';
+    if ( i == 0){
+      div.className = 'color selected';
+    } else {
+      div.className = 'color';
+    };
     let colorPalette = document.querySelector('#color-palette');
     colorPalette.appendChild(div);
   };
