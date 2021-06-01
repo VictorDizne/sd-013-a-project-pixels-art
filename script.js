@@ -14,10 +14,9 @@ function fncCreateHexColor(nCharacters) {
 // console.log(fncCreateHexColor(6)); 
 
 function createColorPalette (QuantidadeDeCores) {  
-  //Selecao e criacao de Elementos HTML    
-  let containerColorPalette = document.querySelector('#color-palette');
+  //Selecao e criacao de Elementos HTML      
   for (let index = 0; index < QuantidadeDeCores; index += 1) {                
-    
+    let containerColorPalette = document.querySelector('#color-palette');
     let divIndividualColor = document.createElement("div");        
     divIndividualColor.className = 'color';
     divIndividualColor.style.width = '40px';    
@@ -27,13 +26,14 @@ function createColorPalette (QuantidadeDeCores) {
     divIndividualColor.style.display = 'inline-block';
 
     if (index == 0) {      
-      divIndividualColor.style.backgroundColor = 'black';
-      containerColorPalette.appendChild(divIndividualColor);
+      divIndividualColor.style.backgroundColor = 'black';      
+      // containerColorPalette.appendChild(divIndividualColor);
     } else {      
       strBackgroundColor = fncCreateHexColor(6);
       divIndividualColor.style.backgroundColor = strBackgroundColor;
-      containerColorPalette.appendChild(divIndividualColor);
-    }      
+      // containerColorPalette.appendChild(divIndividualColor);
+    }
+    document.querySelector('#color-palette').appendChild(divIndividualColor);    
   }
 }
 
