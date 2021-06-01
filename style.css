@@ -6,17 +6,21 @@
   line-height: 100px;
   display: inline-block;
 }
+
 #blue {
   background-color: blue;
   color: white;
 }
+
 #red {
   background-color: red;
 }
+
 #green {
   background-color: green;
   color: white;
 }
+
 #yellow {
   background-color: yellow;
 }
