@@ -8,11 +8,11 @@ document.querySelector('.second').style.backgroundColor = 'red';
 document.querySelector('.third').style.backgroundColor = 'blue';
 document.querySelector('.fourth').style.backgroundColor = 'green';
 
-let pixel = document.getElementsByClassName('pixel')
+// let pixel = document.getElementsByClassName('pixel')
 
-for (let i of pixel){
-  i.style.backgroundColor = 'white';
-}
+// for (let i of pixel){
+//   i.style.backgroundColor = 'white';
+// }
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
