@@ -5,6 +5,7 @@
 }
 
 body {
+  background-image: url('img_girl.jpg');
   background-color: sandybrown;
 }
 
@@ -64,17 +65,20 @@ body {
   border: 1px solid black;
 }
 
-.line{
+.line {
   display: table-row;
 }
 
 .pixel {
   display: table-cell;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background-color: white;
   border: 1px solid black;
   margin: 5px;
+}
 
+.selected {
+  border: 1px solid rgb(149,158,19);
 }
 
