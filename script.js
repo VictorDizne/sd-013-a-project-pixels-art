@@ -1,9 +1,7 @@
-
-
 function addSelect (){
-  var element = document.getElementsByClassName('color')
+  let element = document.getElementsByClassName('color')
 
-  for (i = 0; i < element.length; i++){
+  for (let i = 0; i < element.length; i++){
     element[i].classList.remove('selected')
   }
 

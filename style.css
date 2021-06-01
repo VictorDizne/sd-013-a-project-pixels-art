@@ -2,10 +2,12 @@
   display: table;
   padding: 5px;
 }
+
 .pallets {
   display: table-row;
   padding: 5px;
 }
+
 .color {
   display: table-cell;
   padding: 5px;
