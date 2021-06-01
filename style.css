@@ -3,19 +3,8 @@ div {
   width: 40px;
   border: black solid 1px;
   display: inline-block;
+  margin-right: 11px;
 }
-
-#color-pallete {
-  display: table; 
-}
-
-#color-pallete > div { 
-  display: table-row;
-}
-
-#color-pallete > div > div { 
-  display: table-cell;
-} 
 
 #black {
   background-color: black;
