@@ -30,5 +30,5 @@
 }
 
 .selected {
-  border: 2px solid red;
+  filter: brightness(0.8);
 }

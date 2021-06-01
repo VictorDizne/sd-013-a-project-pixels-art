@@ -21,7 +21,7 @@ function createPalette() {
 function createPixels() {
   const table = document.querySelector('#pixel-board');
 
-  for (let lineIndex = 0; lineIndex < boardSize; lineIndex += 1) {
+  for (let rowIndex = 0; rowIndex < boardSize; rowIndex += 1) {
     const line = document.createElement('tr');
     table.appendChild(line);
 
@@ -70,6 +70,23 @@ function paintPixel() {
   }
 }
 
+function clearPixels() {
+  const pixels = document.querySelectorAll('.pixel');
+  const button = document.querySelector('#clear-board');
+
+
+  button.addEventListener('click', () => {
+    for (let pixel in pixels) {
+      try {
+        pixels[pixel].style.backgroundColor = '#ffffff';
+      }
+      catch (err) {
+        let error = err
+      }
+    }
+  })
+}
+
 createPalette();
 
 createPixels();
@@ -77,3 +94,5 @@ createPixels();
 selectColor();
 
 paintPixel();
+
+clearPixels();
