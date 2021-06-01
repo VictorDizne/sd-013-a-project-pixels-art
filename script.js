@@ -1,18 +1,16 @@
+/* eslint-disable space-before-function-paren */
+/* eslint-disable func-names */
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-arrow-callback */
-/* eslint-disable nonblock-statement-body-position */
 function setColorClass() {
-  const elementToClick = document.querySelectorAll('.color');
-  const clickedElement = document.getElementsByClassName('color selected');
+  const elementToClick = document.querySelector('.color');
+  const clickedElement = document.getElementsByClassName('selected');
+  const classColor = 'color selected';
   elementToClick.addEventListener('click', function(event) {
-    for (let index = 0; index < elementToClick; index += 1) {
-      if (elementToClick[index] === event.target) {
-        if (clickedElement.length === 0) {
-          event.target.className = 'color selected';
-        } else {
-          event.target.className = 'color';
-        }
-      }
+    if (clickedElement.length === 0) {
+      event.target.className = classColor;
+    } else {
+      event.target.className = 'color';
     }
   });
 }
