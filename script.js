@@ -1,9 +1,25 @@
-const elementLiPaleta = document.querySelectorAll('.color');
-
-
 // Eventos
 //Marca a cor na paleta
+function corRandomica() {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  const randomica = `${r}, ${g}, ${b}`;
+  const cor = `rgb(${randomica})`;
+  return cor;  
+}
+
 function setaPaleta() {
+  const elementLiPaleta = document.querySelectorAll('.color');
+  elementLiPaleta[0].style.backgroundColor = 'black'
+  sessionStorage.setItem('color1', elementLiPaleta[0].style.backgroundColor)
+  elementLiPaleta[1].style.backgroundColor = corRandomica();
+  sessionStorage.setItem('color2', elementLiPaleta[1].style.backgroundColor)
+  elementLiPaleta[2].style.backgroundColor = corRandomica();
+  sessionStorage.setItem('color3', elementLiPaleta[2].style.backgroundColor)
+  elementLiPaleta[3].style.backgroundColor = corRandomica();
+  sessionStorage.setItem('color4', elementLiPaleta[3].style.backgroundColor)
+  
   for (let index = 0; index < elementLiPaleta.length; index += 1){
     elementLiPaleta[index].addEventListener('click', function(event) {
         switch (index) {
@@ -72,29 +88,25 @@ function darVidaAosPixels() {
       }
       const elementSelectedPaleta = document.querySelector('#selected');
       const elementSelectedQuadro = document.getElementsByClassName('pixel selectedPixel');
-      console.log(elementSelectedPaleta.className)
-      //console.log(elementSelectedQuadro[0])
       let corPaleta = 'white'
       switch (elementSelectedPaleta.className){
         case 'color colorblack':
-          corPaleta = 'black';
+          corPaleta = sessionStorage.getItem('color1')
           break;
         case 'color colorred':
-          corPaleta = 'red';
+          corPaleta = sessionStorage.getItem('color2')
           break;
         case 'color colorblue':
-          corPaleta = 'blue';
+          corPaleta = sessionStorage.getItem('color3')
           break;
         case 'color coloryellow':
-          corPaleta = 'yellow';
+          corPaleta = sessionStorage.getItem('color4')
           break;
       }
-      console.log("Cor: " + corPaleta)
       elementSelectedQuadro[0].style.backgroundColor = corPaleta
     })
   }
 }
-darVidaAosPixels();
 
 function criaBotaoClear() {
   //Cria o botão Clear - requisito 9
@@ -116,7 +128,6 @@ function criaBotaoClear() {
     }
   }
 }
-criaBotaoClear()
 
 function criaBotaoInput() {
   //Preparando estrutura do Botão de Input
@@ -139,7 +150,6 @@ function criaBotaoInput() {
   elementConfig.appendChild(elementButtonInput);
   elementButtonInput.addEventListener('click', estruturaPainel)
 }
-criaBotaoInput();
 
 function limpaPainel() {
   const elementUlParaLimpar = document.querySelectorAll('.linha')
@@ -192,3 +202,6 @@ function estruturaPainel() {
 setaPaleta();
 darNomeAosQuadrantes();
 darNomeAsLinhas();
+darVidaAosPixels();
+criaBotaoClear()
+criaBotaoInput();
