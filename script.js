@@ -5,6 +5,7 @@ let div4 = document.querySelector(".color").nextElementSibling.nextElementSiblin
 
 function corPreta() {
   div1.style.backgroundColor = "black"
+  div1.classList.add("selected")
 }
 corPreta()
 
