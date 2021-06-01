@@ -58,3 +58,26 @@ function selecionar(event) {
   event.target.classList.add('selected')
 }
 
+
+/* preencher cores
+?
+*/
+const cor = document.getElementsByClassName('color');
+const pixels = document.getElementsByClassName('pixel');
+
+function seletor() {
+  for (let i = 0; i < cor.length; i += 1) {
+    if (cor[i].classList.contains('selected')) {
+      return cor[i].style.backgroundColor;
+    }
+  }
+}
+
+function mudanssa(event) {
+  const evento = event;
+  evento.target.style.backgroundColor = seletor();
+}
+
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', mudanssa);}
+
