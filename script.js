@@ -1,9 +1,12 @@
+window.onload = function() {
 
-// function createPixels() {
+function classSelected() {
+  document.querySelector('#color-palette .color:nth-child(1)').classList.add('selected');
+}
 
-//   let pixelBoard = document.createElement('div');
-//   pixelBoard.id = "pixel-board";
-// }
+classSelected();
+
+}
 
 
 
