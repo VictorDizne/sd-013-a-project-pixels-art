@@ -11,30 +11,34 @@ function fncCreateHexColor(nCharacters) {
   return strHexaColor;
 }
 
-// console.log(fncCreateHexColor(6)); 
-
-function createColorPalette (QuantidadeDeCores) {  
-  //Selecao e criacao de Elementos HTML      
-  for (let index = 0; index < QuantidadeDeCores; index += 1) {                
-    let containerColorPalette = document.querySelector('#color-palette');
+function createColorPalette (QuantidadeDeCores) {    
+  for (let index = 0; index < QuantidadeDeCores; index += 1) {                    
     let divIndividualColor = document.createElement("div");        
     divIndividualColor.className = 'color';
-    divIndividualColor.style.width = '40px';    
-    divIndividualColor.style.height = '40px';    
-    divIndividualColor.style.border = '1px solid black';    
-    divIndividualColor.style.margin = '0px 5px 10px 5px';
-    divIndividualColor.style.display = 'inline-block';
-
     if (index == 0) {      
       divIndividualColor.style.backgroundColor = 'black';      
-      // containerColorPalette.appendChild(divIndividualColor);
     } else {      
       strBackgroundColor = fncCreateHexColor(6);
       divIndividualColor.style.backgroundColor = strBackgroundColor;
-      // containerColorPalette.appendChild(divIndividualColor);
     }
     document.querySelector('#color-palette').appendChild(divIndividualColor);    
   }
 }
 
 createColorPalette(4);
+
+function createTable(rows, columns) {  
+  let divTable = document.querySelector('#pixel-board');  
+  for (let index = 0; index < rows; index += 1) {
+    let divRow = document.createElement('div');
+    divRow.className = 'table-row';
+    divTable.appendChild(divRow);
+    for (let i = 0; i < columns; i += 1) {
+      let divPixel = document.createElement('div');
+      divPixel.className = 'pixel';
+      divRow.appendChild(divPixel);
+    }
+  }
+}
+
+createTable(5,5);
