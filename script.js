@@ -19,18 +19,18 @@ for (let i of pixel){
 // document.querySelector('.fourth').style.backgroundColor = '#' + randomColor4;
 
 
-let board = document.querySelector('#pixel-board');
-let n = 5;
+// let board = document.querySelector('#pixel-board');
+// let n = 5;
 
-function receiveColor() {
+// function receiveColor() {
 
-}
+// }
 
 
 
-function setColor () {
+// function setColor () {
 
-}
+// }
 
 
 
