@@ -24,8 +24,17 @@ palletBlocs.addEventListener('click', function selectedBlock(clickEvent) {
     inputColor = '#ffff00';
   }
 });
+
 const painting = document.getElementById('pixel-board');
 painting.addEventListener('click', function paintingBlocks(secondClick) {
   const paintingBlock = secondClick.target;
   paintingBlock.style.backgroundColor = inputColor;
+});
+
+let butao = document.getElementById("clear-board");
+butao.addEventListener('click', function clear(){
+  let pixels = document.getElementsByClassName("pixel")
+  for (let i = 0; i < pixelsss.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  };
 });
