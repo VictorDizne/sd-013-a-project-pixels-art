@@ -1,7 +1,7 @@
-let div1 = document.querySelector(".color")
-let div2 = document.querySelector(".color").nextElementSibling
-let div3 = document.querySelector(".color").nextElementSibling.nextElementSibling
-let div4 = document.querySelector(".color").nextElementSibling.nextElementSibling.nextElementSibling
+const div1 = document.querySelector(".color")
+const div2 = document.querySelector(".color").nextElementSibling
+const div3 = document.querySelector(".color").nextElementSibling.nextElementSibling
+const div4 = document.querySelector(".color").nextElementSibling.nextElementSibling.nextElementSibling
 
 function corPreta() {
   div1.style.backgroundColor = "black"
