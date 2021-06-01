@@ -1,11 +1,10 @@
 const pixelBoard = 5;
-window.onload = blackSelected;
 
 function blackSelected() {
   const black = document.querySelector('.black');
   black.classList.add('selected');
 }
-
+window.onload = blackSelected;
 
 function createPixelBoard() {
   const board = document.getElementById('pixel-board');
@@ -24,3 +23,19 @@ function createPixelBoard() {
   }
 }
 createPixelBoard();
+
+const colors = document.getElementsByClassName('color');
+
+for (let index = 0; index < colors.length; index += 1) {
+  colors[index].addEventListener('click', changeSelected);
+}
+
+function changeSelected(event) {
+  for (let index2 of colors) {
+    if (index2.classList.contains('selected')) {
+      index2.classList.remove('selected');
+    } 
+  }
+  event.target.classList.add('selected');
+}
+
