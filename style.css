@@ -1,7 +1,19 @@
-#title {
-
+.color {
+  display: inline-block;
+  border: solid #000 1px;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
 }
-
-#color-palette {
-
+#black {
+  background-color: black;
+}
+#red {
+  background-color: red;
+}
+#green {
+  background-color: green;
+}
+#blue {
+  background-color: blue;
 }
