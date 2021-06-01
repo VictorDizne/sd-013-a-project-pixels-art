@@ -48,3 +48,14 @@ function colorPixelBoard(styleValue) {
     });
   }
 }
+
+function buttonClear() {
+  const idButton = document.querySelector('#btnClear');
+  const pixel = document.querySelectorAll('.pixel');
+  idButton.addEventListener('click', () => {
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = "white";
+    }
+  });
+}
+buttonClear();
