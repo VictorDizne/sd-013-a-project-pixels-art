@@ -33,8 +33,8 @@ painting.addEventListener('click', function paintingBlocks(secondClick) {
 
 let butao = document.getElementById("clear-board");
 butao.addEventListener('click', function clear(){
-  let pixels = document.getElementsByClassName("pixel")
+  let pixelsss = document.getElementsByClassName("pixel")
   for (let i = 0; i < pixelsss.length; i += 1) {
-    pixels[i].style.backgroundColor = 'white';
+    pixelsss[i].style.backgroundColor = 'white';
   };
 });
