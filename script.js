@@ -1,2 +1,5 @@
-// let black = document.getElementsByClassName('black');
-// black.classlist.add('selected');
+window.onload =function selectBlack (){
+	document.querySelectorAll('.black').classList ='selected';
+}
+
+
