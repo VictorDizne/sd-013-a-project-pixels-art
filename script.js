@@ -43,19 +43,36 @@ function createMainDivs () {
 
 createMainDivs ();
 
-for (let index = 0; index < 5; index++){
-	let colorDiv = document.querySelectorAll('.color')[index];
-	colorDiv.addEventListener('click', () => {
-		let selected = document.querySelector('.selected');
-		selected.classList.remove('selected');
-		colorDiv.classList.add('selected');
-	})
-}
+const colorDiv = document.querySelectorAll('.color');
+
+colorDiv[0].addEventListener('click', () => {
+	let selected = document.querySelector('.selected');
+	selected.classList.remove('selected');
+	colorDiv[0].classList.add('selected');
+})
+
+colorDiv[1].addEventListener('click', () => {
+	let selected = document.querySelector('.selected');
+	selected.classList.remove('selected');
+	colorDiv[1].classList.add('selected');
+})
+
+colorDiv[2].addEventListener('click', () => {
+	let selected = document.querySelector('.selected');
+	selected.classList.remove('selected');
+	colorDiv[2].classList.add('selected');
+})
+
+colorDiv[3].addEventListener('click', () => {
+	let selected = document.querySelector('.selected');
+	selected.classList.remove('selected');
+	colorDiv[3].classList.add('selected');
+})
 
 for (let index = 0; index < 25; index++){
 	let toPaint = document.querySelectorAll('.pixel')[index];
 	toPaint.addEventListener('click', () => {
 		let selected = document.querySelector('.selected');
-		toPaint.style.backgroundColor = selected.style.backgroundColor;
+		toPaint.style.backgroundColor = selected.style.backgroundColor
 	})
 }
