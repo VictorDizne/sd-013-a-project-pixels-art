@@ -1,8 +1,12 @@
 .color {
   border: solid 1px;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+#color-palette {
+  margin: 15px;
 }
 
 #color-palette :nth-child( 1 ) {
@@ -19,4 +23,11 @@
 
 #color-palette :nth-child( 4 ) {
   background-color: blue;
+}
+
+.pixel {
+  width: 50px;
+  height: 50px;
+  border: solid black 1px;
+  display: inline-block; 
 }
