@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+  margin-right: 400px;
+}
+
+.color {
+  border: 1px solid black;
+  width: 7%;
+  height: 80px;
+  display: inline-block;
+  margin-left: 85px;
+}
+
+.color-1 {
+  background-color: #000;
+}
+
+.color-2 {
+  background-color: #00f;
+}
+
+.color-3 {
+  background-color: #7fffd4;
+}
+
+.color-4 {
+  background-color: #7fff07;
+}
