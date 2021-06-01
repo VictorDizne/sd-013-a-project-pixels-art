@@ -11,7 +11,8 @@ function createPalette() {
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
     td.classList.add('color');
-    td.style.backgroundColor = `${paletteColors[index]}`
+    td.style.backgroundColor = `${paletteColors[index]}`;
+    td.style.border = '1px solid #000';
     index === 0 ? td.classList.add('selected') : '';
     line.appendChild(td);
   }
@@ -63,7 +64,8 @@ function paintPixel() {
 
   for (let pixelsIndex = 0; pixelsIndex < pixels.length; pixelsIndex += 1) {
     pixels[pixelsIndex].addEventListener('click', (event) => {
-      event.target.style.backgroundColor = currentColor;
+      const currentPixel = event.target;
+      currentPixel.style.backgroundColor = currentColor;
     });
   }
 }
