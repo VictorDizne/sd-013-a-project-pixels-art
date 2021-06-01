@@ -8,10 +8,9 @@ html {
 
 header {
   text-align: center;
-
 }
-#titulo {
-  text-align: center; 
+#title {
+  text-align: center;
   margin: 10px;
 }
 .centro {
@@ -21,21 +20,11 @@ header {
   justify-content: center;
   background-color: rgb(34, 50, 153);
   margin: 0 auto;
-  height: 500px;
-  width: 400px;
+  min-height: 500px;
+  min-width: 400px;
   border-radius: 10%;
 }
-#color-palette {
-  background-color: lightblue;
-  position: absolute;
-  margin-left: 10px;
-  width: 380px;
-  height: 430px;
-  text-align: center;
-}
-
 .color {
- 
   border: 1px solid black;
   display: inline-block;
   height: 40px;
@@ -57,4 +46,16 @@ header {
 
 #color4 {
   background-color: red;
+}
+
+button {
+  margin: 10px;
+}
+
+.pixel {
+  background-color: #ffffff;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
 }
