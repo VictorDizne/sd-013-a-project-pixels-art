@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Verdana, sans-serif;
+}
+
+#color-palette {
+  margin-top: 20px;
+}
+
+.color {
+  border: solid black 1px;
+}
+
+/*  color button */
+#button-one {
+  background-color: black;
+}
+#button-two {
+  background-color: red;
+}
+#button-three {
+  background-color: green;
+}
+#button-four {
+  background-color: yellow;
+}
