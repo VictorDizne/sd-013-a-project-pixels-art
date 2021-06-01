@@ -1,7 +1,7 @@
 .color {
   border: black solid 1px;
   display: inline-block;
-  padding: 50px;
+  padding: 40px;
 }
 
 .one {
@@ -18,4 +18,17 @@
 
 .four {
   background-color: lightslategrey;
+}
+
+.pixel {
+  display: inline-block;
+  border: black solid 1px;
+  height: 40px;
+  width: 40px;
+  margin: 0.5px;
+  margin-top: 0;
+}
+
+#pixel-board {
+  width: 250px;
 }
