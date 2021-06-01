@@ -6,10 +6,10 @@ function corRandomica() {
   const b = Math.floor(Math.random() * 255);
   const randomica = `${r}, ${g}, ${b}`;
   const cor = `rgb(${randomica})`;
-  return cor;  
+  return cor;
 }
 
-function setaPaleta() {
+function setaCores() {
   const elementLiPaleta = document.querySelectorAll('.color');
   elementLiPaleta[0].style.backgroundColor = 'black';
   sessionStorage.setItem('color1', elementLiPaleta[0].style.backgroundColor);
@@ -19,34 +19,40 @@ function setaPaleta() {
   sessionStorage.setItem('color3', elementLiPaleta[2].style.backgroundColor);
   elementLiPaleta[3].style.backgroundColor = corRandomica();
   sessionStorage.setItem('color4', elementLiPaleta[3].style.backgroundColor);
-  
+}
+
+function setaPaleta() {
+  const elementLiPaleta = document.querySelectorAll('.color');
+  setaCores();
   for (let index = 0; index < elementLiPaleta.length; index += 1) {
-    elementLiPaleta[index].addEventListener('click', function() {
+    elementLiPaleta[index].addEventListener('click', function () {
       switch (index) {
-        case 0:
-          elementLiPaleta[0].id = 'selected';
-          elementLiPaleta[1].id = 'unset';
-          elementLiPaleta[2].id = 'unset';
-          elementLiPaleta[3].id = 'unset';
-          break;
-        case 1:
-          elementLiPaleta[0].id = 'unset';
-          elementLiPaleta[1].id = 'selected';
-          elementLiPaleta[2].id = 'unset';
-          elementLiPaleta[3].id = 'unset';
-          break;
-        case 2:
-          elementLiPaleta[0].id = 'unset';
-          elementLiPaleta[1].id = 'unset';
-          elementLiPaleta[2].id = 'selected';
-          elementLiPaleta[3].id = 'unset';
-          break;
-        case 3:
-          elementLiPaleta[0].id = 'unset';
-          elementLiPaleta[1].id = 'unset';
-          elementLiPaleta[2].id = 'unset';
-          elementLiPaleta[3].id = 'selected';
-          break;
+      case 0:
+        elementLiPaleta[0].className = 'color selected';
+        elementLiPaleta[1].className = 'color';
+        elementLiPaleta[2].className = 'color';
+        elementLiPaleta[3].className = 'color';
+        break;
+      case 1:
+        elementLiPaleta[0].className = 'color';
+        elementLiPaleta[1].className = 'color selected';
+        elementLiPaleta[2].className = 'color';
+        elementLiPaleta[3].className = 'color';
+        break;
+      case 2:
+        elementLiPaleta[0].className = 'color';
+        elementLiPaleta[1].className = 'color';
+        elementLiPaleta[2].className = 'color selected';
+        elementLiPaleta[3].className = 'color';
+        break;
+      case 3:
+        elementLiPaleta[0].className = 'color';
+        elementLiPaleta[1].className = 'color';
+        elementLiPaleta[2].className = 'color';
+        elementLiPaleta[3].className = 'color selected';
+        break;
+      default:
+        break;
       }
     });
   }
@@ -72,7 +78,7 @@ function darNomeAsLinhas() {
 function darVidaAosPixels() {
   const elementLiQuadro = document.querySelectorAll('.pixel');
   for (let index = 0; index < elementLiQuadro.length; index += 1) {
-    elementLiQuadro[index].addEventListener('click', function() {
+    elementLiQuadro[index].addEventListener('click', function () {
       /* Muda a classe para selecionada quando houver o click */
       elementLiQuadro[index].className = 'pixel selectedPixel';
       /* Busca/Puxa todas as classes selecionadas */
@@ -85,24 +91,25 @@ function darVidaAosPixels() {
           elementPixelSelected[index2].className = 'pixel';
         }
       }
-      const elementSelectedPaleta = document.querySelector('#selected');
+      /* const elementSelectedPaleta = document.querySelector('.selected'); */
+      const elementSelectedPaleta = document.getElementsByClassName('color selected');
       const elementSelectedQuadro = document.getElementsByClassName('pixel selectedPixel');
       let corPaleta = 'white';
-      switch (elementSelectedPaleta.className) {
-        case 'color colorblack':
-          corPaleta = sessionStorage.getItem('color1');
-          break;
-        case 'color colorred':
-          corPaleta = sessionStorage.getItem('color2');
-          break;
-        case 'color colorblue':
-          corPaleta = sessionStorage.getItem('color3');
-          break;
-        case 'color coloryellow':
-          corPaleta = sessionStorage.getItem('color4');
-          break;
-        default:
-          break;
+      switch (elementSelectedPaleta[0].id) {
+      case '1':
+        corPaleta = sessionStorage.getItem('color1');
+        break;
+      case '2':
+        corPaleta = sessionStorage.getItem('color2');
+        break;
+      case '3':
+        corPaleta = sessionStorage.getItem('color3');
+        break;
+      case '4':
+        corPaleta = sessionStorage.getItem('color4');
+        break;
+      default:
+        break;
       }
       elementSelectedQuadro[0].style.backgroundColor = corPaleta;
     });
@@ -134,13 +141,14 @@ function criaBotaoInput() {
   /* Preparando estrutura do Botão de Input */
   const elementConfig = document.querySelector('#configuracao');
   const elementInput = document.createElement('input');
+  elementInput.type = 'number';
   elementInput.id = 'board-size';
+  elementInput.min = '1';
+  /* elementInput.value = '5'; */
   elementInput.style.marginTop = '15px';
   elementInput.style.marginLeft = '45px';
   elementInput.style.width = '40px';
   elementInput.style.backgroundColor = 'rgb(238,238,238)';
-  elementInput.value = '5';
-  elementInput.min = '1';
   elementConfig.appendChild(elementInput);
   const elementButtonInput = document.createElement('button');
   elementButtonInput.id = 'generate-board';
@@ -166,10 +174,10 @@ function montaPainel(quantidade) {
     elementLinha.className = 'linha';
     elementPixelBoard.appendChild(elementLinha);
     for (let indexColuna = 0; indexColuna < quantidade; indexColuna += 1) {
-      const elementLinha = document.getElementsByClassName('linha');
+      const elementLinha2 = document.getElementsByClassName('linha');
       const elementPixels = document.createElement('li');
       elementPixels.className = 'pixel';
-      elementLinha[indexLinha].appendChild(elementPixels);
+      elementLinha2[indexLinha].appendChild(elementPixels);
     }
   }
   darNomeAsLinhas();
@@ -178,22 +186,24 @@ function montaPainel(quantidade) {
 }
 
 function estruturaPainel() {
-  const inputQuantidade = document.querySelector('#board-size');
-  let quantidade = inputQuantidade.value;
-  if (quantidade === '') {
+  const input = document.querySelector('#board-size');
+  let quantidade = input.value;
+  if (input.value === '') {
     alert('Board inválido!');
   } else {
     if (quantidade > 50) {
       quantidade = 50;
-      inputQuantidade.value = '50';
-    } else if (quantidade < 5) {
-      quantidade = 5;
-      inputQuantidade.value = '5';
+      input.value = '50';
     }
+    if (quantidade < 5) {
+      quantidade = 5;
+      input.value = '5';
+    }
+    /* input.value = ''; */
+    const quantidadeFinal = quantidade;
+    limpaPainel();
+    montaPainel(quantidadeFinal);
   }
-  const quantidadeFinal = quantidade;
-  limpaPainel();
-  montaPainel(quantidadeFinal);
 }
 
 setaPaleta();
