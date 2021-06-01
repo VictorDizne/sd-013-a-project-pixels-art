@@ -1,10 +1,10 @@
 body {
   margin: 0;
 }
-#color-pallete{
+#color-palette {
   margin-left: 25px;
 }
-#pixel-board{
+#pixel-board {
   margin-top: 25px;
 }
 .color, .pixel {
@@ -12,16 +12,17 @@ body {
   width: 40px;
   height: 40px;
   border: 1px solid black;
+  background-color: white;
 }
-#black{
+#black {
   background-color: black;
 }
-#blue{
+#blue {
   background-color: blue;
 }
-#red{
+#red {
   background-color: red;
 }
-#green{
+#green {
   background-color: green;
 }
