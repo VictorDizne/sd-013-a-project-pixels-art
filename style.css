@@ -1,0 +1,35 @@
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    background-color: brown;
+    margin: 1%;
+    width: 8%;
+    height: 40px;
+    margin-left: 15px;
+    padding: 2px;
+    right: inherit;
+
+}
+
+#title {
+    text-align: center;
+    margin-right: 4%;
+    font-size: 40px;
+    top: 1%;
+}
+
+#black {
+    background-color: black;
+}
+
+#pink {
+    background-color: palevioletred;
+}
+
+#blue {
+    background-color: rgb(21, 69, 228);
+}
+
+#green {
+    background-color: rgb(67, 207, 67);
+}
