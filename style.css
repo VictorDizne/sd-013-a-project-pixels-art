@@ -1,0 +1,22 @@
+#color-palette .color { 
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+#color-palette .black {
+  background-color: yellow;
+}
+
+#color-palette .red {
+  background-color: red;
+}
+
+#color-palette .purple {
+  background-color: purple;
+}
+
+#color-palette .orange {
+  background-color: orange;
+}
