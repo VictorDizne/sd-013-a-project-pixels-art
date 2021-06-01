@@ -1,11 +1,7 @@
 const paletteLength = 4;
 const boardSize = 5;
-
-createPalette();
-
-createPixels();
-
-selectColor();
+let currentColor = 'black';
+const paletteColors = ['black', 'red', 'green', 'blue'];
 
 function createPalette() {
   const table = document.querySelector('#color-palette');
@@ -13,9 +9,9 @@ function createPalette() {
   table.appendChild(line);
 
   for (let index = 0; index < paletteLength; index += 1) {
-    let td = document.createElement('td');
+    const td = document.createElement('td');
     td.classList.add('color');
-    td.classList.add(`color${index}`);
+    td.style.backgroundColor = `${paletteColors[index]}`
     index === 0 ? td.classList.add('selected') : '';
     line.appendChild(td);
   }
@@ -36,25 +32,46 @@ function createPixels() {
   }
 }
 
-function selectColor() {
-  const colors = document.querySelectorAll('.color');
-
-  for (let index = 0; index < colors.length; index += 1) {
-    colors[index].addEventListener('click', (event) => {
-      event.target.classList.add('selected');
-    })
-    colors[index].addEventListener('click', (event) => {
-      removeSelected(event)
-    });
-  }
+function setCurrentColor(item) {
+  currentColor = item.target.style.backgroundColor;
 }
 
 function removeSelected(selected) {
   const colors = document.querySelectorAll('.color');
 
-  for (const color of colors) {
-    if (selected.target !== color) {
-      color.classList.remove('selected');
+  for (let index = 0; index < colors.length; index += 1) {
+    if (selected.target !== colors[index]) {
+      colors[index].classList.remove('selected');
     }
   }
 }
+
+function selectColor() {
+  const colors = document.querySelectorAll('.color');
+
+  for (let colorsIndex = 0; colorsIndex < colors.length; colorsIndex += 1) {
+    colors[colorsIndex].addEventListener('click', (event) => {
+      event.target.classList.add('selected');
+      removeSelected(event);
+      setCurrentColor(event);
+    });
+  }
+}
+
+function paintPixel() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let pixelsIndex = 0; pixelsIndex < pixels.length; pixelsIndex += 1) {
+    pixels[pixelsIndex].addEventListener('click', (event) => {
+      event.target.style.backgroundColor = currentColor;
+    });
+  }
+}
+
+createPalette();
+
+createPixels();
+
+selectColor();
+
+paintPixel();

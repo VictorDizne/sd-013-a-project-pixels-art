@@ -19,22 +19,6 @@
   height: 40px;
 }
 
-.color0 {
-  background-color: black;
-}
-
-.color1 {
-  background-color: rgb(238, 60, 15);
-}
-
-.color2 {
-  background-color: rgb(255, 132, 0);
-}
-
-.color3 {
-  background-color: rgb(168, 168, 168);
-}
-
 #pixel-board {
   border-collapse: collapse;
 }
