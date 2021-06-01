@@ -31,10 +31,10 @@ painting.addEventListener('click', function paintingBlocks(secondClick) {
   paintingBlock.style.backgroundColor = inputColor;
 });
 
-let butao = document.getElementById("clear-board");
-butao.addEventListener('click', function clear(){
-  let pixelsss = document.getElementsByClassName("pixel")
+const butao = document.getElementById('clear-board');
+butao.addEventListener('click', function clear() {
+  const pixelsss = document.getElementsByClassName("pixel");
   for (let i = 0; i < pixelsss.length; i += 1) {
     pixelsss[i].style.backgroundColor = 'white';
-  };
+  }
 });
