@@ -4,6 +4,10 @@
   border: 0;
 }
 
+body {
+  background-color: sandybrown;
+}
+
 #title {
   text-align: center;
 }
@@ -14,7 +18,8 @@
 }
 
 #color-palette {
-  max-width: 390px;
+  display: flex;
+  max-width: 460px;
   margin: 50px auto;
 }
 
@@ -29,11 +34,11 @@
 }
 
 .color:hover {
-  border: 1px solid rgb(59, 158, 19);
+  border: 1px solid rgb(149,158,19);
 }
 
 .color:nth-of-type(1) {
-  background-color: aqua;
+  background-color: black;
 }
 
 .color:nth-of-type(2) {
@@ -45,6 +50,31 @@
 }
 
 .color:nth-of-type(4) {
-  background-color: rgb(12, 211, 12);
+  background-color: rgb(12,211,12);
+}
+
+.color:nth-of-type(5) {
+  background-color: aqua;
+}
+
+#pixel-board {
+  max-width: 500px;
+  display: table;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.line{
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 5px;
+
 }
 
