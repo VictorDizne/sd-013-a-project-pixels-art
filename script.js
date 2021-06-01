@@ -46,6 +46,7 @@ function CoresDisponiveis(){
 function AdicionaPixels(referencia) {
 	let quantidade = document.querySelector(referencia).value;
 	let lugarDaLinha = document.querySelector('#pixel-board');
+	pixelNumeroN = 0
 	for (let linha = 1; linha <= quantidade; linha += 1){
 		let line = document.createElement('ul')
 		lugarDaLinha.appendChild(line)
@@ -53,6 +54,8 @@ function AdicionaPixels(referencia) {
 			let column = document.createElement('li')
 			line.appendChild(column)
 			column.className = "pixel"
+			column.id = `pixel ${pixelNumeroN}`
+			pixelNumeroN += 1
 		}
 	}
 
