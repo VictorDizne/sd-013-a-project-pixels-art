@@ -32,3 +32,12 @@ function gerarPixel(Tamanho, linha) {
   }
 }
 gerartabelaPixels(5);
+
+/* cor preta defaut
+?
+*/
+
+function sempreBlack() {
+  cor1.classList.add('selected');
+}
+sempreBlack();
