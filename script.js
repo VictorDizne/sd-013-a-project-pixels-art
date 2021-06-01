@@ -44,10 +44,13 @@ function createPixel(){
 function createBoard(){
   let board = document.querySelector("#pixel-board");
   for (let row = 0; row < 5; row += 1) {
+    let divRow = document.createElement("div");
+    divRow.className = "row";
     for(let column = 0; column < 5; column += 1) {
       let pixel = createPixel();
-      board.appendChild(pixel);
+      divRow.appendChild(pixel);
     }
+    board.appendChild(divRow);
   }
   setListenersOfPixels();
 }
