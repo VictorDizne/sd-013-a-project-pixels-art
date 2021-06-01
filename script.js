@@ -1,7 +1,8 @@
 let colors = ['black', 'blue', 'green', 'red'];
+let clearButton = document.querySelector('#clear-board');
 
 function createBoxPalette(){
-  for ( let i = 0; i < 4; i += 1){
+  for ( let i = 0; i < colors.length; i += 1){
     let div = document.createElement('div');
     if ( i == 0){
       div.className = 'color selected';
@@ -51,7 +52,13 @@ function changePixels(event){
   event.target.style.backgroundColor = actualColor;
 }
 let pixelsArray = document.querySelectorAll('.pixel');
-for (let i =0; i < pixelsArray.length; i += 1){
+for (let i = 0; i < pixelsArray.length; i += 1){
   pixelsArray[i].addEventListener('click', changePixels);
 };
 
+function resetAll(){
+  for (let i = 0; i < pixelsArray.length; i += 1){
+    pixelsArray[i].style.backgroundColor = 'white';
+  };
+};
+clearButton.addEventListener('click', resetAll)
