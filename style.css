@@ -1,0 +1,13 @@
+#title{
+
+}
+
+.color{
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 60px 60px;
+  background-color: pink;
+  margin: 10px;
+  display: inline-block;
+}
