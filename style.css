@@ -15,16 +15,14 @@ h1 {
 }
 section {
 	text-align: center;	
-	padding: 50px 0px 50px ;
+	padding: 20px 0px 50px ;
 }
 ul {
 	text-decoration: none;
+	display: flex;
+	justify-content: center;
 }
-ul li {
-	display: inline-block;
-	list-style: none;
-	width: 50px;
-	height: 50px;
+ul li .color {
 }
 nav {
 	margin-left: auto;
@@ -36,21 +34,29 @@ div {
 	display: inline-block;
 }
 input{
-	width:100px
+	width:100px;
+	justify-content: center;
+	top: 50%;
+	position:;
+
   }
 .color {
+
+	display: inline-block;
+	list-style: none;
+	width: 50px;
+	height: 50px;
 	border-radius: 100%;
 	border: 1px solid black;
 	margin-right: 13px;
 
 }
-img {
-	border-radius: 120%;
-	width: 40px;
-	height: 40px;
-	color: black;
-}
 .pixel {
+	display: inline-block;
+	list-style: none;
+	width: 50px;
+	height: 50px;
 	background-color: white;
 	border: 1px solid black;
 }
+500 x 280 tamanho da tela
