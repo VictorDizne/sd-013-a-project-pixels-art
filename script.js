@@ -1,5 +1,4 @@
-// Constante de Elementos
-const elementLiPaleta = document.querySelectorAll('.color')
+const elementLiPaleta = document.querySelectorAll('.color');
 
 
 // Eventos
@@ -37,7 +36,6 @@ function setaPaleta() {
     )
   }  
 }
-setaPaleta();
 
 function darNomeAosQuadrantes() {
   //Dou um nome id para cada quadrante
@@ -46,7 +44,6 @@ function darNomeAosQuadrantes() {
     elementLiNomes[index].id = index +1;
   }
 }
-darNomeAosQuadrantes();
 
 function darNomeAsLinhas() {
   //Dou um nome id para cada linha
@@ -55,7 +52,6 @@ function darNomeAsLinhas() {
     elementUlNomes[index].id = index +1;
   }
 }
-darNomeAsLinhas();
 
 //Lê todos os pixels e adiciona o evento click nelas
 function darVidaAosPixels() {
@@ -171,15 +167,17 @@ function montaPainel(quantidade) {
 }
 
 function estruturaPainel() {
-  const inputQuantidade = document.querySelector('#board-size')
+  const inputQuantidade = document.querySelector('#board-size');
   let quantidade = inputQuantidade.value;
   if (quantidade === '') {
     alert('Board inválido!');
   } else {
     if (quantidade > 50) {
       quantidade = 50;
+      inputQuantidade.value = '50';
     } else if (quantidade < 5) {
       quantidade = 5;
+      inputQuantidade.value = '5';
     }
     //inputQuantidade.value = '';
   }
@@ -190,3 +188,7 @@ function estruturaPainel() {
   montaPainel(quantidadeFinal);
   console.log("Passo 02");
 }
+
+setaPaleta();
+darNomeAosQuadrantes();
+darNomeAsLinhas();
