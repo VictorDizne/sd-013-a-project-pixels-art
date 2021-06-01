@@ -6,6 +6,7 @@ const azul = document.querySelector('.blue')
 azul.style.backgroundColor = 'blue'
 const verde = document.querySelector('.green')
 verde.style.backgroundColor = 'green'
+const limpar = document.querySelector('#clear-board')
 
 const pixel = document.querySelectorAll('.pixel')
 
@@ -17,6 +18,13 @@ vermelho.addEventListener('click', selecionarVermelho)
 preto.addEventListener('click', selecionarPreto)
 azul.addEventListener('click', selecionarAzul)
 verde.addEventListener('click', selecionarVerde)
+limpar.addEventListener('click', pintarTudoDeBranco)
+
+function pintarTudoDeBranco() {
+  for (let index = 0; index < pixel.length; index++) {
+      pixel[index].style.backgroundColor = 'white'
+  }
+}
 
 function selecionarPixel() {
   for (let index = 0; index < pixel.length; index++) {
