@@ -1,0 +1,49 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#title {
+  display: block;
+  text-align: center;
+}
+
+#color-palette {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 15px 15px;
+
+}
+
+.color {
+  background-color: white;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.paletas {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background-color: rgb(251, 124, 124);
+  height: 5vh;
+}
