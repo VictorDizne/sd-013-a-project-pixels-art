@@ -15,6 +15,11 @@ body {
   }
 
 #pixel-board {
+  margin-top: 0px;
   display: inline-block;
   text-align: center;
+}
+
+#clear-board {
+  
 }

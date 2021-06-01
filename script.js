@@ -79,5 +79,18 @@ function mudanssa(event) {
 }
 
 for (let i = 0; i < pixels.length; i += 1) {
-  pixels[i].addEventListener('click', mudanssa);}
+  pixels[i].addEventListener('click', mudanssa);
+}
 
+/* butão limpar
+?
+*/
+const limpeza = document.getElementById('clear-board');
+
+
+function limpar() {
+  for (let i = 0; i < pixels.length; i+=1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+limpeza.addEventListener('click', limpar);
