@@ -15,9 +15,8 @@ window.onload = function () {
   }
 };
 
-
 // Adiciona função de pintar o pixel
-let pixel = document.querySelectorAll('.pixel');
+const pixel = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixel.length; index += 1) {
   pixel[index].addEventListener('click', function (event) {
     let selected = document.querySelector('.selected');
@@ -25,3 +24,11 @@ for (let index = 0; index < pixel.length; index += 1) {
     event.target.style.backgroundColor = backgroundColor;
   })
 }
+
+// Adiciona botão de limpar
+const button = document.querySelector('#clear-board');
+button.addEventListener('click', function() {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+})

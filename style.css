@@ -1,5 +1,14 @@
+body {
+  background-color: rgb(165, 160, 160);
+}
+
 h1 {
   text-align: center;
+}
+
+#center-button {
+  text-align: center;
+  margin: 10px;
 }
 
 #color-palette {
