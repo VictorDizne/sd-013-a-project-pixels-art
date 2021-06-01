@@ -7,14 +7,14 @@ function createBoard() {
   const tb = document.createElement('tbody');
   for (let i = 0; i < 5; i += 1) {
     const line = document.createElement('tr');
-  for (let i2 = 0; i2 < 5; i2 += 1) {
-    const pixel = document.createElement('td');
-    pixel.className = 'pixel';
-    line.appendChild(pixel);
-      }
-    tb.appendChild(line);
+    for (let i2 = 0; i2 < 5; i2 += 1) {
+      const pixel = document.createElement('td');
+      pixel.className = 'pixel';
+      line.appendChild(pixel);
     }
+    tb.appendChild(line);
+  }
   t.appendChild(tb);
   b.appendChild(t);
-  }
+}
 createBoard();
