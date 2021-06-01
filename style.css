@@ -43,3 +43,9 @@ header {
   background-color:white;
   border:1px solid rgb(0, 0, 0)
 }
+
+.botoes {
+  display: flex;
+  margin: 20px 20px;
+  justify-content: center;
+}
