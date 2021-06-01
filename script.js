@@ -11,7 +11,7 @@ let coresPaleta = 4;
 let criaSection = document.createElement('section');
 document.querySelector('body').appendChild(criaSection);
 criaSection.className = 'sectionClass';
-
+criaSection.id = 'color-palette'
 
 for( let index = 0; index < coresPaleta; index += 1){
   let div = document.createElement('div');
