@@ -1,0 +1,60 @@
+html {
+  background: url(Background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header {
+  text-align: center;
+
+}
+#titulo {
+  text-align: center; 
+  margin: 10px;
+}
+.centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(34, 50, 153);
+  margin: 0 auto;
+  height: 500px;
+  width: 400px;
+  border-radius: 10%;
+}
+#color-palette {
+  background-color: lightblue;
+  position: absolute;
+  margin-left: 10px;
+  width: 380px;
+  height: 430px;
+  text-align: center;
+}
+
+.color {
+ 
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: 5px;
+  width: 40px;
+}
+
+#color1 {
+  background-color: black;
+}
+
+#color2 {
+  background-color: blue;
+}
+
+#color3 {
+  background-color: yellow;
+}
+
+#color4 {
+  background-color: red;
+}
