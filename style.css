@@ -1,0 +1,22 @@
+.color {
+  border: black solid 1px;
+  display: inline-block;
+  padding: 50px; 
+}
+
+.one {
+  background-color: black;
+}
+
+.two {
+  background-color:greenyellow;
+}
+
+.three {
+  background-color: hotpink;
+}
+
+.four {
+  background-color: lightslategrey;
+}
+
