@@ -21,3 +21,20 @@
 .red {
   background-color: red;
 }
+
+#pixel-board {
+  background-color: white;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px;
+  border-color: black;
+  display: inline-block;
+  background-color: white;
+}
+
+.linha {
+  height: 40px;
+}
