@@ -49,6 +49,14 @@ window.addEventListener('load', function() {
   firsColorSelected.className = 'color selected';
 }) 
 
+let listDivsColorsPalette = document.querySelector('#color-palette');
+
+listDivsColorsPalette.addEventListener('click', function(elemento) {
+  document.getElementsByClassName('color selected')[0].className = 'color';
+  strColorSelected = elemento.target.style.backgroundColor;
+  elemento.target.className = 'color selected';
+  sessionStorage.setItem('Color Selected', strColorSelected);
+});
 
   
 
