@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0 0 0 10px;
 }
 
 /* #color-palette {
@@ -7,12 +7,22 @@ body {
   display: block;
 } */
 
+.selected {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;  
+  margin: 0px 5px 10px 5px;
+  display: inline-block;
+  /* background-color: black; */
+}
+
 .color {
   width: 40px;
   height: 40px;
   border: 1px solid black;  
   margin: 0px 5px 10px 5px;
   display: inline-block;
+  background-color: rgb(0,0,0);
 }
 
 .pixel {

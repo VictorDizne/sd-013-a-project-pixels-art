@@ -16,7 +16,8 @@ function createColorPalette (QuantidadeDeCores) {
     let divIndividualColor = document.createElement("div");        
     divIndividualColor.className = 'color';
     if (index == 0) {      
-      divIndividualColor.style.backgroundColor = 'black';      
+      divIndividualColor.style.backgroundColor = 'rgb(0,0,0)';      
+      // divIndividualColor.className = 'selected';
     } else {      
       strBackgroundColor = fncCreateHexColor(6);
       divIndividualColor.style.backgroundColor = strBackgroundColor;
@@ -42,3 +43,13 @@ function createTable(rows, columns) {
 }
 
 createTable(5,5);
+
+window.addEventListener('load', function() {
+  let firsColorSelected = document.getElementsByClassName('color')[0];
+  firsColorSelected.className = 'color selected';
+}) 
+
+
+  
+
+
