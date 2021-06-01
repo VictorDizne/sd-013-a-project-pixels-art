@@ -16,7 +16,7 @@ window.onload = function () {
 };
 
 // Adiciona função de pintar o pixel
-const pixel = document.querySelectorAll('.pixel');
+let pixel = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixel.length; index += 1) {
   pixel[index].addEventListener('click', function (event) {
     let selected = document.querySelector('.selected');
@@ -30,5 +30,35 @@ const button = document.querySelector('#clear-board');
 button.addEventListener('click', function() {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
+  }
+})
+
+// Adiciona botão que redimensiona o quadro de pixels
+const buttonBoard = document.querySelector('#generate-board');
+const input = document.querySelector('#board-size');
+const board = document.querySelector('#pixel-board')
+buttonBoard.addEventListener('click', function() {
+  if (input.value === '') {
+    alert('Board inválido!');
+  } else {
+    board.innerHTML = '';
+    for (let index = 1 ; index <= input.value; index += 1) {
+      let divTr = document.createElement('div');
+      divTr.classList.add('tr');
+      for (let index2 = 1; index2 <= input.value; index2 += 1) {
+        let divPixelTd = document.createElement('div');
+        divPixelTd.classList.add('pixel','td');
+        divTr.appendChild(divPixelTd);
+      }
+      board.appendChild(divTr);
+    }
+  }
+  pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', function (event) {
+      let selected = document.querySelector('.selected');
+      let backgroundColor = window.getComputedStyle(selected).getPropertyValue('background-color');
+      event.target.style.backgroundColor = backgroundColor;
+    })
   }
 })
