@@ -30,3 +30,18 @@ h1 {
 .brown {
   background-color: brown;
 }
+
+#pixel-board {
+  display: table;
+  width: 25px;
+  height: 25px;
+}
+
+.tr {
+  display: table-row;
+}
+
+.td {
+  display: table-cell;
+  background-color: white;
+}
