@@ -1,0 +1,41 @@
+.center {
+  margin: auto;
+  width: 80%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.colors {
+    margin: auto;
+    width: 80%;
+    border: 3px solid rgb(128, 0, 100);
+    padding: 10px;
+    bottom: 20px;
+  }
+
+.box {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
+    border-collapse: collapse;
+}
+
+.pallete {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
+    border-collapse: collapse;
+}
+
+.tabela, .paleta {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#first-color {
+    background-color: black;
+  }
