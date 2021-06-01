@@ -29,6 +29,13 @@ table {
   border-collapse: collapse;
 }
 
+button {
+  display: block;
+}
+table {
+  margin-top: 5px;
+}
+
 th {
   width: 41px;
   height: 41px;

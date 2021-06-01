@@ -30,3 +30,13 @@ function paintPixel() {
   }
 }
 paintPixel();
+function resetColors() {
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', function(){
+    const pixels = document.getElementsByClassName('pixel');
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  })
+}
+resetColors();
