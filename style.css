@@ -1,0 +1,61 @@
+header {
+    text-align: center;
+    width: 100%;
+}
+
+#gode {
+    width: 100px;
+    display: inline-block;
+    background-position-y: center;
+}
+
+#title {
+    display: inline-block;
+}
+
+#black {
+    background-color: black;
+    border: solid 1px black;
+    margin-right: 5px;
+}
+
+#red {
+    background-color: red;
+    border: solid 1px black;
+}
+
+#green {
+    background-color: green;
+    border: solid 1px black;
+}
+
+#blue {
+    background-color: blue;
+    border: solid 1px black;
+}
+
+#color-palette {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.color {
+    display: table-cell;
+    width: 40px;
+    height: 40px;;
+    padding-left: 5px;
+}
+
+#pixel-board {
+    width: 210px;
+    height: 210px;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    float: left;
+    background-color: white;
+}
