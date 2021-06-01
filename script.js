@@ -20,8 +20,6 @@ createBoard();
 const paletaCores = document.querySelectorAll('.color');
 const pixels = document.querySelectorAll('.pixel');
 
-
-
 function selectedActive() {
   for (let i = 0; i < paletaCores.length; i += 1) {
     paletaCores[i].classList.remove('selected');
@@ -56,4 +54,3 @@ window.document.onload = selectedActive();
 addEvents(pixels, 'click', addCollor);
 addEvents(paletaCores, 'click', sectorColor);
 document.getElementById('clear-board').addEventListener('click', clearPixels);
-

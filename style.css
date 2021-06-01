@@ -5,6 +5,18 @@ div .color {
   height: 100px;
 }
 
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 120px;
+  width: 70px;
+}
+
+#generate-board {
+  margin-left: 10px;
+  height: 38px;
+}
+
 #color1 {
   background-color: black;
 }
@@ -45,4 +57,5 @@ div .color {
   padding: 10px;
   margin-top: 10px;
   margin-left: 170px;
+  display: block;
 }
