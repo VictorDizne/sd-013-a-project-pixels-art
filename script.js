@@ -1,11 +1,11 @@
 function createPixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
-  for (let index = 0; index < 5; index += 1) {
-    let pixelLine = document.createElement('div');
+  for (let indexLine = 0; indexLine < 5; indexLine += 1) {
+    const pixelLine = document.createElement('div');
     pixelLine.className = 'line';
     pixelBoard.appendChild(pixelLine);
-    for (let index = 0; index < 5; index += 1) {
-      let pixelColumn = document.createElement('div');
+    for (let indexColumn = 0; indexColumn < 5; indexColumn += 1) {
+      const pixelColumn = document.createElement('div');
       pixelColumn.className = 'pixel';
       pixelLine.appendChild(pixelColumn);
     }
@@ -13,3 +13,8 @@ function createPixelBoard() {
 }
 
 createPixelBoard();
+
+window.onload = function picBlack() {
+  const blackColor = document.querySelector('#first');
+  blackColor.classList.add('selected');
+}
