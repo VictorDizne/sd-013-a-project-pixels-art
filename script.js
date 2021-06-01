@@ -37,4 +37,14 @@ window.onload = function() {
       }
     }
   }, false);
+
+  document.addEventListener('click', function (event) {
+    if ( event.target.classList.contains('pixel') ) {
+      console.log('entrou')
+      let selected = document.getElementsByClassName('selected')[0];
+      let selectedColor = window.getComputedStyle(selected, null).getPropertyValue('background-color')
+      event.target.style.backgroundColor = selectedColor;
+    }
+  }, false);
+
 }
