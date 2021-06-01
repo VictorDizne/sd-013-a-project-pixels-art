@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap') ;
 
 body {
   margin: 0;
@@ -29,12 +29,43 @@ body {
   color: white;
   font-size: 3.5rem;
   font-weight: normal;
-  background: linear-gradient(
-    225deg,
-    rgba(255, 153, 102, 1) 0%,
-    rgba(255, 94, 98, 1) 100%
-  );
+  background: linear-gradient(225deg,
+      rgba(255, 153, 102, 1) 0%,
+      rgba(255, 94, 98, 1) 100%);
   border-bottom: 5px solid white;
 }
 
 /* End Cabeçalho */
+/* Article */
+
+#color-palette {
+  width: 100%;
+  text-align: center;
+}
+
+.color {
+  height: 80px;
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.color1 {
+  background-color: #FF0000;
+}
+
+.color2 {
+  background-color: #6C77F0;
+}
+
+.color3 {
+  background-color: #60F089;
+}
+
+.color4 {
+  background-color: #F07878;
+}
+
+/* End Article */
