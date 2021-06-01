@@ -1,14 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: rgb(165, 160, 160);
 }
 
 h1 {
   text-align: center;
+  margin: 20px;
 }
 
 #center-button {
   text-align: center;
   margin: 10px;
+}
+
+#clear-board {
+  width: 75px;
+}
+
+#resize-board {
+  text-align: center;
+  margin: 20px;
 }
 
 #color-palette {
@@ -26,14 +41,14 @@ h1 {
   height: 40px;
 }
 
-.yellow {
-  background-color: yellow;
+.gray {
+  background-color: gray;
   width: 40px;
   height: 40px;
 }
 
-.blue {
-  background-color: blue;
+.purple {
+  background-color: purple;
   width: 40px;
   height: 40px;
 }
@@ -46,7 +61,7 @@ h1 {
 
 #pixel-board {
   display: table;
-  margin: 40px auto;
+  margin: 10px auto;
 }
 
 .tr {

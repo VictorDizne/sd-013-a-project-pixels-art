@@ -47,7 +47,7 @@ buttonBoard.addEventListener('click', function() {
       divTr.classList.add('tr');
       for (let index2 = 1; index2 <= input.value; index2 += 1) {
         let divPixelTd = document.createElement('div');
-        divPixelTd.classList.add('pixel','td');
+        divPixelTd.classList.add('pixel', 'td');
         divTr.appendChild(divPixelTd);
       }
       board.appendChild(divTr);
