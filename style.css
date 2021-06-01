@@ -20,3 +20,21 @@
 #color-palette .orange {
   background-color: orange;
 }
+
+#pixel-board {
+  margin-top: 10px;
+  display: table;
+  border: 0.5px solid black;
+}
+
+#pixel-board .pixel {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  display: table-cell;
+  background-color: white;
+}
+
+.tr {
+  display: table-row;
+}
