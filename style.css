@@ -1,0 +1,26 @@
+body {
+  font-family: Helvetica, sans-serif, Arial;
+}
+
+.color{
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.c1 {
+  background-color: rgb(0, 0, 0);
+}
+
+.c2 {
+  background-color:rgb(255, 0, 0);
+}
+
+.c3 {
+  background-color: rgb(165, 42, 42);
+}
+
+.c4 {
+  background-color: rgb(136, 207, 252);
+}
