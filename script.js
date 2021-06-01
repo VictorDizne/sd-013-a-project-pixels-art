@@ -7,21 +7,41 @@ function selector() {
 
 let palletBlocs = document.getElementById("color-palette");
 
-palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
+let inputColor = ""
 
-  function selectorChange() {
+palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
     let colors = document.getElementsByClassName("color");
-    console.log(colors);
     for(let i = 0; i < colors.length; i +=1 ){
       colors[i].classList.remove("selected");
     }
-  };
-  selectorChange();
+
   let newSelected = clickEvent.target
   newSelected.classList.add("selected")
-  console.log(newSelected);
-  }
+    if(newSelected === document.getElementsByClassName("color")[0]){
+    inputColor = "#000"
+    }
+    else if(newSelected === document.getElementsByClassName("color")[1]){
+    inputColor = "#0000ff"
+    }
+    else if(newSelected === document.getElementsByClassName("color")[2]){
+    inputColor = "#ff0000"
+    }
+    else if(newSelected === document.getElementsByClassName("color")[3]){
+    inputColor = "#ffff00"
+    }
+    console.log(inputColor)
+}
 );
 
 
+document.getElementsByClassName("selected")[0].style.background = "black"
+
+let painting = document.getElementById("pixel-board");
+
+painting.addEventListener("click" ,function(secondClick){
+  let paintingBlock = secondClick.target
+  // let colorChoose = document.getElementsByClassName("selected")[0];
+  // console.log(colorChoose);
+  paintingBlock.style.backgroundColor = inputColor
+})
 
