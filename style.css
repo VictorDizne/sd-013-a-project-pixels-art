@@ -1,1 +1,34 @@
-/* resolução de tela 1366 largura x 768 altura
+/* resolução de tela 1366 largura x 768 altura */
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    max-width: 1366px;
+}
+
+#color-palette{
+
+}
+
+.color{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.black{
+    background-color: #000;
+}
+.blue{
+    background-color: #ADE2FE;
+}
+
+.red{
+    background-color: #D40100;
+}
+
+.yellow{
+    background-color: #FFFF00
+}
