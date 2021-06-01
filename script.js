@@ -5,7 +5,8 @@ function selector() {
   black.classList.add("selected");
 };
 
-let palletBlocs = document.getElementById("color-palette")
+let palletBlocs = document.getElementById("color-palette");
+
 palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
 
   function selectorChange() {
@@ -19,5 +20,7 @@ palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
   let newSelected = clickEvent.target
   newSelected.classList.add("selected")
   console.log(newSelected);
-  }
-)
+  };
+);
+
+
