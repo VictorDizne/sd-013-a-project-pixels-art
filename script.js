@@ -5,6 +5,8 @@ createPalette();
 
 createPixels();
 
+selectColor();
+
 function createPalette() {
   const table = document.querySelector('#color-palette');
   const line = document.createElement('tr');
@@ -14,6 +16,7 @@ function createPalette() {
     let td = document.createElement('td');
     td.classList.add('color');
     td.classList.add(`color${index}`);
+    index === 0 ? td.classList.add('selected') : '';
     line.appendChild(td);
   }
 }
@@ -30,5 +33,15 @@ function createPixels() {
       td.classList.add('pixel');
       line.appendChild(td);
     }
+  }
+}
+
+function selectColor() {
+  const colors = document.querySelectorAll('.color');
+
+  for (const color of colors) {
+    color.addEventListener('click', event => {
+      event.target.classList.toggle('selected', removeSelected);
+    })
   }
 }
