@@ -6,6 +6,7 @@ function blackSelected() {
 }
 window.onload = blackSelected;
 
+// Cria quadro de pixels de acordo com tamanho passado para a variavel pixelBoard
 function createPixelBoard() {
   const board = document.getElementById('pixel-board');
 
@@ -24,18 +25,38 @@ function createPixelBoard() {
 }
 createPixelBoard();
 
-const colors = document.getElementsByClassName('color');
+// Mudar a classe 'selected' entre elementos com a classe 'color'
+function changeSelected() {
+  const colors = document.getElementsByClassName('color');
 
-for (let index = 0; index < colors.length; index += 1) {
-  colors[index].addEventListener('click', changeSelected);
-}
-
-function changeSelected(event) {
-  for (let index2 of colors) {
-    if (index2.classList.contains('selected')) {
-      index2.classList.remove('selected');
-    } 
+  function changeColorSelect(event) {
+    for (let index2 of colors) {
+     if (index2.classList.contains('selected')) {
+        index2.classList.remove('selected');
+      }
+    }
+    event.target.classList.add('selected');
   }
-  event.target.classList.add('selected');
-}
 
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener('click', changeColorSelect);
+  }
+}
+changeSelected();
+
+// Muda background color do pixel clickado
+function colorClick() {
+  let pixels = document.getElementsByClassName('pixel');
+
+  function changeColor(event) {
+    let selectElement = document.querySelector('.selected');
+    let colorSelect = window.getComputedStyle(selectElement).backgroundColor;
+
+    event.target.style.backgroundColor = colorSelect;
+  }
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', changeColor);
+  }
+}
+colorClick();
