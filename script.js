@@ -2,6 +2,15 @@ window.onload = function() {
   let initBlack = document.getElementsByClassName('color')[0];
   initBlack.classList.add('selected')
 
+  for (let i = 1; i < 4; i += 1) {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let colorUnit = document.getElementsByClassName('color');
+    let strColor = `rgb(${r},${g},${b})`;
+    colorUnit[i].style.backgroundColor = strColor;
+  }
+
   let pixelBoard = document.createElement('div');
   pixelBoard.id = 'pixel-board';
   pixelBoard.style.display = 'table';
