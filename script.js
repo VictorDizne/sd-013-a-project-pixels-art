@@ -14,6 +14,23 @@ document.querySelector('.fourth').style.backgroundColor = 'green';
 //   i.style.backgroundColor = 'white';
 // }
 
+let board = document.createElement('div');
+board.setAttribute('id','pixel-board');
+document.querySelector('#table').appendChild(board);
+
+let n = 5;
+
+for (let i = 0; i < n; i +=1 ){
+  let tr = document.createElement('div');
+  tr.classList.add('tr');
+  board.appendChild(tr);
+  for (let j = 0; j < n; j += 1) {
+    let pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    tr.appendChild(pixel);
+  }
+}
+
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
 // document.querySelector('.fourth').style.backgroundColor = '#' + randomColor4;
