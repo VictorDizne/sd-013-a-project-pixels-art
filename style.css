@@ -1,0 +1,26 @@
+.ai {
+    background-color: rgb(66, 231, 33);
+    border: solid 1px;
+}
+
+.b2 {
+    background-color: rgb(255, 0, 0);
+    border: solid 1px;
+}
+
+.c3 {
+    background-color: rgb(22, 13, 153);
+    border: solid 1px;
+}
+
+.d4 {
+    background-color: rgb(110, 10, 255);
+    border: solid 1px;
+}
+
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+}
