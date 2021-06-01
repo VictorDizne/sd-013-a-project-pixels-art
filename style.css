@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url('img_girl.jpg');
+  background-image: url('the-witcher-pixels.jpg');
   background-color: sandybrown;
 }
 
@@ -59,7 +59,6 @@ body {
 }
 
 #pixel-board {
-  max-width: 500px;
   display: table;
   margin: 0 auto;
   border: 1px solid black;
@@ -75,7 +74,7 @@ body {
   height: 40px;
   background-color: white;
   border: 1px solid black;
-  margin: 5px;
+  cursor: pointer;
 }
 
 .selected {

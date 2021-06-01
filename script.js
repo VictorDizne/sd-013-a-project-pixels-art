@@ -26,7 +26,6 @@ window.onload = function () {
   //Define a cor preta como selecionada inicialmente.
   function startBlack() {
     let colorBlack = document.getElementsByClassName('color')[0];
-    console.log(colorBlack.backgroundColor);
     colorBlack.classList.add('selected')
   }
   startBlack();
@@ -46,4 +45,18 @@ window.onload = function () {
   }
   colorSelect();
 
-  //Cria o evento de colorir os pixels
+  //Cria o evento de colorir os
+  function coloredPixels() {
+
+    document.addEventListener('click', function (event) {
+      let pixel = event.target;
+      let selected = document.getElementsByClassName('selected')[0];
+      let color = window.getComputedStyle(selected, null).getPropertyValue("background-color");
+      if (pixel.classList.contains('pixel')) {
+        pixel.style.backgroundColor = color;
+      }
+    })
+  }
+  coloredPixels();
+
+}
