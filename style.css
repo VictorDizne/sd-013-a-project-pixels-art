@@ -31,3 +31,17 @@
 #verde {
   background-color: green;
 }
+
+#pixel-board {
+  width: 50%;
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  border: 2px solid black;
+}
+
+.pixel {
+  padding: 40px 20px;
+  background-color: white;
+  border: 1px solid black;
+}
