@@ -1,3 +1,33 @@
 #title {
+    margin-left: 40px;
+
+}
+
+#color-palette {    
+    margin-left: auto;
+   
     
+}
+
+.color {
+    display: inline-block;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+#colorOne {
+    background-color: black;
+}
+
+#colorTwo {
+    background-color: blue;
+}
+
+#colorThree {
+    background-color: red;
+}
+
+#colorFour {
+    background-color: green;
 }
