@@ -1,0 +1,35 @@
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: purple;
+  text-align: center; 
+}
+
+body {
+  background-color: rgb(36, 36, 36);
+  font-size: 25px;
+}
+
+div.color{
+  border: 1px black solid;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin-left: 150px;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
+
+#black {
+  background-color: black;
+}
