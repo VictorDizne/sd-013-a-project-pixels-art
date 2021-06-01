@@ -12,3 +12,4 @@ let granimInstance = new Granim({
       }
   }
 });
+
