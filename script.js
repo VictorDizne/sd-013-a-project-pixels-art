@@ -7,6 +7,8 @@ window.onload = function() {
   pixelBoard.style.display = 'table';
   document.body.appendChild(pixelBoard);
 
+  let n = 5;
+
   function fillPixelBoard(n){
     for (let i = 0; i < n; i += 1){
       let pixelRow = document.createElement('div');
@@ -23,7 +25,7 @@ window.onload = function() {
     }
   }
 
-  fillPixelBoard(5);
+  fillPixelBoard(n);
 
   document.addEventListener('click', function (event) {
     if ( event.target.classList.contains( 'color' ) ) {
@@ -40,11 +42,16 @@ window.onload = function() {
 
   document.addEventListener('click', function (event) {
     if ( event.target.classList.contains('pixel') ) {
-      console.log('entrou')
       let selected = document.getElementsByClassName('selected')[0];
       let selectedColor = window.getComputedStyle(selected, null).getPropertyValue('background-color')
       event.target.style.backgroundColor = selectedColor;
     }
   }, false);
 
+  document.getElementById('clear-board').addEventListener('click', function () {
+    let pixelCell = document.getElementsByClassName('pixel')
+    for (let i = 0; i < pixelCell.length; i += 1) {
+      pixelCell[i].style.backgroundColor = 'white';
+    }
+  });
 }
