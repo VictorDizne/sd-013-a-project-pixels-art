@@ -16,3 +16,7 @@ function criarQuadros(quantidade) {
 }
 
 criarQuadros(5);
+
+function selecionado(atual) {
+  atual = 
+}
