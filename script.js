@@ -17,34 +17,35 @@ palletBlocs.addEventListener("click" ,function selectBlock(clickEvent){
 
   let newSelected = clickEvent.target
   newSelected.classList.add("selected")
-    // if(newSelected === document.getElementsByClassName("color")[0]){
-    // inputColor = "#000"
-    // }
-    // else if(newSelected === document.getElementsByClassName("color")[1]){
-    // inputColor = "#0000ff"
-    // }
-    // else if(newSelected === document.getElementsByClassName("color")[2]){
-    // inputColor = "#ff0000"
-    // }
-    // else if(newSelected === document.getElementsByClassName("color")[3]){
-    // inputColor = "#ffff00"
-    // }
-    // console.log(inputColor)
+    if(newSelected === document.getElementsByClassName("color")[0]){
+    inputColor = "#000"
+    }
+    else if(newSelected === document.getElementsByClassName("color")[1]){
+    inputColor = "#0000ff"
+    }
+    else if(newSelected === document.getElementsByClassName("color")[2]){
+    inputColor = "#ff0000"
+    }
+    else if(newSelected === document.getElementsByClassName("color")[3]){
+    inputColor = "#ffff00"
+    }
+    console.log(inputColor)
 }
 );
 
 
-document.getElementsByClassName("selected")[0].style.background = "black"
-document.getElementsByClassName("selected")[1].style.background = "blue"
-document.getElementsByClassName("selected")[2].style.background = "red"
-document.getElementsByClassName("selected")[3].style.background = "yellow"
+// document.getElementsByClassName("color")[0].style.background = "black"
+// document.getElementsByClassName("color")[1].style.background = "blue"
+// document.getElementsByClassName("color")[2].style.background = "red"
+// document.getElementsByClassName("color")[3].style.background = "yellow"
 
 let painting = document.getElementById("pixel-board");
 
 painting.addEventListener("click" ,function(secondClick){
   let paintingBlock = secondClick.target
-  let colorChoose = document.getElementsByClassName("selected")[0];
-  console.log(colorChoose);
-  paintingBlock.style.backgroundColor = colorChoose.style.backgroundColor
+  // let colorChoose = document.getElementsByClassName("color")[0];
+  // console.log(colorChoose);
+  paintingBlock.style.backgroundColor = inputColor
+
 })
 
