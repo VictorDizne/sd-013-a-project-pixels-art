@@ -7,6 +7,9 @@ window.addEventListener('load', function addClassColor () {
     colors.classList.add('color')
     colors.style.backgroundColor = listColor[key]
     paleteColors.appendChild(colors)
+    if (listColor[key] === 'black') {
+      colors.classList.add('selected')
+    }
   }
 });
 
