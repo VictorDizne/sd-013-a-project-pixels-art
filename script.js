@@ -21,11 +21,11 @@ document.querySelector('#table').appendChild(board);
 let n = 5;
 
 for (let i = 0; i < n; i +=1 ){
-  let tr = document.createElement('div');
+  let tr = document.createElement('tr');
   tr.classList.add('tr');
   board.appendChild(tr);
   for (let j = 0; j < n; j += 1) {
-    let pixel = document.createElement('div');
+    let pixel = document.createElement('td');
     pixel.classList.add('pixel');
     tr.appendChild(pixel);
   }
