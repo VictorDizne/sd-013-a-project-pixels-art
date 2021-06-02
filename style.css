@@ -1,0 +1,23 @@
+div {
+    height: 100px;
+    width: 100px;
+    border: black solid 1px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#black-palette {
+    background-color: black;
+}
+
+#red-palette {
+    background-color: red;
+}
+
+#blue-palette {
+    background-color: blue;
+}
+
+#green-palette {
+    background-color: green;
+}
