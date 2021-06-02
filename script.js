@@ -7,6 +7,9 @@ function cores (){
     cor.className = "color"
     cor.id = "color-palette"
   }
+}
+cores()
+function test (){
   let listaC = document.querySelectorAll(".color")
   for(let j = 0; j < listaC.length; j += 1){
     if(listaC[j] === listaC[0]){
@@ -20,7 +23,7 @@ function cores (){
     }
   }
 }
-cores()
+test()
 
 function tabela(){
   const linhas = 5
@@ -38,3 +41,25 @@ function tabela(){
   }
 }
 tabela()
+window.onload = function(){
+  
+  const elementoCor = document.querySelector(".preto")
+  elementoCor.classList.add("selected")
+  
+}
+function selecCores(){
+const vermelho = document.querySelector(".vermelho")
+const verde = document.querySelector(".verde")
+const preto = document.querySelector(".preto")
+const amarelo = document.querySelector(".amarelo")
+function clicar(event) {
+  const elementoCor = document.querySelector(".selected")
+  elementoCor.classList.remove("selected")
+  event.target.classList.add("selected")
+}
+verde.addEventListener("click",clicar)
+vermelho.addEventListener("click",clicar)
+preto.addEventListener("click",clicar)
+amarelo.addEventListener("click", clicar)
+}
+selecCores()
