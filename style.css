@@ -12,21 +12,64 @@
   box-sizing: border-box;
 }
 
+/* corpo da aplicação */
 body {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  /* fazendo background animado com tons pasteis */
+  /* tons retirados aqui: https://www.canva.com/colors/color-palettes/ e levemente alterados*/
+  /* keyframes eu li aqui: https://medium.com/uxmotiondesign/o-que-sa%CC%83o-keyframes-e-como-usa%CC%81-los-corretamente-4d108fd6aacc */
+  /* e aqui: https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframeshttps://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes */
+
+  background: linear-gradient(-45deg, #f7acb9, #b2d1d0, #81af8f, #e4cfad);
+  background-size: 500%;
+  animation: bg-gradient 30s ease infinite;
+}
+
+@keyframes bg-gradient {
+  0% {
+    background-position: 0% 25%;
+  }
+
+  25% {
+    background-position: 25% 50%;
+  }
+
+  50% {
+    background-position: 50% 75%;
+  }
+
+  75% {
+    background-position: 75% 100%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+/* fim da animação do background estilo gradient com cores pateis */
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 table, th, td {
   border: 1px solid black;
+  border-radius: 8px;
 }
 
 tr {
-  height:80px;
+  height:40px;
 }
 
 td {
-  width: 80px;
+  width: 40px;
 }
 
 /* adiciona cores à paleta */
@@ -34,3 +77,8 @@ td {
 .red-palette { background-color: var(--second_palette); }
 .green-palette { background-color: var(--third_palette); }
 .blue-palette { background-color: var(--fourth_palette); }
+
+/* estilos sobre o pixel-board */
+.pixel {
+  background: rgba(255, 255, 255, 1);
+}
