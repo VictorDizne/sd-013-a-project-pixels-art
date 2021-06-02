@@ -1,5 +1,5 @@
 const colorPalette = document.querySelector('#color-palette');
-const divsPalette = document.querySelectorAll('.color');
+const divsPalette = document.querySelector('#color-palette').children;;
 let pixelBoard = document.querySelector('#pixel-board');
 let tr = document.querySelector('#pixel-board').children;
 let colors = [];
@@ -58,7 +58,7 @@ function createPixels() {
 }
 
 function resetClassSelected() {
-  for (let index in divsPalette) {
+  for (let index = 0; index < divsPalette.length; index += 1) {
     divsPalette[index].className = 'color';
   }
 }
