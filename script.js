@@ -46,8 +46,8 @@ function criaQuadro(tamanho) {
     }
     quadroDePixel.appendChild(novaLinha);
   }
-  let dimensaoCorreta = 42 * tamanho;
-  let tamanhoQuadro = document.getElementById('pixel-board');
+  const dimensaoCorreta = 42 * tamanho;
+  const tamanhoQuadro = document.getElementById('pixel-board');
   tamanhoQuadro.style.width = `${dimensaoCorreta}px`;
   tamanhoQuadro.style.height = `${dimensaoCorreta}px`;
 }
