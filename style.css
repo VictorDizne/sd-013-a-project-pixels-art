@@ -44,3 +44,8 @@ body {
   margin-left:auto;
   margin-right: auto;
 }
+
+#clear-board {
+  padding: 5px;
+  margin-bottom: 20px;
+}

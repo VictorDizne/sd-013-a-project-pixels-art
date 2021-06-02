@@ -62,6 +62,22 @@ pixelBoard.addEventListener("click", pincel)
 
 
 
+const button = document.getElementById("clear-board");
+button.innerHTML= "Limpar"
+
+button.addEventListener("click", ()=> {
+  const clear = document.getElementsByClassName("pixel")
+   for (let index = 0; index < clear.length; index +=1) {
+      clear[index].style.backgroundColor= "white";
+      console.log(clear)
+    }
+})
+  
+  
+
+
+
+
 
 
 
