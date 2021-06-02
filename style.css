@@ -1,10 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  display: block;
+}
+
 #title {
   text-align: center;
 }
 
-.color {
-  
-}
+
 
 #main-container {
   text-align: center;
@@ -13,6 +19,18 @@
 #color-palette div{
   display: inline-block;
   border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+
+#pixel-board {
+  text-align: center;
+  display: grid;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.pixel {
   width: 50px;
   height: 50px;
 }
