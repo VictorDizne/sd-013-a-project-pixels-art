@@ -86,9 +86,9 @@ function generateButtonBoard() {
     } else {
       let board = document.createElement('tbody');
       table.appendChild(board);
-      for (let i = 1; i <= 50; i += 1) {
+      for (let i = 0; i < 50; i += 1) {
         let linha = document.createElement('tr');
-        for (let index = 0; index <= 50; index += 1) {
+        for (let index = 0; index < 50; index += 1) {
           let pix = document.createElement('th');
           pix.classList.add('pixel');
           linha.appendChild(pix);
