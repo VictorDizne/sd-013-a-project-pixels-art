@@ -13,7 +13,6 @@ window.addEventListener('load', function addClassColor () {
   }
 
   let selectColor = document.querySelector('#color-palette').firstElementChild
-  console.log (selectColor.children.length)
   selectColor.addEventListener('click',addColor)
 
   function addColor (event) {
@@ -23,9 +22,26 @@ window.addEventListener('load', function addClassColor () {
       }
     }
     event.target.classList.add('selected')
-    console.log (event.target.style.backgroundColor)
+    document.querySelector('.selected').style.backgroundColor = event.target.style.backgroundColor
+    console.log (document.querySelector('.selected').style.backgroundColor)
   }  
+
   
+
+  let selectorPixel = document.querySelector('#pixel-board')
+  selectorPixel.addEventListener('click', addColorInPixel)
+  
+  function addColorInPixel (eventColor) {
+
+
+    if (eventColor.target == document.querySelector('#pixel-board')) {
+
+    }else {
+      eventColor.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor
+    }
+    console.log (eventColor.target)
+  }
+
 });
 
 const pixeis = 5
