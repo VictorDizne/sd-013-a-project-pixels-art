@@ -1,9 +1,12 @@
-const palette = ['black', 'red', 'green', 'blue'];
+const palette = ['black'];
+const paletteLength = 4;
 let boardWidth = 5;
 let boardLength = boardWidth;
 let boardSize = pow(boardWidth);
 const defaultPixelColor = '#fff';
 let selectedColor = palette[0];
+
+randomizePalette();
 
 const container = new dom('.container');
 const colorPalette = create('div', undefined, { id: 'color-palette' });
@@ -35,8 +38,14 @@ sel('#generate-board').on('click', generateBoard);
 
 // ************************
 
+function randomizePalette() {
+  while (palette.length < 4) {
+    palette.push(genRandomHexColor());
+  }
+}
+
 function fillColors() {
-  for (let i = 0; i < palette.length; i += 1) {
+  for (let i = 0; i < paletteLength; i += 1) {
     const colorClassList = i == 0 ? 'color selected' : 'color';
     const colorAttributes = { class: colorClassList };
 
@@ -118,4 +127,24 @@ function updateDimensions(n) {
 
 function pow(base, exponent) {
   return Math.pow(base, exponent);
+}
+
+function genRandomHexColor() {
+  let hexRGBA = [];
+  let start = 25;
+
+  while (hexRGBA.length < 3) {
+    const hexFromInt = getRandomInt(start, 255).toString(16);
+    hexRGBA.push(hexFromInt);
+    start += 50;
+  }
+
+  return `#${hexRGBA.join('')}`;
+}
+
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
