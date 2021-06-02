@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Project Pixels Art</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,53 +12,21 @@
     <header id = 'header'>
       <h1 id='title'>Paleta de Cores</h1>
       <div id="color-palette">
-        <button class="color selection selected" id = 'one'>a</button>
-        <button class="color selection" id = 'two'>a</button>
-        <button class="color selection" id = 'three'>a</button>
-        <button class="color selection" id = 'four'>a</button>
+        <button onclick class="color selection" id = 'one'></button>
+        <button onclick class="color selection" id = 'two'></button>
+        <button onclick class="color selection" id = 'three'></button>
+        <button onclick class="color selection" id = 'four'></button>
       </div>
     </header>
     <section>
       <button id = 'clear-board'>Limpar</button>
-      <div id="pixel-board">
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="tr">
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-      </div>
-      <div class="tr">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-    </div>
-    <div class="tr">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-  </div>
-    </div>
+<!--       <h5>Digite o tamanho do quadro:</h5>
+      <input id="board-size" name="textinput" value="" type="text">
+      <button id='generate-board' onclick="enviar()">Aplicar</button> -->
+      <div id="pixel-board"></div>
     </section>
   </main>
-  <script src="script.js"></script>
+
+  <script src="./script.js"></script>
 </body>
 </html>

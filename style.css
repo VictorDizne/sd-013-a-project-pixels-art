@@ -9,8 +9,7 @@
 
 body {
   background-color: #ffe1ff;
-
-
+  overflow-x: hidden;
 }
 
 header {
@@ -48,24 +47,21 @@ button {
   transform: scale(1.2);
 }
 
-#one {
+/* #one {
   background-color: black;
 }
 
 #two {
   background-color: red;
-  color: red;
 }
 
 #three {
   background-color: blue;
-  color: blue;
 }
 
 #four {
   background-color: green;
-  color: green;
-}
+} */
 
 section {
   width: 100vw;
@@ -104,3 +100,24 @@ section {
   border: 5px solid #4eee94;
   transform: scale(1.2);
 }
+
+/* #board-size {
+  margin-top: 10px;
+  margin-left: 45vw;
+  border: 1px solid;
+  border-radius:10px;
+  font-size: 15px
+}
+
+#generate-board {
+  border: 1px solid;
+  border-radius:5px;
+  font-size: 15px;
+  background-color: #ffe1ff
+}
+
+h5 {
+  margin-top:15px;
+  margin-left:0;
+  margin-left: 46vw;
+} */
