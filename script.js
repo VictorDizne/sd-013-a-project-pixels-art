@@ -6,7 +6,7 @@ firstColor.className = 'color selected';
 const limpaQuadro = document.querySelector('#clear-board');
 const vqv = document.querySelector('#generate-board');
 const imputNumber = document.querySelector('#board-size');
-  console.log(imputNumber);
+console.log(imputNumber);
 
 firstColor.style.backgroundColor = 'black';
 
@@ -46,8 +46,8 @@ function criaQuadro(tamanho) {
     }
     quadroDePixel.appendChild(novaLinha);
   }
-  let dimensaoCorreta = 42*tamanho;  
-  let tamanhoQuadro = document.getElementById('pixel-board');
+  const dimensaoCorreta = 42 * tamanho;
+  const tamanhoQuadro = document.getElementById('pixel-board');
   tamanhoQuadro.style.width = `${dimensaoCorreta}px`;
   tamanhoQuadro.style.height = `${dimensaoCorreta}px`;
 }
@@ -57,7 +57,7 @@ criaQuadro(5);
 function selecionaCor(origem) {
   if (origem.target.className === 'color') {
     const selecionada = document.querySelector('.selected');
-    origem.target.className = 'color selected';
+    origem.target.classList.add('selected');
     selecionada.className = 'color';
   }
 }
@@ -84,35 +84,32 @@ function resetarQuadro() {
 limpaQuadro.addEventListener('click', resetarQuadro);
 
 function gerarQuadro(input) {
-  if (imputNumber.value < 5) {
-    input = 5;
-    criaQuadro(input);
+  if (input.value < 5) {
+    criaQuadro(5);
     alert('O tamanho mínimo é 5');
-  } 
-  if (imputNumber.value > 50) {
-    input = 50;
-    criaQuadro(input);
-    alert('O tamanho máximo é 50') 
-      } else {
-      criaQuadro(input.value);
-   }
+  }
+  if (input.value > 50) {
+    criaQuadro(50);
+    alert('O tamanho máximo é 50');
+  } if (input.value > 5 && input.value < 50) {
+    criaQuadro(input.value);
+  }
 }
 
-function apagaOriginal() {
+function apagaAntigo() {
   const linhaDePixels = document.querySelectorAll('.linhaDePixels');
   for (let nDaLinha = 0; nDaLinha < linhaDePixels.length; nDaLinha += 1) {
-  quadroDePixel.removeChild(linhaDePixels[nDaLinha]);
+    quadroDePixel.removeChild(linhaDePixels[nDaLinha]);
   }
 }
 
 function botaoVqv() {
   if (imputNumber.value === '') {
     alert('Board inválido!');
-  } else { 
-    apagaOriginal();
+  } else {
+    apagaAntigo();
     gerarQuadro(imputNumber);
-    }
+  }
 }
 
 vqv.addEventListener('click', botaoVqv);
-
