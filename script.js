@@ -15,3 +15,13 @@ function insertColor () {
   }
 }
 insertColor();
+
+function boxsPixel (n) {
+  
+  for (let index = 0; index < n*n; index += 1) {
+    let boxPixel = document.createElement('div');
+    boxPixel.className = 'pixel';
+    document.getElementById("pixel-board").appendChild(boxPixel);
+  }
+}
+boxsPixel(5);
