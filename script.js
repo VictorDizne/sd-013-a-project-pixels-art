@@ -1,11 +1,9 @@
-window.onload = function () {
-
-  setColors();
-
+window.onload = function startPage() {
   function setColors() {
-    let colors = document.getElementsByClassName('color');
-    for (let color of colors) {
-      color.style.backgroundColor = color.innerText;
+    const colors = document.getElementsByClassName('color');
+    for (let i = 0; i < colors.length; i += 1) {
+      colors[i].style.backgroundColor = colors[i].innerText;
     }
   }
-}
+  setColors();
+};
