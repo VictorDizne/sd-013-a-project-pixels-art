@@ -29,3 +29,7 @@ body {
   cursor: pointer;
   border-radius: 25%;
 }
+
+#reset {
+  margin: 10px;
+}

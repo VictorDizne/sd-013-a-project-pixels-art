@@ -32,11 +32,6 @@ for (let i = 0; i < n; i += 1) {
   }
 }
 
-// let black = document.querySelector('.first');
-// let second = document.querySelector('.second');
-// let third = document.querySelector('.third');
-// let fourth = document.querySelector('.fourth')
-
 black.classList.add('selected');
 // feito com ajuda do Matheus Duarte
 function selectColor(element) {
@@ -58,6 +53,11 @@ function fillColor(element) {
 }
 
 board.addEventListener('click', fillColor);
+
+function resetBoard() {
+  
+}
+
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
