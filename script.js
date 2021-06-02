@@ -118,7 +118,16 @@ window.onload = function inicio() {
       document.querySelector('input').style.border = '3px solid red';
       setTimeout(() => { document.querySelector('input').style.border = '1px solid black'; }, 2000);
     } else {
-      numLinesAndColumn = parseInt(txtSize.value, 10);
+      let maxValue = 50;
+      let minValue = 5;
+
+      if (txtSize.value < minValue) {
+        numLinesAndColumn = minValue;
+      } else if (txtSize.value > maxValue) {
+        numLinesAndColumn = maxValue;
+      } else {
+        numLinesAndColumn = parseInt(txtSize.value, 10);
+      }
       resetPixelBoard();
       createLines();
       createPixels();
