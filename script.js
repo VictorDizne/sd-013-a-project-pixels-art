@@ -51,8 +51,22 @@ pixelBoard.addEventListener('click', paintColor);
 
 function cleanFunction(event) {
   let eventoN = event;
-  pixelado.forEach(( eventoN ) => { (eventoN.style.backgroundColor) = 'white'; });
+  pixelado.forEach((eventoN) => { (eventoN.style.backgroundColor) = 'white'; });
 }
+// Fonte:
+// https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+
+function geradorDeCor () {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  
+  return `rgba(${r}, ${g}, ${b})`;
+}
+
+divcolor1[0].style.backgroundColor = geradorDeCor();
+divcolor2[0].style.backgroundColor = geradorDeCor();
+divcolor3[0].style.backgroundColor = geradorDeCor();
 
 // for (let index in pixelado) {
 // pixelado[index].style.backgroundColor = 'white';
