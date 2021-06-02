@@ -2,39 +2,6 @@ function blackSelected() {
   const black = document.querySelector('.black');
   black.classList.add('selected');
 }
-window.onload = blackSelected, createPixelBoard(5);
-
-// Criar botão e input para controlar o tamanho do quadro
-const button = document.getElementById('generate-board');
-const input = document.getElementById('board-size');
-let pixelBoard = 5;
-
-function sizeBoard() {
-  let number = parseInt(input.value);
-
-  if (number < 5) {
-    pixelBoard = 5;
-  } else if (number > 50) {
-    pixelBoard = 50;
-  } else if (!number) {
-    alert('Board inválido!');
-  } else {
-    pixelBoard = number;
-  }
-  removeLines();
-  createPixelBoard(pixelBoard);
-  colorClick();
-  input.value = '';
-}
-
-button.addEventListener('click', sizeBoard);
-
-function removeLines() {
-  const board = document.getElementById('pixel-board');
-  while (board.firstChild) {
-    board.removeChild(board.firstChild);
-  }
-}
 
 // Cria quadro de pixels de acordo com tamanho passado para a variavel pixelBoard
 function createPixelBoard(number) {
@@ -53,6 +20,7 @@ function createPixelBoard(number) {
     }
   }
 }
+window.onload = blackSelected,createPixelBoard(5);
 
 // Mudar a classe 'selected' entre elementos com a classe 'color'
 function changeSelected() {
@@ -91,7 +59,7 @@ function colorClick() {
 }
 colorClick();
 
-// Cria botão para limpar o quadro
+// Cria botão para 'limpar' o quadro, colocando background branco
 function clear() {
   const button = document.getElementById('clear-board');
 
@@ -103,3 +71,60 @@ function clear() {
   button.addEventListener('click', clickClear);
 }
 clear();
+
+// Função que remove as linhas do quadro
+function removeLines() {
+  const board = document.getElementById('pixel-board');
+  while (board.firstChild) {
+    board.removeChild(board.firstChild);
+  }
+}
+
+// Criar botão e input para controlar o tamanho do quadro
+const button = document.getElementById('generate-board');
+const input = document.getElementById('board-size');
+let pixelBoard = 5;
+
+function sizeBoard() {
+  const number = Number(input.value);
+
+  if (number < 5) {
+    pixelBoard = 5;
+  } else if (number > 50) {
+    pixelBoard = 50;
+  } else if (!number) {
+    alert('Board inválido!');
+  } else {
+    pixelBoard = number;
+  }
+  removeLines();
+  createPixelBoard(pixelBoard);
+  colorClick();
+  input.value = '';
+}
+
+button.addEventListener('click', sizeBoard);
+input.addEventListener('keydown', (event) => {
+  let key = event.code;
+  if (key === 'NumpadEnter' || key === 'Enter') {
+    sizeBoard();
+  }
+});
+
+// Gerando cores aleatorias
+function randomColors() {
+  const colors = document.getElementsByClassName('color');
+
+  function generateColor() {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+
+    return rgb;
+  }
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = generateColor();
+  }
+}
+randomColors();
