@@ -18,6 +18,16 @@ function setPaletteColor (event) {
    x.classList.add("selected");    
   }; 
 
+  function paintPixel (event) {
+    let x = event.target;
+    let pixels = document.getElementsByClassName('pixel');
+    if (pixels.classList !== "pixel"){
+      pixels.classList === "pixel";
+      x.classList.add();
+    }
+      x.classList.add("selected");    
+  };   
+ 
 
  
 
