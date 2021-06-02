@@ -33,3 +33,8 @@
 #pixel-board {
   border-spacing: 0;
 }
+
+#clear-board {
+  margin-bottom: 4px;
+  
+}
