@@ -59,7 +59,12 @@ function useSelectedColor(event){
   console.log(event.target,corSelect.style.backgroundColor);
 }
 
-
+function resetColor(){
+  const pixelDiv = document.querySelectorAll('.pixel')
+  for(let div of pixelDiv){
+    div.style.backgroundColor = 'white';
+  }
+}
 
 pixelBoard.addEventListener('click', useSelectedColor)
 bntClear.addEventListener('click', resetColor)
