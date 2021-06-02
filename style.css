@@ -2,14 +2,33 @@
 
 /* ID's */
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color:rgb(0, 126, 67);
+  width: 100vw;
+  text-align: center;
+  padding:8px;
+  box-shadow: 0px 5px 5px rgba(12, 12, 12, 0.4);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
 #title {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  color: #bd390f;
+  color: #ffffff;
 }
 
 #color-palette {
   text-align: center;
+  margin-top: 50px;
 }
 
 #pixel-board {
@@ -29,6 +48,12 @@
   border-radius: 5px;
 }
 
+#clear-board:hover {
+  box-shadow: 0px 5px 5px rgba(12, 12, 12, 0.4);
+  background-color:rgb(102, 102, 102);
+  color: white
+}
+
 #inputContainer {
   padding-top: 5px;
   text-align: center;
@@ -41,6 +66,12 @@
 #generate-board {
   background-color: rgba(128, 128, 128, 0.333);
   border-radius: 5px;
+}
+
+#generate-board:hover {
+  box-shadow: 0px 5px 5px rgba(12, 12, 12, 0.4);
+  background-color:rgb(102, 102, 102);
+  color: white
 }
 
 /* Classes */
