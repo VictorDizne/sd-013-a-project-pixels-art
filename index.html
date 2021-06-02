@@ -8,13 +8,14 @@
   </head>
   <body>
     <h1 id="title">Paleta de Cores</h1>
-    <div id="color-palette" onclick="setPaletteColor(event)">
-      <div class="color selected"></div>
-      <div class="color"></div>
-      <div class="color"></div>
-      <div class="color"></div>
+    <div id="color-palette">
+      <div class="color selected" onclick="setPaletteColor(event)"></div>
+      <div class="color" onclick="setPaletteColor(event)"></div>
+      <div class="color" onclick="setPaletteColor(event)"></div>
+      <div class="color" onclick="setPaletteColor(event)"></div>
     </div>
-    <div id="pixel-board"onclick = "paintPixel (event)">
+    <button id="clear-board">Limpar</button>
+    <div id="pixel-board">
       <div id="tr">
         <div class="pixel"></div>
         <div class="pixel"></div>
