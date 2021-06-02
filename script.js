@@ -1,5 +1,4 @@
-window.onload =function selectBlack (){
-	document.querySelectorAll('.black').classList ='selected';
+window.onload = function(){
+	document.querySelector('.black').className += " selected"
 }
-
 
