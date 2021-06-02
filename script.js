@@ -23,7 +23,7 @@ function PaletCor () {
     //aplicar cor preta no primeiro quadrado da paleta
     let div1 = document.createElement('div');
     palet.appendChild(div1);
-    div1.className = ' style1';
+    div1.className = 'selected';
     div1.classList.add('color');
     div1.id ='click';
     div1.style.backgroundColor = 'black';
@@ -71,16 +71,7 @@ function PaletCor () {
     }
 
   PaletCor ();
-// clica no quadrado e armazena a cor dele
-/* let link = document.getElementsByClassName('click');
-    for(let index = 0;)
-      link.addEventListener('click', function(){
-        link.classList.remove('selected');
-        this.classList.add('selected');
-      })
 
- */
-/* aqui crio a classe no quadrado 1 e removo dos outros 3 */
 let coresDaPaleta = document.querySelectorAll('.color');
 
 function recebeCliq(event) {
