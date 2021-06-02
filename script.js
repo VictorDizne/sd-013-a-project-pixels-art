@@ -15,18 +15,18 @@ green.style.backgroundColor = 'green';
 
 const pixels = document.querySelector('#color-palette');
 
-let board = document.createElement('div');
-board.setAttribute('id','pixel-board');
+const board = document.createElement('div');
+board.setAttribute('id', 'pixel-board');
 document.querySelector('#table').appendChild(board);
 
-let n = 5;
+const n = 5;
 
-for (let i = 0; i < n; i +=1 ){
-  let tr = document.createElement('tr');
+for (let i = 0; i < n; i += 1) {
+  const tr = document.createElement('tr');
   tr.classList.add('tr');
   board.appendChild(tr);
   for (let j = 0; j < n; j += 1) {
-    let pixel = document.createElement('td');
+    const pixel = document.createElement('td');
     pixel.classList.add('pixel');
     tr.appendChild(pixel);
   }
@@ -37,7 +37,7 @@ for (let i = 0; i < n; i +=1 ){
 // let third = document.querySelector('.third');
 // let fourth = document.querySelector('.fourth')
 
-black.classList.add('selected')
+black.classList.add('selected');
 // feito com ajuda do Matheus Duarte
 function selectColor(element) {
   if (element.target.className === 'color') {
@@ -51,7 +51,6 @@ function selectColor(element) {
 pixels.addEventListener('click', selectColor);
 
 // function fillColor() {
-  
 // }
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
