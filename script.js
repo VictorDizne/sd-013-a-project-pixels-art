@@ -26,3 +26,14 @@ function corSelecionada(atual) {
   trocaSelecionada.classList.remove('selected');
 }
 trocaSelecionada.addEventListener('click', corSelecionada);
+
+const pixelBoard = document.querySelector('#pixel-board');
+function colorir(atual) {
+  for (let i = 0; i < trocaSelecionada.children.length; i += 1) {
+    if (trocaSelecionada.children[i].classList.contains('selected')) {
+      const color = window.getComputedStyle(trocaSelecionada.children[i], null).getPropertyValue('background-color');
+      atual.target.style.backgroundColor = color;
+    }
+  }
+}
+pixelBoard.addEventListener('click', colorir);
