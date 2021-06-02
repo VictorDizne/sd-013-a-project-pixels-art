@@ -18,28 +18,28 @@ function criarQuadros(quantidade) {
 criarQuadros(5);
 
 const trocaSelecionada = document.getElementById('color-palette');
-function corSelecionada(atual) {
+function corSelecionada(event) {
   for (let i = 0; i < trocaSelecionada.children.length; i += 1) {
     trocaSelecionada.children[i].classList.remove('selected');
   }
-  atual.target.classList.add('selected');
+  event.target.classList.add('selected');
   trocaSelecionada.classList.remove('selected');
 }
 trocaSelecionada.addEventListener('click', corSelecionada);
 
 const pixelBoard = document.querySelector('#pixel-board');
-function colorir(atual) {
+function colorir(event) {
   for (let i = 0; i < trocaSelecionada.children.length; i += 1) {
     if (trocaSelecionada.children[i].classList.contains('selected')) {
       const color = window.getComputedStyle(trocaSelecionada.children[i], null).getPropertyValue('background-color');
-      atual.target.style.backgroundColor = color;
+      event.target.style.backgroundColor = color;
     }
   }
 }
 pixelBoard.addEventListener('click', colorir);
 
 const pixel = document.querySelectorAll('.pixel');
-function limpar(atual) {
+function limpar() {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
   }
