@@ -20,26 +20,25 @@ function createPixelBoard(number) {
     }
   }
 }
-createPixelBoard(5)
+createPixelBoard(5);
 
 window.onload = blackSelected;
 
 // Mudar a classe 'selected' entre elementos com a classe 'color'
 function changeSelected() {
   const colors = document.getElementsByClassName('color');
+  const palette = document.getElementById('color-palette');
 
   function changeColorSelect(event) {
-    for (let index2 of colors) {
-      if (index2.classList.contains('selected')) {
-        index2.classList.remove('selected');
+    for (let index2 = 0; index2 < colors.length; index2 += 1) {
+      if (colors[index2].classList.contains('selected')) {
+        colors[index2].classList.remove('selected');
       }
     }
     event.target.classList.add('selected');
   }
 
-  for (let index = 0; index < colors.length; index += 1) {
-    colors[index].addEventListener('click', changeColorSelect);
-  }
+  palette.addEventListener('click', changeColorSelect);
 }
 changeSelected();
 
@@ -47,12 +46,12 @@ changeSelected();
 const pixels = document.getElementsByClassName('pixel');
 
 function colorClick() {
-
   function changeColor(event) {
-    let selectElement = document.querySelector('.selected');
-    let colorSelect = window.getComputedStyle(selectElement).backgroundColor;
+    const selectElement = document.querySelector('.selected');
+    const colorSelect = window.getComputedStyle(selectElement).backgroundColor;
+    const evento = event.target;
 
-    event.target.style.backgroundColor = colorSelect;
+    evento.style.backgroundColor = colorSelect;
   }
 
   for (let index = 0; index < pixels.length; index += 1) {
@@ -66,8 +65,8 @@ function clear() {
   const button = document.getElementById('clear-board');
 
   function clickClear() {
-    for (let index of pixels) {
-      index.style.backgroundColor = 'white';
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
     }
   }
   button.addEventListener('click', clickClear);
@@ -107,7 +106,7 @@ function sizeBoard() {
 
 button.addEventListener('click', sizeBoard);
 input.addEventListener('keydown', (event) => {
-  let key = event.code;
+  const key = event.code;
   if (key === 'NumpadEnter' || key === 'Enter') {
     sizeBoard();
   }
@@ -118,10 +117,10 @@ function randomColors() {
   const colors = document.getElementsByClassName('color');
 
   function generateColor() {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
-    let rgb = `rgb(${r}, ${g}, ${b})`;
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const rgb = `rgb(${r}, ${g}, ${b})`;
 
     return rgb;
   }
