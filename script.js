@@ -31,7 +31,7 @@ function changeSelected() {
 
   function changeColorSelect(event) {
     for (let index2 of colors) {
-     if (index2.classList.contains('selected')) {
+      if (index2.classList.contains('selected')) {
         index2.classList.remove('selected');
       }
     }
@@ -45,8 +45,9 @@ function changeSelected() {
 changeSelected();
 
 // Muda background color do pixel clickado
+const pixels = document.getElementsByClassName('pixel');
+
 function colorClick() {
-  let pixels = document.getElementsByClassName('pixel');
 
   function changeColor(event) {
     let selectElement = document.querySelector('.selected');
@@ -60,3 +61,16 @@ function colorClick() {
   }
 }
 colorClick();
+
+// Cria botão para limpar o quadro
+function clear() {
+  const button = document.getElementById('clear-board');
+
+  function clickClear() {
+    for (let index of pixels) {
+      index.style.backgroundColor = 'white';
+    }
+  }
+  button.addEventListener('click', clickClear);
+}
+clear();
