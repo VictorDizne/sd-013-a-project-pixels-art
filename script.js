@@ -97,10 +97,11 @@ function generateBoard(e) {
 }
 
 function cleanBoard(e) {
-  const board = e.target.nextElementSibling.children;
+  const lines = board.children;
 
-  for (let line of board) {
-    for (let pixel of line.children) {
+  for (let line of lines) {
+    const pixels = line.children;
+    for (let pixel of pixels) {
       changeStyle(pixel)('backgroundColor', defaultPixelColor);
       selectedColor = palette[0];
     }
