@@ -48,12 +48,6 @@ function paintColor(event){
 
 pixelBoard.addEventListener('click', paintColor)
 
-function selectColor(event) {
-  const colorElement = document.querySelector('.selected');
-  colorElement.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-
 function cleanFunction() {
   for (index in pixel){
     pixel[index].style.color = 'white';
