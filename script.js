@@ -1,6 +1,7 @@
 let paletaDeCores = document.querySelectorAll('.color');
 let pixelBoard = document.querySelector('#pixel-board');
-let pixels = document.querySelectorAll('.pixel')
+let pixels = document.querySelectorAll('.pixel');
+let botao = document.querySelector('#clear-board');
 
 // Inicia com a cor Preta Selecionada
 function startBlack(){
@@ -16,6 +17,7 @@ function removeSelected(){
 		}
 	}
 }
+
 
 // Add Class selected na Cor Escolhida
  	for(let i = 0; i < paletaDeCores.length; i += 1){
@@ -46,6 +48,15 @@ function board(){
 		pixels[i].addEventListener('click', pintaBoard)
 	}
 }
-board()
+board();
 // Com ajuda do Luiz Furtado
+
+// Crie um botão
+function resetBoard(){
+	for(let i = 0; i < pixels.length; i += 1){
+		pixels[i].style.backgroundColor = "#fff"
+		console.log(pixels[i]);
+	}
+}
+botao.addEventListener('click', resetBoard);
 

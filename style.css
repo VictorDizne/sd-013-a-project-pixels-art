@@ -41,7 +41,9 @@ body{
 
 table, th, td {
     margin:auto;
+    margin-top: 60px;
     border-collapse: collapse;
+    position:relative;
     
   }
 
@@ -52,3 +54,13 @@ table, th, td {
     background-color: #FFFF;
 }   
     
+#clear-board{
+    padding: 5px;
+    width:100px;
+    border-radius: 10px;    
+    background-color: rgb(4, 250, 250);
+    position: relative;
+    bottom:260px;
+    left:575px;
+    
+}
