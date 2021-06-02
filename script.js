@@ -1,3 +1,5 @@
+const colorElements = document.getElementsByClassName('color');
+
 /** Returns a random hexadecimal color except #ffffff (white). */
 function getRandomColor() {
   let color;
@@ -41,7 +43,12 @@ function createBoard(n = 5) {
   for (let j = 0; j < n; j += 1) board.appendChild(line.cloneNode(true));
 }
 
+function selectColorBlack() {
+  colorElements[0].classList.add('selected');
+}
+
 window.onload = () => {
   createPalette();
   createBoard();
+  selectColorBlack();
 };
