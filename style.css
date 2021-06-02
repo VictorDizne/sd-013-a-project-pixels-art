@@ -21,14 +21,12 @@ body {
   border: 1px solid black;
   display: inline-block;
 }
-
+#pixel-boar {
+  width: 200px;
+}
 .pixel {
   background-color: white;
   width: 36px;
   height: 36px;
   border: 1px solid black;
-}
-
-.section {
-  margin-left: 10px;
 }
