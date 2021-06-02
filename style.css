@@ -44,6 +44,7 @@
   background-color: white;
   border-radius: 12px;
   margin-top: 2em;
+  padding-right: 2em;
   height: 10em;
 }
 .color {
@@ -54,22 +55,6 @@
   margin-left: 1em;
   margin-right: 1em;
   display: inline-block;
-}
-
-#black {
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#green {
-  background-color: green;
-}
-
-#blue {
-  background-color: blue;
 }
 
 .pixel-section {
