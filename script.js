@@ -4,11 +4,11 @@ function createPixels() {
     const quadrado = document.createElement('div');
     const pixelBoard = document.querySelector('#pixel-board');
     pixelBoard.appendChild(quadrado);
-    quadrado.className = 'linha';
+    quadrado.classList = 'linha';
 
     for (let index2 = 0; index2 < quadroInicio; index2 += 1) {
       const quadradinho = document.createElement('div');
-      quadradinho.className = 'pixel';
+      quadradinho.classList = 'pixel';
       quadrado.appendChild(quadradinho);
     }
   }
@@ -24,7 +24,16 @@ requisito baseado no exercício da trybe bloco 4.3 exercício 1, lá tem 25 aste
 joguei como filha para ficar embaixo */
 
 
+function corAleatoria() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
+  document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
+  document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
+};
 
+corAleatoria();
 
 function addClassSelect(event){
    let corSelecionada= document.querySelector('.selected');
@@ -48,23 +57,28 @@ corVermelha.addEventListener('click', addClassSelect);
 
 
 function pintar(event){
-  let elementoSelecionado = document.querySelector('.selected');
-  let corSelecionada = window.getComputedStyle(elementoSelecionado).getPropertyValue("background-color");
-  event.target.style.backgroundColor = corSelecionada;
+  if(event.target.classList.contains('pixel')){
+    let elementoSelecionado = document.querySelector('.selected');
+    let corSelecionada = window.getComputedStyle(elementoSelecionado,null).getPropertyValue("background-color");
+    event.target.style.backgroundColor = corSelecionada;
+  }
+  
 }
 
-pixelBoard = document.querySelector('#pixel-board');
-pixelBoard.addEventListener('click', pintar)
+const pixels = document.querySelector("#pixel-board")
+pixels.addEventListener('click', pintar);
 
 /* Com a ajuda do Luiz Furtado, ele me mostrou a dica que a Trybe passou que a função getComputedStyle pega todos os valores de propriedade e passa para o javascript.*/
+/*Com a ajuda da Luiza Antiques parou de pintar a linha também, precisava criar um if que só pegasse dentro do board os filhos dele, por isso usou o contain"*/
+function Limpar() {
+  let buttonClean = document.querySelector('#clear-board');
+  let pixels = document.getElementsByClassName('pixel');
 
-function corAleatoria() {
-  let r = Math.random() * 255;
-  let g = Math.random() * 255;
-  let b = Math.random() * 255;
-  document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
-  document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
-  document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
-};
+  buttonClean.addEventListener('click', function() {
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = "white";
+    }
+  });
+}
+Limpar();
 
-corAleatoria();
