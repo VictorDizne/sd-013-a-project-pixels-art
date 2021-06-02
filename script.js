@@ -37,3 +37,11 @@ function colorir(atual) {
   }
 }
 pixelBoard.addEventListener('click', colorir);
+
+const pixel = document.querySelectorAll('.pixel');
+function limpar(atual) {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+document.querySelector('#clear-board').addEventListener('click', limpar);

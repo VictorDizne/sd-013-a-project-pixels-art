@@ -41,3 +41,9 @@ body {
   height: 40px;
   display: inline-block;
 }
+
+#clear-board {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+}
