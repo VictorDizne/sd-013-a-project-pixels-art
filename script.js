@@ -23,6 +23,9 @@ aprendi no plantao que nao posso por a classe pixel no primeiro for porque o pri
 requisito baseado no exercício da trybe bloco 4.3 exercício 1, lá tem 25 asteriscos também, fiz a troca pela div.
 joguei como filha para ficar embaixo */
 
+
+
+
 function addClassSelect(event){
    let corSelecionada= document.querySelector('.selected');
    corSelecionada.classList.remove('selected');
@@ -38,8 +41,7 @@ corPreta.addEventListener('click', addClassSelect);
 corVerde.addEventListener('click', addClassSelect);
 corCinza.addEventListener('click', addClassSelect);
 corVermelha.addEventListener('click', addClassSelect); 
-pixelBoard = document.querySelector('#pixel-board');
-pixelBoard.addEventListener('click', pintar)
+
 /* addClassSelect foi baseado no bloco 5.3 do conteúdo parte 2, toda cor recebeu um evento, que ao clicar remove a classe de quem está e add a classe para o que é escolhido*/
 
 
@@ -47,7 +49,22 @@ pixelBoard.addEventListener('click', pintar)
 
 function pintar(event){
   let elementoSelecionado = document.querySelector('.selected');
-  let corSelecionada = window.getComputedStyle(elementoSelecionado, null).getPropertyValue("background-color");
+  let corSelecionada = window.getComputedStyle(elementoSelecionado).getPropertyValue("background-color");
   event.target.style.backgroundColor = corSelecionada;
 }
- 
+
+pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', pintar)
+
+/* Com a ajuda do Luiz Furtado, ele me mostrou a dica que a Trybe passou que a função getComputedStyle pega todos os valores de propriedade e passa para o javascript.*/
+
+function corAleatoria() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
+  document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
+  document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
+};
+
+corAleatoria();
