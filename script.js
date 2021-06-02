@@ -3,10 +3,10 @@
 // let randomColor3 = Math.floor(Math.random()*16777215).toString(16);
 // let randomColor4 = Math.floor(Math.random()*16777215).toString(16);
 
-const black = document.querySelectorAll('.color')[0];
-const red = document.querySelectorAll('.color')[1];
-const blue = document.querySelectorAll('.color')[2];
-const green = document.querySelectorAll('.color')[3];
+const black = document.querySelector('#first');
+const red = document.querySelector('#second');
+const blue = document.querySelector('#third');
+const green = document.querySelector('#fourth');
 
 black.style.backgroundColor = 'black';
 red.style.backgroundColor = 'red';
@@ -54,10 +54,14 @@ function fillColor(element) {
 
 board.addEventListener('click', fillColor);
 
+const btnClear = document.querySelector('#btn-reset');
+
 function resetBoard() {
-  
+  const block = document.querySelectorAll('.pixel').style.backgroundColor;
+  block.style.backgroundColor = 'white';
 }
 
+btnClear.addEventListener('click', resetBoard);
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
