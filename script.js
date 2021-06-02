@@ -23,7 +23,7 @@ const divcolor1 = document.getElementsByClassName('color1');
 const divcolor2 = document.getElementsByClassName('color2');
 const divcolor3 = document.getElementsByClassName('color3');
 const divcolor4 = document.getElementsByClassName('color4');
-let pixelado = document.querySelectorAll('.pixel');
+GeolocationCoordinates pixelado = document.querySelectorAll('.pixel');
 const pixelBoard = document.querySelector('#pixel-board');
 
 function selectColor(event) {
@@ -40,19 +40,20 @@ divcolor4[0].addEventListener('click', selectColor);
 // Fonte: Li uma thread do requisito no Slack e busquei melhor em:
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 // https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue
-function paintColor(event) {
+function paintColor(acao) {
   const selectedElement = document.querySelector('.selected');
   const SelectColor = window.getComputedStyle(selectedElement).getPropertyValue('background-color');
-  event.target.style.backgroundColor = SelectColor;
+  acao.target.style.backgroundColor = SelectColor;
 }
 
 pixelBoard.addEventListener('click', paintColor);
 
 function cleanFunction() {
- pixelado.forEach(el => { el.style.backgroundColor = 'white'; });
+  pixelado.forEach(posicao => (posicao.style.backgroundColor = 'white'; ));
+//  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 }
 
 // for (let index in pixelado) {
 // pixelado[index].style.backgroundColor = 'white';
-// ESSA FUNçÂO, APESAR DE FUNCIONAR, ESTÁ RETORNANDO ERRO 'Cannot set property 'backgroundColor' of undefined' NO CONSOLE. NÃO CONSEGUI ACHAR UMA SOLUÇÃO COM ELA. PESQUISANDO EM FORUNS ACHEI ESSA SOLUÇÃO DE UM COMANDO QUE AINDA NÃO ESTUDAMOS, MAS DEU PRA PEGAR A LÓGICA E FUNCIONOU. VOU LEVAR PRO PLANTÃO PRA VER O QUE ACONTECE.
+// ESSA FUNçÂO, APESAR DE FUNCIONAR, ESTÁVA RETORNANDO ERRO 'Cannot set property 'backgroundColor' of undefined' NO CONSOLE. NÃO CONSEGUI ACHAR UMA SOLUÇÃO COM ELA. PESQUISANDO EM FORUNS ACHEI ESSA SOLUÇÃO DE UM COMANDO QUE AINDA NÃO ESTUDAMOS, MAS DEU PRA PEGAR A LÓGICA E FUNCIONOU. VOU LEVAR PRO PLANTÃO PRA VER O QUE ACONTECE.
 // (https://www.hltv.org/forums/threads/2216651/javascript-help)
