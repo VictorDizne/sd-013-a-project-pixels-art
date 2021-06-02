@@ -21,12 +21,14 @@ function setPixelColor() {
 
 function buttomClear() {
   let pixels = document.querySelector('.pixel');
-  let pixelsColor = pixels.style.backgroundColor;
-  let buttom = document.getElementById('clear-board');
+  let buttom = document.querySelector('#clear-board');
+  let color = 'white';
 
-  buttom.addEventListener('click', function(event){
-    if (pixelsColor !== "white") {
-      pixelsColor = "white";      
+  buttom.addEventListener('click', function(){
+    for (let index = 0; index < pixels.length; index += 1){
+      if (pixels[index].style.backgroundColor !== color) {
+        pixels[index].style.backgroundColor = color;      
+      }  
     }  
   });
 };
