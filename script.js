@@ -23,7 +23,8 @@ function PaletCor () {
     //aplicar cor preta no primeiro quadrado da paleta
     let div = document.createElement('div');
     palet.appendChild(div);
-    div.className = 'color';
+    div.className = 'selected';
+    div.classList.add('color');
     div.style.backgroundColor = 'black';
   
     //Cria 3 quadrados 
