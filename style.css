@@ -42,3 +42,8 @@
 #color-palette, h1 {
   margin: 20px;
 }
+
+#clear-board {
+  border: black solid 1.75px;
+  margin-bottom: 10px;
+}

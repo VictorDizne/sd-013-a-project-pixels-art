@@ -51,6 +51,7 @@ function getFourthColor() {
 };
 
 let pixel = document.querySelectorAll('.pixel');
+
 for (let j = 0; j < pixel.length; j += 1) {
   pixel[j].addEventListener('click', paint);
 };
@@ -59,4 +60,14 @@ function paint(event) {
   let colorSelected = document.querySelector('.selected');
   let cssStyle = window.getComputedStyle(colorSelected).getPropertyValue("background-color");
   event.target.style.backgroundColor = cssStyle;
+}
+
+let clearButton = document.getElementById('clear-board');
+
+clearButton.addEventListener('click', clearFunc);
+
+function clearFunc() {
+  for (let i = 0; i < pixel.length; i += 1) { 
+    pixel[i].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
 }
