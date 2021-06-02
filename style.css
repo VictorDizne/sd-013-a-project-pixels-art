@@ -3,10 +3,7 @@ body {
 }
 
 .color {
-  display: inline-block;
-  margin: 8px;
-  padding: 15px;
-  border: solid black 1px;
+  
 }
 
 .quadrados {
@@ -36,3 +33,11 @@ body {
   border: 1px solid black;
   background-color: white;
 }
+
+.color{
+  display: inline-block;
+  margin: 8px;
+  padding: 15px;
+  border: solid black 1px;
+}
+
