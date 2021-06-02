@@ -1,43 +1,18 @@
-const elementPixel = 5;
-const paleta = document.getElementById('color');
-const color1 = paleta[0];
-const color2 = paleta[1];
-const color3 = paleta[2];
-const color4 = paleta[3];
-
-const elementPixelBoard = document.querySelector('#pixel-board');
-const clickB = document.getElementById('clear-board');
-
-clickB.addEventListener('click', recebeClick);
-color1.addEventListener('click', changeSelected);
-color2.addEventListener('click', changeSelected);
-color3.addEventListener('click', changeSelected);
-color4.addEventListener('click', changeSelected);
-
-function recebeClick() {
-  console.log('botão');
-}
-
-function changeSelected(evento) {
-  console.log(evento.target);
-  console.log(evento.type);
-  const seleciona = document.querySelector('.selected');
-  seleciona.classList.remove('selected');
-  evento.target.classList.add('selected');
-  console.log(paleta);
-}
-
-function fillFrame(value) {
-  for (let line = 0; line < value; line += 1) {
-    const boxline = document.createElement('div');
-    boxline.className = 'linha';
-    elementPixelBoard.appendChild(boxline);
-
-    for (let column = 0; column < value; column += 1) {
-      const boxColumn = document.createElement('div');
-      boxColumn.className = 'pixel';
-      boxline.appendChild(boxColumn);
+function criaQuadro(tamanho) {
+  const pixelBoard = document.getElementById(pixelBoard);
+  for (let coluna = 0; coluna < tamanho; coluna += 1) {
+    const novaColuna = document.createElement('div');
+    novaColuna.classname = 'linhaDePixels';
+    for (let linha = 0; linha < tamanho; linha += 1) {
+      const novoPixel = document.createElement('div');
+      novoPixel.className = 'pixel';
+      novoPixel.style.backgroundColor = 'white';
+      novaColuna.appendChild(novoPixel);
     }
+    pixelBoard.appendChild(novaColuna);
   }
+  const dimensaoCorreta = 42 * tamanho;
+  const tamanhoDoQuadro = document.getElementById('pixel-board');
+  tamanhoDoQuadro.style.width = `${dimensaoCorreta}px`;
+  tamanhoDoQuadro.style.heigth = `${dimensaoCorreta}px`;
 }
-fillFrame(elementPixel);
