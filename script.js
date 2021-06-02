@@ -1,5 +1,7 @@
 let colors = ['black', 'blue', 'green', 'red'];
+let pixelBoard = document.querySelector('#pixel-board');
 let clearButton = document.querySelector('#clear-board');
+let generateButton = document.querySelector('#generate-board');
 
 function createBoxPalette(){
   for ( let i = 0; i < colors.length; i += 1){
@@ -23,19 +25,18 @@ function setColor(){
 };
 setColor();
 
-function createPixelBoard(){
-  for (let i = 0; i < 5; i += 1){
-    let pixelBoard = document.querySelector('#pixel-board');
+function createPixelBoard(number){
+  for (let i = 0; i < number; i += 1){
     let divLine = document.createElement('div');
     pixelBoard.appendChild(divLine);
-    for( let index = 0; index < 5; index += 1){
+    for( let index = 0; index < number; index += 1){
       let div = document.createElement('div');
       div.className = 'pixel';
       divLine.appendChild(div);
     };
   };
 };
-createPixelBoard();
+createPixelBoard(5);
 
 function changeFocus(event) {
   let actualFocus = document.querySelector('.selected');
@@ -61,4 +62,15 @@ function resetAll(){
     pixelsArray[i].style.backgroundColor = 'white';
   };
 };
-clearButton.addEventListener('click', resetAll)
+clearButton.addEventListener('click', resetAll);
+
+function changeMatrix(){
+  pixelBoard.innerHTML = '';
+  let boardSize = document.querySelector('#board-size').value;
+  if (boardSize === ''){
+    window.alert('Board inválido!')
+  } else {
+  createPixelBoard(boardSize);
+  }
+}
+generateButton.addEventListener('click', changeMatrix);
