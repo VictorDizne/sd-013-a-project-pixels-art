@@ -1,5 +1,6 @@
 const listaDeCor = 'lista-de-cor';
 const pixelBoard = '#pixel-board';
+const input = document.querySelector('input');
 
 function criaUlDeCor(id) {
   const ul = document.createElement('ul');
@@ -21,22 +22,17 @@ function criaLiCores(id, n) {
   }
 }
 
+function CoresDisponiveis() {
+  const cores = ['black', 'green', 'orange', 'red'];
+  return cores;
+}
+
 function atribuindoCoresSelecionadas() {
   const cor = document.querySelectorAll('.color');
   const cores = CoresDisponiveis();
   for (let i = 0; i < cores.length; i += 1) {
     cor[i].style.backgroundColor = cores[i];
   }
-}
-
-function CoresDisponiveis() {
-  const cores = ['black', 'green', 'orange', 'red'];
-  return cores;
-}
-
-function removePixels() {
-  const tabelaDePixel = document.querySelector(pixelBoard);
-  tabelaDePixel.parentNode.removeChild(tabelaDePixel);
 }
 
 criaUlDeCor('color-palette');
@@ -51,72 +47,75 @@ function AdicionaPixels(referencia) {
   const lugarDaLinha = document.querySelector(pixelBoard);
   let pixelNumeroN = 0;
   for (let linha = 1; linha <= quantidade; linha += 1) {
-    const line = document.createElement('ul')
-    lugarDaLinha.appendChild(line)
-    for (let coluna = 1; coluna <= quantidade; coluna += 1 ) {
-      let column = document.createElement('li');
+    const line = document.createElement('ul');
+    lugarDaLinha.appendChild(line);
+    for (let coluna = 1; coluna <= quantidade; coluna += 1) {
+      const column = document.createElement('li');
       line.appendChild(column);
-      column.className = "pixel";
+      column.className = 'pixel';
       column.id = `pixel ${pixelNumeroN}`;
       pixelNumeroN += 1;
     }
+  }
 }
 
+AdicionaPixels(input);
+
+function removePixels() {
+  const tabelaDePixel = document.querySelector(pixelBoard);
+  tabelaDePixel.parentNode.removeChild(tabelaDePixel);
 }
 
+input.addEventListener('keyup', () => {
+  removePixels();
+  AdicionaPixels(input);
+});
 
-input = document.querySelector('input');
-input.addEventListener('keyup',AdicionaPixels);
-AdicionaPixels(input)
-
-function SelecionaColor (){
-	let classSelecionada = document.querySelector('lista-de-cor');
-	classSelecionada.addEventListener("click", changeColor);
-
-	function changeColor(event) {
-		let classCor = event.target;
-		let elementoSelecionado = document.getElementsByClassName('selected');
-		elementoSelecionado[0].classList.remove('selected');
-		classCor.classList.add('selected');
-	}
+function SelecionaColor() {
+  function changeColor(event) {
+    const classCor = event.target;
+    const elementoSelecionado = document.getElementsByClassName('selected');
+    elementoSelecionado[0].classList.remove('selected');
+    classCor.classList.add('selected');
+  }
+  const classSelecionada = document.querySelector('lista-de-cor');
+  classSelecionada.addEventListener('click', changeColor);
 }
 
 SelecionaColor();
 
-
 function changeColorBox() {
-	pixelBoard.addEventListener('click', (event) => {
-	  const boxPixel = event.target;
-	  if (boxPixel.className === 'pixel') {
-		const selectedColor = document.querySelector('.selected').style.backgroundColor;
-		boxPixel.style.backgroundColor = selectedColor;
-	  }
-	});
-  }
-  changeColorBox();
-
-function mudaCorDoPixel (){
-	let tabelaPixelada = document.querySelector(pixelBoard)
-	tabelaPixelada.addEventListener('click',mudaCor)
-	function mudaCor(event){
-		let pixelClicado = event.target
-		let corBase = document.getElementsByClassName('selected')
-		pixelClicado.style.backgroundColor = corBase[0].style.backgroundColor
-	}
+  pixelBoard.addEventListener('click', (event) => {
+    const boxPixel = event.target;
+    if (boxPixel.className === 'pixel') {
+      const selectedColor = document.querySelector('.selected').style.backgroundColor;
+      boxPixel.style.backgroundColor = selectedColor;
+    }
+  });
 }
-mudaCorDoPixel()
 
+changeColorBox();
 
-
+function mudaCorDoPixel() {
+  function mudaCor(event) {
+    const pixelClicado = event.target;
+    const corBase = document.getElementsByClassName('selected');
+    pixelClicado.style.backgroundColor = corBase[0].style.backgroundColor;
+  }
+  const tabelaPixelada = document.querySelector(pixelBoard);
+  tabelaPixelada.addEventListener('click', mudaCor);
+}
+mudaCorDoPixel();
 
 function CriandoCoresAleatórias(argumento) {
-	let ObjectColor = {};
-	let coisa = document.querySelectorAll(argumento)
-	for (let index = 0; index < coisa.length; index += 1){
-		let r = parseInt(Math.random() * 255);
-		let g = parseInt(Math.random() * 255);
-		let b = parseInt(Math.random() * 255);
-		ObjectColor[`cor: ${index}`] = `rgb(${r}, ${g}, ${b})`
-	}
-	return ObjectColor;
+  const ObjectColor = {};
+  const elemento = document.querySelectorAll(argumento);
+  for (let index = 0; index < elemento.length; index += 1) {
+    const r = parseInt(Math.random() * 255, 10);
+    const g = parseInt(Math.random() * 255, 10);
+    const b = parseInt(Math.random() * 255, 0);
+    ObjectColor[`cor: ${index}`] = `rgb(${r}, ${g}, ${b})`;
+  }
+  return ObjectColor;
 }
+CriandoCoresAleatórias(4);
