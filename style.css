@@ -1,14 +1,13 @@
 h1 {
-  text-align: center;
-  margin-right: 400px;
+  margin-left: 50px;
 }
 
 .color {
   border: 1px solid black;
-  width: 7%;
-  height: 80px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
-  margin-left: 85px;
+  margin-left: 37px;
 }
 
 .color-1 {
@@ -25,4 +24,17 @@ h1 {
 
 .color-4 {
   background-color: #7fff07;
+}
+
+#pixel-board {
+  margin-top: 25px;
+  margin-left: 73px;
+}
+
+.pixel {
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  display: inline-block;
 }
