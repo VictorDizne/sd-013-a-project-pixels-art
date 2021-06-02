@@ -20,6 +20,7 @@ for(index =0; index< quadrado; index+=1){
 
 }
 
+
 gradePixel();
 
 function classSelect(event){
@@ -73,7 +74,7 @@ listaPixel.addEventListener("click", pintaPixel); */
 function addPixel(){
   
   let listaPixel = document.querySelectorAll(".pixel");
-
+  
   for(index =0; index < listaPixel.length; index+=1 ){
 
     let listaPixel = document.querySelectorAll(".pixel")[index];
@@ -83,3 +84,20 @@ function addPixel(){
   }
 }
 addPixel();
+
+ function resetaTela(event){
+
+  let pixels = document.querySelectorAll(".pixel");
+
+
+  for(let index = 0; index < pixels.length; index +=1){
+
+    document.querySelectorAll(".pixel")[index].style.backgroundColor = "white";
+      
+  }
+
+
+} 
+
+let botao = document.querySelector("#clear-board");
+botao.addEventListener("click", resetaTela);
