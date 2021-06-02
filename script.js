@@ -19,10 +19,32 @@ let div = document.createElement('div');
   div.style.backgroundColor = 'black'
   criaSection.appendChild(div);
 
+  let div2 = document.createElement('div');
+  div2.style.display = 'inline-block';
+  div2.style.padding = '15px';
+  div2.className = 'color';
+  div2.style.margin = '2px';
+  div2.style.backgroundColor = 'green'
+  criaSection.appendChild(div2);
+
+  let div3 = document.createElement('div');
+  div3.style.display = 'inline-block';
+  div3.style.padding = '15px';
+  div3.className = 'color';
+  div3.style.margin = '2px';
+  div3.style.backgroundColor = 'red'
+  criaSection.appendChild(div3);
   
+  let div4 = document.createElement('div');
+  div4.style.display = 'inline-block';
+  div4.style.padding = '15px';
+  div4.className = 'color';
+  div4.style.margin = '2px';
+  div4.style.backgroundColor = 'pink'
+  criaSection.appendChild(div4);
   let coresPaleta = 3;
 
-for( let index = 0; index < coresPaleta; index += 1){
+/* for( let index = 0; index < coresPaleta; index += 1){
   let div = document.createElement('div');
   div.style.display = 'inline-block';
   div.style.padding = '15px';
@@ -31,7 +53,7 @@ for( let index = 0; index < coresPaleta; index += 1){
   criaSection.appendChild(div);
   
   div.style.backgroundColor = corAleatoria();
-}
+} */
 
 function corAleatoria() {
   let caracteres = '0123456789ABCDEF';
@@ -86,7 +108,7 @@ function criaLinha2(){
       divSec3.style.display = 'inline-block';
       divSec3.style.padding = '15px';
       divSec3.className = 'color';
-      divSec3.style.backgroundColor = 'white'
+      divSec3.style.backgroundColor = 'rgb(255, 255, 255)'
       divSec3.style.margin = '0px';
       divSec3.style.marginTop = '-5px';
       divSec3.classList.add('pixel');;
@@ -106,7 +128,7 @@ function criaLinha3(){
       divSec4.style.display = 'inline-block';
       divSec4.style.padding = '15px';
       divSec4.className = 'color';
-      divSec4.style.backgroundColor = 'white'
+      divSec4.style.backgroundColor = 'rgb(255, 255, 255)'
       divSec4.style.margin = '0px';
       divSec4.style.marginTop = '-4px';
       divSec4.classList.add('pixel');
@@ -126,7 +148,7 @@ function criaLinha4(){
       divSec5.style.display = 'inline-block';
       divSec5.style.padding = '15px';
       divSec5.className = 'color';
-      divSec5.style.backgroundColor = 'white'
+      divSec5.style.backgroundColor = 'rgb(255, 255, 255)'
       divSec5.style.margin = '0px';
       divSec5.style.marginTop = '-5px';
       divSec5.classList.add('pixel');
@@ -146,7 +168,7 @@ function criaLinha5(){
       divSec6.style.display = 'inline-block';
       divSec6.style.padding = '15px';
       divSec6.className = 'color';
-      divSec6.style.backgroundColor = 'white'
+      divSec6.style.backgroundColor = 'rgb(255, 255, 255)'
       divSec6.style.margin = '0px';
       divSec6.style.marginTop = '-4px';
       divSec6.classList.add('pixel');
