@@ -1,5 +1,5 @@
+/* exported cleanFunction */
 // Fonte: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
-
 function createBoard() {
   const b = document.getElementsByTagName('body')[0];
   const t = document.createElement('table');
@@ -23,7 +23,7 @@ const divcolor1 = document.getElementsByClassName('color1');
 const divcolor2 = document.getElementsByClassName('color2');
 const divcolor3 = document.getElementsByClassName('color3');
 const divcolor4 = document.getElementsByClassName('color4');
-GeolocationCoordinates pixelado = document.querySelectorAll('.pixel');
+const pixelado = document.querySelectorAll('.pixel');
 const pixelBoard = document.querySelector('#pixel-board');
 
 function selectColor(event) {
@@ -49,8 +49,7 @@ function paintColor(acao) {
 pixelBoard.addEventListener('click', paintColor);
 
 function cleanFunction() {
-  pixelado.forEach(posicao => (posicao.style.backgroundColor = 'white'; ));
-//  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+  pixelado.forEach(posicao => {posicao.style.backgroundColor = 'white';});
 }
 
 // for (let index in pixelado) {
