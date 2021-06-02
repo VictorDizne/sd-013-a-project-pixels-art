@@ -4,33 +4,37 @@ let pixelBoard = document.querySelector('#pixel-board');
 let tr = document.querySelector('#pixel-board').children;
 let colors = [];
 let colorSelected = 'black';
-
+let btnClear = document.querySelector('#clear-board');
 
 
 function createColorPalette() {
-  
   for (let index = 0; index < 4; index += 1) {
-    let red = Math.random()*255;
-    let green = Math.random()*255;
-    let blue = Math.random()*255;
-    let color;
 
     const div = document.createElement('div');
     div.className = 'color';
     div.id = index;
     colorPalette.appendChild(div);
 
-    if (index === 0) {
-      color = div.style.backgroundColor = 'black';
-      colors.push(color);
-      div.className = 'color selected';
-    } else {
-      color = div.style.backgroundColor = `rgb(${red},${green},${blue})`;
-      colors.push(color);
-    }
+    storeRandomColors(index, div);
   }
-  console.log(colors);
 }
+
+function storeRandomColors(index, div) {
+  let red = Math.random()*255;
+  let green = Math.random()*255;
+  let blue = Math.random()*255;
+  let color;
+
+  if (index === 0) {
+    color = div.style.backgroundColor = 'black';
+    colors.push(color);
+    div.className = 'color selected';
+  } else {
+    color = div.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    colors.push(color);
+  }
+}
+
 
 function createLines() {
   for (let numLine = 0; numLine < 5; numLine += 1) {
@@ -64,7 +68,7 @@ window.onload = function inicio() {
 
   document.addEventListener('click', function(event) {
     if (event.target.classList.contains('color')) {
-      console.log(event.target.id);
+      console.log(`div ${event.target.id}`);
       resetClassSelected();
       for(let index = 0; index < colors.length; index += 1) {
         if (parseInt(event.target.id, 10) === index) {
@@ -74,7 +78,15 @@ window.onload = function inicio() {
       }
     }
   });
-  
+
+  btnClear.addEventListener('click', function() {
+    console.log('botão de limpar foi clicado.');
+    let pixels = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('pixel')) {
       console.log('pixel clicado')

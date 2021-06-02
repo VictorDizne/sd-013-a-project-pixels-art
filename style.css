@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+body, header, #pixel-board {
+  margin: auto;
+  text-align: center;
+}
+
 #color-palette .color {
   height: 40px;
   width: 40px;
@@ -30,7 +35,6 @@
 #pixel-board {
   margin-top: 10px;
   display: table;
-  border: 1px solid black;
 }
 
 #pixel-board .pixel {
