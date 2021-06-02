@@ -20,8 +20,35 @@ window.onload = function() {
       }
     });
   }
-
   changeClassSelected();
+
+  function paintPixel() {
+
+    let pixelBoard = document.querySelector('#pixel-board');
+
+    pixelBoard.addEventListener('click', function(event) {
+
+      if (event.target.classList.contains('pixel')) {
+        let selected = document.querySelector('.selected');
+        let bgcolor = window.getComputedStyle(selected).backgroundColor;
+        event.target.style.backgroundColor = bgcolor;
+      }
+    })
+  }
+  paintPixel();
+
+
+  function clearBoard() {
+    let btnClearBoard = document.querySelector('#clear-board');
+    let pixelList = document.querySelectorAll('#pixel-board .pixel');
+    
+    btnClearBoard.addEventListener('click', function() {
+      for (let i = 0; i < pixelList.length; i += 1) {
+        pixelList[i].style.backgroundColor = "white";
+      }
+    });
+  }
+  clearBoard();
 
 }
 
