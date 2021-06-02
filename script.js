@@ -22,6 +22,28 @@ window.onload = function() {
   }
   changeClassSelected();
 
+  function createPixelBoard(number = 5) {
+    let pixelBoard = document.querySelector('#pixel-board');
+
+    for (let indexLine = 0; indexLine < number; indexLine += 1) {
+      let line = document.createElement('div');
+      line.classList.add('line');
+        for (let indexColumn = 0; indexColumn < number; indexColumn += 1) {
+          let pixel = document.createElement('div');
+          pixel.classList.add('pixel');
+          line.appendChild(pixel);
+        }
+      pixelBoard.appendChild(line);
+    }
+  }
+
+  createPixelBoard();
+
+
+
+
+
+
   function paintPixel() {
 
     let pixelBoard = document.querySelector('#pixel-board');
@@ -49,6 +71,13 @@ window.onload = function() {
     });
   }
   clearBoard();
+
+
+  function paletteColors() {
+
+  }
+
+
 
 }
 
