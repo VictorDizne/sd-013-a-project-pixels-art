@@ -1,8 +1,11 @@
-.selected {
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-  display: inline-block;
+body{
+  background-color: grey;
+  justify-content: center;
+}
+#title {
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
 }
 .color {
   border: 1px solid black;
@@ -10,13 +13,23 @@
   height: 40px;
   display: inline-block;
 }
+#color-palette{
+  
+}
 #pixel-board {
-  width: 250px;
+  display: table;
+  
+}
+#tr {
+  display: table-row;
 }
 .pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  display: inline-block;
+  display: table-cell;
   background-color: white;
+}
+.selected {
+  border: 2px groove orange ;
 }
