@@ -47,17 +47,18 @@ function selectColorBlack() {
   colors[0].classList.add('selected');
 }
 
-function makePaletteColorsBeSelectedOnClick() {
-  for (let i = 0; i < colors.length; i += 1) {
-    colors[i].addEventListener('click', (e) => {
-      const colorSelected = document.querySelector('.selected');
-      const colorClicked = e.target;
+function onClickEvents(e) {
+  const colorSelected = document.querySelector('.selected');
 
-      if (colorClicked !== colorSelected) {
-        colorSelected.classList.remove('selected');
-        colorClicked.classList.add('selected');
-      }
-    });
+  /** Make Palette Colors Selectable */
+  if (e.target.classList.contains('color') && e.target !== colorSelected) {
+    colorSelected.classList.remove('selected');
+    e.target.classList.add('selected');
+
+  /** Make pixels paintable */
+  } else if (e.target.classList.contains('pixel')) {
+    const currentColor = colorSelected.style.backgroundColor;
+    e.target.style.backgroundColor = currentColor;
   }
 }
 
@@ -65,5 +66,5 @@ window.onload = () => {
   createPalette();
   createBoard();
   selectColorBlack();
-  makePaletteColorsBeSelectedOnClick();
+  document.addEventListener('click', onClickEvents); // Event Bubbling
 };
