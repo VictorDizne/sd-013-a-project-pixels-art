@@ -39,3 +39,14 @@ body {
   border: 0;
   height: 42px;
 }
+
+.input-board-size {
+  display: inline-block;     
+  margin: 0px 4px 0px 10px;
+  width: 5%;
+}
+
+.btn-generate-board {
+  display: inline-block;     
+  margin: 0px 10px 0px 10px;
+}
