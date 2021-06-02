@@ -7,9 +7,9 @@ function createPixels() {
     quadrado.className = 'linha';
 
     for (let index2 = 0; index2 < quadroInicio; index2 += 1) {
-      const quadrado2 = document.createElement('div');
-      quadrado2.className = 'pixel';
-      quadrado.appendChild(quadrado2);
+      const quadradinho = document.createElement('div');
+      quadradinho.className = 'pixel';
+      quadrado.appendChild(quadradinho);
     }
   }
 }
@@ -38,4 +38,16 @@ corPreta.addEventListener('click', addClassSelect);
 corVerde.addEventListener('click', addClassSelect);
 corCinza.addEventListener('click', addClassSelect);
 corVermelha.addEventListener('click', addClassSelect); 
+pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', pintar)
 /* addClassSelect foi baseado no bloco 5.3 do conteúdo parte 2, toda cor recebeu um evento, que ao clicar remove a classe de quem está e add a classe para o que é escolhido*/
+
+
+
+
+function pintar(event){
+  let elementoSelecionado = document.querySelector('.selected');
+  let corSelecionada = window.getComputedStyle(elementoSelecionado, null).getPropertyValue("background-color");
+  event.target.style.backgroundColor = corSelecionada;
+}
+ 
