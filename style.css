@@ -78,7 +78,4 @@ td {
 .green-palette { background-color: var(--third_palette); }
 .blue-palette { background-color: var(--fourth_palette); }
 
-/* estilos sobre o pixel-board */
-.pixel {
-  background: rgba(255, 255, 255, 1);
-}
+.pixel { background-color: white; }
