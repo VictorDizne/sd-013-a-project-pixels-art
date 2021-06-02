@@ -1,7 +1,8 @@
 * {
 	padding: 0;
-	margin: 0%;
+	margin: 0;
 	border: 0;
+	box-sizing: border-box;
 }
 body {
 	margin: 40px;
@@ -13,6 +14,11 @@ body {
 h1 {
 	text-align:center;
 }
+h1:hover {
+	transform: scale(1.1);
+	transition: 0.5;
+	cursor: pointer;
+}
 section {
 	text-align: center;	
 	padding: 20px 0px 50px ;
@@ -21,8 +27,6 @@ ul {
 	text-decoration: none;
 	display: flex;
 	justify-content: center;
-}
-ul li .color {
 }
 nav {
 	margin-left: auto;
@@ -33,13 +37,14 @@ div {
 	text-align: center;
 	display: inline-block;
 }
-input{
+
+input {
 	width:100px;
 	justify-content: center;
 	top: 50%;
-	position:;
 
-  }
+}
+
 .color {
 
 	display: inline-block;
@@ -49,14 +54,25 @@ input{
 	border-radius: 100%;
 	border: 1px solid black;
 	margin-right: 13px;
-
 }
+
+.color:hover {
+    transform: scale(1.8);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 .pixel {
 	display: inline-block;
 	list-style: none;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background-color: white;
 	border: 1px solid black;
 }
-500 x 280 tamanho da tela
+.pixel:hover { 
+    transform: scale(1.5);
+    cursor: pointer;
+    transition: 0.5s;
+}
+/* 500 x 280 tamanho da tela */
