@@ -5,7 +5,7 @@ function setPaletteColor(event) {
     myPalettes[index].classList.remove("selected");
   }
   x.classList.add("selected");    
-}; 
+};
 
 function setPixelColor() {
   let selectedColor = document.getElementsByClassName('color selected');
@@ -15,21 +15,21 @@ function setPixelColor() {
     if (selectedColor.length > 0) {
       let color = selectedColor[0].style.backgroundColor;
       event.target.style.backgroundColor = color;
-    }  
+    }
   });
 };
 
 function buttomClear() {
-  let pixels = document.querySelector('.pixel');
+  let pixels = document.getElementsByClassName('pixel');
   let buttom = document.querySelector('#clear-board');
   let color = 'white';
 
   buttom.addEventListener('click', function(){
     for (let index = 0; index < pixels.length; index += 1){
       if (pixels[index].style.backgroundColor !== color) {
-        pixels[index].style.backgroundColor = color;      
-      }  
-    }  
+        pixels[index].style.backgroundColor = color;
+      }
+    }
   });
 };
 
