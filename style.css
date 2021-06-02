@@ -1,0 +1,21 @@
+
+h1{
+    background-color: blueviolet;
+}
+body {
+    text-align: center;
+}
+#cores-paleta{
+    margin-left: 20px;
+}
+
+.colors {
+background-color: black;
+margin-left: 0px;
+text-align: center;
+display: inline-block;
+width: 80px;
+height: 80px;
+border: 1px, solid black;
+}
+
