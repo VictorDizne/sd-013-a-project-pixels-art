@@ -44,14 +44,20 @@ function selectColor(element) {
     const selected = document.querySelector('.selected');
     element.target.classList.add('selected');
     selected.classList.remove('selected');
-    console.log(element);
   }
 }
 
 pixels.addEventListener('click', selectColor);
+// feito com ajuda do Matheus Duarte
+function fillColor(element) {
+  const pixelSelected = element.target;
+  const color = document.querySelector('.selected').style.backgroundColor;
+  if (element.target.className === 'pixel') {
+    pixelSelected.style.backgroundColor = color;
+  }
+}
 
-// function fillColor() {
-// }
+board.addEventListener('click', fillColor);
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;

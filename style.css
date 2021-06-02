@@ -8,6 +8,7 @@ body {
   border: 1px solid black;
   padding: 25px;
   margin: 15px 5px;
+  transition: 0.5s;
 }
 
 #pixel-board {
@@ -17,10 +18,14 @@ body {
 }
 
 .pixel {
-  /* display: inline-block; */
   border: 1px solid black;
   width: 40px;
   height: 40px;
   background-color: white;
   margin: 0 1px;
+}
+
+.color:hover {
+  cursor: pointer;
+  border-radius: 25%;
 }
