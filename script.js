@@ -1,7 +1,17 @@
-let colors = ['black', 'blue', 'green', 'red'];
+let colors = ['black'];
 let pixelBoard = document.querySelector('#pixel-board');
 let clearButton = document.querySelector('#clear-board');
 let generateButton = document.querySelector('#generate-board');
+
+function colorGenerate(){
+  for (let i = 0; i < 3; i += 1){
+    let rgb1 = Math.ceil(Math.random()*255);
+    let rgb2 = Math.ceil(Math.random()*255);
+    let rgb3 = Math.ceil(Math.random()*255);
+    colors.push(`rgb(${rgb1}, ${rgb2}, ${rgb3})`)
+  };
+};
+colorGenerate();
 
 function createBoxPalette(){
   for ( let i = 0; i < colors.length; i += 1){
@@ -52,12 +62,18 @@ function changePixels(event){
   let actualColor = document.querySelector('.selected').style.backgroundColor;
   event.target.style.backgroundColor = actualColor;
 }
-let pixelsArray = document.querySelectorAll('.pixel');
-for (let i = 0; i < pixelsArray.length; i += 1){
-  pixelsArray[i].addEventListener('click', changePixels);
+
+
+function reloadArray(){
+  let pixelsArray = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelsArray.length; i += 1){
+    pixelsArray[i].addEventListener('click', changePixels);
+  };
 };
+reloadArray();
 
 function resetAll(){
+  let pixelsArray = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixelsArray.length; i += 1){
     pixelsArray[i].style.backgroundColor = 'white';
   };
@@ -68,9 +84,15 @@ function changeMatrix(){
   pixelBoard.innerHTML = '';
   let boardSize = document.querySelector('#board-size').value;
   if (boardSize === ''){
-    window.alert('Board inválido!')
+    window.alert('Board inválido!');
   } else {
-  createPixelBoard(boardSize);
-  }
-}
+    if (boardSize < 5){
+      boardSize = 5;
+    } else if (boardSize > 50){
+      boardSize = 50;
+    };
+    createPixelBoard(boardSize);
+    reloadArray();
+  };
+};
 generateButton.addEventListener('click', changeMatrix);
