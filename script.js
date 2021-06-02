@@ -1,5 +1,6 @@
-const paletaColor = document.getElementById('color-palette')
-
+const paletaColor = document.getElementById('color-palette');
+const pixelBoard = document.getElementById('pixel-board');
+const bntClear = document.getElementById('clear-board')
 // função retorna uma valor de 0 ao numero
 function randomNumber(numero) {
   return Math.floor(Math.random() * numero);
@@ -49,8 +50,20 @@ function selectCorClick(elemet) {
   }
 }
 
-
 paletaColor.addEventListener('click', selectCorClick)
+
+// Usar cor selecionada para pinta a div
+function useSelectedColor(event){
+  const corSelect = document.getElementsByClassName('color selected')[0];
+  event.target.style.backgroundColor  = corSelect.style.backgroundColor
+  console.log(event.target,corSelect.style.backgroundColor);
+}
+
+
+
+pixelBoard.addEventListener('click', useSelectedColor)
+bntClear.addEventListener('click', resetColor)
+
 window.onload = () => {
   randomColorDiv();
   createPixelBord();
