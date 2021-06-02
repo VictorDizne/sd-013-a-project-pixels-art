@@ -1,3 +1,19 @@
+function generateRandomColors () {
+  let num1 = 155 + Math.random() * 100;
+  num1 = Math.round(num1);
+  let num2 = Math.random() * 255;
+  num2 = Math.round(num2);
+  let num3 = Math.random() * 255;
+  num3 = Math.round(num3);
+  let colorC2 = `rgb(${num1}, ${num2}, ${num3})`;
+  let colorC3 = `rgb(${num2}, ${num1}, ${num3})`;
+  let colorC4 = `rgb(${num3}, ${num2}, ${num1})`;
+  document.querySelector('.c2').style.backgroundColor = colorC2;
+  document.querySelector('.c3').style.backgroundColor = colorC3;
+  document.querySelector('.c4').style.backgroundColor = colorC4;
+}
+generateRandomColors();
+
 let palletSelectedColor = 'black';
 
 function selectColor() {
@@ -8,15 +24,7 @@ function selectColor() {
       selectedColor.classList.remove('selected');
       const clickedColor = event.target;
       clickedColor.classList.add('selected');
-      if (pallet[i] === pallet[0]) {
-        palletSelectedColor = 'black';
-      } else if (pallet[i] === pallet[1]) {
-        palletSelectedColor = 'rgb(235, 7, 7)';
-      } else if (pallet[i] === pallet[2]) {
-        palletSelectedColor = 'rgb(160, 34, 34)';
-      } else if (pallet[i] === pallet[3]) {
-        palletSelectedColor = 'rgb(136, 207, 252)';
-      }
+      palletSelectedColor = window.getComputedStyle(clickedColor).backgroundColor;
     });
   }
 }
