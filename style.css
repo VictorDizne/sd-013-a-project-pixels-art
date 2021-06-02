@@ -1,8 +1,19 @@
+#title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+#color-palette {
+  text-align: center;
+}
+
 .color {
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   border: 1px solid black;
   display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
 #colorBlack {
@@ -27,6 +38,8 @@
 
 #pixel-board {
   display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tr {
