@@ -1,4 +1,4 @@
-const colorElements = document.getElementsByClassName('color');
+const colors = document.getElementsByClassName('color');
 
 /** Returns a random hexadecimal color except #ffffff (white). */
 function getRandomColor() {
@@ -44,11 +44,26 @@ function createBoard(n = 5) {
 }
 
 function selectColorBlack() {
-  colorElements[0].classList.add('selected');
+  colors[0].classList.add('selected');
+}
+
+function makePaletteColorsBeSelectedOnClick() {
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].addEventListener('click', (e) => {
+      const colorSelected = document.querySelector('.selected');
+      const colorClicked = e.target;
+
+      if (colorClicked !== colorSelected) {
+        colorSelected.classList.remove('selected');
+        colorClicked.classList.add('selected');
+      }
+    });
+  }
 }
 
 window.onload = () => {
   createPalette();
   createBoard();
   selectColorBlack();
+  makePaletteColorsBeSelectedOnClick();
 };
