@@ -1,37 +1,36 @@
-* {
-    padding: 0;
-}
 .color {
-    border: solid black 1px;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
+  border: solid black 1px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
 }
+
 .c0 {
-    background-color: rgb(0, 0, 0);
+  background-color: black;
 }
 
 .c1 {
-    background-color: rgb(52, 107, 158);
+  background-color: rgb(52, 107, 158);
 }
 
 .c2 {
-    background-color: rgb(189, 35, 130);
+  background-color: rgb(189, 35, 130);
 }
 
 .c3 {
-    background-color: rgb(206, 231, 64);
+  background-color: rgb(206, 231, 64);
 }
 
 #pixel-board {
-    margin-top: 70px;
-    width: 210px;
+  margin-top: 70px;
+  width: 210px;
+  line-height: 0px;
 }
 
 .pixel {
-    border: solid black 1px;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
+  border: solid black 1px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }
