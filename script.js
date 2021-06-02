@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function color() {
   const paletaCores = document.getElementsByClassName('color');
   const colorArray = ['black', 'red', 'blue', 'green'];
   for (let i = 0; i < 4; i += 1) {
