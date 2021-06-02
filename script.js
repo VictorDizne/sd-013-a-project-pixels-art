@@ -8,9 +8,9 @@ function quadroDePixels() {
     pixelLinha.className = 'pixel-linha';
     quadro.appendChild(pixelLinha);
     for (let j = 0; j < 5; j += 1) {
-        const pixelColuna = document.createElement('div');
-        pixelColuna.className = 'pixel';
-        pixelLinha.appendChild(pixelColuna);
+      const pixelColuna = document.createElement('div');
+      pixelColuna.className = 'pixel';
+      pixelLinha.appendChild(pixelColuna);
     }
   }
 }
