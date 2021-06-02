@@ -3,6 +3,7 @@
   width: 50px;
   height: 50px;
   border: 1px solid black;
+  line-height: 0%;
 }
 
 #color-palette .color:nth-child(1) {
@@ -25,6 +26,7 @@
   display: table;
   width: 25px;
   height: 25px;
+  line-height: 50%;
 }
 
 .pixel{
@@ -32,13 +34,17 @@
   height: 40px;
   width: 40px;
   display: inline-block;
+  line-height: 0%;
 }
 
 .tr {
   display: table-row;
+  line-height: 0%;
 }
 
 .td {
   display: table-cell;
   background-color: white;
+  line-height: 0%;
+  
 }
