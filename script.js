@@ -1,13 +1,15 @@
 const colorPalette = document.querySelector('#color-palette');
-const divsPalette = document.querySelector('#color-palette').children;
+const divsPalette = document.querySelectorAll('.color');
 let pixelBoard = document.querySelector('#pixel-board');
 let tr = document.querySelector('#pixel-board').children;
 let colors = [];
 let colorSelected = 'black';
 let btnClear = document.querySelector('#clear-board');
+let btnRandom = document.querySelector('#random');
 
 
 function createColorPalette() {
+  colors = [];
   for (let index = 0; index < 4; index += 1) {
 
     const div = document.createElement('div');
@@ -61,6 +63,7 @@ function resetClassSelected() {
   }
 }
 
+
 window.onload = function inicio() {
   createColorPalette();
   createLines();
@@ -85,6 +88,14 @@ window.onload = function inicio() {
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
     }
+  });
+
+  btnRandom.addEventListener('click', function() {
+    let count = colorPalette.childElementCount;
+    for (let index = 0; index < count; index += 1) {
+      colorPalette.removeChild(colorPalette.children[0]);
+    }
+    createColorPalette();
   });
 
   document.addEventListener('click', function (event) {
