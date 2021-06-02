@@ -7,16 +7,27 @@ function setListenersOfColors(){
     })
   }
 }
+function randomizedColors(){
+  let result = [];
+
+  for (let i = 0; i < 3; i += 1) {
+    let randomRed = Math.floor(Math.random() * (255 - 0)) + 0;
+    let randomGreen = Math.floor(Math.random() * (255 - 0)) + 0;
+    let randomBlue = Math.floor(Math.random() * (255 - 0)) + 0;
+    result.push(`rgb(${randomRed}, ${randomGreen}, ${randomBlue})`);
+  }
+
+  return result;
+}
 function setColors(){
   let colors = document.querySelectorAll(".color");
   // Regra em que a primeira deve ser preta.
   colors[0].style.backgroundColor = "black";
   // Regra em que o preto é o primeiro selected
   colors[0].classList.add("selected");
-
-  let colorsUser = ["black", "green", "red", "blue"];
+  let colorsUser = randomizedColors();
   for (let i = 1; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = colorsUser[i];
+    colors[i].style.backgroundColor = colorsUser[i-1];
   }
   setListenersOfColors();
 }
@@ -91,10 +102,20 @@ function setButtonCreateBoard(){
   ("#generate-board");
   let input = document.querySelector("#board-size");
   button.addEventListener("click", function (event) {
-    // Retira o tabuleiro antigo, artigo de referência https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript.
-    board.innerHTML = '';
     let n = input.value;
-    createBoard(n);
+    if (n === '') {
+      alert('Board inválido!');
+    } else if(n < 5){
+      board.innerHTML = '';
+      createBoard(5);
+    } else if(n > 50){
+      board.innerHTML = '';
+      createBoard(50);
+    } else {
+      // Retira o tabuleiro antigo, artigo de referência https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript.
+      board.innerHTML = '';
+      createBoard(n);
+    }
   })
 }
 setButtonCreateBoard();
