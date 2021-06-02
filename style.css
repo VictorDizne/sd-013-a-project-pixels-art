@@ -14,37 +14,47 @@ body {
 #title {
   text-align: center;
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 #color-palette {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  justify-content: center;
+  column-gap: 10px;
+  margin-bottom: 50px;
 }
 
-#color-palette .color,
-#pixel-board .pixel {
+.color,
+.pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
 
-/* .color:nth-child(1) {
+#clear-board {
+  display: inherit;
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  font-size: 18px;
+  border: 2px solid;
+  border-radius: 4px;
+}
+
+#clear-board:hover {
+  color: white;
   background-color: black;
+  border: 2px solid grey;
+  border-radius: 4px;
 }
 
-.color:nth-child(2) {
-  background-color: yellow;
+.color {
+  transition: all 0.3s;
 }
 
-.color:nth-child(3) {
-  background-color: red;
+.color.selected {
+  opacity: 0.5;
 }
-
-.color:nth-child(4) {
-  background-color: green;
-} */
 
 #pixel-board {
   display: grid;
