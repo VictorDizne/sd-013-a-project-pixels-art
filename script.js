@@ -1,5 +1,5 @@
 window.onload = function () {
-  document.getElementById('colorOne').className = 'selected';
+  document.getElementById('colorOne').classList.add('selected');
 };
 
 let colorOne = document.getElementById('colorOne'); 
@@ -13,7 +13,7 @@ colorThree.addEventListener('click', selected);
 colorFour.addEventListener('click', selected);
 
 function selected(event) {
-  const colorElement = document.querySelector('.color');
+  const colorElement = document.querySelector('.selected');
   colorElement.classList.remove('selected');
   event.target.classList.add('selected');
   input.value = 'color';
