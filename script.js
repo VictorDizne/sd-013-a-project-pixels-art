@@ -10,11 +10,18 @@ function createPalette() {
 
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
-    td.classList.add('color');
-    td.style.backgroundColor = `${paletteColors[index]}`;
-    td.style.border = '1px solid #000';
-    if (index === 0) td.classList.add('selected');
-    line.appendChild(td);
+    if (index === 0) {
+      td.classList.add('selected');
+      td.style.backgroundColor = '#000'
+      td.style.border = '1px solid #000';
+      td.classList.add('color');
+      line.appendChild(td);
+    } else {
+      td.classList.add('color');
+      td.style.backgroundColor = getRandomColor();
+      td.style.border = '1px solid #000';
+      line.appendChild(td);
+    }
   }
 }
 
@@ -80,6 +87,18 @@ function clearPixels() {
     }
   });
 }
+
+// FUNÇÃO RETIRADA DE https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
+
+function getRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+//
 
 createPalette();
 
