@@ -20,26 +20,39 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 70px;
 }
 
-#color-palette .color {
+#color-palette .color,
+#pixel-board .pixel {
   border: 1px solid black;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
 
-#color-palette .color:nth-child(1) {
+/* .color:nth-child(1) {
   background-color: black;
 }
 
-#color-palette .color:nth-child(2) {
+.color:nth-child(2) {
   background-color: yellow;
 }
 
-#color-palette .color:nth-child(3) {
+.color:nth-child(3) {
   background-color: red;
 }
 
-#color-palette .color:nth-child(4) {
+.color:nth-child(4) {
   background-color: green;
+} */
+
+#pixel-board {
+  display: grid;
+  grid-template-rows: repeat(5, 40px);
+  grid-template-columns: repeat(5, 40px);
+  justify-content: center;
+}
+
+.pixel {
+  background-color: white;
 }
