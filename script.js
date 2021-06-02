@@ -3,8 +3,10 @@ let tabelaTd = '<td class="pixel"></td>';
 for (let i = 0; i < 4; i += 1) {
   tabelaTd += '<td class="pixel"></td>';
 }
-tabelaTd = '<tr>'+tabelaTd+'</tr>';
-for (let i = 0; i < 4; i += 1) {
-  tabelaTd += '<tr><td class="pixel"></td><td class="pixel"></td><td class="pixel"></td><td class="pixel"></td><td class="pixel"></td></tr>';
+tabelaTd = `<tr> ${tabelaTd} </tr>`;
+let aux = tabelaTd;
+for (let i = 0; i < 2; i += 1) {
+  aux += tabelaTd + tabelaTd;
 }
-pixelBoard.innerHTML = '<table>'+tabelaTd+'</table>';
+tabelaTd = aux;
+pixelBoard.innerHTML = `<table> ${tabelaTd} </table>`;
