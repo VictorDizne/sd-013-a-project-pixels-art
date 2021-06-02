@@ -38,3 +38,18 @@ aside {
 .color:nth-child(4) {
     background-color: green;
 }
+
+/* pixels */
+#pixel-board {
+    border: 1px solid black;
+    margin-left: 450px;
+    border-collapse: collapse;
+
+}
+
+.pixel {
+    background-color: white;
+    border: 1px solid black;
+    padding: 40px;
+
+}
