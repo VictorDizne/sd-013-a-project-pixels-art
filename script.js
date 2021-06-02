@@ -1,10 +1,12 @@
 window.onload = function () {
   const classColor = document.querySelectorAll('.color');
   const idBoard = document.querySelector('#pixel-board');
-
   // Adiciona pallete de cores
   function colorsPalletes() {
-    const pallets = ['#000000', '#F10202', '#2200FD', '#257400'];
+    const pallets = ['#000000', 
+    'rgb(' + Math.ceil(Math.random()*255) + ', ' + Math.ceil(Math.random()*255) + ', ' + Math.ceil(Math.random()*255) + ')', 
+    'rgb(' + Math.ceil(Math.random()*255) + ', ' + Math.ceil(Math.random()*255) + ', ' + Math.ceil(Math.random()*255) + ')', 
+    'rgb(' + Math.ceil(Math.random()*255) + ', ' + Math.ceil(Math.random()*255) + ', ' + Math.ceil(Math.random()*255) + ')'];
     for (let index = 0; index < classColor.length; index += 1) {
       classColor[index].style.backgroundColor = pallets[index];
     }
@@ -122,6 +124,10 @@ window.onload = function () {
       }
       if (inputBoardSize.value >= 5 && inputBoardSize.value <= 50) {
         createBoard(inputBoardSize.value);
+      } else if (inputBoardSize.value < 5) {
+        createBoard(5);
+      } else if (inputBoardSize.value > 50) {
+        createBoard(50);
       }
     });
   }
