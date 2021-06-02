@@ -28,11 +28,11 @@ function corSelecionada(event) {
 trocaSelecionada.addEventListener('click', corSelecionada);
 
 const pixelBoard = document.querySelector('#pixel-board');
-function colorir(event) {
+function colorir(parameter) {
   for (let i = 0; i < trocaSelecionada.children.length; i += 1) {
     if (trocaSelecionada.children[i].classList.contains('selected')) {
       const color = window.getComputedStyle(trocaSelecionada.children[i], null).getPropertyValue('background-color');
-      event.target.style.backgroundColor = color;
+      parameter.target.style.backgroundColor = color;
     }
   }
 }
