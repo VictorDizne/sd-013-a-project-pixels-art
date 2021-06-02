@@ -31,13 +31,17 @@ for (let i = 0; i < n; i +=1 ){
   }
 }
 
+let black = document.querySelector('.first');
+black.classList.add('selected')
+
+function defaultColor(element){
+  element.target.style.backgroundColor = 'black';
+}
+
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
 // document.querySelector('.fourth').style.backgroundColor = '#' + randomColor4;
 
-
-// let board = document.querySelector('#pixel-board');
-// let n = 5;
 
 // function receiveColor() {
 
