@@ -13,6 +13,9 @@ header {
   text-align: center;
   margin: 10px;
 }
+.centro h1 {
+  color:#ffffff;
+}
 .centro {
   display: flex;
   flex-direction: column;
@@ -22,7 +25,8 @@ header {
   margin: 0 auto;
   min-height: 500px;
   min-width: 400px;
-  border-radius: 10%;
+  border-radius: 4%;
+  
 }
 .color {
   border: 1px solid black;
@@ -58,4 +62,10 @@ button {
   height: 40px;
   width: 40px;
   border: 1px solid black;
+}
+
+.aux p {
+  text-align: center;
+  font-size: large;
+  color: #ffffff;
 }
