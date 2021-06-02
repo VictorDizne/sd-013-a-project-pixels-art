@@ -20,6 +20,15 @@ function palette() {
 }
 palette();
 
+function clear() {
+  const buttonClear = document.querySelector('#clear-board');
+
+  buttonClear.addEventListener('click', function () {
+    location.reload();
+  });
+}
+clear();
+
 // Cria o tamanho do board
 function gradeSize() {
   const pixelBoard = document.getElementById('pixel-board');
