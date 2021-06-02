@@ -1,5 +1,6 @@
 const classColor = document.querySelectorAll('.color');
 
+//- Adiciona pallete de cores
 function colorsPalletes() {
   const pallets = ['#000000', '#F10202', '#2200FD', '#257400'];
   for (let index = 0; index < classColor.length; index += 1) {
@@ -8,6 +9,7 @@ function colorsPalletes() {
 }
 colorsPalletes();
 
+//- Cria o board
 function createBoard() {
   const idBoard = document.querySelector('#pixel-board');
   for (let index = 0; index < 25; index += 1) {
@@ -18,20 +20,21 @@ function createBoard() {
 }
 createBoard();
 
+//- Inicia com a cor preta
 function initBlack() {
-  let styleColor = classColor[0].getAttribute("style");
+  const styleColor = classColor[0].getAttribute('style');
   colorPixelBoard(styleColor);
 }
 initBlack();
 
+//- Pega uma cor no pellete e adiciona no board
 function getColor() {
   for (let index = 0; index < classColor.length; index += 1) {
-    let styleColor = classColor[index].getAttribute("style");
-    classColor[index].addEventListener("click", function(){
-      if (classColor[index].classList[1] === "selected") {
-        classColor[index].className = "color";
-      }else {
-        classColor[index].className = "color selected";
+    const styleColor = classColor[index].getAttribute('style');
+    classColor[index].addEventListener('click', function() {
+      if (classColor[index].classList[1] !== 'selected') {
+        verifySelec(index);
+        classColor[index].className = 'color selected';
         colorPixelBoard(styleColor);
       }
     });
@@ -39,6 +42,31 @@ function getColor() {
 }
 getColor();
 
+function verifySelec(indexValue) {
+  let indexClass = indexValue;
+  switch (indexClass) {
+    case 0:
+      classColor[indexClass].nextElementSibling.nextElementSibling.nextElementSibling.className = 'color';
+      classColor[indexClass].nextElementSibling.nextElementSibling.className = 'color';
+      classColor[indexClass].nextElementSibling.className = 'color';
+      break;
+    case 1:
+      classColor[indexClass].nextElementSibling.nextElementSibling.className = 'color';
+      classColor[indexClass].nextElementSibling.className = 'color';
+      classColor[indexClass].previousElementSibling.className = 'color';
+      break;
+    case 2:
+      classColor[indexClass].nextElementSibling.className = 'color';
+      classColor[indexClass].previousElementSibling.className = 'color';
+      classColor[indexClass].previousElementSibling.previousElementSibling.className = 'color';
+      break;
+    case 3:
+      classColor[indexClass].previousElementSibling.className = 'color';
+      classColor[indexClass].previousElementSibling.previousElementSibling.className = 'color';
+      classColor[indexClass].previousElementSibling.previousElementSibling.previousElementSibling.className = 'color';
+      break;
+  }
+}
 
 function colorPixelBoard(styleValue) {
   const pixel = document.querySelectorAll('.pixel');
@@ -49,6 +77,7 @@ function colorPixelBoard(styleValue) {
   }
 }
 
+//- Botão para limpar o board
 function buttonClear() {
   const idButton = document.querySelector('#clear-board');
   const pixel = document.querySelectorAll('.pixel');
