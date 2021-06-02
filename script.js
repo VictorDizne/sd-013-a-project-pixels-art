@@ -54,11 +54,13 @@ function fillColor(element) {
 
 board.addEventListener('click', fillColor);
 
-const btnClear = document.querySelector('#btn-reset');
+const btnClear = document.querySelector('#clear-board');
 
 function resetBoard() {
-  const block = document.querySelectorAll('.pixel').style.backgroundColor;
-  block.style.backgroundColor = 'white';
+  const block = document.querySelectorAll('.pixel');
+  for (let i of block) {
+    i.style.backgroundColor = 'white';
+  }
 }
 
 btnClear.addEventListener('click', resetBoard);
