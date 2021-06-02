@@ -19,6 +19,7 @@ let green = document.getElementById('green');
 let blue = document.getElementById('blue');
 
 black.className += ' selected';
+//document.querySelector('.selected').style.backgroundColor = 'black';
 
 
 // Recupera a cor do elemento clicado
@@ -36,8 +37,7 @@ black.onclick = function() {
     black.classList.remove('selected');
   }
   black.className += ' selected';
-  document.querySelector('.selselected').style.backgroundColor = 'black';
-  
+  document.querySelector('.selected').style.backgroundColor = 'black';
 }
 
 green.onclick = function() {
@@ -54,8 +54,7 @@ green.onclick = function() {
     green.classList.remove('selected');
   }
   green.className += ' selected';
-  document.querySelector('selected');
-  document.querySelector('.selselected').style.backgroundColor = 'green';
+  document.querySelector('.selected').style.backgroundColor = 'green';
 }
 
 red.onclick = function() {
@@ -72,6 +71,7 @@ red.onclick = function() {
     red.classList.remove('selected');
   }
   red.className += ' selected';
+  document.querySelector('.selected').style.backgroundColor = 'red';
 }
 
 blue.onclick = function() {
@@ -88,12 +88,16 @@ blue.onclick = function() {
     blue.classList.remove('selected');
   }
   blue.className += ' selected';
+  document.querySelector('.selected').style.backgroundColor = 'blue';
 }
 
-// Alterar a cor da class selected
-function alterColor(elment, color) {
-  document.getElementById(elment).style.backgroundColor = color;
+let pixel = document.getElementsByClassName('pixel');
+pixel.onclick = function () {
+  console.log('ok');
 }
+
+
+
 
   
 
