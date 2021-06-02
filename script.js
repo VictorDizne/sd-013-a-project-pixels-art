@@ -23,6 +23,25 @@ function createPalette() {
   }
 }
 
+function createLine(numCells) {
+  const line = document.createElement('div');
+  line.className = 'tr';
+  const cell = document.createElement('div');
+  cell.className = 'pixel td';
+
+  for (let i = 0; i < numCells; i += 1) line.appendChild(cell.cloneNode());
+
+  return line;
+}
+
+function createBoard(n = 5) {
+  const board = document.getElementById('pixel-board');
+  const line = createLine(n);
+
+  for (let j = 0; j < n; j += 1) board.appendChild(line.cloneNode(true));
+}
+
 window.onload = () => {
   createPalette();
+  createBoard();
 };
