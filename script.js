@@ -1,21 +1,51 @@
-const pixelBoard = 5;
-
 function blackSelected() {
   const black = document.querySelector('.black');
   black.classList.add('selected');
 }
-window.onload = blackSelected;
+window.onload = blackSelected, createPixelBoard(5);
+
+// Criar botão e input para controlar o tamanho do quadro
+const button = document.getElementById('generate-board');
+const input = document.getElementById('board-size');
+let pixelBoard = 5;
+
+function sizeBoard() {
+  let number = parseInt(input.value);
+
+  if (number < 5) {
+    pixelBoard = 5;
+  } else if (number > 50) {
+    pixelBoard = 50;
+  } else if (!number) {
+    alert('Board inválido!');
+  } else {
+    pixelBoard = number;
+  }
+  removeLines();
+  createPixelBoard(pixelBoard);
+  colorClick();
+  input.value = '';
+}
+
+button.addEventListener('click', sizeBoard);
+
+function removeLines() {
+  const board = document.getElementById('pixel-board');
+  while (board.firstChild) {
+    board.removeChild(board.firstChild);
+  }
+}
 
 // Cria quadro de pixels de acordo com tamanho passado para a variavel pixelBoard
-function createPixelBoard() {
+function createPixelBoard(number) {
   const board = document.getElementById('pixel-board');
 
-  for (let index = 0; index < pixelBoard; index += 1) {
+  for (let index = 0; index < number; index += 1) {
     const divLine = document.createElement('div');
     divLine.classList.add('line');
 
     board.appendChild(divLine);
-    for (let i = 0; i < pixelBoard; i += 1) {
+    for (let i = 0; i < number; i += 1) {
       const divCollum = document.createElement('div');
       divCollum.className = 'pixel';
 
@@ -23,7 +53,6 @@ function createPixelBoard() {
     }
   }
 }
-createPixelBoard();
 
 // Mudar a classe 'selected' entre elementos com a classe 'color'
 function changeSelected() {

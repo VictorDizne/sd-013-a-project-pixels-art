@@ -32,6 +32,11 @@ body {
   margin-bottom: 30px;
   padding: 10px;
 }
+
+#board-size {
+  margin-left: 50px;
+}
+
 /* quadro de pixels */
 #pixel-board {
   border: 3px solid black;
