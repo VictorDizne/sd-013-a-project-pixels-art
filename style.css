@@ -1,24 +1,30 @@
 body {
   text-align: center;
 }
+
 .color {
   display: inline-block;
   width: 100px;
   height: 100px;
   border: black solid 1px;
 }
+
 #color-one {
   background-color: black;
 }
+
 #color-two {
   background-color: red;
 }
+
 #color-three {
   background-color: green;
 }
+
 #color-four {
   background-color: blue;
 }
+
 .pixel {
   width: 40px;
   height: 40px;
