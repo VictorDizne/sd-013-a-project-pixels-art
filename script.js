@@ -13,11 +13,11 @@ const colorThree = document.querySelector('.three');
 const colorFour = document.querySelector('.four');
 
 window.onload = function blackStarts() {
-  colorOne.className = 'color one selected';
-}
+  colorOne.classList.add('selected');
+};
 
 function getFirstColor() {
-  colorOne.className = 'color one selected';
+  colorOne.classList.add('selected');
   colorTwo.className = 'color two';
   colorThree.className = 'color three';
   colorFour.className = 'color four';
@@ -25,7 +25,7 @@ function getFirstColor() {
 
 function getSecondColor() {
   colorOne.className = 'color one';
-  colorTwo.className = 'color two selected';
+  colorTwo.classList.add('selected');
   colorThree.className = 'color three';
   colorFour.className = 'color four';
 }
@@ -33,7 +33,7 @@ function getSecondColor() {
 function getTirdColor() {
   colorOne.className = 'color one';
   colorTwo.className = 'color two';
-  colorThree.className = 'color three selected';
+  colorThree.classList.add('selected');
   colorFour.className = 'color four';
 }
 
@@ -41,7 +41,7 @@ function getFourthColor() {
   colorOne.className = 'color one';
   colorTwo.className = 'color two';
   colorThree.className = 'color three';
-  colorFour.className = 'color four selected';
+  colorFour.classList.add('selected');
 }
 
 let pixel = document.querySelectorAll('.pixel');
