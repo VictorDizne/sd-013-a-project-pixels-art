@@ -11,7 +11,6 @@ body {
 #title {
   text-align: center;
   color: white;
-  margin-left: 10px;
 }
 
 .color {
@@ -29,4 +28,7 @@ body {
   width: 36px;
   height: 36px;
   border: 1px solid black;
+}
+.section {
+  margin-left: 10px;
 }
