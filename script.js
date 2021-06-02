@@ -1,29 +1,39 @@
+criaPixelBoard();
 
-// onload = function criaQuadro(){
-//     for (let i = 0; i > 5 ; i++) {
-//         let tempPixel = document.createElement('div');
-//         tempPixel.className = 'pixel';
-//         console.log(tempPixel.className)
-//         document.querySelector('pixel-board').appendChild(tempPixel);
+function resetBoard(){
+    window.location.reload();
+}
 
-    
-//     }
-// }
+function criaPixelBoard() {
+    for (let index = 0; index < 5; index += 1) {
+      let pixelBoard = document.querySelector('#pixel-board');
+      let line = document.createElement('div');
+      pixelBoard.appendChild(line);
+      for (let index = 0; index < 5; index += 1) {
+        let div = document.createElement('div');
+        div.className = 'pixel';
+        line.appendChild(div);
+      }
+    }
+  } 
+  
+function mudaCor(event) {
+  let corAtual = document.querySelector('.selected');
+  corAtual.className = 'color';
+  event.target.className = 'color selected';
+};
 
-// onclick = function changebackground(){
-// 	document.getElementsByClassName('pixel')[0].style.backgroundColor ='green';     console.log(document.getElementsByClassName('pixel').style.backgroundColor)
-// }
+let paletteArray = document.querySelectorAll('#color-palette div');
+for (let i = 0; i < paletteArray.length; i += 1) {
+  paletteArray[i].addEventListener('click', mudaCor);
+};
+  
+function changePixels(event) {
+  let corAtual = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = corAtual;
+}
 
-
-// onclick = function changeColor(){
-//     let isso = document.querySelector('.pixel .pixel');
-//     console.log(isso)
-//     console.log(isso.style.backgroundColor)
-//     return isso;
-
-// }
-
-// se  div id="color-palette , faz seleciona a cor da class color
-
-
-//se div id="pixel-board" , pinta a class "pixel"
+let pixelsArray = document.querySelectorAll('.pixel');
+for (let i = 0; i < pixelsArray.length; i += 1) {
+  pixelsArray[i].addEventListener('click', changePixels);
+}; 

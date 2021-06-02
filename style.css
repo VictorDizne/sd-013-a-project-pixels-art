@@ -1,12 +1,25 @@
 .color {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    background-color: black;
-    border: solid black;
-    border-width: 1px;
+  border: 1px solid;
+  display: inline-block;
+  padding: 50px;
 }
 
+.pixel {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border: 1px solid;
+  background-color: rgb(255, 255, 255);
+}
+
+#clear-board {
+    background-color: white;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+}
+
+/* 
 #cor1 {
     background-color: red;
 }
@@ -18,13 +31,4 @@
 #cor3 {
     background-color: green;
 }
-
-.pixel {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-color:white;
-    outline-color: black;    
-    outline-style: solid;
-    outline-width: 1px;
-}
+*/
