@@ -1,6 +1,9 @@
 window.onload = function () {
 
   // Cria quadrado de pixels 5 x 5
+  let table = document.createElement('table');
+  table.id = 'table';
+  document.getElementById('pixel-board').appendChild(table);
   for (let line = 0 ; line < 5 ; line++) {
     let pixelLine = document.createElement('tr');
       for (let colum = 0 ; colum < 5 ; colum++) {
@@ -8,7 +11,7 @@ window.onload = function () {
         pixelData.className = 'pixel';
         pixelLine.appendChild(pixelData);
       }  
-    document.getElementById('pixel-board').appendChild(pixelLine);
+    document.getElementById('table').appendChild(pixelLine);
   }
 
   // Inicia com cor preta selecionada
@@ -19,6 +22,8 @@ window.onload = function () {
 
   black.className += ' selected';
 
+
+  // Recupera a cor do elemento clicado
   black.onclick = function() {
     if (green.className === 'color selected') {
       green.classList.remove('selected');
@@ -43,6 +48,7 @@ window.onload = function () {
       blue.classList.remove('selected');
     }
     green.className += ' selected';
+    document.querySelector('selected');
   }
 
   red.onclick = function() {
@@ -69,28 +75,13 @@ window.onload = function () {
       green.classList.remove('selected');
     }
     blue.className += ' selected';
+    alterColor(blue, blue)
   }
 
-
- 
-  /* let color;
-  black.onclick = function () {
-    color = 'black';
+  // Alterar a cor da class selected
+  function alterColor(elment, color) {
+    document.getElementById(elment).style.backgroundColor = color;
   }
-  red.onclick = function () {
-    color = 'red';
-  }
-  green.onclick = function () {
-    color = 'green';
-  }
-  blue.onclick = function () {
-    color = 'blue';
-  } */
-
-  
-  
-    
-
 
   
 }

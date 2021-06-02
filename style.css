@@ -35,7 +35,3 @@ table {
   column-span: unset;
   border-collapse: collapse;
 }
-
-.selected {
-  background-color: black;
-}
