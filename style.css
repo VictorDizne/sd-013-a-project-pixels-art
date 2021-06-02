@@ -1,0 +1,13 @@
+.color {
+  border: 1px solid;
+  display: inline-block;
+  padding: 50px;
+}
+
+.pixel {
+  border: 1px solid;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(255, 255, 255);
+}
