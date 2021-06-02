@@ -2,3 +2,36 @@
 text-align: center;
 color: darkslategrey;
 }
+.color {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+#black {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 10px;
+    border: black solid 1px;
+}
+#blue {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+    border: black solid 1px;
+}
+#orange {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 115, 0);
+    margin: 10px;
+    border: black solid 1px;
+}
+#green {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(3, 158, 3);
+    margin: 10px;
+    border: black solid 1px;
+}
