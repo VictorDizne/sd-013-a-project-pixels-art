@@ -25,3 +25,15 @@
   background-color: green;
   color: white;
 }
+
+table, td {
+  border: solid black 1px;
+  width: 700px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.pixel {
+  background-color: white;
+}
