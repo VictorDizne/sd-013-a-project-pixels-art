@@ -1,7 +1,14 @@
+* {
+  margin: auto;
+  border: 0;
+  text-align: center;
+  font-family: monospace;
+}
+
 .color {
   border: black solid 1px;
   display: inline-block;
-  padding: 40px;
+  padding: 30px;
 }
 
 .one {
@@ -26,9 +33,12 @@
   height: 40px;
   width: 40px;
   margin: 0.5px;
-  margin-top: 0;
 }
 
 #pixel-board {
-  width: 250px;
+  width: 215px;
+}
+
+#color-palette, h1 {
+  margin: 20px;
 }

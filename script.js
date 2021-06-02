@@ -1,45 +1,62 @@
 const pixelBoard = document.getElementById('pixel-board');
 
 for (let i = 0; i < 25; i += 1) {
-  const pixel = document.createElement('div');
+  let pixel = document.createElement('div');
   pixel.className = 'pixel';
   pixelBoard.appendChild(pixel);
   pixel.style.backgroundColor = 'rgb(255, 255, 255)';
-}
+  // pixel.addEventListener('click', paint);
+};
 
-let colorOne = document.querySelector('.one');
-let colorTwo = document.querySelector('.two');
-let colorThree = document.querySelector('.three');
-let colorFour = document.querySelector('.four');
+const colorOne = document.querySelector('.one');
+const colorTwo = document.querySelector('.two');
+const colorThree = document.querySelector('.three');
+const colorFour = document.querySelector('.four');
 
-window.onload = function blackFirst () {
+window.onload = function blackStarts() {
   colorOne.className = 'color one selected';
 };
 
-colorOne.addEventListener('click', function () {
+colorOne.addEventListener('click', getFirstColor);
+colorTwo.addEventListener('click', getSecondColor); 
+colorThree.addEventListener('click', getTirdColor);
+colorFour.addEventListener('click', getFourthColor);
+
+function getFirstColor() {
   colorOne.className = 'color one selected';
   colorTwo.className = 'color two';
   colorThree.className = 'color three';
   colorFour.className = 'color four';
-});
+};
 
-colorTwo.addEventListener('click', function () {
+function getSecondColor() {
   colorOne.className = 'color one';
   colorTwo.className = 'color two selected';
   colorThree.className = 'color three';
   colorFour.className = 'color four';
-});
+};
 
-colorThree.addEventListener('click', function () {
+function getTirdColor() {
   colorOne.className = 'color one';
   colorTwo.className = 'color two';
   colorThree.className = 'color three selected';
   colorFour.className = 'color four';
-});
+};
 
-colorFour.addEventListener('click', function () {
+function getFourthColor() {
   colorOne.className = 'color one';
   colorTwo.className = 'color two';
   colorThree.className = 'color three';
   colorFour.className = 'color four selected';
-});
+};
+
+let pixel = document.querySelectorAll('.pixel');
+for (let j = 0; j < pixel.length; j += 1) {
+  pixel[j].addEventListener('click', paint);
+};
+
+function paint(event) {
+  let colorSelected = document.querySelector('.selected');
+  let cssStyle = window.getComputedStyle(colorSelected).getPropertyValue("background-color");
+  event.target.style.backgroundColor = cssStyle;
+}
