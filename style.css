@@ -5,7 +5,6 @@
 }
 
 body {
-  background-image: url('pixel-art-witcher.png');
   background-color: sandybrown;
 }
 
@@ -38,18 +37,6 @@ body {
   background-color: black;
 }
 
-.color:nth-of-type(2) {
-  background-color: red;
-}
-
-.color:nth-of-type(3) {
-  background-color: yellow;
-}
-
-.color:nth-of-type(4) {
-  background-color: aqua;
-}
-
 #pixel-board {
   display: table;
   margin: 0 auto;
@@ -69,15 +56,28 @@ body {
   cursor: pointer;
 }
 
-.btn-clear {
-  max-width: 70px;
-  margin: 0 auto;
+.btns {
+  max-width: 283px;
+  margin: 0 auto 15px;
+  display: flex;
 }
 
-#clear-board {
+.btns button {
+  display: inline-block;
   cursor: pointer;
   width: 70px;
-  height: 20px;
-  margin: 0 0 30px;
-  border: 1px groove black;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
+
+.btns input {
+  max-height: 30px;
+  max-width: 50px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 0 0 0 90px;
+  font-size: 20px;
+  text-align: center;
+}
+
