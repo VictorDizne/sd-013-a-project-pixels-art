@@ -51,3 +51,9 @@ h1{
   display: table-cell;
 }
 
+#clear-board{
+  margin-left: 50%;
+  margin-right: 50%;
+  height: 20px;
+  width: 150px;
+}

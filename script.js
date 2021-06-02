@@ -20,7 +20,14 @@ function paleta() {
 }
 paleta();
 
-
+//botao de apagar
+function clear() {
+    const clearButton = document.getElementById('clear-board');
+    clearButton.addEventListener('click', function(){
+        location.reload()//--recarrega a pagina atual--//
+    })
+}
+clear()
 //seleciona cor da paleta
 let cor = document.querySelector('.selected');
 function colorSelect() {
@@ -36,16 +43,16 @@ function colorSelect() {
 }
 colorSelect();
 
-//dando cor aos vlocos
-function colorBlocks() {
+//dando cor aos blocos
+function blocks() {
     const allBlocks = document.getElementById('pixel-board');
 
     allBlocks.addEventListener('click', (event) => {
-    const colorBlock = 
-    window.getComputedStyle(cor, null)
-    window.getPropertyValue('background-color');
-    event.target.style.backgroundColor = colorBlock;
-    console.log(cor.backgroundColor);
+    const corBlocos = window
+        .getComputedStyle(cor, null) //--retorna um objeto contendo os valores de todas as propriedades CSS de um elemento--//
+        .getPropertyValue('background-color');//--retorna o valor de uma propriedade--//
+        event.target.style.backgroundColor = corBlocos;
+        console.log(cor.backgroundColor);
     });
-}
-colorBlocks();
+  }
+  blocks();
