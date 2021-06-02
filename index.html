@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Projeto Pixel Art</title>
+    <link href="jquery.nice-number.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -14,9 +15,14 @@
     <main>
       <section id="color-palette"></section>
       <section id="inputs">
-        <button id="clear-board">Limpar tela</button>
-        <button id="random">Random color</button>
-        <input type="text">
+        <div id="tools">
+          <button id="clear-board">Limpar tela</button>
+          <button id="random">Random color</button>
+        </div>
+        <div id="size">
+          <input type="number" placeholder="size" id="board-size" min="1" max="50">
+          <button id="generate-board">VQV</button> <span></span>
+        </div>
       </section>
       <section id="pixel-board"></section>
     </main>

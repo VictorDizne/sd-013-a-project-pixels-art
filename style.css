@@ -48,3 +48,12 @@ body, header, #pixel-board {
 .tr {
   display: table-row;
 }
+
+#inputs, #size {
+  margin: 10px;
+}
+
+input {
+  text-align: center;
+  width: 45px;
+}

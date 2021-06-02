@@ -1,11 +1,14 @@
 const colorPalette = document.querySelector('#color-palette');
-const divsPalette = document.querySelector('#color-palette').children;;
-let pixelBoard = document.querySelector('#pixel-board');
+const divsOfPalette = document.querySelector('#color-palette').children;;
+const pixelBoard = document.querySelector('#pixel-board');
 let tr = document.querySelector('#pixel-board').children;
 let colors = [];
 let colorSelected = 'black';
 let btnClear = document.querySelector('#clear-board');
 let btnRandom = document.querySelector('#random');
+let btnChangeSize = document.querySelector('#generate-board');
+let txtSize = document.querySelector('#board-size');
+let numLinesAndColumn = 5;
 
 
 function createColorPalette() {
@@ -39,7 +42,7 @@ function storeRandomColors(index, div) {
 
 
 function createLines() {
-  for (let numLine = 0; numLine < 5; numLine += 1) {
+  for (let numLine = 0; numLine < numLinesAndColumn; numLine += 1) {
     const line = document.createElement('div');
     line.className = 'tr';
     pixelBoard.appendChild(line);
@@ -49,7 +52,7 @@ function createLines() {
 function createPixels() {
 
   for (let line = 0; line < tr.length; line += 1) {
-    for (let column = 0; column < 5; column += 1) {
+    for (let column = 0; column < numLinesAndColumn; column += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       tr[line].appendChild(pixel);
@@ -58,8 +61,22 @@ function createPixels() {
 }
 
 function resetClassSelected() {
-  for (let index = 0; index < divsPalette.length; index += 1) {
-    divsPalette[index].className = 'color';
+  for (let index = 0; index < divsOfPalette.length; index += 1) {
+    divsOfPalette[index].className = 'color';
+  }
+}
+
+function resetColorPalette() {
+  let count = colorPalette.childElementCount;
+  for (let index = 0; index < count; index += 1) {
+    colorPalette.removeChild(colorPalette.children[0]);
+  }
+}
+
+function resetPixelBoard() {
+  let count = pixelBoard.childElementCount;
+  for (let index = 0; index < count; index += 1) {
+    pixelBoard.removeChild(pixelBoard.children[0]);
   }
 }
 
@@ -91,11 +108,21 @@ window.onload = function inicio() {
   });
 
   btnRandom.addEventListener('click', function() {
-    let count = colorPalette.childElementCount;
-    for (let index = 0; index < count; index += 1) {
-      colorPalette.removeChild(colorPalette.children[0]);
-    }
+    resetColorPalette();
     createColorPalette();
+  });
+
+  btnChangeSize.addEventListener('click', function() {
+    if (txtSize.value === '') {
+      alert('Board inválido!');
+      document.querySelector('input').style.border = '3px solid red';
+      setTimeout(() => { document.querySelector('input').style.border = '1px solid black'; }, 2000);
+    } else {
+      numLinesAndColumn = parseInt(txtSize.value, 10);
+      resetPixelBoard();
+      createLines();
+      createPixels();
+    }
   });
 
   document.addEventListener('click', function (event) {
@@ -103,6 +130,6 @@ window.onload = function inicio() {
       console.log('pixel clicado')
       event.target.style.backgroundColor = colorSelected;
     }
-  })
+  });
 };
 
