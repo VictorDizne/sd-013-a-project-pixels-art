@@ -1,6 +1,8 @@
 const paletaColor = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
-const bntClear = document.getElementById('clear-board')
+const bntClear = document.getElementById('clear-board');
+const bntPixelBoard = document.getElementById('generate-board');
+
 // função retorna uma valor de 0 ao numero
 function randomNumber(numero) {
   return Math.floor(Math.random() * numero);
@@ -8,12 +10,15 @@ function randomNumber(numero) {
 
 // Criar as div com cores diferente
 function randomColorDiv() {
-  const listCor = ['red', 'blue', 'yellow', 'green'];
+  const listCor = [
+    'Silver', 'Gray', 'Red', 'Maroon',
+    'Yellow', 'Olive', 'Lime', 'Aqua', 'Blue', 'Navy',
+    'Fuchsia', 'Purple',
+  ];
   const listaCorDiv = document.getElementsByClassName('color');
   listaCorDiv[0].style.backgroundColor = 'black'; // Primeiro div Black
-  listaCorDiv[0].className
 
-  for (let el of listaCorDiv) {
+  for (const el of listaCorDiv) {
     if (el.style.backgroundColor !== 'black') {
       // Usa a cor e deleta ela da lista.
       el.style.backgroundColor = listCor.splice(randomNumber(listCor.length), 1);
@@ -22,54 +27,80 @@ function randomColorDiv() {
 }
 
 // Criar o quadro de pixels
-function createPixelBord() {
-  const pixelBoard = document.getElementById('pixel-board')
-
-  for (let linha = 0; linha < 5; linha++) {
-    let divLinha = document.createElement('div')
-    for (let coluna = 0; coluna < 5; coluna++) {
-      let divCelular = document.createElement('div')
-      divCelular.className = 'pixel'
-      divLinha.appendChild(divCelular)
+function createPixelBord(numero = 5) {
+  const pixelBordDiv = document.getElementById('pixel-board');
+  for (let linha = 0; linha < numero; linha += 1) {
+    const divLinha = document.createElement('div');
+    divLinha.className = 'linha';
+    for (let coluna = 0; coluna < numero; coluna += 1) {
+      const divCelular = document.createElement('div');
+      divCelular.className = 'pixel';
+      divLinha.appendChild(divCelular);
     }
-    pixelBoard.appendChild(divLinha)
+    pixelBordDiv.appendChild(divLinha);
   }
 }
 
 // Função que seleciona a cor
 function selectCorClick(elemet) {
-  const listPaleta = document.getElementsByClassName('color')
-  for (let select of listPaleta) {
-    if(elemet.target.className !== ''){
-      select.className = 'color'
+  const el = elemet;
+  const listPaleta = document.getElementsByClassName('color');
+  for (const select of listPaleta) {
+    if (el.target.className !== '') {
+      select.className = 'color';
     }
   }
 
-  if(elemet.target.className === 'color'){
-    elemet.target.className = 'color selected '
+  if (el.target.className === 'color') {
+    el.target.className = 'color selected ';
   }
 }
 
-paletaColor.addEventListener('click', selectCorClick)
+paletaColor.addEventListener('click', selectCorClick);
 
 // Usar cor selecionada para pinta a div
-function useSelectedColor(event){
+function useSelectedColor(elemet) {
+  const el = elemet;
   const corSelect = document.getElementsByClassName('color selected')[0];
-  event.target.style.backgroundColor  = corSelect.style.backgroundColor
-  console.log(event.target,corSelect.style.backgroundColor);
+  el.target.style.backgroundColor = corSelect.style.backgroundColor;
 }
 
-function resetColor(){
-  const pixelDiv = document.querySelectorAll('.pixel')
-  for(let div of pixelDiv){
+function resetColor() {
+  const pixelDiv = document.querySelectorAll('.pixel');
+  for (const div of pixelDiv) {
     div.style.backgroundColor = 'white';
   }
 }
 
-pixelBoard.addEventListener('click', useSelectedColor)
-bntClear.addEventListener('click', resetColor)
+// Função para Criar uma Pixel board personalizada.
+function pixelBoardSize() {
+  // Seleciona o pai para pode deleta o filhos
+
+  let inputPixelBoard = Number(document.getElementById('board-size').value);
+  if (inputPixelBoard <= 0) {
+    return alert('Board inválido!');
+  }
+
+  if (inputPixelBoard >= 51) {
+    inputPixelBoard = 50;
+  } else if (inputPixelBoard <= 5) {
+    inputPixelBoard = 5;
+  }
+
+  // lista de filhos para deleta
+  const linhaPixel = document.querySelectorAll('.linha');
+
+  for (const linha of linhaPixel) {
+    pixelBoard.removeChild(linha);
+  }
+
+  createPixelBord(inputPixelBoard);
+}
+pixelBoard.addEventListener('click', useSelectedColor);
+bntClear.addEventListener('click', resetColor);
+bntPixelBoard.addEventListener('click', pixelBoardSize);
 
 window.onload = () => {
   randomColorDiv();
-  createPixelBord();
+  createPixelBord(5);
 };
