@@ -11,6 +11,21 @@ window.addEventListener('load', function addClassColor () {
       colors.classList.add('selected')
     }
   }
+
+  let selectColor = document.querySelector('#color-palette').firstElementChild
+  console.log (selectColor.children.length)
+  selectColor.addEventListener('click',addColor)
+
+  function addColor (event) {
+    for (let index = 0; selectColor.children.length > index; index += 1) {
+      if (selectColor.children[index].classList.contains('selected')) {
+        selectColor.children[index].classList.remove('selected')
+      }
+    }
+    event.target.classList.add('selected')
+    console.log (event.target.style.backgroundColor)
+  }  
+  
 });
 
 const pixeis = 5
@@ -25,3 +40,6 @@ window.addEventListener ('load', function addPixel () {
       }
   }
 });
+
+
+
