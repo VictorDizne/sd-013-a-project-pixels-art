@@ -1,4 +1,4 @@
-body{
+body {
   background-color: grey;
   justify-content: center;
 }
@@ -13,12 +13,8 @@ body{
   height: 40px;
   display: inline-block;
 }
-#color-palette{
-  
-}
 #pixel-board {
-  display: table;
-  
+  display: table;  
 }
 #tr {
   display: table-row;
