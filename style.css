@@ -19,6 +19,6 @@
   background-color: white;
 }
 
-#pixel-board {
+#pixel-board , #clear-board {
   margin-top: 20px;
 }

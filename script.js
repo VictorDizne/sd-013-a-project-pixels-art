@@ -1,4 +1,6 @@
 const colors = document.getElementsByClassName('color');
+const pixels = document.getElementsByClassName('pixel');
+const btnClear = document.getElementById('clear-board');
 
 /** Returns a random hexadecimal color except #ffffff (white). */
 function getRandomColor() {
@@ -62,9 +64,17 @@ function onClickEvents(e) {
   }
 }
 
+function clearPixels() {
+  // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/getElementsByClassName#examples
+  Array.prototype.map.call(pixels, (pixel) => {
+    pixel.style.removeProperty('background-color');
+  });
+}
+
 window.onload = () => {
   createPalette();
   createBoard();
   selectColorBlack();
   document.addEventListener('click', onClickEvents); // Event Bubbling
+  btnClear.addEventListener('click', clearPixels);
 };
