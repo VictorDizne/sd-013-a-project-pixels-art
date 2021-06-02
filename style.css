@@ -1,3 +1,11 @@
+/* configuração global e variáveis */
+:root {
+  --first_palette: black;
+  --second_palette: red;
+  --third_palette: green;
+  --fourth_palette: blue;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,3 +28,9 @@ tr {
 td {
   width: 80px;
 }
+
+/* adiciona cores à paleta */
+.black-palette { background-color: var(--first_palette); }
+.red-palette { background-color: var(--second_palette); }
+.green-palette { background-color: var(--third_palette); }
+.blue-palette { background-color: var(--fourth_palette); }
