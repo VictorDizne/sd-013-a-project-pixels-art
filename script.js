@@ -4,7 +4,11 @@ window.onload = function () {
   for (let i = 0; i < 4; i += 1) {
     paletaCores[i].style.backgroundColor = colorArray[i];
   }
-  let pixels = document.getElementById('pixel-board');
+  function criaElemento(nome) {
+    const elemento = document.createElement(nome);
+    return elemento;
+  }
+  const pixels = document.getElementById('pixel-board');
   for (let i = 0; i < 5; i += 1) {
     const horizontal = criaElemento('tr');
     pixels.appendChild(horizontal);
@@ -13,9 +17,5 @@ window.onload = function () {
       vertical.className = 'pixel';
       pixels.lastElementChild.appendChild(vertical);
     }
-  }
-  function criaElemento(nome) {
-    const elemento = document.createElement(nome);
-    return elemento;
   }
 };
