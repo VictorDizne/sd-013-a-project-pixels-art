@@ -4,8 +4,8 @@ h1 {
 
 .color {
   border: 1px solid black;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   margin-left: 37px;
 }
@@ -28,13 +28,13 @@ h1 {
 
 #pixel-board {
   margin-top: 25px;
-  margin-left: 73px;
+  margin-left: 68px;
 }
 
 .pixel {
   background-color: #fff;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   display: inline-block;
 }
