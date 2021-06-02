@@ -1,23 +1,45 @@
 body {
-    margin: 0 auto;
-    padding: 0;
-}
-.color {
-    display: inline-block;
-    border: 1px solid black;
-    width: 25px;
-    height: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-#pixel-board{
-    display: table;
-    width: auto;
-    border: 1px solid black;
+h1 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
+
+#color-palette {
+  width: 121px;
+  margin: 5px auto;
+}
+
+.center {
+  width: 165px;
+  margin: 10px auto;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+}
+
+#pixel-board {
+  display: table;
+  width: auto;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .pixel {
-    display: table-cell;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
 }
