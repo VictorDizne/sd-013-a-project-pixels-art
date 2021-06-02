@@ -22,11 +22,9 @@ window.addEventListener('load', function addClassColor () {
       }
     }
     event.target.classList.add('selected')
-    document.querySelector('.selected').style.backgroundColor = event.target.style.backgroundColor
+    document.querySelector('.selected').style.git = event.target.style.backgroundColor
     console.log (document.querySelector('.selected').style.backgroundColor)
   }  
-
-  
 
   let selectorPixel = document.querySelector('#pixel-board')
   selectorPixel.addEventListener('click', addColorInPixel)
@@ -40,6 +38,18 @@ window.addEventListener('load', function addClassColor () {
       eventColor.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor
     }
     console.log (eventColor.target)
+  }
+
+  let cleanBottom = document.querySelector('#clear-board')
+  let pixelsClean = document.getElementsByClassName('pixel')
+  console.log (pixelsClean.length)
+  cleanBottom.addEventListener('click',clearBoard)
+
+  function clearBoard () {
+    for (let key in pixelsClean)
+    if (key < pixelsClean.length) {
+      pixelsClean[key].style.backgroundColor = 'white'
+    }
   }
 
 });
