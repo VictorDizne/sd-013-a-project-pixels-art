@@ -9,7 +9,7 @@ function classeSelecionada() { // questao explicada pela Julia e Luiza.
   corDaPaleta.addEventListener('click', (evento) => { // requisito resolvido com a ajuda da Jessica.
     if (evento.target.classList.contains('color')) {
       for (let i = 0; i < selecionaPaletaFilhos.length; i += 1) {
-        selecionaPaletaFilhos[i].classlist.remove('selected');
+        selecionaPaletaFilhos[i].classList.remove('selected');
       }
       evento.target.classList.add('selected');
     }
