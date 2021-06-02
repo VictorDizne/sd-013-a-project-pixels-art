@@ -34,3 +34,19 @@
     width: 250px;
     background-color: white;
 }
+
+button {
+    margin: 10px;
+}
+
+#clear-board {
+    background-color: #eee;
+    display: inline-block;
+    width: 100%;
+}
+
+#botao {
+    display: inline-block;
+    padding: 15px 50px;
+    
+}
