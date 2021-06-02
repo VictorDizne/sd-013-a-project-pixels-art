@@ -1,0 +1,55 @@
+body {
+
+}
+#cor {
+  width: 230px;
+  border: 1px solid black;
+  height: 60px;
+}
+.preto{
+  width: 50px;
+  border: 1px solid black;
+  height: 50px;
+  margin:1%;
+  background-color: black;
+  display: inline-block;
+}
+.vermelho{
+  width: 50px;
+  border: 1px solid black;
+  height: 50px;
+  margin:1%;
+  background-color: red;
+  display: inline-block;
+}
+.verde{
+  width: 50px;
+  border: 1px solid black;
+  height: 50px;
+  margin:1%;
+  background-color: green;
+  display: inline-block;
+}
+.amarelo{
+  width: 50px;
+  border: 1px solid black;
+  height: 50px;
+  margin:1%;
+  background-color: yellow;
+  display: inline-block;
+}
+#border{
+ margin-top: 2%;
+}
+#pixel-board{
+  height: 41px;
+  width: auto
+}
+.pixel{
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+
+}
