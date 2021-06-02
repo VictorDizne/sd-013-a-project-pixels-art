@@ -5,7 +5,7 @@
 }
 
 body {
-	background-color: rgb(77, 77, 77);
+  background-color: rgb(77, 77, 77);
 }
 
 .container {
@@ -19,6 +19,11 @@ header {
 	color: aliceblue;
 	grid-column: 1/4;
 	grid-row: 1/2;
+}
+
+.header1 {
+	text-align: center;
+	font-size: xx-large;
 }
 
 main {
@@ -35,9 +40,8 @@ footer {
 	grid-row: 5/6;
 }
 
-header .palette-name {
+.palette-name {
 	background-color: aqua;
-	grid-column: 1/2;
 }
 
 #color-palette {
@@ -57,4 +61,8 @@ header .palette-name {
 	height: 40px;
 	width: 40px;
 	display: inline-block;
+}
+
+#clear-board:hover {
+	cursor: pointer;
 }

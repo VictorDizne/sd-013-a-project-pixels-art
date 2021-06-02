@@ -1,5 +1,6 @@
 const colorPalette = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
+const eraser = document.querySelector('#clear-board');
 
 function createPaletteDivs () {
 	const colors = ['black', 'red', 'gray', 'green'];
@@ -76,3 +77,11 @@ for (let index = 0; index < 25; index++){
 		toPaint.style.backgroundColor = selected.style.backgroundColor
 	})
 }
+
+eraser.addEventListener('click', () => {
+	let squares = document.querySelectorAll('.pixel');
+	for (index in squares) {
+		let square = squares[index];
+		square.style.backgroundColor = 'white'
+	}
+})
