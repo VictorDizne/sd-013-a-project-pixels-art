@@ -1,3 +1,7 @@
+body {
+  padding: 0;
+  margin: 0;
+}
 #cabecalho {
   margin-bottom: 20px;
   padding: 20px;
@@ -19,7 +23,12 @@
 }
 
 .pixel {
+  background-color: white;
   width: 36px;
   height: 36px;
   border: 1px solid black;
+}
+
+.section {
+  margin-left: 10px;
 }
