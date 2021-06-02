@@ -16,12 +16,9 @@
 #pixel-board{
   margin-top: 50px;
   margin-left: 5px;
-  width: 210px;
-  height: 210px;
 }
 .row{
   height: 40px;
-  width: 210px;
 }
 .pixel{
   display: inline-block;
