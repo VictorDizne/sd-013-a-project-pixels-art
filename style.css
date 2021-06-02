@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+}
+
+body{ 
+  text-align: center;
+}
+
+.color {
+  border: black solid 1px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+}
+
+#first-color {
+  background-color: black;
+}
+
+#second-color {
+  background-color: red;
+}
+
+#third-color {
+  background-color: purple;
+}
+
+#fourth-color {
+  background-color: green;
+}
