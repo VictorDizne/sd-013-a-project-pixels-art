@@ -1,3 +1,7 @@
+body {
+    background-color: #f9eac3;
+}
+
 header {
     text-align: center;
     width: 100%;
@@ -15,47 +19,47 @@ header {
 
 #black {
     background-color: black;
-    border: solid 1px black;
-    margin-right: 5px;
 }
 
 #red {
     background-color: red;
-    border: solid 1px black;
 }
 
 #green {
     background-color: green;
-    border: solid 1px black;
 }
 
 #blue {
     background-color: blue;
-    border: solid 1px black;
 }
 
 #color-palette {
+    display: table;
     margin-bottom: 10px;
     margin-left: 20px;
     margin-top: 10px;
+    border-collapse: separate;
+    border-spacing: 5px;
 }
 
 .color {
     display: table-cell;
-    width: 40px;
-    height: 40px;;
-    padding-left: 5px;
+    width: 41px;
+    height: 41px;
+    border: solid 1px black;
+    cursor: pointer;
 }
 
 #pixel-board {
-    width: 210px;
-    height: 210px;
+    border-collapse: collapse;
+    margin-left: 10px;
 }
 
 .pixel {
-    width: 40px;
-    height: 40px;
+    width: 41px;
+    height: 41px;
     border: solid 1px black;
-    float: left;
     background-color: white;
+    padding: 0;
+    cursor: pointer;
 }
