@@ -1,19 +1,7 @@
-* {
-  box-sizing: border-box;
-}
 
-section {
-  display: block;
-}
-
-#title {
-  text-align: center;
-}
-
-
-
-#main-container {
-  text-align: center;
+body {
+  background-color: grey
+  
 }
 
 #color-palette div{
@@ -24,14 +12,21 @@ section {
 }
 
 #pixel-board {
+  display: table;
   text-align: center;
-  display: grid;
-  width: 200px;
-  border: 1px solid black;
+  width: 270px;
 }
 
 .pixel {
+  border: 1px solid black;
+  display: table-cell;
+  background-color: white;
   width: 50px;
   height: 50px;
 }
+
+.pixel-board-line {
+  display: table-row;
+}
+
 
