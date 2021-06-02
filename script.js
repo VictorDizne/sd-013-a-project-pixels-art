@@ -40,16 +40,17 @@ divcolor4[0].addEventListener('click', selectColor);
 // Fonte: Li uma thread do requisito no Slack e busquei melhor em:
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 // https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue
-function paintColor(acao) {
+function paintColor(event) {
+  const evento = event;
   const selectedElement = document.querySelector('.selected');
   const SelectColor = window.getComputedStyle(selectedElement).getPropertyValue('background-color');
-  acao.target.style.backgroundColor = SelectColor;
+  evento.target.style.backgroundColor = SelectColor;
 }
 
 pixelBoard.addEventListener('click', paintColor);
 
 function cleanFunction() {
-  pixelado.forEach(posicao => {posicao.style.backgroundColor = 'white';});
+  pixelado.forEach(posicao => { (posicao.style.backgroundColor) = 'white'; });
 }
 
 // for (let index in pixelado) {
