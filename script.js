@@ -1,23 +1,34 @@
-const colorPalette = document.querySelector('#color-palette');
 const colorBlack = document.querySelector('#black');
 const colorBlue = document.querySelector('#blue');
 const colorRed = document.querySelector('#red');
 const colorGreen = document.querySelector('#green');
 
-const pixelBoard = document.querySelector('#pixel-board');
-const tabela = document.querySelector('#table');
+function pintaCor(event) {
+  const selected = document.querySelector('.selected');
+  event.target.style.backgroundColor = selected.innerHTML;
+}
 
-let tabelaTd = '<td class="pixel"></td>';
-for (let i = 0; i < 4; i += 1) {
-  tabelaTd += '<td class="pixel"></td>';
+function pixel() {
+  const linhas = document.querySelectorAll('.linha');
+  for (let i = 0; i < linhas.length; i += 1) {
+    for (let j = 0; j < 5; j += 1) {
+      const td = document.createElement('td');
+      td.classList.add('pixel');
+      td.addEventListener('click', pintaCor);
+      linhas[i].appendChild(td);
+    }
+  }
 }
-tabelaTd = `<tr> ${tabelaTd} </tr>`;
-let aux = tabelaTd;
-for (let i = 0; i < 2; i += 1) {
-  aux += tabelaTd + tabelaTd;
+
+function linha() {
+  for (let i = 0; i < 5; i += 1) {
+    const tr = document.createElement('tr');
+    tr.classList.add('linha');
+    document.querySelector('#table').appendChild(tr);
+  }
+  pixel();
 }
-tabelaTd = aux;
-pixelBoard.innerHTML = `<table id="table"> ${tabelaTd} </table>`;
+linha();
 
 function seleciona(event) {
   const classSelected = document.querySelector('.selected');
