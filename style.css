@@ -24,18 +24,18 @@ body{
     
 }
 
-.black{
+#black{
     background-color: #000;
 }
-.blue{
+#blue{
     background-color: #ADE2FE;
 }
 
-.red{
+#red{
     background-color: #D40100;
 }
 
-.yellow{
+#yellow{
     background-color: #FFFF00
 }
 
