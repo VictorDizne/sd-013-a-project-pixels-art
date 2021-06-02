@@ -33,13 +33,13 @@ function createPixels() {
   }
 }
 
-function paintPixel(color) {
+function paintPixel() {
   const pixels = document.querySelectorAll('.pixel');
 
   for (let pixelIndex = 0; pixelIndex < pixels.length; pixelIndex += 1) {
     pixels[pixelIndex].addEventListener('click', (event) => {
       const currentPixel = event.target;
-      currentPixel.style.backgroundColor = color;
+      currentPixel.style.backgroundColor = currentColor;
     });
   }
 }
@@ -56,7 +56,6 @@ function removeSelected(selected) {
 
 function setCurrentColor(item) {
   currentColor = item.target.style.backgroundColor;
-  paintPixel(currentColor);
 }
 
 function selectColor() {
@@ -89,3 +88,5 @@ createPixels();
 selectColor();
 
 clearPixels();
+
+paintPixel();
