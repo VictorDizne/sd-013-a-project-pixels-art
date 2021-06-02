@@ -20,7 +20,9 @@ function createPixelBoard(number) {
     }
   }
 }
-window.onload = blackSelected,createPixelBoard(5);
+createPixelBoard(5)
+
+window.onload = blackSelected;
 
 // Mudar a classe 'selected' entre elementos com a classe 'color'
 function changeSelected() {
@@ -86,7 +88,7 @@ const input = document.getElementById('board-size');
 let pixelBoard = 5;
 
 function sizeBoard() {
-  const number = Number(input.value);
+  const number = parseInt(input.value, 10);
 
   if (number < 5) {
     pixelBoard = 5;
