@@ -39,16 +39,20 @@ for (let i = 0; i < n; i +=1 ){
 
 black.classList.add('selected')
 // feito com ajuda do Matheus Duarte
-function selectColor(teste) {
-  if (teste.target.className === 'color') {
+function selectColor(element) {
+  if (element.target.className === 'color') {
     const selected = document.querySelector('.selected');
-    teste.target.classList.add('selected');
+    element.target.classList.add('selected');
     selected.classList.remove('selected');
-    console.log(teste);
+    console.log(element);
   }
 }
 
 pixels.addEventListener('click', selectColor);
+
+// function fillColor() {
+  
+// }
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
