@@ -53,3 +53,7 @@
   display: table-cell;
   background-color: white;
 }
+
+.selected {
+  background-color: black;
+}
