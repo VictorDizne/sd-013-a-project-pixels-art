@@ -1,0 +1,40 @@
+body {
+    background-color: grey;
+}
+
+aside {
+    border: 1px solid black;
+    width: 500px;
+    margin-left: 400px;
+}
+
+#color-palette th {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#color-palette {
+    margin-left: 162px;
+    
+}
+#title {
+    font-size: 30px;
+    margin-left: 150px;
+}
+/* cores*/
+
+.color:nth-child(1) {
+    background-color: black;
+}
+
+.color:nth-child(2) {
+    background-color: blue;
+}
+
+.color:nth-child(3) {
+    background-color: red;
+}
+
+.color:nth-child(4) {
+    background-color: green;
+}
