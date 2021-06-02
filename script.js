@@ -32,7 +32,7 @@ function coloreColor() {
 
 coloreColor();
 
-// Fiz com a ajuda de Matheus Camillo, eu estava usando 'div' no lugar de 'tr' e 'td' e mesmo forçando o tamanho do .pixel-board a ficar exatamente do tamanho das linhas e colunas, o bot estava reclamando que não eram do mesmo tamanho, ao usar 'tr' e 'td' o meu quadro adquire as propriedades de uma tabela e o robô consegue identificar o mesmo tamanho
+// Fiz com a ajuda de Matheus Camillo, eu estava usando 'div' no lugar de 'tr' e 'td' e mesmo forçando o tamanho do pixel-board a ficar exatamente do tamanho das linhas e colunas, o bot estava reclamando que não eram do mesmo tamanho, ao usar 'tr' e 'td' o meu quadro adquire as propriedades de uma tabela e o robô consegue identificar o mesmo tamanho
 
 function criaQuadro(tamanho) {
   for (let linha = 0; linha < tamanho; linha += 1) {
@@ -46,8 +46,8 @@ function criaQuadro(tamanho) {
     }
     quadroDePixel.appendChild(novaLinha);
   }
-  const dimensaoCorreta = 42 * tamanho;
-  const tamanhoQuadro = document.getElementById('pixel-board');
+  let dimensaoCorreta = 42 * tamanho;
+  let tamanhoQuadro = document.getElementById('pixel-board');
   tamanhoQuadro.style.width = `${dimensaoCorreta}px`;
   tamanhoQuadro.style.height = `${dimensaoCorreta}px`;
 }
@@ -84,14 +84,14 @@ function resetarQuadro() {
 limpaQuadro.addEventListener('click', resetarQuadro);
 
 function gerarQuadro(input) {
-  if (input.value < 5) {
-    criaQuadro(5);
-    alert('O tamanho mínimo é 5');
-  }
   if (input.value > 50) {
-    criaQuadro(50);
     alert('O tamanho máximo é 50');
-  } if (input.value > 5 && input.value < 50) {
+    criaQuadro(50);
+  }
+  if (input.value < 5) {
+    alert('O tamanho mínimo é 5');
+    criaQuadro(5);
+  } if (input.value >= 5 && input.value <= 50) {
     criaQuadro(input.value);
   }
 }
