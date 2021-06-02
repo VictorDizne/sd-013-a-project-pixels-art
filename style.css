@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url('pixel-art-wicther.pn');
+  background-image: url('pixel-art-witcher.png');
   background-color: sandybrown;
 }
 
@@ -20,22 +20,18 @@ body {
 
 #color-palette {
   display: flex;
-  max-width: 460px;
+  max-width: 368px;
   margin: 50px auto 10px;
 }
 
 .color {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 4px;
   display: inline-block;
   width: 40px;
   height: 40px;
   margin: 0 25px;
   cursor: pointer;
-}
-
-.color:hover {
-  border: 1px solid rgb(149, 158, 19);
 }
 
 .color:nth-of-type(1) {
@@ -51,10 +47,6 @@ body {
 }
 
 .color:nth-of-type(4) {
-  background-color: rgb(12,211,12);
-}
-
-.color:nth-of-type(5) {
   background-color: aqua;
 }
 
@@ -75,10 +67,6 @@ body {
   background-color: white;
   border: 1px solid black;
   cursor: pointer;
-}
-
-.selected {
-  border: 1px solid rgb(149,158,19);
 }
 
 .btn-clear {
