@@ -1,12 +1,11 @@
-function createPixels() {
-  let quadroInicio = 5;
-  for (let index = 0; index < quadroInicio; index += 1) {
+function createPixels(n=5) {
+  for (let index = 0; index < n; index += 1) {
     const quadrado = document.createElement('div');
     const pixelBoard = document.querySelector('#pixel-board');
     pixelBoard.appendChild(quadrado);
     quadrado.classList = 'linha';
 
-    for (let index2 = 0; index2 < quadroInicio; index2 += 1) {
+    for (let index2 = 0; index2 < n; index2 += 1) {
       const quadradinho = document.createElement('div');
       quadradinho.classList = 'pixel';
       quadrado.appendChild(quadradinho);
@@ -82,3 +81,4 @@ function Limpar() {
 }
 Limpar();
 
+/* 
