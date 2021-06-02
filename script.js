@@ -23,3 +23,4 @@ for(index =0; index< quadrado; index+=1){
 }
 
 gradePixel();
+
