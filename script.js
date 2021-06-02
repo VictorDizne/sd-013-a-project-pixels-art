@@ -40,3 +40,46 @@ elementColor1.addEventListener('click' , classSelect);
 elementColor2.addEventListener('click' , classSelect);
 elementColor3.addEventListener('click' , classSelect);
 elementColor4.addEventListener('click' , classSelect);
+
+function pintaPixel(event){
+
+  selectedELement = document.querySelector(".selected");
+
+  let cor1 = document.getElementById("color-1");
+  let cor2 = document.getElementById("color-2");
+  let cor3 = document.getElementById("color-3");
+  let cor4 = document.getElementById("color-4");
+
+  if( selectedELement === cor1){
+  event.target.style.backgroundColor = "black";
+  }
+  else if( selectedELement === cor2){
+    event.target.style.backgroundColor = "blue";
+  }
+  else if( selectedELement === cor3){
+    event.target.style.backgroundColor = "green";
+  }
+  else if( selectedELement === cor4){
+    event.target.style.backgroundColor ="red";
+  }
+
+}
+
+/* let listaPixel = document.querySelectorAll(".pixel")[0];
+listaPixel.addEventListener("click", pintaPixel); */
+
+
+
+function addPixel(){
+  
+  let listaPixel = document.querySelectorAll(".pixel");
+
+  for(index =0; index < listaPixel.length; index+=1 ){
+
+    let listaPixel = document.querySelectorAll(".pixel")[index];
+
+    listaPixel.addEventListener("click", pintaPixel);
+
+  }
+}
+addPixel();
