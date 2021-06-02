@@ -82,6 +82,7 @@ function generateBoard(e) {
     return;
   }
 
+  boardSizeInput.value = boardWidth;
   clear(board)();
   fillBoard();
 }
@@ -98,8 +99,11 @@ function cleanBoard(e) {
 }
 
 function handleSizeChange(e) {
+  let constrainedValue = e.target.value;
+  if (constrainedValue < 5) constrainedValue = 5;
+  if (constrainedValue > 50) constrainedValue = 50;
   if (e.target.value.trim() !== '') {
-    updateDimensions(e.target.value);
+    updateDimensions(constrainedValue);
     return;
   }
 
