@@ -1,46 +1,23 @@
+#cabecalho {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgb(37, 37, 42);
+}
 #title {
+  text-align: center;
+  color: white;
   margin-left: 10px;
 }
-
-#color-palette {
-  padding: 10px 20px;
-  width: 30%;
-  display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
-  grid-gap: 5px;
-}
-
 .color {
-  padding: 30px 10px;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
+  display: inline-block;
 }
-
-#preto {
-  background-color: black;
-}
-
-#vermelho {
-  background-color: red;
-}
-
-#azul {
-  background-color: blue;
-}
-
-#verde {
-  background-color: green;
-}
-
-#pixel-board {
-  width: 50%;
-  margin-left: 20px;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  border: 2px solid black;
-}
-
 .pixel {
-  padding: 40px 40px;
-  background-color: white;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
+
