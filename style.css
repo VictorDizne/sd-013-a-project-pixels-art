@@ -27,6 +27,8 @@
   width: 25px;
   height: 25px;
   line-height: 50%;
+  margin: 0 auto;
+  margin-top: 3%;
 }
 
 .pixel{
@@ -34,6 +36,7 @@
   height: 40px;
   width: 40px;
   display: inline-block;
+  background-color: white;
 }
 
 .tr {
