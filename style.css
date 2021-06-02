@@ -47,22 +47,6 @@ button {
   transform: scale(1.2);
 }
 
-/* #one {
-  background-color: black;
-}
-
-#two {
-  background-color: red;
-}
-
-#three {
-  background-color: blue;
-}
-
-#four {
-  background-color: green;
-} */
-
 section {
   width: 100vw;
   height: 65.4vh;
@@ -101,23 +85,3 @@ section {
   transform: scale(1.2);
 }
 
-/* #board-size {
-  margin-top: 10px;
-  margin-left: 45vw;
-  border: 1px solid;
-  border-radius:10px;
-  font-size: 15px
-}
-
-#generate-board {
-  border: 1px solid;
-  border-radius:5px;
-  font-size: 15px;
-  background-color: #ffe1ff
-}
-
-h5 {
-  margin-top:15px;
-  margin-left:0;
-  margin-left: 46vw;
-} */
