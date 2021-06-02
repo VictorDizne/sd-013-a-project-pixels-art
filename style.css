@@ -1,35 +1,51 @@
 .color {
-    border: 1px solid black;
-    display: inline-block;
-    background-color: brown;
-    margin: 1%;
-    width: 8%;
-    height: 40px;
-    margin-left: 15px;
-    padding: 2px;
-    right: inherit;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: brown;
+  margin: 1%;
+  width: 8%;
+  height: 40px;
+  margin-left: 10px;
+  padding: 2px;
+  right: inherit;
 
 }
 
 #title {
-    text-align: center;
-    margin-right: 4%;
-    font-size: 40px;
-    top: 1%;
+  text-align: center;
+  margin-right: 4%;
+  font-size: 40px;
+  top: 1%;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #pink {
-    background-color: palevioletred;
+  background-color: palevioletred;
 }
 
 #blue {
-    background-color: rgb(21, 69, 228);
+  background-color: rgb(21, 69, 228);
 }
 
 #green {
-    background-color: rgb(67, 207, 67);
+  background-color: rgb(67, 207, 67);
+}
+
+.pixel {
+  background-color: white;
+  display: table-cell;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  border: #000000 solid 1px;
+  margin-right: 1px;
+  float: left;
+  left: 5px;
+}
+
+#pixel-board {
+  display: table; 
 }
