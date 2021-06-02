@@ -16,7 +16,6 @@ function selected(event) {
   const colorElement = document.querySelector('.selected');
   colorElement.classList.remove('selected');
   event.target.classList.add('selected');
-  input.value = 'color';
 }
 
 
