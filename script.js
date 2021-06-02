@@ -1,6 +1,7 @@
 const colors = document.getElementsByClassName('color');
-const pixels = document.getElementsByClassName('pixel');
 const btnClear = document.getElementById('clear-board');
+const form = document.getElementById('size-form');
+const input = document.getElementById('board-size');
 
 /** Returns a random hexadecimal color except #ffffff (white). */
 function getRandomColor() {
@@ -39,10 +40,14 @@ function createLine(numCells) {
 }
 
 function createBoard(n = 5) {
-  const board = document.getElementById('pixel-board');
+  const board = document.createElement('div');
+  board.id = 'pixel-board';
+  board.className = 'table';
   const line = createLine(n);
 
-  for (let j = 0; j < n; j += 1) board.appendChild(line.cloneNode(true));
+  for (let i = 0; i < n; i += 1) board.appendChild(line.cloneNode(true));
+
+  document.body.appendChild(board);
 }
 
 function selectColorBlack() {
@@ -65,10 +70,27 @@ function onClickEvents(e) {
 }
 
 function clearPixels() {
+  const pixels = document.getElementsByClassName('pixel');
+
   // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/getElementsByClassName#examples
   Array.prototype.map.call(pixels, (pixel) => {
     pixel.style.removeProperty('background-color');
   });
+}
+
+function setBoardSize(e) {
+  e.preventDefault();
+
+  let n = parseInt(input.value, 10);
+
+  if (!n) return alert('Board inválido!');
+  if (n < 5) n = 5;
+  if (n > 50) n = 50;
+
+  document.getElementById('pixel-board').remove();
+  input.value = null;
+
+  createBoard(n);
 }
 
 window.onload = () => {
@@ -77,4 +99,5 @@ window.onload = () => {
   selectColorBlack();
   document.addEventListener('click', onClickEvents); // Event Bubbling
   btnClear.addEventListener('click', clearPixels);
+  form.addEventListener('submit', setBoardSize);
 };

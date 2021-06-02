@@ -1,3 +1,7 @@
+form {
+  display: inline;
+}
+
 .table {
   display: table;
 }
@@ -19,6 +23,6 @@
   background-color: white;
 }
 
-#pixel-board , #clear-board {
+#pixel-board , .controls {
   margin-top: 20px;
 }
