@@ -4,10 +4,6 @@ const botao = document.createElement('button');
 const tools = document.querySelector('#tools');
 const color = document.querySelectorAll('.color');
 const cores = ['red', 'blue', 'yellow', 'HotPink', 'orange', 'green', 'teal', 'Purple'];
-const r1 = getRandomDifferent(cores);
-const r2 = getRandomDifferent(cores, r1);
-const r3 = getRandomDifferent(cores, r1, r2);
-
 
 botao.setAttribute('id', 'clear-board');
 botao.innerText = 'Limpar';
@@ -32,24 +28,22 @@ let aux = 0;
 // }
 
 function getRandomDifferent(randomColor, last = undefined, last2 = undefined) {
-    if (randomColor.length === 0) {
-      return;
-    } else if (randomColor.length === 1) {
-      return randomColor[0];
-    } else {
-      let num = 0;
-      do {
-        num = Math.floor(Math.random() * randomColor.length);
-      } while (randomColor[num] === last || randomColor[num] === last2);
-      return randomColor[num];
-    }
+  if (randomColor.length === 1) {
+    return randomColor[0];
   }
+  let num = 0;
+  do {
+    num = Math.floor(Math.random() * randomColor.length);
+  } while (randomColor[num] === last || randomColor[num] === last2);
+  return randomColor[num];
+}
 
-
-    color[1].style.backgroundColor = r1;
-    color[2].style.backgroundColor = r2;
-    color[3].style.backgroundColor = r3;
-
+const r1 = getRandomDifferent(cores);
+const r2 = getRandomDifferent(cores, r1);
+const r3 = getRandomDifferent(cores, r1, r2);
+color[1].style.backgroundColor = r1;
+color[2].style.backgroundColor = r2;
+color[3].style.backgroundColor = r3;
 
 for (let i = 0; i < 25; i += 1) {
   const pixel = document.createElement('div');
