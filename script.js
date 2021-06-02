@@ -3,16 +3,17 @@
 // let randomColor3 = Math.floor(Math.random()*16777215).toString(16);
 // let randomColor4 = Math.floor(Math.random()*16777215).toString(16);
 
-document.querySelector('.first').style.backgroundColor = 'black';
-document.querySelector('.second').style.backgroundColor = 'red';
-document.querySelector('.third').style.backgroundColor = 'blue';
-document.querySelector('.fourth').style.backgroundColor = 'green';
+const black = document.querySelectorAll('.color')[0];
+const red = document.querySelectorAll('.color')[1];
+const blue = document.querySelectorAll('.color')[2];
+const green = document.querySelectorAll('.color')[3];
 
-// let pixel = document.getElementsByClassName('pixel')
+black.style.backgroundColor = 'black';
+red.style.backgroundColor = 'red';
+blue.style.backgroundColor = 'blue';
+green.style.backgroundColor = 'green';
 
-// for (let i of pixel){
-//   i.style.backgroundColor = 'white';
-// }
+const pixels = document.querySelector('#color-palette');
 
 let board = document.createElement('div');
 board.setAttribute('id','pixel-board');
@@ -31,40 +32,24 @@ for (let i = 0; i < n; i +=1 ){
   }
 }
 
-let black = document.querySelector('.first');
-black.classList.add('selected')
+// let black = document.querySelector('.first');
+// let second = document.querySelector('.second');
+// let third = document.querySelector('.third');
+// let fourth = document.querySelector('.fourth')
 
-function defaultColor(element){
-  element.target.style.backgroundColor = 'black';
+black.classList.add('selected')
+// feito com ajuda do Matheus Duarte
+function selectColor(teste) {
+  if (teste.target.className === 'color') {
+    const selected = document.querySelector('.selected');
+    teste.target.classList.add('selected');
+    selected.classList.remove('selected');
+    console.log(teste);
+  }
 }
+
+pixels.addEventListener('click', selectColor);
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
 // document.querySelector('.fourth').style.backgroundColor = '#' + randomColor4;
-
-
-// function receiveColor() {
-
-// }
-
-
-
-// function setColor () {
-
-// }
-
-
-
-
-// for (let i = 1; i < n; i += 1) {
-//   let line = document.createElement('div');
-//   // line.setAttribute('id', 'lines')
-//   line.classList.add('pixel')
-//   document.querySelector('#pixel-board').appendChild(line);
-//   for (let j = 0; j < i; j += 1) {
-//     let column = document.createElement('div');
-//     // column.setAttribute('id', 'column')
-//     column.classList.add('pixel')
-//     document.querySelector('#pixel-board').appendChild(column);
-//   }
-// }
