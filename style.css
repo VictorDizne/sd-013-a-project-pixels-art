@@ -6,18 +6,18 @@ div {
     margin-right: 10px;
 }
 
-#black-palette {
+.black {
     background-color: black;
 }
 
-#red-palette {
+.red {
     background-color: red;
 }
 
-#blue-palette {
+.blue {
     background-color: blue;
 }
 
-#green-palette {
+.green {
     background-color: green;
 }
