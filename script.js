@@ -58,8 +58,8 @@ const btnClear = document.querySelector('#clear-board');
 
 function resetBoard() {
   const block = document.querySelectorAll('.pixel');
-  for (let i of block) {
-    i.style.backgroundColor = 'white';
+  for (let i = 0; i < block.length; i += 1) {
+    block[i].style.backgroundColor = 'white';
   }
 }
 
