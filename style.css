@@ -5,23 +5,23 @@
   height: 40px;
 }
 
-#color-black {
+.color-black {
   background-color: black;
 }
 
-#color-red {
+.color-red {
   background-color: red;
 }
 
-#color-green {
+.color-green {
   background-color: green;
 }
 
-#color-yellow { 
+.color-yellow {
   background-color: yellow;
 }
 
-#pixel-board { 
+.pixel-board {
   display: table;
   border: 1px solid;
 }
