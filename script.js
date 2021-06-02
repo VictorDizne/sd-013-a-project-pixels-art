@@ -49,8 +49,9 @@ function paintColor(event) {
 
 pixelBoard.addEventListener('click', paintColor);
 
-function cleanFunction() {
-  pixelado.forEach(posicao => { (posicao.style.backgroundColor) = 'white'; });
+function cleanFunction(event) {
+  let eventoN = event;
+  pixelado.forEach(( eventoN ) => { (eventoN.style.backgroundColor) = 'white'; });
 }
 
 // for (let index in pixelado) {
