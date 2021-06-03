@@ -15,8 +15,8 @@ body {
 
 .color {
   margin-bottom: 10px;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   display: inline-block;
 }
@@ -25,8 +25,8 @@ body {
 }
 .pixel {
   background-color: white;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 .section {

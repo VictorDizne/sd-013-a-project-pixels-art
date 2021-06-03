@@ -1,11 +1,11 @@
-window.onload = function color() {
-  const paletaCores = document.getElementsByClassName('color');
-  const colorArray = ['black', 'red', 'blue', 'green'];
+const paletaCores = document.getElementsByClassName('color');
+const colorArray = ['black', 'red', 'blue', 'green'];
+let bgColor = 'black';
 
-  for (let i = 0; i < 4; i += 1) {
-    paletaCores[i].style.backgroundColor = colorArray[i];
-  }
-};
+for (let i = 0; i < 4; i += 1) {
+  paletaCores[i].style.backgroundColor = colorArray[i];
+}
+
 function criaElemento(nome) {
   let elemento = document.createElement(nome);
   return elemento;
@@ -20,4 +20,19 @@ for (let i = 0; i < 5; i += 1) {
     vertical.className = 'pixel';
     pixels.lastElementChild.appendChild(vertical);
   }
+}
+let coresPaleta = document.getElementsByClassName('color');
+for (let corPaleta of coresPaleta) {
+  corPaleta.addEventListener('click', setColor);
+}
+function setColor(e) {
+  let bg = e.target.style.backgroundColor;
+  bgColor = bg;
+}
+let pixelColor = document.getElementsByClassName('pixel');
+for (classColor of pixelColor) {
+  classColor.addEventListener('click', pintaPixel);
+}
+function pintaPixel(e) {
+  e.target.style.backgroundColor = bgColor;
 }
