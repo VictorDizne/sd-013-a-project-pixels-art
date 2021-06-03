@@ -1,0 +1,31 @@
+.color {
+    display: inline-block;
+}
+
+#fire {
+    background-color: red;
+    border: #000 solid 1px;
+    width: 40px;
+    height: 40px;
+}
+
+#sun {
+    background-color: yellow;
+    border: #000 solid 1px;
+    width: 40px;
+    height: 40px;
+}
+
+#sky {
+    background-color: blue;
+    border: #000 solid 1px;
+    width: 40px;
+    height: 40px;
+}
+
+#plant {
+    background-color: green;
+    border: #000 solid 1px;
+    width: 40px;
+    height: 40px;
+}
