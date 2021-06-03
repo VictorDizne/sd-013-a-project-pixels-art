@@ -16,7 +16,7 @@
 
 #color-palette {
   display: flex;
-  justify-content:  center;
+  justify-content: center;
 }
 
 .color {
@@ -42,4 +42,22 @@
 
 .blue {
   background-color: blue;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0px 80px;
+}
+#pixel-board {
+  margin: 80px 0px 80px;
+  position: absolute;
+  margin:auto;
+}
+
+.pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
 }
