@@ -37,3 +37,8 @@ table , td {
   height: 40px;
   width: 40px;
 }
+
+button {
+  display: block;
+  margin: 20px;
+}
