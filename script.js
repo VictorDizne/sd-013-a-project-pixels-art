@@ -1,7 +1,18 @@
 const paletteLength = 4;
 const boardSize = 5;
 let currentColor = 'black';
-const paletteColors = ['black', 'red', 'green', 'blue'];
+
+// FUNÇÃO RETIRADA DE https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
+
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+//
 
 function createPalette() {
   const table = document.querySelector('#color-palette');
@@ -10,18 +21,15 @@ function createPalette() {
 
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
+    td.classList.add('color');
+    td.style.border = '1px solid #000';
     if (index === 0) {
       td.classList.add('selected');
-      td.style.backgroundColor = '#000'
-      td.style.border = '1px solid #000';
-      td.classList.add('color');
-      line.appendChild(td);
+      td.style.backgroundColor = '#000';
     } else {
-      td.classList.add('color');
       td.style.backgroundColor = getRandomColor();
-      td.style.border = '1px solid #000';
-      line.appendChild(td);
     }
+    line.appendChild(td);
   }
 }
 
@@ -40,13 +48,13 @@ function createPixels() {
   }
 }
 
-function paintPixel() {
+function paintPixel(color) {
   const pixels = document.querySelectorAll('.pixel');
 
   for (let pixelIndex = 0; pixelIndex < pixels.length; pixelIndex += 1) {
     pixels[pixelIndex].addEventListener('click', (event) => {
       const currentPixel = event.target;
-      currentPixel.style.backgroundColor = currentColor;
+      currentPixel.style.backgroundColor = color;
     });
   }
 }
@@ -63,6 +71,7 @@ function removeSelected(selected) {
 
 function setCurrentColor(item) {
   currentColor = item.target.style.backgroundColor;
+  paintPixel(currentColor);
 }
 
 function selectColor() {
@@ -88,18 +97,6 @@ function clearPixels() {
   });
 }
 
-// FUNÇÃO RETIRADA DE https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
-
-function getRandomColor() {
-  let letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-//
-
 createPalette();
 
 createPixels();
@@ -108,4 +105,4 @@ selectColor();
 
 clearPixels();
 
-paintPixel();
+paintPixel(currentColor);
