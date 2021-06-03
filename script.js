@@ -1,5 +1,5 @@
 const paletteLength = 4;
-const boardSize = 15;
+const boardSize = 5;
 let currentColor = 'black';
 
 // FUNÇÃO RETIRADA DE https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
@@ -18,11 +18,11 @@ function createPalette() {
   const table = document.querySelector('#color-palette');
   const line = document.createElement('tr');
   table.appendChild(line);
+  const black = 'black'
 
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
     td.classList.add('color');
-    td.style.border = '1px solid #000';
     if (index === 0) {
       td.classList.add('selected');
       td.style.backgroundColor = '#000';

@@ -14,29 +14,17 @@ body, input, textarea, button {
   width: 95vw;
   max-width: 90%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: 'board palette';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin: auto;
 }
-
-.board {
-  grid-area: board;
-  align-self: center;
-  justify-self: center;
-}
-
-.palette {
-  width: 300px;
-  grid-area: palette;
-  align-self: center;
-}
-
 .color {
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #pixel-board {
