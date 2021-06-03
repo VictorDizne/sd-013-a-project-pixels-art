@@ -1,5 +1,7 @@
 // Função criar pixels
 
+
+
 let pixelBoard = document.getElementById('pixel-board');
 
 function createPixels(tamanho, elementoPai) {
@@ -30,5 +32,26 @@ function initialColor () {
 }
 
 initialColor();
+
+// Função seleciona cor da paleta
+
+let paletaUm = document.querySelector('.black');
+let paletaDois = document.querySelector('.red');
+let paletaTres = document.querySelector('.green');
+let paletaQuatro = document.querySelector('.blue');
+
+
+paletaUm.addEventListener('click', selectColor);
+paletaDois.addEventListener('click', selectColor);
+paletaTres.addEventListener('click', selectColor);
+paletaQuatro.addEventListener('click', selectColor);
+
+function selectColor(event) {
+  let cores = document.querySelector('.selected');
+  cores.classList.remove('selected');
+  event.target.classList.add('selected');
+
+}
+
 
 
