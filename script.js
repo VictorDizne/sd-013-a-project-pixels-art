@@ -1,7 +1,11 @@
+// Ids
 let paiColor = document.querySelector('#color-palette');
+let clearTable = document.querySelector('#clear-board');
+
+// Classes
 let colorList = document.querySelectorAll('.color');
 let pixels = document.querySelectorAll('.pixel');
-let clear = document.querySelector('#clear-board');
+let paiPixels = document.querySelector('.tr');
 
 let cor1 = document.querySelector('.cor1');
 let cor2 = document.querySelector('.cor2');
@@ -34,3 +38,10 @@ for (let c = 0; c < 25; c += 1) {
   allPixels.addEventListener('click', colorir);
 }
 
+function clearPixels() {
+  for (let c = 0; c < pixels.length; c += 1) {
+    pixels[c].style.background = 'white';
+  }
+}
+
+clearTable.addEventListener('click', clearPixels);
