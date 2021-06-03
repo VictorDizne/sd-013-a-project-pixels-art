@@ -3,19 +3,29 @@ function palette() {
   const paletteGrid = document.getElementById('color-palette');
 
   const color1 = document.createElement('div');
-  color1.className = 'color black selected';
+  color1.className = 'color selected';
+  color1.style.backgroundColor = 'rgb(0,0,0)';
   paletteGrid.appendChild(color1);
 
   const color2 = document.createElement('div');
-  color2.className = 'color yellow';
+  const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = '#' + randomColor2;
+  color2.className = 'color';
+  color2.style.backgroundColor = '#' + randomColor2;
   paletteGrid.appendChild(color2);
 
   const color3 = document.createElement('div');
-  color3.className = 'color blue';
+  const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = '#' + randomColor3;
+  color3.className = 'color';
+  color3.style.backgroundColor = '#' + randomColor3;
   paletteGrid.appendChild(color3);
 
   const color4 = document.createElement('div');
-  color4.className = 'color red';
+  const randomColor4 = Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = '#' + randomColor4;
+  color4.className = 'color';
+  color4.style.backgroundColor = '#' + randomColor4;
   paletteGrid.appendChild(color4);
 }
 palette();
@@ -75,19 +85,17 @@ function vqvSize() {
   buttonVQV.addEventListener('click', function () {
     newSize = document.getElementById('board-size').value;
 
-    if ((newSize === '') || (newSize === 0)) {
+    if (newSize === '' || newSize === 0) {
       alert('Board inválido!');
-    } else if ((newSize > 0) && (newSize < 5)) {
+    } else if (newSize > 0 && newSize < 5) {
       newSize = 5;
       gradeSize();
     } else if (newSize > 50) {
       newSize = 50;
       gradeSize();
-    } 
-    else {
+    } else {
       gradeSize();
     }
-  
   });
 }
 vqvSize();
