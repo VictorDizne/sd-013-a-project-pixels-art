@@ -22,6 +22,7 @@ function createPalette() {
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
     td.classList.add('color');
+    td.style.border = '1px solid black';
     if (index === 0) {
       td.classList.add('selected');
       td.style.backgroundColor = '#000';
