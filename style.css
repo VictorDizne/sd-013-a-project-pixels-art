@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/** Header **/
+.header {
+  background-color: rgb(159, 252, 223);
+  display: flex;
+}
+
+#title {
+  font-family: 'Mate SC', serif;
+}
+
+/** Color Palette **/
+#color-palette {
+  text-align: center;
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  border-color: black;
+  border: solid;
+  border-width: 1px;
+}
+
+.color:hover {
+  cursor: pointer;
+}
+
+#random-button {
+  text-align: center;
+}
+
+.random-color:hover {
+  background-color: rgb(247, 249, 249);
+  cursor: pointer;
+}
+
+.random-color {
+  margin-top: 1%;
+  border: solid;
+  border-color: rgb(247, 249, 249);
+  border-width: 1px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/** Pixel Board **/
+#pixel-board {
+  display: table;
+  margin: auto;
+}
+
+.pixel {
+  display: table-cell;
+  width: 80px;
+  height: 80px;
+  border: 1px solid;
+  border-color: black;
+  background-color: white;
+}
+
+#reset-button {
+  text-align: center;
+}
+
+#clear-board {
+  text-align: center;
+  margin-top: 1%;
+  border: 1px solid;
+  border-color: rgb(247, 249, 249);
+  border-width: 1px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#clear-board:hover {
+  background-color: rgb(247, 249, 249);
+  cursor: pointer;
+}
