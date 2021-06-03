@@ -1,15 +1,15 @@
+// let currentColor;
+function setCurrentColor(event) {
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  event.target.classList.toggle('selected');
+  selectedColor.classList.toggle('selected');
+}
 const colors = document.getElementsByClassName('color');
 function setColors() {
   for (let i = 0; i < colors.length; i += 1) {
     colors[i].addEventListener('click', setCurrentColor);
     colors[i].style.backgroundColor = colors[i].innerText;
   }
-}
-let currentColor;
-function setCurrentColor(event) {
-  let selectedColor = document.getElementsByClassName('selected')[0];
-  event.target.classList.toggle('selected');
-  selectedColor.classList.toggle('selected');
 }
 function createPixels(width) {
   const pixelLines = document.getElementsByClassName('pixel-line');
