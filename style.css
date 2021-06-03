@@ -1,3 +1,25 @@
-#color-pallete {
-  text-align:center;
-}
+h1 {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+    
+  }
+  
+  body {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 4px;
+    margin: 0;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+  }
+  
+  tr,td {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+  #board-size {
+    width: 30px;
+  }

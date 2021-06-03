@@ -1,55 +1,112 @@
 
 function createPalette(colors) {
-    for (let i = 0; i < colors.length; i++) {
-        let getColorPalette = document.getElementById('color-palette');
-        let color = document.createElement('div');
+    for (let i = 0; i < colors.length; i += 1) {
+        const ColorPalette = document.getElementById('color-palette');
+        const color = document.createElement('div');
         color.className = 'color';
         color.style.backgroundColor = colors[i];
         color.style.width = '50px';
         color.style.height = '50px';
         color.style.display = 'inline-block';
-        color.style.border = '1px solid black'
-        color.style.margin = "2px"
-        getColorPalette.appendChild(color);
-        getColorPalette.style.textAlign = 'center';
+        color.style.border = '1px solid black';
+        color.style.margin = "2px";
+        ColorPalette.appendChild(color);
+        ColorPalette.style.textAlign = 'center';
     }
 }
-createPalette(['black', 'blue', 'orange', 'gray']);
-
-function createPixelSquares(number) {
+createPalette(['black', getRandomColor(), getRandomColor(), getRandomColor()]);
+function createBoard(number) {
+    const getPixelBoard = document.getElementById('pixel-board');
+    let table = document.createElement('table');
+    table.id = 'table';
     for (let i = 0; i < number; i++) {
-        let getPixelBoard = document.querySelector('#pixel-board');
-        let linhaPixel = document.createElement('div');
-        linhaPixel.className = 'pixel';
-        linhaPixel.style.width = '40px';
-        linhaPixel.style.height = '40px';
-        linhaPixel.style.display = 'inline-block';
-        linhaPixel.style.border = '1px solid black'
-        linhaPixel.style.marginBottom = "-5px";
-        linhaPixel.style.padding = "0px";
-        getPixelBoard.appendChild(linhaPixel);
-        getPixelBoard.style.width = '210px';
-        getPixelBoard.style.margin = "auto";
-        getPixelBoard.style.height = "226px";
-
-
+        let line = document.createElement('tr');
+        for (let j = 0; j < number; j++) {
+            column = document.createElement('td');
+            column.className = 'pixel';
+            column.style.backgroundColor = 'white';
+            line.appendChild(column); //preenche as linhas
+        }
+        table.appendChild(line); // preenche a table
     }
-    for (let j = 0; j < number[j]; j += 5) {
-        linhaPixel[j].style.display = 'block';
-    }
+    getPixelBoard.appendChild(table); //após as tables estiverem preenchidas
+
+    table.style.borderSpacing = '0';
+    table.style.backgroundColor = 'white';
+    getPixelBoard.style.margin = 'auto';
+    getPixelBoard.style.display = 'table';
 }
-createPixelSquares(25);
-function selected (){
-    let getPixelBoard = document.querySelector('#pixel-board');
+createBoard(5);
+
+function selected() {
+    let getPixelBoard = document.querySelector('#color-palette');
     let firstElement = getPixelBoard.firstChild;
     firstElement.className += ' selected';
 }
 selected();
-//function setBlackColor() {
-    // let pixel = document.querySelector(".pixel");
-    // pixel.addEventListener('click', function (event) {
-    //     event.target.style.backgroundColor = 'black';
-    // })
-//};
+// mudar classe
+function changeClass(event) {
+    const colors = document.getElementsByClassName('color');
+    for (let i = 0; i < colors.length; i += 1) {
+        colors[i].className = 'color';
+    }
+    event.target.className += " selected";
+};
+// adiciona escutador
+let colorPalette = document.querySelector('#color-palette');
+colorPalette.addEventListener('click', changeClass);
 
-setBlackColor();
+function changePixel(event) {
+    let currentColor = document.querySelector('.selected').style.backgroundColor;
+    event.target.style.backgroundColor = currentColor
+}
+let getPixelBoard = document.querySelector('#pixel-board');
+getPixelBoard.addEventListener('click', changePixel);
+
+// criar  botão
+function clearPixels() {
+    let pixels = document.getElementsByClassName('pixel');
+    for (let i = 0; i < pixels.length; i++) {
+        pixels[i].style.backgroundColor = 'white';
+    }
+}
+let button = document.getElementById('clear-board');
+button.style.marginBottom = '15px';
+button.addEventListener('click', clearPixels);
+clearPixels();
+
+function chooseNumberPixels() {
+    let button = document.getElementById('generate-board');
+    button.addEventListener('click', function () {
+        table = document.getElementById('table');
+        if (table) {
+            table.remove();
+        }
+        let number = document.getElementById('board-size').value;
+        if (number > 0) {
+            createBoard(limitBoard(number));
+        } else {
+            alert('Board inválido!')
+        }
+    })
+}
+chooseNumberPixels();
+
+function limitBoard(input) {
+    if (input < 5) {
+        return 5;
+    } else if (input > 50) {
+        return 50;
+    } else {
+        return input;
+    }           
+}
+// funcion got from stackoverflow
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
