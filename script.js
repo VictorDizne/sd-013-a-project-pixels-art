@@ -38,12 +38,12 @@ receberCorS()
 function limpar (){
     let branco = document.querySelectorAll('.pixel');
     
-    let botao = document.querySelector('#clear-board');
+    let botao = document.querySelector('button');
     for (let index = 0; index < branco.length; index++) {
         botao.addEventListener('click', function(){
             let brancao = document.querySelector('#pixel-board');
             brancao.classList.add('branco');
-            branco[index].classList.toggle('branco');
+            branco[index].style.backgroundColor = 'white';
              
          })
         
