@@ -1,29 +1,30 @@
 // Cria quadrado de pixels 5 x 5
-let table = document.createElement('table');
+const table = document.createElement('table');
 table.id = 'table';
 document.getElementById('pixel-board').appendChild(table);
-for (let line = 0 ; line < 5 ; line++) {
-  let pixelLine = document.createElement('tr');
-    for (let colum = 0 ; colum < 5 ; colum++) {
-      let pixelData = document.createElement('td');
-      pixelData.className = 'pixel';
-      pixelLine.appendChild(pixelData);
-    }  
+for (let line = 0; line < 5; line + 1) {
+  const pixelLine = document.createElement('tr');
+  for (let colum = 0; colum < 5; colum + 1) {
+    const pixelData = document.createElement('td');
+    pixelData.className = 'pixel';
+    pixelData.className += ` squad${colum}`;
+    pixelLine.appendChild(pixelData);
+  }
   document.getElementById('table').appendChild(pixelLine);
 }
 
 // Inicia com cor preta selecionada
-let black = document.getElementById('black');
-let red = document.getElementById('red');
-let green = document.getElementById('green');
-let blue = document.getElementById('blue');
+const black = document.getElementById('black');
+const red = document.getElementById('red');
+const green = document.getElementById('green');
+const blue = document.getElementById('blue');
 
 black.className += ' selected';
-//document.querySelector('.selected').style.backgroundColor = 'black';
-
+// document.querySelector('.selected').style.backgroundColor = 'black';
 
 // Recupera a cor do elemento clicado
-black.onclick = function() {
+black.onclick = function colorBlack() {
+  // eslint-disable-next-line sonarjs/no-duplicate-string
   if (green.className === 'color selected') {
     green.classList.remove('selected');
   }
@@ -38,9 +39,9 @@ black.onclick = function() {
   }
   black.className += ' selected';
   document.querySelector('.selected').style.backgroundColor = 'black';
-}
+};
 
-green.onclick = function() {
+green.onclick = function colorGreen() {
   if (black.className === 'color selected') {
     black.classList.remove('selected');
   }
@@ -55,9 +56,9 @@ green.onclick = function() {
   }
   green.className += ' selected';
   document.querySelector('.selected').style.backgroundColor = 'green';
-}
+};
 
-red.onclick = function() {
+red.onclick = function colorRed() {
   if (black.className === 'color selected') {
     black.classList.remove('selected');
   }
@@ -72,9 +73,9 @@ red.onclick = function() {
   }
   red.className += ' selected';
   document.querySelector('.selected').style.backgroundColor = 'red';
-}
+};
 
-blue.onclick = function() {
+blue.onclick = function colorBlue() {
   if (black.className === 'color selected') {
     black.classList.remove('selected');
   }
@@ -89,18 +90,4 @@ blue.onclick = function() {
   }
   blue.className += ' selected';
   document.querySelector('.selected').style.backgroundColor = 'blue';
-}
-
-let pixel = document.getElementsByClassName('pixel');
-pixel.onclick = function () {
-  console.log('ok');
-}
-
-
-
-
-  
-
-
-
-
+};
