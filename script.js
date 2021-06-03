@@ -1,20 +1,36 @@
-// Paleta de cores
-function addColorList () {
-  let colorList = document.querySelectorAll('.color');
-  let paleta = ['black', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51'];
+let paiColor = document.querySelector('#color-palette');
+let colorList = document.querySelectorAll('.color');
+let pixels = document.querySelectorAll('.pixel');
+let clear = document.querySelector('#clear-board');
 
-  for (let c = 0; c < colorList.length; c += 1) {
-    colorList[c].style.background = paleta[c];
-  }
+let cor1 = document.querySelector('.cor1');
+let cor2 = document.querySelector('.cor2');
+let cor3 = document.querySelector('.cor3');
+let cor4 = document.querySelector('.cor4');
+
+window.onload = function() {
+  cor1.classList.add('selected');
 }
 
-addColorList();
-
-// Pincel
-
-let a = document.querySelector('.color');
-a.addEventListener('click', clicar);
-
-function clicar() {
-  a.style.background = 'red';
+function addClass(event) {
+  let elementClass = document.querySelector('.selected');
+  elementClass.classList.remove('selected');
+  event.target.classList.add('selected');
 }
+
+cor1.addEventListener('click', addClass);
+cor2.addEventListener('click', addClass);
+cor3.addEventListener('click', addClass);
+cor4.addEventListener('click', addClass);
+
+function colorir(event) {
+  let classSelectorOno = document.querySelector('.selected');
+  let css = window.getComputedStyle(classSelectorOno).getPropertyValue('background-color');
+  event.target.style.background = css;
+}
+
+for (let c = 0; c < 25; c += 1) {
+  let allPixels = pixels[c];
+  allPixels.addEventListener('click', colorir);
+}
+
