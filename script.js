@@ -97,7 +97,7 @@ for (let index = 0; index < pData.length; index++) {
     if (black.className === 'color selected') {
       pData[index].style.backgroundColor = 'black';
     }
-    if (green.className === 'color selected') {
+    if (green.className === 'color selected') { 
       pData[index].style.backgroundColor = 'green';
     }
     if (red.className === 'color selected') {
