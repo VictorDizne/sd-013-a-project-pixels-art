@@ -1,5 +1,5 @@
 
-let linha = [5];
+/*
 function creatPallet() {
 let linha = [5];
   for(index = 0; index < linha.length; index +=1){
@@ -10,4 +10,4 @@ let linha = [5];
   }
 }
 console.log(linha);
-creatPallet();
+creatPallet();*/
