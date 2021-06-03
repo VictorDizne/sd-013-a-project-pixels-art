@@ -51,5 +51,3 @@ input {
 #generate-board {
   display: inline;
 }
-
-#board-size[type='number'][min='1']
