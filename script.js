@@ -38,3 +38,11 @@ function paint(event){
   const color = getComputedStyle(selected).getPropertyValue('background-color');
   e.target.style.backgroundColor = color;
 }
+
+const limpar = document.getElementById('clear-board');
+limpar.addEventListener('click', backgroundColorWhite);
+function backgroundColorWhite(){
+  for (let i = 0; i < pixels.length; i += 1){
+    pixels[i].style.backgroundColor = 'white';
+  };
+};
