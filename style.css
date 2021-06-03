@@ -50,10 +50,11 @@ div {
 
 #pixel-board {
     display: table-cell;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     padding: 0%;
     margin: 0%;
+    background-color: white;
 }
 .tr {
     display: table-cell;
@@ -63,14 +64,19 @@ div {
 }
 .pixel {
     display: table-cell;
-    height: 50px;
-    width: 150px;
+    height: 15px;
+    width: 15px;
     background-color: white;
-    padding: 0%;
+    padding: 10px;
     margin: 0%;
+    box-sizing: content-box;
 }
 
 #clear-board {
     border: black 1px solid;
     display: block;
+}
+
+.branco {
+    background-color: white;
 }

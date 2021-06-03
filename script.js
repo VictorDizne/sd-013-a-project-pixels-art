@@ -1,20 +1,19 @@
 window.onload
 sessionStorage.cor = 'black'
 let preto = document.querySelector('.black');
-preto.addClassName = 'selected';
+preto.classList.toggle('selected');
 
 function selecionarCor (){
     let pegaClasses = document.querySelectorAll('.color');
     for (let index = 0; index < pegaClasses.length; index++) {
-        pegaClasses[index].addEventListener('click', function() {
+        pegaClasses[index].addEventListener('click', function(event) {
             sessionStorage.cor = window.getComputedStyle(pegaClasses[index], null).getPropertyValue("background-color");
-            pegaClasses[index].addClassName = 'selected';
-            if (sessionStorage.com != 'black') {
-                preto.className = 'color black';
-            } else {
-                preto.className = 'color black selected'
+            for (let index = 0; index < pegaClasses.length; index++) {
+                pegaClasses[index].classList.remove('selected')
+                
             }
-            return sessionStorage.cor;
+            event.target.classList.toggle('selected');
+            
              
          })
         
@@ -23,9 +22,9 @@ function selecionarCor (){
   
     
 }
-
+selecionarCor()
 function receberCorS (){
-    let empurraCor = sessionStorage.cor;
+    
     let ganhaCor = document.querySelectorAll('.pixel')
     for (let index = 0; index < ganhaCor.length; index++) {
         ganhaCor[index].addEventListener('click', function(){
@@ -35,18 +34,28 @@ function receberCorS (){
         
     }
 }
-
+receberCorS()
 function limpar (){
     let branco = document.querySelectorAll('.pixel');
-    let whiteColor = 'rgb(255,255,255)'
+    
+    let botao = document.querySelector('#clear-board');
     for (let index = 0; index < branco.length; index++) {
-        branco[index].addEventListener('click', function(){
-           branco[index].style.backgroundColor = whiteColor;
-            
-        })
+        botao.addEventListener('click', function(){
+            let brancao = document.querySelector('#pixel-board');
+            brancao.classList.add('branco');
+            branco[index].classList.toggle('branco');
+             
+         })
         
     }
+            
+        
+    
     
     
 
 }
+limpar();
+
+
+    
