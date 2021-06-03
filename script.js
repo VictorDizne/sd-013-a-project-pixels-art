@@ -18,7 +18,6 @@ function createPalette() {
   const table = document.querySelector('#color-palette');
   const line = document.createElement('tr');
   table.appendChild(line);
-  const black = 'black'
 
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
