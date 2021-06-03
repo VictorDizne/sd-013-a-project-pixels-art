@@ -10,7 +10,11 @@
 
 #pixel-board{
   display: table;
-  
+}
+
+#color-palette {
+  border: solid violet 1px;
+  width: 223.4px;
 }
 
 .pixel {
@@ -24,9 +28,7 @@
  
 }
 
-
 #color-palette {
-  border: solid green;
   background-color: solid white;
 }
 
