@@ -40,3 +40,12 @@ function req4() {
  })
 }
 req4();
+
+window.onload = function(){
+  let blackcolor = document.querySelector('#black');
+  blackcolor.classList.add('selected'); 
+};
+
+
+
+
