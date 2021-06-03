@@ -3,36 +3,23 @@ const table = document.createElement('table');
 table.id = 'table';
 document.getElementById('pixel-board').appendChild(table);
 for (let line = 0; line < 5; line++) {
-  console.log('teste');
   const pixelLine = document.createElement('tr');
-  pixelLine.className += `line${line}`;
   for (let colum = 0; colum < 5; colum ++) {
     const pixelData = document.createElement('td');
     pixelData.className = 'pixel';
-    pixelData.className += ` squad${colum}`; 
     pixelLine.appendChild(pixelData);
   }
   table.appendChild(pixelLine);
 }
 
-/* const pixelLine = document.createElement('tr');
-pixelLine.className = 'pixelLine';
-const pixelColumn = document.createElement('td');
-pixelColumn.className = 'pixel';
-pixelColumn.innerText = 'teste';
-pixelLine.appendChild(pixelColumn);
-table.appendChild(pixelLine); */
-
-// Inicia com cor preta selecionada
 const black = document.getElementById('black');
 const red = document.getElementById('red');
 const green = document.getElementById('green');
 const blue = document.getElementById('blue');
 
+// Inicia com cor preta selecionada
 black.className += ' selected';
-// document.querySelector('.selected').style.backgroundColor = 'black';
 
-// Recupera a cor do elemento clicado
 black.onclick = function colorBlack() {
   // eslint-disable-next-line sonarjs/no-duplicate-string
   if (green.className === 'color selected') {
@@ -101,3 +88,23 @@ blue.onclick = function colorBlue() {
   blue.className += ' selected';
   document.querySelector('.selected').style.backgroundColor = 'blue';
 };
+
+// Selecionar elementos do quadrado de pixel
+const pData = document.querySelectorAll('td');
+for (let index = 0; index < pData.length; index++) {
+  pData[index].onclick = function selectedPixel() {
+    pData[index].className += ' selected';
+    if (black.className === 'color selected') {
+      pData[index].style.backgroundColor = 'black';
+    }
+    if (green.className === 'color selected') {
+      pData[index].style.backgroundColor = 'green';
+    }
+    if (red.className === 'color selected') {
+      pData[index].style.backgroundColor = 'red';
+    }
+    if (blue.className === 'color selected') {
+      pData[index].style.backgroundColor = 'blue';
+    }
+  };
+}
