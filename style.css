@@ -38,3 +38,8 @@ main {
   height: 40px;
   border: 1px solid black;
 }
+
+.bt-container {
+  display: flex;
+  justify-content: center;
+}

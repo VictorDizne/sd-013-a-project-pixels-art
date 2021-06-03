@@ -40,7 +40,18 @@ function createPixelBord(width) {
   createPixelLines(width, pixelBoard);
   createPixels(width);
 }
+function clearPixelBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
+    pixels[pixel].style.backgroundColor = '#fff';
+  }
+}
+function setupButton() {
+  const bt = document.getElementById('clear-board');
+  bt.addEventListener('click', clearPixelBoard);
+}
 window.onload = function startPage() {
   setColors();
   createPixelBord(5);
+  setupButton();
 };
