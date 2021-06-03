@@ -49,6 +49,27 @@
 }
 
 /** Pixel Board **/
+#input-board {
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+.input-help {
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  margin-top: 3%;
+  border: 1px solid;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
 #pixel-board {
   display: table;
   margin: auto;

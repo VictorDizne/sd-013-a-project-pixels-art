@@ -54,7 +54,8 @@ function colorSelector() {
 }
 colorSelector();
 
-//Pixel Board 
+// Pixel Board 
+
 function setPixels(amount) {
   const pixelBoard = document.querySelector("#pixel-board");
    
