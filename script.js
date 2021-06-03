@@ -1,8 +1,10 @@
+/* eslint-disable no-shadow */
 /* eslint-disable quotes */
 /* eslint-disable no-use-before-define */
 window.onload = () => {
   clickColorPalette();
-  // paintBox();
+  clearBoard();
+  generateBoard();
 };
 
 /* exercicio 7 */
@@ -21,15 +23,7 @@ function clickColorPalette() {
   });
 }
 
-function getSelected() {
-  const selected = document.getElementsByClassName("selected");
-  return selected[0].style.backgroundColor;
-}
-
-console.log(getSelected());
-
 /* exercicio 8 */
-
 const pixels = document.getElementsByClassName("pixel");
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener("click", paint);
@@ -43,3 +37,18 @@ function paint(event) {
 }
 
 // exercicio 9
+function clearBoard() {
+  const clearBoard = document.querySelector("#clear-board");
+  const pixels = document.querySelectorAll(".pixel");
+
+  clearBoard.addEventListener("click", () => {
+    pixels.forEach((item) => {
+      const pixel = item;
+      pixel.style.backgroundColor = "white";
+    });
+  });
+}
+
+function generateBoard() {
+  const pixelArea = document.querySelector("#pixel-board");
+}

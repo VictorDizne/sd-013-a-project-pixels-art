@@ -59,6 +59,11 @@ h1 {
   margin-bottom: 25px;
 }
 
+#color-palette {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
 table, th, td {
   border: 1px solid black;
   border-radius: 8px;
@@ -66,10 +71,12 @@ table, th, td {
 
 tr {
   height:40px;
+  cursor: pointer;
 }
 
 td {
   width: 40px;
+  cursor: pointer;
 }
 
 /* adiciona cores à paleta */
@@ -79,3 +86,55 @@ td {
 .blue-palette { background-color: var(--fourth_palette); }
 
 .pixel { background-color: white; }
+
+#clear-board {
+  width: 140px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#clear-board:hover {
+  transition: ease-in-out 0.2s;
+  box-shadow: 0px 0px 40px #b4fcf7;
+}
+
+#clear-board:active {
+  background: lightgray;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#board-generator {
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#board-generator:active {
+  background-color: lightgray;
+  box-shadow: inset 0px 0px 10px lightgray;
+}
+
+#board-size {
+  margin-top: 25px;
+  height: 30px;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+}
+
+#board-size::placeholder {
+  text-align: center;
+}
