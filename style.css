@@ -11,6 +11,7 @@
 
 #clear-board {
   display: block;
+  margin-bottom: 10px;
 }
 
 #board-size {
@@ -26,4 +27,32 @@
   border: 1px solid black;
   width: 40px;
   height: 40px;
+}
+
+body {
+  font-family: Ubuntu, Cantarell, sans-serif;
+}
+
+button {
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  border-radius: 1px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+button:active {
+  background-color: white;
+  color: rgb(40, 40, 40);
 }
