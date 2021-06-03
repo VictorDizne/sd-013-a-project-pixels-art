@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://cdnb.artstation.com/p/assets/images/images/024/538/827/original/pixel-jeff-clipa-s.gif?1582740711);
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/024/538/827/original/pixel-jeff-clipa-s.gif?1582740711');
   background-size: 90%;
 }
 
@@ -30,7 +30,7 @@ body {
   padding: 5px;
   width: 40px;
   height: 40px;
-  border: #000000 solid 1px;
+  border: black solid 1px;
   margin: 5px;
   background-color: white;
 }
@@ -56,7 +56,7 @@ body {
 }
 
 #pixel-board {
-  margin: 30px auto 0 auto;
+  margin: 30px auto;
 }
 
 #clear-board {
@@ -66,7 +66,6 @@ body {
   border: 2px solid rgb(252, 247, 253);
   cursor: pointer;
   font-family: monospace;
-  font-weight: bold;
   font-size: 13px;
   padding: 6px 10px;
   text-decoration: none;
