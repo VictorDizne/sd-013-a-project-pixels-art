@@ -30,6 +30,20 @@ function selectedColor() {
 
 selectedColor();
 
+// Pintando os pixels em .pixel-board de acordo com o elemento cuja classe seja .selected.
+function pixelSelected() {
+  const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.addEventListener('click', e => {
+    if (e.target.classList.contains('pixel')) {
+      let pixelSelect = document.querySelector('.selected');
+      let backgroundColor = window.getComputedStyle(pixelSelect).backgroundColor;
+      e.target.style.backgroundColor = backgroundColor;
+    }
+  })
+}
+
+pixelSelected();
+
 // Ao carregar a página
 window.onload = function () {
   selectedBlack();

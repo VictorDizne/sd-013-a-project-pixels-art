@@ -1,3 +1,7 @@
+body{
+  text-align: center;
+}
+
 .color {
   display: inline-block;
   border: 1px solid black;
@@ -21,8 +25,8 @@
   background-color: yellow;
 }
 
-.pixel-board {
-  display: table;
+#pixel-board {
+  display: inline-block;
   border: 1px solid;
 }
 
