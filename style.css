@@ -42,7 +42,7 @@
   margin-right: auto;
 }
 
-.tr {
+tr {
   display: table-row;
 }
 
@@ -52,8 +52,4 @@
   border: 1px solid black;
   display: table-cell;
   background-color: white;
-}
-
-.selected {
-  background-color: black;
 }
