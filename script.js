@@ -8,7 +8,10 @@ window.onload = function () {
 }
 // Cria a linhas já com os pixel que preenchem o board, ou seja, cria o board.
 function boardMaker(n) {
-  let pixelBoard = document.getElementById('pixel-board');
+  let body = document.getElementsByTagName('body')[0];
+  let pixelBoard = document.createElement('section')
+  pixelBoard.setAttribute('id', 'pixel-board');
+  body.appendChild(pixelBoard);
 
   for (let i = 0; i < n; i += 1) {
     let line = document.createElement('div');
@@ -73,46 +76,34 @@ function boardCleaner() {
   })
 }
 
-// Cria função para remove Child. Terminar
-function removeChildFunc(parent, children) {
-  for (let i = 1; i < children.length; i += 1) {
-    parent.removeChild(children[i]);
-
-  }
-}
-
 // Remove o board atual. Terminar
 function deleteBoard() {
   let board = document.getElementById('pixel-board');
-  let lines = document.getElementsByClassName('line');
-
-  for (let line of lines) {
-    let pixels = line.children;
-    removeChildFunc(line, pixels);
-  }
-  removeChildFunc(board, lines);
+  let body = document.getElementsByTagName('body')[0];
 
 
+  body.removeChild(board);
 }
 
-// Cria função para definir o tamanho do board. Terminar
+// Cria função para definir o tamanho do board.
 function boardSize() {
   let buttonVQV = document.getElementById('generate-board');
   let inputField = document.getElementById('board-size');
 
+
   buttonVQV.addEventListener('click', function () {
 
-    deleteBoard();
     let n = inputField.value;
     if (n === '') {
       alert('Board inválido!');
-    }
-    if (n > 0) {
+    } else {
+      deleteBoard();
       n = boardLimit(n);
       boardMaker(n);
     }
 
   })
+
 }
 
 // Cria um limite para o tamanho do board.
@@ -123,6 +114,9 @@ function boardLimit(n) {
   if (n < 5) {
     n = 5;
   };
+  if (n <= 0) {
+    n = Math.max(n, 1);
+  }
   return n;
 }
 
@@ -136,7 +130,7 @@ function randomColor() {
   return rgb;
 }
 
-// Troca a cor da paleta.
+// Troca as cores da paleta.
 function changeColors() {
   let colors = document.getElementsByClassName('color');
 

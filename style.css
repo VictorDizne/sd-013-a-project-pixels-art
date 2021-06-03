@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   background-color: sandybrown;
 }
 
@@ -14,7 +15,7 @@ body {
 
 .header {
   margin: 20px 0;
-  border-bottom: 2px solid black;
+  font-family: 'Merienda', cursive;
 }
 
 #color-palette {
@@ -39,7 +40,7 @@ body {
 
 #pixel-board {
   display: table;
-  margin: 0 auto;
+  margin: 0 auto 80px;
   border: 1px solid black;
 }
 
