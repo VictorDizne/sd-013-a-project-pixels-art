@@ -2,16 +2,26 @@
 const table = document.createElement('table');
 table.id = 'table';
 document.getElementById('pixel-board').appendChild(table);
-for (let line = 0; line < 5; line + 1) {
+for (let line = 0; line < 5; line++) {
+  console.log('teste');
   const pixelLine = document.createElement('tr');
-  for (let colum = 0; colum < 5; colum + 1) {
+  pixelLine.className += `line${line}`;
+  for (let colum = 0; colum < 5; colum ++) {
     const pixelData = document.createElement('td');
     pixelData.className = 'pixel';
-    pixelData.className += ` squad${colum}`;
+    pixelData.className += ` squad${colum}`; 
     pixelLine.appendChild(pixelData);
   }
-  document.getElementById('table').appendChild(pixelLine);
+  table.appendChild(pixelLine);
 }
+
+/* const pixelLine = document.createElement('tr');
+pixelLine.className = 'pixelLine';
+const pixelColumn = document.createElement('td');
+pixelColumn.className = 'pixel';
+pixelColumn.innerText = 'teste';
+pixelLine.appendChild(pixelColumn);
+table.appendChild(pixelLine); */
 
 // Inicia com cor preta selecionada
 const black = document.getElementById('black');
