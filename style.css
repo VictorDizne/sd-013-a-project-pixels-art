@@ -1,23 +1,43 @@
-div {
-    height: 100px;
-    width: 100px;
+.color {
+    height: 50px;
+    width: 50px;
     border: black solid 1px;
     display: inline-block;
-    margin-right: 10px;
+    margin: 1px;
 }
-
+#color-palette{
+   text-align: center;
+}
+body{
+    text-align: center;
+}
 #black {
     background-color: black;
 }
-
 #red {
     background-color: red;
 }
-
 #blue {
     background-color: blue;
 }
-
 #green {
     background-color: green;
+}
+.pixel {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border:black solid 1px;
+    display: inline-block
+}
+#pixel-board {
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    border: black solid 3px;
+    line-height: 0.7px;
+    padding: 5px;
+}
+#title {
+    color: rgb(17, 43, 46);
 }
