@@ -1,3 +1,8 @@
+@font-face {
+  font-family: zcool;
+  src: url(fonts/ZCOOLKuaiLe-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +11,28 @@
 body, header, #pixel-board {
   margin: auto;
   text-align: center;
+  color: rgb(104, 49, 90);
+}
+
+h1 {
+  background: -webkit-linear-gradient(rgb(153, 83, 167), rgb(26, 25, 25));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background-image: url(img/pixel-art.jpg);
+  background-size: cover;
+  margin-bottom: 40px;
+  font-family: zcool;
+}
+
+header {
+  margin-top: 150px;
+}
+
+main {
+  margin-top: 40px;
 }
 
 #color-palette .color {
@@ -49,6 +76,44 @@ body, header, #pixel-board {
   display: table-row;
 }
 
+#tools {
+  margin: 20px;
+}
+
+#clear-board, #random {
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+  color: transparent;
+}
+
+#random {
+  background-color: black;
+  padding: 1px;
+  border-radius: 5px;
+
+}
+
+#generate-board, #board-size {
+  padding: 3px 10px 3px 10px;
+  font-weight: bolder;
+  font-family: zcool;
+  font-size: 18px;
+}
+
+#generate-board {
+  cursor: pointer;
+  background-color: teal;
+}
+
+#board-size {
+  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(219, 12, 12));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid rgb(85, 9, 85);
+  border-radius: 10px;
+  width: 53px;
+}
+
 #inputs, #size {
   margin: 10px;
 }
@@ -56,4 +121,8 @@ body, header, #pixel-board {
 input {
   text-align: center;
   width: 45px;
+}
+
+.pixel, .color {
+  cursor: url(cursors/eventidepaintbrush.cur), auto;
 }

@@ -1,3 +1,5 @@
+let title = 'Projeto Pixel Art - Paleta de Cores'
+let titleCounter = 0;
 const colorPalette = document.querySelector('#color-palette');
 const divsOfPalette = document.querySelector('#color-palette').children;;
 const pixelBoard = document.querySelector('#pixel-board');
@@ -10,18 +12,15 @@ let btnChangeSize = document.querySelector('#generate-board');
 let txtSize = document.querySelector('#board-size');
 let numLinesAndColumn = 5;
 
-
-function createColorPalette() {
-  colors = [];
-  for (let index = 0; index < 4; index += 1) {
-
-    const div = document.createElement('div');
-    div.className = 'color';
-    div.id = index;
-    colorPalette.appendChild(div);
-
-    storeRandomColors(index, div);
-  }
+function introTitle() {
+    if(titleCounter < title.length) {
+      document.querySelector('#title').innerHTML += title.charAt(titleCounter);
+      titleCounter += 1;
+      setTimeout(introTitle, 110);
+    }
+    for (let index = 0; index < title.length; index += 1) {
+      
+    }
 }
 
 function storeRandomColors(index, div) {
@@ -40,6 +39,18 @@ function storeRandomColors(index, div) {
   }
 }
 
+function createColorPalette() {
+  colors = [];
+  for (let index = 0; index < 4; index += 1) {
+
+    const div = document.createElement('div');
+    div.className = 'color';
+    div.id = index;
+    colorPalette.appendChild(div);
+
+    storeRandomColors(index, div);
+  }
+}
 
 function createLines() {
   for (let numLine = 0; numLine < numLinesAndColumn; numLine += 1) {
@@ -80,65 +91,69 @@ function resetPixelBoard() {
   }
 }
 
+function afterError() {
+  document.querySelector('input').style.border = '1px solid black'
+}
 
-window.onload = function inicio() {
+btnClear.addEventListener('click', function() {
+  console.log('botão de limpar foi clicado.');
+  let pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
+
+btnRandom.addEventListener('click', function() {
+  resetColorPalette();
+  createColorPalette();
+});
+
+btnChangeSize.addEventListener('click', function() {
+  if (txtSize.value === '') {
+    alert('Board inválido!');
+    document.querySelector('input').style.border = '3px solid red';
+    setTimeout(afterError, 2500);
+  } else {
+    let maxValue = 50;
+    let minValue = 5;
+
+    if (txtSize.value < minValue) {
+      numLinesAndColumn = minValue;
+    } else if (txtSize.value > maxValue) {
+      numLinesAndColumn = maxValue;
+    } else {
+      numLinesAndColumn = parseInt(txtSize.value, 10);
+    }
+    resetPixelBoard();
+    createLines();
+    createPixels();
+  }
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('color')) {
+    console.log(`div Color ${event.target.id}`);
+    resetClassSelected();
+    for(let index = 0; index < colors.length; index += 1) {
+      if (parseInt(event.target.id, 10) === index) {
+        event.target.className = 'color selected';
+        colorSelected = colors[index];
+      }
+    }
+  }
+});
+
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('pixel')) {
+    console.log('pixel clicado')
+    event.target.style.backgroundColor = colorSelected;
+  }
+});
+
+window.onload = function initProcedures() {
+  introTitle();
   createColorPalette();
   createLines();
   createPixels();
-
-  document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('color')) {
-      console.log(`div ${event.target.id}`);
-      resetClassSelected();
-      for(let index = 0; index < colors.length; index += 1) {
-        if (parseInt(event.target.id, 10) === index) {
-          event.target.className = 'color selected';
-          colorSelected = colors[index];
-        }
-      }
-    }
-  });
-
-  btnClear.addEventListener('click', function() {
-    console.log('botão de limpar foi clicado.');
-    let pixels = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'white';
-    }
-  });
-
-  btnRandom.addEventListener('click', function() {
-    resetColorPalette();
-    createColorPalette();
-  });
-
-  btnChangeSize.addEventListener('click', function() {
-    if (txtSize.value === '') {
-      alert('Board inválido!');
-      document.querySelector('input').style.border = '3px solid red';
-      setTimeout(() => { document.querySelector('input').style.border = '1px solid black'; }, 2000);
-    } else {
-      let maxValue = 50;
-      let minValue = 5;
-
-      if (txtSize.value < minValue) {
-        numLinesAndColumn = minValue;
-      } else if (txtSize.value > maxValue) {
-        numLinesAndColumn = maxValue;
-      } else {
-        numLinesAndColumn = parseInt(txtSize.value, 10);
-      }
-      resetPixelBoard();
-      createLines();
-      createPixels();
-    }
-  });
-
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('pixel')) {
-      console.log('pixel clicado')
-      event.target.style.backgroundColor = colorSelected;
-    }
-  });
 };
 
