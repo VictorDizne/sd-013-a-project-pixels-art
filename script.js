@@ -7,20 +7,22 @@ const div4 = document.querySelector("#green")
 //cores fixas com um selecionador
 
 //criação dos blocoDiv
-function createPixels(n=5) {
+function createPixels(n) {
   for (let index = 0; index < n; index += 1) {
     const quadrado = document.createElement('div');
     const pixelBoard = document.querySelector('#pixel-board');
     pixelBoard.appendChild(quadrado);
-    quadrado.classList = 'linha';
+    quadrado.classList.add('linha');
+
     for (let index2 = 0; index2 < n; index2 += 1) {
       const quadradinho = document.createElement('div');
-      quadradinho.classList = 'pixel';
+      quadradinho.classList.add('pixel');
       quadrado.appendChild(quadradinho);
+      
     }
   }
 }
-createPixels();
+createPixels(5);
 /*quando estou no 0, eu coloco a primeira linha no for 2 eu rodo 5 vezes criando 5 quadrados
 quando estou no 1, eu coloco a segunda linha do for, no 2 for  eu rodo 5 vezes criando 5 quadrados
 quando estou no 2, eu coloco a terceira linha do for, no 3 for eu rodo 5 vezes cirando 5 quadrados.
@@ -33,7 +35,6 @@ joguei como filha para ficar embaixo */
 //codigo de aline hoshino
 //evento que seleciona as paletas de cores
 
-
 function mudaDiv(event) {
   const elemento = document.querySelector('.selected');
   elemento.classList.remove('selected');
@@ -44,7 +45,7 @@ div2.addEventListener("click", mudaDiv)
 div3.addEventListener("click", mudaDiv)
 div4.addEventListener("click", mudaDiv)
 
-//era pra pintar
+//AQUI QUE A MAGICA ACONTECE
 const pixels = document.querySelectorAll(".pixel");
 const pixelBoard = document.querySelector("#pixel-board");
 
@@ -56,106 +57,48 @@ function pincel(event) {
   evento.target.style.backgroundColor = SelectColor;
   }
 }
-
 pixelBoard.addEventListener("click", pincel)
 
-
-
+//limpa pixels
 
 const button = document.getElementById("clear-board");
 button.innerHTML= "Limpar"
-
 button.addEventListener("click", ()=> {
   const clear = document.getElementsByClassName("pixel")
    for (let index = 0; index < clear.length; index +=1) {
       clear[index].style.backgroundColor= "white";
-      console.log(clear)
     }
 })
-  
-  
 
 
+//aumenta pixels
+const buttonVqv = document.getElementById("generate-board");
 
+buttonVqv.addEventListener("click", () => {
+  const pixelBoard = document.getElementById("pixel-board")
+  pixelBoard.innerHTML = "";
+  const inputField = document.getElementById("board-size")
+  createPixels(inputField.value)
+})
 
+const input = document.getElementById("board-size")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function setBackground(element) {
-//   const pixelElement = element;
-//   const selectElement = document.getElementsByClassName('selected')[0];
-
-//   pixelElement.style.backgroundColor = selectElement.style.backgroundColor;
-
-//   return pixelElement;
-// }
-
-// function drawColor() {
-//   const pixelsListElements = document.getElementsByClassName('pixel');
-
-//   for (let elementIndex = 0; elementIndex < pixelsListElements.length; elementIndex += 1 ) {
-//     const pixelElement = pixelsListElements[elementIndex];
-//     pixelElement.addEventListener('click', () => setBackground(pixelElement));
-//   }
-// }
-
-// function clearButton() {
-//   const buttonElement = document.getElementById('clear-board');
-//   const pixelBoardItems = document.getElementsByClassName('pixel');
-
-//   buttonElement.addEventListener('click', () => {
-//     for (let index = 0; index < pixelBoardItems.length; index += 1) {
-//       pixelBoardItems[index].style.backgroundColor = 'white';
+// function verificaInput() {
+//   for (let index = 0; index < input.length; index++) {
+//     if (input[index] < 5) {
+//       input.value = 5;
 //     }
-//   });
+//     if (input[index] > 50) {
+//       input.value = 50;
+//     }
+//     if (input.value.length === 0) {
+//       alert("Board inválido!");
+//     } else {
+//     document.getElementById("pixel-board").innerHTML="";
+//       createPixels(input.numero);
+//   }
+//  }
 // }
 
-// function createPixel() {
-//   const pixelElement = document.createElement('li');
-//   pixelElement.className = 'pixel';
-//   pixelElement.addEventListener('click', () => setBackground(pixelElement));
 
-//   return pixelElement;
-// }
+// buttonVqv.addEventListener("click", checkInput);

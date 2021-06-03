@@ -12,6 +12,15 @@ body {
   margin-bottom: 10px;
 }
 
+.linha {
+  height: 42px;
+}
+
+#pixel-board {
+  width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .pixel {
   width: 40px;
@@ -39,13 +48,15 @@ body {
   background-color: green
 }
 
-.linha {
-  max-width: 210px;
-  margin-left:auto;
-  margin-right: auto;
-}
-
 #clear-board {
   padding: 5px;
   margin-bottom: 20px;
+}
+
+#generate-board {
+  padding: 2px;
+}
+
+#board-size {
+  width: 50px;
 }
