@@ -33,16 +33,26 @@ selectedColor();
 // Pintando os pixels em .pixel-board de acordo com o elemento cuja classe seja .selected.
 function pixelSelected() {
   const pixelBoard = document.getElementById('pixel-board');
-  pixelBoard.addEventListener('click', e => {
+  pixelBoard.addEventListener('click', (e) => {
     if (e.target.classList.contains('pixel')) {
-      let pixelSelect = document.querySelector('.selected');
-      let backgroundColor = window.getComputedStyle(pixelSelect).backgroundColor;
-      e.target.style.backgroundColor = backgroundColor;
+      const pixelSelect = document.querySelector('.selected');
+      const backgroundChange = window.getComputedStyle(pixelSelect).backgroundColor;
+      e.target.style.backgroundColor = backgroundChange;
     }
-  })
+  });
 }
 
 pixelSelected();
+
+// Botão limpa pixels.
+function clearBoard() {
+  const buttonClear = document.getElementById('clear-board');
+  buttonClear.addEventListener('click', () => {
+    initialPixelColor('white');
+  });
+}
+
+clearBoard();
 
 // Ao carregar a página
 window.onload = function () {

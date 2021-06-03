@@ -1,4 +1,4 @@
-body{
+body {
   text-align: center;
 }
 
@@ -35,4 +35,11 @@ body{
   border: 1px solid;
   width: 40px;
   height: 40px;
+}
+
+#clear-board {
+  display: inline-block;
+  border: 1px solid black;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
