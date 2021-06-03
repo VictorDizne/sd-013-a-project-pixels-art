@@ -1,7 +1,8 @@
 let currentColor = '#000';
 function setCurrentColor(event) {
+  const el = event.target;
   const selectedColor = document.getElementsByClassName('selected')[0];
-  event.target.classList.toggle('selected');
+  el.classList.toggle('selected');
   selectedColor.classList.toggle('selected');
   currentColor = event.target.innerText;
 }
@@ -13,7 +14,8 @@ function setColors() {
   }
 }
 function applyColor(event) {
-  event.target.style.backgroundColor = currentColor;
+  const el = event.target;
+  el.style.backgroundColor = currentColor;
 }
 function createPixels(width) {
   const pixelLines = document.getElementsByClassName('pixel-line');
@@ -21,7 +23,7 @@ function createPixels(width) {
     for (let i = 0; i < width; i += 1) {
       const pixel = document.createElement('div');
       pixel.classList.add('pixel');
-      pixel.addEventListener('click', applyColor)
+      pixel.addEventListener('click', applyColor);
       pixelLines[line].appendChild(pixel);
     }
   }
