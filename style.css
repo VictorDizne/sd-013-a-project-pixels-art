@@ -1,6 +1,13 @@
 
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
   text-align: center;
+  padding: 20px;
 }
 
 .container {
@@ -13,13 +20,14 @@ h1 {
 #color-palette {
   display: flex;
   justify-content: center;
+  padding: 50px;
 }
 
 .color {
   border: 1px solid black;
-  height: 50px;
-  width: 50px;
-  margin: 0 25px;
+  height: 60px;
+  width: 60px;
+  margin: 0 30px;
 }
 
 .black {
@@ -36,4 +44,22 @@ h1 {
 
 .green {
   background-color: green;
+}
+
+.container-pixel-board{
+  display: flex;
+  justify-content: center;
+}
+
+#pixel-board {
+  border: black 1px solid;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  }
+
+  .pixel {
+  width: 40px;
+  height: 40px;
+  border: solid black 1px;
+  background-color: white;
 }
