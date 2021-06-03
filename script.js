@@ -1,5 +1,5 @@
 const paletteLength = 4;
-const boardSize = 5;
+const boardSize = 15;
 let currentColor = 'black';
 
 // FUNÇÃO RETIRADA DE https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
@@ -33,6 +33,11 @@ function createPalette() {
   }
 }
 
+function removePalette() {
+  const table = document.getElementById('color-palette');
+  table.innerHTML = '';
+}
+
 function createPixels() {
   const table = document.querySelector('#pixel-board');
 
@@ -43,6 +48,7 @@ function createPixels() {
     for (let columnIndex = 0; columnIndex < boardSize; columnIndex += 1) {
       const td = document.createElement('td');
       td.classList.add('pixel');
+      td.style.backgroundColor = 'white';
       line.appendChild(td);
     }
   }
@@ -96,6 +102,18 @@ function clearPixels() {
     }
   });
 }
+
+function getNewPalette() {
+  const button = document.querySelector('#gererate-palette');
+
+  button.addEventListener('click', () => {
+    removePalette();
+    createPalette();
+    selectColor();
+  });
+}
+
+getNewPalette();
 
 createPalette();
 

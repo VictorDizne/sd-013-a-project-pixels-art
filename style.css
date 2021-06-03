@@ -4,13 +4,34 @@
   box-sizing: border-box;
 }
 
+body, input, textarea, button {
+  background-color: rgb(242, 243, 248);
+  border: none;
+  outline: none;
+}
+
 .container {
   width: 95vw;
+  max-width: 90%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 150px 1fr;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'board palette';
   gap: 2rem;
   margin: auto;
+}
+
+.board {
+  grid-area: board;
+  align-self: center;
+  justify-self: center;
+}
+
+.palette {
+  width: 300px;
+  grid-area: palette;
+  align-self: center;
 }
 
 .color {
@@ -26,9 +47,10 @@
   width: 40px;
   height: 40px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .selected {
-  filter: brightness(0.5);
+  /* filter: brightness(0.7); */
+  border: 5px solid white !important;
 }
