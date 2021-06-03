@@ -2,7 +2,6 @@ const colorBlack = document.querySelector('#black');
 const colorBlue = document.querySelector('#blue');
 const colorRed = document.querySelector('#red');
 const colorGreen = document.querySelector('#green');
-const botaoReset = document.createElement('button');
 
 function pintaCor(event) {
   const selected = document.querySelector('.selected');
@@ -41,9 +40,10 @@ colorBlue.addEventListener('click', seleciona);
 colorRed.addEventListener('click', seleciona);
 colorGreen.addEventListener('click', seleciona);
 
+const botaoReset = document.createElement('button');
 botaoReset.id = 'clear-board';
 botaoReset.innerText = 'Limpar';
-document.querySelector('#color-palette').appendChild(botaoReset);
+document.querySelector('#divBtn').appendChild(botaoReset);
 
 function reset() {
   const pixels = document.querySelectorAll('.pixel');
