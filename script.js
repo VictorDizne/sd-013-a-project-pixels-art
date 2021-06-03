@@ -93,7 +93,6 @@ blue.onclick = function colorBlue() {
 const pData = document.querySelectorAll('td');
 for (let index = 0; index < pData.length; index++) {
   pData[index].onclick = function selectedPixel() {
-    pData[index].className += ' selected';
     if (black.className === 'color selected') {
       pData[index].style.backgroundColor = 'black';
     }
@@ -107,4 +106,12 @@ for (let index = 0; index < pData.length; index++) {
       pData[index].style.backgroundColor = 'blue';
     }
   };
+}
+
+// Botão Limpar
+const clearButton = document.getElementById('clear-board');
+clearButton.onclick = function clearPixels() {
+  for (let index = 0; index < pData.length; index++) {
+    pData[index].style.backgroundColor = 'white';
+  }
 }
