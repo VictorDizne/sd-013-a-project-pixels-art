@@ -27,10 +27,29 @@
   width:40px;
   display:inline-block;
   background-color: white;
+  box-sizing: border-box;
 
 }
 #pixel-board {
   margin: 0 auto;
   text-align: center;
   line-height: 0px;
+  margin-top: 30px;
+}
+
+#color-palette{
+  text-align: center;
+}
+
+#title{
+  text-align: center;
+}
+
+#botao{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.linha{
+  height: 40px;
 }

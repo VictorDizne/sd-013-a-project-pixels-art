@@ -1,11 +1,11 @@
-function createPixels(n=5) {
-  for (let index = 0; index < n; index += 1) {
+function createPixels(number = 5) {
+  for (let index = 0; index < number; index += 1) {
     const quadrado = document.createElement('div');
     const pixelBoard = document.querySelector('#pixel-board');
     pixelBoard.appendChild(quadrado);
     quadrado.classList = 'linha';
 
-    for (let index2 = 0; index2 < n; index2 += 1) {
+    for (let index2 = 0; index2 < number; index2 += 1) {
       const quadradinho = document.createElement('div');
       quadradinho.classList = 'pixel';
       quadrado.appendChild(quadradinho);
@@ -64,8 +64,8 @@ function pintar(event){
   
 }
 
-const pixels = document.querySelector("#pixel-board")
-pixels.addEventListener('click', pintar);
+const pixelBoard = document.querySelector("#pixel-board")
+pixelBoard.addEventListener('click', pintar);
 
 /* Com a ajuda do Luiz Furtado, ele me mostrou a dica que a Trybe passou que a função getComputedStyle pega todos os valores de propriedade e passa para o javascript.*/
 /*Com a ajuda da Luiza Antiques parou de pintar a linha também, precisava criar um if que só pegasse dentro do board os filhos dele, por isso usou o contain"*/
@@ -81,7 +81,8 @@ function Limpar() {
 }
 Limpar();
 
-function DefineBoard(){
+// Ajuda da Júlia nesse exercício, precisa dos ifs para que sempre que for maior que 50 ou menor que 5 fique nesses números
+function DefineBoard(number){
 if(number<5){
 return 5;
 }
@@ -94,5 +95,34 @@ return 50;
 
 DefineBoard();
 
-/* Ajuda da Júlia nesse exercício, precisa dos ifs para que sempre que for maior que 50 ou menor que 5 fique nesses números
+
+/* Nesse exercício a Julia me explicou passo a passo, 
+primeiro precisamos ver se o input ta vazio, se tiver vazio da board invalido, porque tem de por um 
+numero, depois zeramos para nao ficar nenhum quadro,
+depois criou a variavel numero que tem o valor colocado no input
+depois cria uma nova variavel numero que vai pegar o valor correto, porque se o usuário por Ex: 51 
+no input é para retornar 50, e se por 1 é para retonar 5 
+daí puxa a funcao que cria os pixels e dá esse nuemro para ela
+depois zera o input
 */
+
+function resizeBoard() {
+  let input = document.querySelector('#board-size');
+  let buttonSize = document.querySelector('#generate-board');
+  
+  buttonSize.addEventListener('click', function(){
+    if (input.value === "") {
+      alert('Board inválido!');
+    }
+    else {
+      pixelBoard.innerHTML = ""; // zera o quadro
+      let number = input.value;
+      let newNumber = DefineBoard(number); // chama a funcção anterior para que o número não passe de 50
+      createPixels(newNumber);
+      input.value = '';//zera o input
+    }
+
+  });
+}
+
+resizeBoard();
