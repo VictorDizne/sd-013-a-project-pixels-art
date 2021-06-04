@@ -7,6 +7,7 @@ const black = document.querySelector('#first');
 const red = document.querySelector('#second');
 const blue = document.querySelector('#third');
 const green = document.querySelector('#fourth');
+const receiveValue = document.querySelector('#board-size')
 
 black.style.backgroundColor = 'black';
 red.style.backgroundColor = 'red';
@@ -19,20 +20,24 @@ const board = document.createElement('div');
 board.setAttribute('id', 'pixel-board');
 document.querySelector('#table').appendChild(board);
 
-const n = 5;
+function createBoard(element) {
 
-for (let i = 0; i < n; i += 1) {
+for (let i = 0; i < element; i += 1) {
   const tr = document.createElement('tr');
   tr.classList.add('tr');
   board.appendChild(tr);
-  for (let j = 0; j < n; j += 1) {
+  for (let j = 0; j < element; j += 1) {
     const pixel = document.createElement('td');
     pixel.classList.add('pixel');
     tr.appendChild(pixel);
   }
 }
+}
+
+createBoard(5);
 
 black.classList.add('selected');
+
 // feito com ajuda do Matheus Duarte
 function selectColor(element) {
   if (element.target.className === 'color') {
@@ -43,6 +48,7 @@ function selectColor(element) {
 }
 
 pixels.addEventListener('click', selectColor);
+
 // feito com ajuda do Matheus Duarte
 function fillColor(element) {
   const pixelSelected = element.target;
@@ -64,6 +70,41 @@ function resetBoard() {
 }
 
 btnClear.addEventListener('click', resetBoard);
+
+// desafios 10 e 11 feito com ajuda do Matheus Duarte. mlk é brabo
+function receiveBoard(element) {
+  if (element.value > 50) {
+    alert('Really?');
+    createBoard(50);
+  }
+  if (element.value < 5) {
+    alert('Again?');
+    createBoard(5);
+  }
+  if (element.value >= 5 && element.value <= 50) {
+    createBoard(element.value);
+  }
+}
+
+function deleteBoard() {
+  const delTr = document.querySelectorAll('.tr');
+  for (let i = 0; i < delTr.length; i += 1) {
+    board.removeChild(delTr[i]);
+}
+}
+
+function btnVQV() {
+  if (receiveValue.value === ''){
+   alert('Board inválido!')
+  } else {
+  deleteBoard();
+  receiveBoard(receiveValue);
+}
+}
+
+const btnSubmit = document.querySelector('#generate-board');
+
+btnSubmit.addEventListener('click', btnVQV);
 
 // document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
 // document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
