@@ -1,4 +1,4 @@
-// https://css-tricks.com/snippets/javascript/random-hex-color/
+// https://css-tricks.com/snippets/javascript/random-hex-color
 const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
 const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
 const randomColor4 = Math.floor(Math.random() * 16777215).toString(16);
