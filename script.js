@@ -1,35 +1,76 @@
 
-  //document.getElementById('colorOne').classList.add('selected');
+window.onload = function () {
 
+function black () {
+document.getElementById('colorOne').classList.add('selected');
+}
+black();
 
 let colorOne = document.getElementById('colorOne'); 
 let colorTwo = document.getElementById('colorTwo'); 
 let colorThree = document.getElementById('colorThree'); 
 let colorFour = document.getElementById('colorFour'); 
-let squares = document.querySelectorAll('.pixel')
- 
+let bigSquare = document.getElementById('pixel-board');
+let colorSelected;
+
+
 colorOne.addEventListener('click', selected);
 colorTwo.addEventListener('click', selected);
 colorThree.addEventListener('click', selected);
 colorFour.addEventListener('click', selected);
 
-for (let i=0; i < squares.length; i += 1) {
-  squares[index].addEventListener('click', changeColor);
-}
 
 function selected(event) {
   let colorChoose = document.querySelector('.selected');
   colorChoose.classList.remove('selected');
   event.target.classList.add('selected');
+  colorSelected = event.target;
+}
+
+bigSquare.addEventListener('click', Pixels);
+
+ function Pixels(event) {  
+  let pixel = document.querySelector('.painted');
+  if (pixel == null) {
+    
+      event.target.classList.add('painted');
+  } else {
+    pixel.classList.remove('painted');
+    event.target.classList.add('painted');
+    
+  }
+  paintSquare();
+} 
+
+function paintSquare () {
+  let colorChoose = document.querySelector('.selected');
+  let squareChoose = document.querySelector('.painted');
+  squareChoose.className = '';
+  if (colorChoose == colorOne) {
+    squareChoose.classList.add('firstColor');
+  } else if (colorChoose == colorTwo) {
+    squareChoose.classList.add('secondColor');
+  } else if (colorChoose == colorThree) {
+    squareChoose.classList.add('thirdColor');
+  } else if (colorChoose == colorFour) {
+    squareChoose.classList.add('fourthColor');
+  }
+  squareChoose.classList.add('pixel');
+}
+
+/* window.onload = function squaresEvent (){
+  for (let i=0; i < squares.length; i += 1) {
+  squares[i].addEventListener('click', changeColor);
+  }
 }
 
 function changeColor(event) {
   // let square = document.querySelector('.printed');
   // squares.classList.remove('printed');
   event.target.classList.add('printed');
+} */
+
 }
-
-
 
 
 

@@ -1,3 +1,7 @@
+#pixel-board {
+  background-color: white;
+}
+
 .color {
   border-color: black;
   border-style: solid;
@@ -19,20 +23,20 @@
   margin-right: 5px;
   display: inline-block;
 }
-#colorOne {
-  background-color: black;
+.firstColor {
+  background-color: black !important;
 }
 
-#colorTwo {
-  background-color: red;
+.secondColor {
+  background-color: red !important;
 }
 
-#colorThree {
-  background-color: yellow;
+.thirdColor {
+  background-color: yellow !important;
 }
 
-#colorFour {
-  background-color: blue;
+.fourthColor {
+  background-color: blue !important;
 }
 
 #pixel-board { 
@@ -41,8 +45,8 @@
 .tr { 
   display: table-row; 
 }
-.pixel { 
-  background-color: white;
+.pixel {
+  background-color: white; 
   border-color: black;
   border-style: solid;
   border-width: 1px;
