@@ -28,15 +28,14 @@ function questionFour() {
   let divBoard = document.createElement('div');
   divBoard.setAttribute('id', 'pixel-board');
 
-  for(let i = 0; i < 25; i += 1) {
+  for(let i = 1; i <= 25; i += 1) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
     pixel.style.backgroundColor = 'white';
-    if(i % 5 == 1) {
-      pixel.style.display = 'block';
-    } else {
+    pixel.style.border = '1px solid black';
+
       pixel.style.display = 'inline-block';
-    }
+
     divBoard.appendChild(pixel);
   }
   document.body.appendChild(divBoard);
