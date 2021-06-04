@@ -9,8 +9,8 @@ questionOne();
 
 function questionTwo() {
   let divPallet = document.createElement('div');
-  divPallet.setAttribute('id','color-palette');
-  let arrayCores = ['green','yellow','blue','red'];
+  divPallet.setAttribute('id', 'color-palette');
+  let arrayCores = ['black', 'yellow', 'blue', 'red'];
 
   for(let i = 0; i < 4; i += 1) {
     let div = document.createElement('div');
@@ -23,3 +23,4 @@ function questionTwo() {
   }
 }
 questionTwo();
+
