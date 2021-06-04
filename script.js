@@ -1,8 +1,7 @@
 const listaDeCor = 'lista-de-cor';
 const pixelBoard = '#pixel-board';
-const input = document.querySelector('input');
-let paletaDeCor = 'color-palette';
-ListaHasDeCor = '#lista-de-cor'
+const paletaDeCor = 'color-palette';
+const ListaHasDeCor = '#lista-de-cor';
 
 function criaUlDeCor(id) {
   const ul = document.createElement('ul');
@@ -31,16 +30,18 @@ function NumeroValidoInput() {
   let Inputvalor = document.querySelector('#board-size').value;
   if (Inputvalor < 5 && Inputvalor > -1) {
     Inputvalor = 5;
-    return Inputvalor;
-  } else if (Inputvalor > 50){
+  } else if (Inputvalor > 50) {
     Inputvalor = 50;
-    return Inputvalor;
-  } else if (Inputvalor >= 5 && Inputvalor <= 50 ) {
-    return Inputvalor;
-  } else {
-    return alert('Board inválido!');
   }
+  return Inputvalor;
 };
+
+function mudaCor(event) {
+  const pixelClicado = event.target;
+  const corBase = document.getElementsByClassName('selected');
+  pixelClicado.style.backgroundColor = corBase[0].style.backgroundColor;
+  pixelClicado.setAttribute('id', 'colorido');
+}
 
 function mudaCorDoPixel() {
   let pixelNumeroN = 0;
@@ -74,7 +75,7 @@ function AdicionaPixels() {
   mudaCorDoPixel();
 };
 
-AdicionaPixels();
+AdicionaPixels()
 
 function removePixels() {
   const tabelaDePixel = document.querySelector(pixelBoard);
@@ -91,21 +92,15 @@ function changeColor(event) {
   const CorAntiga = document.getElementsByClassName('selected');
   CorAntiga[0].classList.remove('selected');
   NovaCor.classList.add('selected');
-}
+};
+
 const classSelecionada = document.querySelector(ListaHasDeCor);
 classSelecionada.addEventListener('click', changeColor);
-
-function mudaCor(event) {
-  const pixelClicado = event.target;
-  const corBase = document.getElementsByClassName('selected');
-  pixelClicado.style.backgroundColor = corBase[0].style.backgroundColor;
-  pixelClicado.setAttribute('id', 'colorido');
-}
 
 mudaCorDoPixel();
 
 document.querySelector('#clear-board').addEventListener('click', () => {
-  let pixelsColoridos = document.querySelectorAll('.pixel');
+  const pixelsColoridos = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixelsColoridos.length; i += 1) {
     pixelsColoridos[i].style.backgroundColor = 'white';
     pixelsColoridos[i].setAttribute('id', '');
@@ -126,108 +121,108 @@ function gerarCor() {
   return cor;
 }
 
-document.querySelector('#mudarCores').addEventListener('click', CriandoCoresAleatórias);
-
 function CriandoCoresAleatórias() {
   removeCores();
   criaUlDeCor(paletaDeCor);
-  criaLiCores(listaDeCor, 4);  
-  let lista = document.getElementById('lista-de-cor');
+  criaLiCores(listaDeCor, 4);
+  const lista = document.getElementById(listaDeCor);
   for (let i = 0; i < lista.children.length; i += 1) {
-    if (i === 0 ) {
-      lista.children[i].style.backgroundColor = 'black'
+    if (i === 0) {
+      lista.children[i].style.backgroundColor = 'black';
     } else {
-    const cor = gerarCor();
-    lista.children[i].style.backgroundColor = cor;
+      const cor = gerarCor();
+      lista.children[i].style.backgroundColor = cor;
     }
   }
-  let classSelecionada = document.querySelector(ListaHasDeCor);
+  const classSelecionada = document.querySelector(ListaHasDeCor);
   classSelecionada.addEventListener('click', changeColor);
 }
+
+document.querySelector('#mudarCores').addEventListener('click', CriandoCoresAleatórias);
 
 CriandoCoresAleatórias();
 
 NumeroValidoInput();
 
 function gerarCorVerde() {
-  let r = Math.random() * 100;
-  let g = Math.random() * 255;
-  let b = Math.random() * 0;
-  let cor = `rgb(${r}, ${g}, ${b})`;
+  const r = Math.random() * 100;
+  const g = Math.random() * 255;
+  const b = Math.random() * 0;
+  const cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
-};
+}
 
 function gerarCorVermelha() {
-  let r = Math.random() * 255;
-  let g = Math.random() * 100;
-  let b = Math.random() * 100;
-  let cor = `rgb(${r}, ${g}, ${b})`;
+  const r = Math.random() * 255;
+  const g = Math.random() * 100;
+  const b = Math.random() * 100;
+  const cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
-};
+}
 
 function gerarCorAzul() {
-  let r = Math.random() * 100;
-  let g = Math.random() * 100;
-  let b = Math.random() * 255;
-  let cor = `rgb(${r}, ${g}, ${b})`;
+  const r = Math.random() * 100;
+  const g = Math.random() * 100;
+  const b = Math.random() * 255;
+  const cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
-};
+}
 
 function CriandoCoresAleatóriasVerde() {
   removeCores();
   criaUlDeCor(paletaDeCor);
-  criaLiCores(listaDeCor, 4);  
-  let lista = document.getElementById('lista-de-cor');
+  criaLiCores(listaDeCor, 4);
+  const lista = document.getElementById(listaDeCor);
   for (let i = 0; i < lista.children.length; i += 1) {
-    if (i === 0 ) {
-      lista.children[i].style.backgroundColor = 'black'
+    if (i === 0) {
+      lista.children[i].style.backgroundColor = 'black';
     } else {
       const cor = gerarCorVerde();
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  let classSelecionada = document.querySelector(ListaHasDeCor);
+  const classSelecionada = document.querySelector(ListaHasDeCor);
   classSelecionada.addEventListener('click', changeColor);
 };
 
 function CriandoCoresAleatóriasRed() {
   removeCores();
   criaUlDeCor(paletaDeCor);
-  criaLiCores(listaDeCor, 4);  
-  let lista = document.getElementById('lista-de-cor');
+  criaLiCores(listaDeCor, 4);
+  let lista = document.getElementById(listaDeCor);
   for (let i = 0; i < lista.children.length; i += 1) {
-    if (i === 0 ) {
-      lista.children[i].style.backgroundColor = 'black'
+    if (i === 0) {
+      lista.children[i].style.backgroundColor = 'black';
     } else {
       const cor = gerarCorVermelha();
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  let classSelecionada = document.querySelector(ListaHasDeCor);
+  const classSelecionada = document.querySelector(ListaHasDeCor);
   classSelecionada.addEventListener('click', changeColor);
-};
+}
 
 function CriandoCoresAleatóriasAzul() {
   removeCores();
   criaUlDeCor(paletaDeCor);
-  criaLiCores(listaDeCor, 4);  
-  let lista = document.getElementById('lista-de-cor');
+  criaLiCores(listaDeCor, 4);
+  let lista = document.getElementById(listaDeCor);
   for (let i = 0; i < lista.children.length; i += 1) {
-    if (i === 0 ) {
-      lista.children[i].style.backgroundColor = 'black'
+    if (i === 0) {
+      lista.children[i].style.backgroundColor = 'black';
     } else {
       const cor = gerarCorAzul();
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  let classSelecionada = document.querySelector(ListaHasDeCor);
+  const classSelecionada = document.querySelector(ListaHasDeCor);
   classSelecionada.addEventListener('click', changeColor);
-};
+}
 
-document.querySelector('#mudarCoresVerde').addEventListener('click', CriandoCoresAleatóriasVerde);
-
-
-document.querySelector('#mudarCoresAzul').addEventListener('click', CriandoCoresAleatóriasAzul);
+document.querySelector('#mudarCoresVerde').addEventListener('click',CriandoCoresAleatóriasVerde);
 
 
-document.querySelector('#mudarCoresVermelha').addEventListener('click', CriandoCoresAleatóriasRed);
+document.querySelector('#mudarCoresAzul').addEventListener('click',CriandoCoresAleatóriasAzul);
+
+
+document.querySelector('#mudarCoresVermelha').addEventListener('click',CriandoCoresAleatóriasRed);
