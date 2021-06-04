@@ -104,7 +104,3 @@ function btnVQV() {
 const btnSubmit = document.querySelector('#generate-board');
 
 btnSubmit.addEventListener('click', btnVQV);
-
-// document.querySelector('.second').style.backgroundColor = '#' + randomColor2;
-// document.querySelector('.third').style.backgroundColor = '#' + randomColor3;
-// document.querySelector('.fourth').style.backgroundColor = '#' + randomColor4;
