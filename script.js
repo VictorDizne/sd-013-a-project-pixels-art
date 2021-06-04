@@ -30,7 +30,7 @@ function setColor(e) {
   bgColor = bg;
 }
 let pixelColor = document.getElementsByClassName('pixel');
-for (classColor of pixelColor) {
+for (let classColor of pixelColor) {
   classColor.addEventListener('click', pintaPixel);
 }
 function pintaPixel(e) {
