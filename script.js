@@ -106,16 +106,16 @@ function gerarCor() {
   let r = Math.random() * 255;
   let g = Math.random() * 255;
   let b = Math.random() * 255;
-  let cor = `rgb(${r}, ${g}, ${b})`
+  let cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
 }
 
-document.querySelector('#mudarCores').addEventListener('click', CriandoCoresAleatórias)
+document.querySelector('#mudarCores').addEventListener('click', CriandoCoresAleatórias);
 
 function CriandoCoresAleatórias() {
   removeCores();
   criaUlDeCor('color-palette');
-  criaLiCores(listaDeCor, 8);  
+  criaLiCores(listaDeCor, 4);  
   let lista = document.getElementById('lista-de-cor');
   for (let i = 0; i < lista.children.length; i += 1) {
     if (i == 0 ) {
@@ -132,45 +132,45 @@ function CriandoCoresAleatórias() {
 CriandoCoresAleatórias();
 
 function NumeroValidoInput() {
-  let Inputvalor = document.querySelector('#board-size').value
+  let Inputvalor = document.querySelector('#board-size').value;
   if (Inputvalor < 5 && Inputvalor > -1) {
-    Inputvalor = 5
-    return Inputvalor
+    Inputvalor = 5;
+    return Inputvalor;
   } else if (Inputvalor > 50){
-    Inputvalor = 50
-    return Inputvalor
+    Inputvalor = 50;
+    return Inputvalor;
   } else if (Inputvalor >= 5 && Inputvalor <= 50 ) {
-    return Inputvalor
+    return Inputvalor;
   } else {
     return alert('Board inválido!');
   }
-}
+};
 
-NumeroValidoInput()
+NumeroValidoInput();
 
 function gerarCorVerde() {
   let r = Math.random() * 100;
   let g = Math.random() * 255;
   let b = Math.random() * 0;
-  let cor = `rgb(${r}, ${g}, ${b})`
+  let cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
-}
+};
 
 function gerarCorVermelha() {
   let r = Math.random() * 255;
   let g = Math.random() * 100;
   let b = Math.random() * 100;
-  let cor = `rgb(${r}, ${g}, ${b})`
+  let cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
-}
+};
 
 function gerarCorAzul() {
   let r = Math.random() * 100;
   let g = Math.random() * 100;
   let b = Math.random() * 255;
-  let cor = `rgb(${r}, ${g}, ${b})`
+  let cor = `rgb(${r}, ${g}, ${b})`;
   return cor;
-}
+};
 
 function CriandoCoresAleatóriasVerde() {
   removeCores();
@@ -187,7 +187,7 @@ function CriandoCoresAleatóriasVerde() {
   }
   let classSelecionada = document.querySelector('#lista-de-cor');
   classSelecionada.addEventListener('click', changeColor);
-}
+};
 
 function CriandoCoresAleatóriasVermelha() {
   removeCores();
@@ -204,7 +204,7 @@ function CriandoCoresAleatóriasVermelha() {
   }
   let classSelecionada = document.querySelector('#lista-de-cor');
   classSelecionada.addEventListener('click', changeColor);
-}
+};
 
 function CriandoCoresAleatóriasAzul() {
   removeCores();
@@ -221,12 +221,12 @@ function CriandoCoresAleatóriasAzul() {
   }
   let classSelecionada = document.querySelector('#lista-de-cor');
   classSelecionada.addEventListener('click', changeColor);
-}
+};
 
-document.querySelector('#mudarCoresVerde').addEventListener('click', CriandoCoresAleatóriasVerde)
-
-
-document.querySelector('#mudarCoresAzul').addEventListener('click', CriandoCoresAleatóriasAzul)
+document.querySelector('#mudarCoresVerde').addEventListener('click', CriandoCoresAleatóriasVerde);
 
 
-document.querySelector('#mudarCoresVermelha').addEventListener('click', CriandoCoresAleatóriasVermelha)
+document.querySelector('#mudarCoresAzul').addEventListener('click', CriandoCoresAleatóriasAzul);
+
+
+document.querySelector('#mudarCoresVermelha').addEventListener('click', CriandoCoresAleatóriasVermelha);

@@ -4,6 +4,7 @@
   border: 0;
   box-sizing: border-box;
 }
+
 body {
   margin: 40px;
   background-color: rgb(50, 50, 50);
@@ -11,13 +12,16 @@ body {
   font-size: 2em;
   font-family: monospace;
 }
+
 h1 {
   text-align: center;
 }
+
 section {
   text-align: center;	
   padding: 20px 0px 50px ;
 }
+
 ul {
   text-decoration: none;
   display: flex;
@@ -29,15 +33,18 @@ ul #lista-de-cor{
   display: inline-block;
   justify-content: center;
 }
+
 nav {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
 }
+
 div {
   text-align: center;
   display: inline-block;
 }
+
 input {
   width:100px;
   justify-content: center;
@@ -76,10 +83,12 @@ input {
   cursor: pointer;
   transition: 0.5s;
 }
+
 .selected {
   transform: scale(1.5);
   transition: 0.5s;
 }
+
 button {
   padding: 5px;
   margin-right: 20px;
@@ -88,6 +97,7 @@ button {
   color: rgb(252, 248, 241);
   background-color: rgb(25, 34, 41);
 }
+
 #pixel-board {
   border-radius: 40px;
   border: rgb(50, 50, 50);
