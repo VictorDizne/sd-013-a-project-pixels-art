@@ -32,3 +32,29 @@ body {
 .section {
   margin-left: 10px;
 }
+
+.botão {
+  padding: 3px;
+  margin-top: 10px;
+  margin-left: 10px;
+  line-height: 3px;
+  text-align: center;
+  background-color: rgb(141, 141, 158);
+  width: 80px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.botão:hover {
+  background-color: rgb(29, 27, 27);
+  color: aliceblue;
+  padding: 3px;
+  margin-top: 10px;
+  margin-left: 10px;
+  line-height: 3px;
+  text-align: center;
+  width: 80px;
+  height: 25px;
+  border-radius: 4px;
+  cursor: pointer;
+}
