@@ -7,14 +7,14 @@ const black = document.querySelector('#first');
 const red = document.querySelector('#second');
 const blue = document.querySelector('#third');
 const green = document.querySelector('#fourth');
-const receiveValue = document.querySelector('#board-size');
 
 black.style.backgroundColor = 'black';
-red.style.backgroundColor = `#${randomColor2}`;
-blue.style.backgroundColor = `#${randomColor3}`;
-green.style.backgroundColor = `#${randomColor4}`;
+red.style.backgroundColor = '#'+randomColor2;
+blue.style.backgroundColor = '#'+randomColor3;
+green.style.backgroundColor = '#'+randomColor4;
 
 const pixels = document.querySelector('#color-palette');
+const receiveValue = document.querySelector('#board-size');
 
 const board = document.createElement('div');
 board.setAttribute('id', 'pixel-board');
