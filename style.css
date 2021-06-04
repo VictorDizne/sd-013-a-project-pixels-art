@@ -10,19 +10,19 @@ h1 {
   margin-left: 37px;
 }
 
-.color-1 {
+#color-1 {
   background-color: black;
 }
 
-.color-2 {
+#color-2 {
   background-color: blue;
 }
 
-.color-3 {
+#color-3 {
   background-color: aqua;
 }
 
-.color-4 {
+#color-4 {
   background-color: #ff07de;
 }
 
