@@ -3,11 +3,15 @@ h1 {
 }
 
 #color-palette {
-  border: 1px solid gray;
+  border: 1px solid green;
   padding: 2px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
+  width: fit-content;
+  height: fit-content;
+  font-size: 0;
 }
 
 .color {
@@ -18,3 +22,23 @@ h1 {
   display: inline-block;
 }
 
+#pixel-board {
+  border: 1px solid green;
+  padding: 3px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  height: fit-content;
+  font-size: 0;
+}
+
+.pixel {
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
+}
