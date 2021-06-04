@@ -1,7 +1,18 @@
 // https://css-tricks.com/snippets/javascript/random-hex-color
-const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
-const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
-const randomColor4 = Math.floor(Math.random() * 16777215).toString(16);
+// const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+// const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
+// const randomColor4 = Math.floor(Math.random() * 16777215).toString(16);
+
+function randomColor() {
+  const caracter = '0123456789ABCDEF'
+
+  let color = '#';
+
+  for (let i = 0; i < 6; i += 1) {
+    color += caracter[Math.floor(Math.random() * 16)];
+  }
+  return color
+}
 
 const black = document.querySelector('#first');
 const red = document.querySelector('#second');
@@ -9,9 +20,9 @@ const blue = document.querySelector('#third');
 const green = document.querySelector('#fourth');
 
 black.style.backgroundColor = 'black';
-red.style.backgroundColor = `#${randomColor2}`;
-blue.style.backgroundColor = `#${randomColor3}`;
-green.style.backgroundColor = `#${randomColor4}`;
+red.style.backgroundColor = randomColor('color');
+blue.style.backgroundColor = randomColor('color');
+green.style.backgroundColor = randomColor('color');
 
 const pixels = document.querySelector('#color-palette');
 const receiveValue = document.querySelector('#board-size');
