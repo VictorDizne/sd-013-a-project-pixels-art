@@ -96,8 +96,6 @@ document.querySelector('#clear-board').addEventListener('click', () => {
   }
 });
 
-// 5) Verifica se o input só aceita número maiores que zero. Essa restrição deve ser feita usando os atributos do elemento `input`
-// 6) Verifica se nenhum valor for colocado no input ao clicar no botão, um `alert` é exibido com o texto: 'Board inválido!'-----------------------------------------------------------------------------
 function removeCores() {
   const nav = document.getElementsByTagName('nav')[0];
   const ul = document.getElementsByTagName('ul')[0];
@@ -117,7 +115,7 @@ document.querySelector('#mudarCores').addEventListener('click', CriandoCoresAlea
 function CriandoCoresAleatórias() {
   removeCores();
   criaUlDeCor('color-palette');
-  criaLiCores(listaDeCor, 6);  
+  criaLiCores(listaDeCor, 8);  
   let lista = document.getElementById('lista-de-cor');
   for (let i = 0; i < lista.children.length; i += 1) {
     if (i == 0 ) {
@@ -129,7 +127,6 @@ function CriandoCoresAleatórias() {
   }
   let classSelecionada = document.querySelector('#lista-de-cor');
   classSelecionada.addEventListener('click', changeColor);
-
 }
 
 CriandoCoresAleatórias();
@@ -150,3 +147,86 @@ function NumeroValidoInput() {
 }
 
 NumeroValidoInput()
+
+function gerarCorVerde() {
+  let r = Math.random() * 100;
+  let g = Math.random() * 255;
+  let b = Math.random() * 0;
+  let cor = `rgb(${r}, ${g}, ${b})`
+  return cor;
+}
+
+function gerarCorVermelha() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 100;
+  let b = Math.random() * 100;
+  let cor = `rgb(${r}, ${g}, ${b})`
+  return cor;
+}
+
+function gerarCorAzul() {
+  let r = Math.random() * 100;
+  let g = Math.random() * 100;
+  let b = Math.random() * 255;
+  let cor = `rgb(${r}, ${g}, ${b})`
+  return cor;
+}
+
+function CriandoCoresAleatóriasVerde() {
+  removeCores();
+  criaUlDeCor('color-palette');
+  criaLiCores(listaDeCor, 4);  
+  let lista = document.getElementById('lista-de-cor');
+  for (let i = 0; i < lista.children.length; i += 1) {
+    if (i == 0 ) {
+      lista.children[i].style.backgroundColor = 'black'
+    } else {
+    let cor = gerarCorVerde();
+    lista.children[i].style.backgroundColor = cor;
+    }
+  }
+  let classSelecionada = document.querySelector('#lista-de-cor');
+  classSelecionada.addEventListener('click', changeColor);
+}
+
+function CriandoCoresAleatóriasVermelha() {
+  removeCores();
+  criaUlDeCor('color-palette');
+  criaLiCores(listaDeCor, 4);  
+  let lista = document.getElementById('lista-de-cor');
+  for (let i = 0; i < lista.children.length; i += 1) {
+    if (i == 0 ) {
+      lista.children[i].style.backgroundColor = 'black'
+    } else {
+    let cor = gerarCorVermelha();
+    lista.children[i].style.backgroundColor = cor;
+    }
+  }
+  let classSelecionada = document.querySelector('#lista-de-cor');
+  classSelecionada.addEventListener('click', changeColor);
+}
+
+function CriandoCoresAleatóriasAzul() {
+  removeCores();
+  criaUlDeCor('color-palette');
+  criaLiCores(listaDeCor, 4);  
+  let lista = document.getElementById('lista-de-cor');
+  for (let i = 0; i < lista.children.length; i += 1) {
+    if (i == 0 ) {
+      lista.children[i].style.backgroundColor = 'black'
+    } else {
+    let cor = gerarCorAzul();
+    lista.children[i].style.backgroundColor = cor;
+    }
+  }
+  let classSelecionada = document.querySelector('#lista-de-cor');
+  classSelecionada.addEventListener('click', changeColor);
+}
+
+document.querySelector('#mudarCoresVerde').addEventListener('click', CriandoCoresAleatóriasVerde)
+
+
+document.querySelector('#mudarCoresAzul').addEventListener('click', CriandoCoresAleatóriasAzul)
+
+
+document.querySelector('#mudarCoresVermelha').addEventListener('click', CriandoCoresAleatóriasVermelha)
