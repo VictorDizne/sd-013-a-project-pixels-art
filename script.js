@@ -7,7 +7,7 @@ function questionOne() {
 }
 questionOne();
 
-function questionTwo() {
+function questionTwoThree() {
   let divPallet = document.createElement('div');
   divPallet.setAttribute('id', 'color-palette');
   let arrayCores = ['black', 'yellow', 'blue', 'red'];
@@ -22,5 +22,23 @@ function questionTwo() {
     document.body.appendChild(divPallet);
   }
 }
-questionTwo();
+questionTwoThree();
 
+function questionFour() {
+  let divBoard = document.createElement('div');
+  divBoard.setAttribute('id', 'pixel-board');
+
+  for(let i = 0; i < 25; i += 1) {
+    let pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    pixel.style.backgroundColor = 'white';
+    if(i % 5 == 1) {
+      pixel.style.display = 'block';
+    } else {
+      pixel.style.display = 'inline-block';
+    }
+    divBoard.appendChild(pixel);
+  }
+  document.body.appendChild(divBoard);
+}
+questionFour();
