@@ -18,8 +18,8 @@ h1 {
 }
 
 section {
-  text-align: center;	
-  padding: 20px 0px 50px ;
+  text-align: center;
+  padding: 20px 1px 50px;
 }
 
 ul {
@@ -28,7 +28,7 @@ ul {
   justify-content: center;
 }
 
-ul #lista-de-cor{
+ul #lista-de-cor {
   text-decoration: none;
   display: inline-block;
   justify-content: center;
@@ -46,21 +46,20 @@ div {
 }
 
 input {
-  width:100px;
+  width: 100px;
   justify-content: center;
   top: 50%;
 
 }
 
 .color {
-
   display: inline-block;
   list-style: none;
   width: 50px;
   height: 50px;
   border-radius: 100%;
   border: 1px solid black;
-  margin-right: 0px;
+  margin-right: 1px;
   transition: 0.5s;
 }
 
@@ -78,7 +77,7 @@ input {
   background-color: white;
   border: 1px solid black;
 }
-.pixel:hover { 
+.pixel:hover {
   transform: scale(1.5);
   cursor: pointer;
   transition: 0.5s;
