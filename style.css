@@ -11,7 +11,7 @@
   display: inline-block;
 }
 
-#colorBlack  {
+#colorBlack {
   background-color: black;
 }
 
@@ -27,9 +27,20 @@
   background-color: green;
 }
 
+.margin-left {
+  margin-left: 13px;
+  
+}
+
+#clear-board {
+  width: 215px;
+  margin-left: 13px;
+}
+
 table {
   border-collapse: collapse;
   border: 1px solid black;
+  margin: 20px 20px;
 }
 
 td {
