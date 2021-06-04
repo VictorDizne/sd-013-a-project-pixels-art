@@ -1,6 +1,10 @@
 const paletaDeCores = document.querySelectorAll('.color');
 const botaoResetBoard = document.querySelector('#clear-board');
 const section = document.getElementById('tabela');
+
+
+
+
 // CRIA TABELA
 function table(size,celula){
 	let tabela = document.createElement('table');
@@ -15,6 +19,9 @@ function table(size,celula){
 			let cell = document.createElement('td');
 			linha.appendChild(cell);
 			cell.setAttribute('class', 'pixel');
+			cell.addEventListener('click',pintaBoard);
+			cell.style.backgroundColor = 'white';
+			
 		}				
 	}
 }
@@ -60,24 +67,21 @@ for (let index = 0; index < paletaDeCores.length; index += 1){
 
 function pintaBoard(event){
 	event.target.style.backgroundColor = gravaCor();
-}
-
-function board(){
-	for (let i = 0; i < pixels.length; i += 1){
-		pixels[i].addEventListener('click', pintaBoard)
-	}
-}
-board();
+};
 // Com ajuda do Luiz Furtado
 
 // Crie um botão
-function resetBoard(){
-	for (let i = 0; i < pixels.length; i += 1){
-		pixels[i].style.backgroundColor = "#fff"
+
+function resetBoard() {
+	 for (let i = 0; i < pixels.length; i += 1) {
+		pixels[i].style.backgroundColor = "white";		
 		console.log(pixels[i]);
 	}
-}
+ }
+
 botaoResetBoard.addEventListener('click', resetBoard);
+
+
 const input = document.querySelector('#board-size');
 
 // Definitamanho da tabela pelo usuário.
@@ -86,18 +90,12 @@ let buttonGerarNewTable = document.querySelector('#generate-board'); // BOTÃO V
 
 function newTable(){
 	if(input.value == ""){
-		alert('Board Inválido')
-	} else if((input.value >= 5) && (input.value <= 50)){
+		alert('Board Inválido');
+	} else if((input.value >= 5) && (input.value<= 50)){
 	section.innerHTML = null;	
 	table(input.value, input.value)
-	}	
-	
-}	
-
-
-buttonGerarNewTable.addEventListener('click', newTable)
+	}		
+};
+buttonGerarNewTable.addEventListener('click', newTable);
 
 // Feito Com a ajuda do Gabriel Gaspar.
-
-	
-
