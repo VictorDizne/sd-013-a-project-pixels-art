@@ -5,14 +5,14 @@
 
 // peguei essa funcao com o Matheus Duarte.
 function randomColor() {
-  const caracter = '0123456789ABCDEF'
+  const caracter = '0123456789ABCDEF';
 
   let color = '#';
 
   for (let i = 0; i < 6; i += 1) {
     color += caracter[Math.floor(Math.random() * 16)];
   }
-  return color
+  return color;
 }
 
 const black = document.querySelector('#first');
@@ -21,9 +21,9 @@ const blue = document.querySelector('#third');
 const green = document.querySelector('#fourth');
 
 black.style.backgroundColor = 'black';
-red.style.backgroundColor = randomColor('color');
-blue.style.backgroundColor = randomColor('color');
-green.style.backgroundColor = randomColor('color');
+red.style.backgroundColor = randomColor();
+blue.style.backgroundColor = randomColor();
+green.style.backgroundColor = randomColor();
 
 const pixels = document.querySelector('#color-palette');
 const receiveValue = document.querySelector('#board-size');
