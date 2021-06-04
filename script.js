@@ -3,6 +3,7 @@
 // const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
 // const randomColor4 = Math.floor(Math.random() * 16777215).toString(16);
 
+// peguei essa funcao com o Matheus Duarte.
 function randomColor() {
   const caracter = '0123456789ABCDEF'
 
