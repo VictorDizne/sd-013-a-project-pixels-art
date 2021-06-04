@@ -11,19 +11,19 @@ h1 {
 }
 
 .color-1 {
-  background-color: #000;
+  background-color: black;
 }
 
 .color-2 {
-  background-color: #00f;
+  background-color: blue;
 }
 
 .color-3 {
-  background-color: #7fffd4;
+  background-color: aqua;
 }
 
 .color-4 {
-  background-color: #7fff07;
+  background-color: #ff07de;
 }
 
 #pixel-board {
@@ -32,7 +32,7 @@ h1 {
 }
 
 .pixel {
-  background-color: #fff;
+  background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid black;
