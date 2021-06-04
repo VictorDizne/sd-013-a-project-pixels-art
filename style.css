@@ -12,16 +12,16 @@ body{
   padding: 40px;
 }
 
-#red{
+.red{
   background-color: red;
 }
-#black{
+.black{
   background-color: black;
 }
-#yellow{
+.yellow{
   background-color: yellow;
 }
-#blue{
+.blue{
   background-color: blue;
 }
 
@@ -37,6 +37,7 @@ body{
   margin: 40px;
 }
 
-.selected{
+/* .selected{
   background-color: black;
-}
+} */
+
