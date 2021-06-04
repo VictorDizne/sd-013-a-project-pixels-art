@@ -18,13 +18,10 @@
   <main>
     <nav>
       <div id="color-palette">
-        <button class="color" id="black"></button>
-        <button class="color" id="red"></button>
-        <button class="color" id="blue"></button>
-        <button class="color" id="green"></button>
-        <button class="color" id="pink"></button>
-        <button class="color" id="gray"></button>
-        <button class="color" id="yellow"></button>
+        <button class="color selected" id="black"></button>
+        <button class="color"></button>
+        <button class="color"></button>
+        <button class="color"></button>
       </div>
 
       <div id="random-button">
@@ -37,21 +34,71 @@
         <h3 class="input-help">Pixel board</h3>
         <p class="input-help">Escolha a quantidade de pixels que você deseja no board.
         </p>
+
         <label for="input-box" class="input-help" id="input-label">Digite aqui:</label>
-        <input type="text" id="board-size" placeholder="Valores entre 5 e 50" required minlength="1" maxlength="2" min="5" max="50" size="13">
+        <input 
+        type="number"
+        name="board-size"
+        id="board-size"
+        min="1"
+        max="50"
+        maxlength="50"
+        />
         <button class="input-help" id="generate-board">VQV</button>
+      </div>
+      
+      <div class="reset-container">
+
       </div>
 
       <div id="pixel-board">
-        
-      </div>
+        <div id="pixel-board">
+          <div class="pixel-column">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+          </div>
+          <div class="pixel-column">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+          </div>
+          <div class="pixel-column">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+          </div>
+          <div class="pixel-column">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+          </div>
+          <div class="pixel-column">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+          </div>
+        </div>
+      </div>  
 
-      <div id="reset-button">
-
-      </div>
     </section>
   </main>
   
+  <footer class="project-author">
+    <div class="github-link">
+      <p>Projeto feito por <a href="https://github.com/gesse-carlos">Gessé Carlos</a></p>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

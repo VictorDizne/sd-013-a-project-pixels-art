@@ -1,7 +1,7 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  border: 0;
+  height: 100%;
 }
 
 /** Header **/
@@ -51,8 +51,7 @@
 /** Pixel Board **/
 #input-board {
   text-align: center;
-  margin-top: 8%;
-  margin-bottom: 8%;
+  margin-bottom: 3%;
 }
 
 .input-help {
@@ -61,6 +60,7 @@
 
 input {
   margin-top: 3%;
+  margin-bottom: 0%;
   border: 1px solid;
 }
 
@@ -76,15 +76,20 @@ label {
 }
 
 .pixel {
+  cursor: pointer;
   display: table-cell;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border: 1px solid;
   border-color: black;
   background-color: white;
 }
 
-#reset-button {
+.board-container {
+  text-align: center;
+}
+
+.reset-container {
   text-align: center;
 }
 
@@ -100,4 +105,11 @@ label {
 #clear-board:hover {
   background-color: rgb(247, 249, 249);
   cursor: pointer;
+}
+
+.project-author {
+  background-color: rgb(159, 252, 223);
+  display: flex;
+  bottom: 0;
+  margin: auto;
 }
