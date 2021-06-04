@@ -7,7 +7,7 @@ const black = document.querySelector('#first');
 const red = document.querySelector('#second');
 const blue = document.querySelector('#third');
 const green = document.querySelector('#fourth');
-const receiveValue = document.querySelector('#board-size')
+const receiveValue = document.querySelector('#board-size');
 
 black.style.backgroundColor = 'black';
 red.style.backgroundColor = 'red';
@@ -21,17 +21,16 @@ board.setAttribute('id', 'pixel-board');
 document.querySelector('#table').appendChild(board);
 
 function createBoard(element) {
-
-for (let i = 0; i < element; i += 1) {
-  const tr = document.createElement('tr');
-  tr.classList.add('tr');
-  board.appendChild(tr);
-  for (let j = 0; j < element; j += 1) {
-    const pixel = document.createElement('td');
-    pixel.classList.add('pixel');
-    tr.appendChild(pixel);
+  for (let i = 0; i < element; i += 1) {
+    const tr = document.createElement('tr');
+    tr.classList.add('tr');
+    board.appendChild(tr);
+    for (let j = 0; j < element; j += 1) {
+      const pixel = document.createElement('td');
+      pixel.classList.add('pixel');
+      tr.appendChild(pixel);
+    }
   }
-}
 }
 
 createBoard(5);
@@ -90,16 +89,16 @@ function deleteBoard() {
   const delTr = document.querySelectorAll('.tr');
   for (let i = 0; i < delTr.length; i += 1) {
     board.removeChild(delTr[i]);
-}
+  }
 }
 
 function btnVQV() {
-  if (receiveValue.value === ''){
-   alert('Board inválido!')
+  if (receiveValue.value === '') {
+    alert('Board inválido!');
   } else {
-  deleteBoard();
-  receiveBoard(receiveValue);
-}
+    deleteBoard();
+    receiveBoard(receiveValue);
+  }
 }
 
 const btnSubmit = document.querySelector('#generate-board');
