@@ -1,71 +1,99 @@
-const listColor = ['black','blue','red','green']
-window.addEventListener('load', function addClassColor () {
-  let paleteColors = document.createElement('tr')
-  document.querySelector('#color-palette').appendChild(paleteColors)
-  for (let key in listColor) {
-    let colors = document.createElement('td')
-    colors.classList.add('color')
-    colors.style.backgroundColor = listColor[key]
-    paleteColors.appendChild(colors)
-    if (listColor[key] === 'black') {
-      colors.classList.add('selected')
+// EXERCICIO 12
+paletteColors();
+function paletteColors() {
+  const listColor = ['black'];
+  for (let index = 0; index < 3; index += 1) {
+    const red = Math.ceil(Math.random() * 255);
+    const green = Math.ceil(Math.random() * 255);
+    const blue = Math.ceil(Math.random() * 255);
+    listColor.push(`rgb(${blue},${green},${red})`);
+  }
+  // EXERCICIO 2/3
+  const paleteColors = document.createElement('tr');
+  document.querySelector('#color-palette').appendChild(paleteColors);
+  for (const key in listColor) {
+    const color = document.createElement('td');
+    color.classList.add('color');
+    color.style.backgroundColor = listColor[key];
+    paleteColors.appendChild(color);
+    // EXERCICIO 6
+    if (color.style.backgroundColor === 'black') {
+      color.classList.add('selected');
     }
   }
-
-  let selectColor = document.querySelector('#color-palette').firstElementChild
-  selectColor.addEventListener('click',addColor)
-
-  function addColor (event) {
-    for (let index = 0; selectColor.children.length > index; index += 1) {
-      if (selectColor.children[index].classList.contains('selected')) {
-        selectColor.children[index].classList.remove('selected')
-      }
-    }
-    event.target.classList.add('selected')
-    document.querySelector('.selected').style.git = event.target.style.backgroundColor
-    console.log (document.querySelector('.selected').style.backgroundColor)
-  }  
-
-  let selectorPixel = document.querySelector('#pixel-board')
-  selectorPixel.addEventListener('click', addColorInPixel)
-  
-  function addColorInPixel (eventColor) {
-
-
-    if (eventColor.target == document.querySelector('#pixel-board')) {
-
-    }else {
-      eventColor.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor
-    }
-    console.log (eventColor.target)
-  }
-
-  let cleanBottom = document.querySelector('#clear-board')
-  let pixelsClean = document.getElementsByClassName('pixel')
-  console.log (pixelsClean.length)
-  cleanBottom.addEventListener('click',clearBoard)
-
-  function clearBoard () {
-    for (let key in pixelsClean)
-    if (key < pixelsClean.length) {
-      pixelsClean[key].style.backgroundColor = 'white'
+}
+// EXERCICIO 4/5
+const pixeis = 5;
+boardSize();
+function boardSize() {
+  for (let index = 0; pixeis > index; index += 1) {
+    const columnPixel = document.createElement('tr');
+    document.getElementById('pixel-board').appendChild(columnPixel);
+    for (let secondIndex = 0; pixeis > secondIndex; secondIndex += 1) {
+      const linePixel = document.createElement('td');
+      linePixel.classList.add('pixel');
+      columnPixel.appendChild(linePixel);
     }
   }
-
-});
-
-const pixeis = 5
-window.addEventListener ('load', function addPixel () {
-  for (let index = 1; pixeis >= index; index += 1) {
-    let columnPixel = document.createElement('tr')
-    document.querySelector('#pixel-board').appendChild(columnPixel)
-      for (let secondIndex = 1; pixeis >= secondIndex; secondIndex += 1) {
-        let linePixel = document.createElement('td')
-        linePixel.classList.add('pixel')
-        columnPixel.appendChild(linePixel)
-      }
+}
+// EXERCICIO 7
+const selectColor = document.getElementById('color-palette');
+selectColor.addEventListener('click', addSelected);
+function addSelected(eventSelected) {
+  const color = document.getElementsByClassName('color');
+  for (const key of color) {
+    if (key.classList.contains('selected')) {
+      key.classList.remove('selected');
+    }
   }
-});
+  eventSelected.target.classList.add('selected');
+}
+// EXERCICIO 8
+const ColorPixel = document.getElementById('pixel-board');
+ColorPixel.addEventListener('click', addColor);
+function addColor(eventPixel) {
+  if (eventPixel.target.classList.contains('pixel')) {
+    eventPixel.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  }
+}
+// EXERCICIO 9
+const clear = document.getElementById('clear-board');
+clear.addEventListener('click', clearBoard);
+function clearBoard() {
+  const clearPixel = document.getElementsByClassName('pixel');
+  for (const key of clearPixel) {
+    key.style.backgroundColor = 'white';
+  }
+}
+// EXERCICIO 10 E 11
+const bottomBoard = document.getElementById('generate-board');
+const board = document.getElementById('pixel-board');
+const boardIput = document.getElementById('board-size');
+bottomBoard.addEventListener('click', clearPixel);
 
-
-
+function clearPixel() {
+  if (boardIput.value.length === 0) {
+    alert('Board inválido!');
+  } else {
+    for (let index = board.children.length - 1; index >= 0; index -= 1) {
+      board.removeChild(board.children[index]);
+    }
+    if (boardIput.value < 5) {
+      boardIput.value = 5;
+    } else if (boardIput.value > 50) {
+      boardIput.value = 50;
+    }
+    newBoardSize();
+  }
+}
+function newBoardSize() {
+  for (let index = 0; boardIput.value > index; index += 1) {
+    const columnPixel = document.createElement('tr');
+    document.getElementById('pixel-board').appendChild(columnPixel);
+    for (let secondIndex = 0; boardIput.value > secondIndex; secondIndex += 1) {
+      const linePixel = document.createElement('td');
+      linePixel.classList.add('pixel');
+      columnPixel.appendChild(linePixel);
+    }
+  }
+}
