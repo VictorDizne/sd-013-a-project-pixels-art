@@ -25,3 +25,19 @@ function boxsPixel (n) {
   }
 }
 boxsPixel(5);
+
+//Referência: https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
+//Referência: https://developer.mozilla.org/pt-BR/docs/Web/API/Event/target
+
+function selectColor (event) {
+  let selected = document.getElementsByClassName("selected");
+  selected[0].classList.remove('selected');
+  event.target.classList.add("selected");
+}
+document.getElementById("color-palette").addEventListener("click",selectColor);
+
+function fillPixel (event) {
+  let selected = document.getElementsByClassName("selected");
+  event.target.style.backgroundColor = selected[0].style.backgroundColor;
+}
+document.getElementById("pixel-board").addEventListener("click",fillPixel);
