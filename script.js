@@ -1,5 +1,5 @@
 
-  document.getElementById('colorOne').classList.add('selected');
+  //document.getElementById('colorOne').classList.add('selected');
 
 
 let colorOne = document.getElementById('colorOne'); 
