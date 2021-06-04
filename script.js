@@ -1,7 +1,7 @@
 // https://css-tricks.com/snippets/javascript/random-hex-color/
-// let randomColor2 = Math.floor(Math.random()*16777215).toString(16);
-// let randomColor3 = Math.floor(Math.random()*16777215).toString(16);
-// let randomColor4 = Math.floor(Math.random()*16777215).toString(16);
+const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
+const randomColor4 = Math.floor(Math.random() * 16777215).toString(16);
 
 const black = document.querySelector('#first');
 const red = document.querySelector('#second');
@@ -10,9 +10,9 @@ const green = document.querySelector('#fourth');
 const receiveValue = document.querySelector('#board-size');
 
 black.style.backgroundColor = 'black';
-red.style.backgroundColor = 'red';
-blue.style.backgroundColor = 'blue';
-green.style.backgroundColor = 'green';
+red.style.backgroundColor = `#${randomColor2}`;
+blue.style.backgroundColor = `#${randomColor3}`;
+green.style.backgroundColor = `#${randomColor4}`;
 
 const pixels = document.querySelector('#color-palette');
 
