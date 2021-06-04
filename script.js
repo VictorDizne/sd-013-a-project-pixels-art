@@ -34,7 +34,7 @@ function NumeroValidoInput() {
     Inputvalor = 50;
   }
   return Inputvalor;
-};
+}
 
 function mudaCor(event) {
   const pixelClicado = event.target;
@@ -56,7 +56,7 @@ function mudaCorDoPixel() {
 criaLiCores(listaDeCor, 4);
 
 function AdicionaPixels() {
-  const quant = NumeroValidoInput();;
+  const quant = NumeroValidoInput();
   const criarBoard = document.createElement('section');
   document.body.appendChild(criarBoard);
   criarBoard.setAttribute('id', 'pixel-board');
@@ -68,14 +68,14 @@ function AdicionaPixels() {
       line.appendChild(column);
       column.className = 'pixel';
       column.id = `pixel ${pixelNumeroN}`; column.style.backgroundColor = 'white';
-      column.addEventListener('click', mudaCor)
+      column.addEventListener('click', mudaCor);
       pixelNumeroN += 1;
     }
   }
   mudaCorDoPixel();
-};
+}
 
-AdicionaPixels()
+AdicionaPixels();
 
 function removePixels() {
   const tabelaDePixel = document.querySelector(pixelBoard);
@@ -92,7 +92,7 @@ function changeColor(event) {
   const CorAntiga = document.getElementsByClassName('selected');
   CorAntiga[0].classList.remove('selected');
   NovaCor.classList.add('selected');
-};
+}
 
 const classSelecionada = document.querySelector(ListaHasDeCor);
 classSelecionada.addEventListener('click', changeColor);
@@ -134,8 +134,8 @@ function CriandoCoresAleatórias() {
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  const classSelecionada = document.querySelector(ListaHasDeCor);
-  classSelecionada.addEventListener('click', changeColor);
+  const colorSelecionada = document.querySelector(ListaHasDeCor);
+  colorSelecionada.addEventListener('click', changeColor);
 }
 
 document.querySelector('#mudarCores').addEventListener('click', CriandoCoresAleatórias);
@@ -181,15 +181,15 @@ function CriandoCoresAleatóriasVerde() {
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  const classSelecionada = document.querySelector(ListaHasDeCor);
-  classSelecionada.addEventListener('click', changeColor);
-};
+  const colorSelecionada = document.querySelector(ListaHasDeCor);
+  colorSelecionada.addEventListener('click', changeColor);
+}
 
 function CriandoCoresAleatóriasRed() {
   removeCores();
   criaUlDeCor(paletaDeCor);
   criaLiCores(listaDeCor, 4);
-  let lista = document.getElementById(listaDeCor);
+  const lista = document.getElementById(listaDeCor);
   for (let i = 0; i < lista.children.length; i += 1) {
     if (i === 0) {
       lista.children[i].style.backgroundColor = 'black';
@@ -198,15 +198,15 @@ function CriandoCoresAleatóriasRed() {
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  const classSelecionada = document.querySelector(ListaHasDeCor);
-  classSelecionada.addEventListener('click', changeColor);
+  const colorSelecionada = document.querySelector(ListaHasDeCor);
+  colorSelecionada.addEventListener('click', changeColor);
 }
 
 function CriandoCoresAleatóriasAzul() {
   removeCores();
   criaUlDeCor(paletaDeCor);
   criaLiCores(listaDeCor, 4);
-  let lista = document.getElementById(listaDeCor);
+  const lista = document.getElementById(listaDeCor);
   for (let i = 0; i < lista.children.length; i += 1) {
     if (i === 0) {
       lista.children[i].style.backgroundColor = 'black';
@@ -215,14 +215,12 @@ function CriandoCoresAleatóriasAzul() {
       lista.children[i].style.backgroundColor = cor;
     }
   }
-  const classSelecionada = document.querySelector(ListaHasDeCor);
-  classSelecionada.addEventListener('click', changeColor);
+  const colorSelecionada = document.querySelector(ListaHasDeCor);
+  colorSelecionada.addEventListener('click', changeColor);
 }
 
-document.querySelector('#mudarCoresVerde').addEventListener('click',CriandoCoresAleatóriasVerde);
+document.querySelector('#mudarCoresVerde').addEventListener('click', CriandoCoresAleatóriasVerde);
 
+document.querySelector('#mudarCoresAzul').addEventListener('click', CriandoCoresAleatóriasAzul);
 
-document.querySelector('#mudarCoresAzul').addEventListener('click',CriandoCoresAleatóriasAzul);
-
-
-document.querySelector('#mudarCoresVermelha').addEventListener('click',CriandoCoresAleatóriasRed);
+document.querySelector('#mudarCoresVermelha').addEventListener('click', CriandoCoresAleatóriasRed);
