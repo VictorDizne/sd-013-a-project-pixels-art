@@ -40,4 +40,12 @@ function fillPixel (event) {
   let selected = document.getElementsByClassName("selected");
   event.target.style.backgroundColor = selected[0].style.backgroundColor;
 }
-document.getElementById("pixel-board").addEventListener("click",fillPixel);
+document.getElementById("pixel-board").addEventListener('click',fillPixel);
+
+function clearBoard () {
+  let pixels = document.getElementsByClassName('pixel')
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+document.getElementById('clear-board').addEventListener('click',clearBoard);
