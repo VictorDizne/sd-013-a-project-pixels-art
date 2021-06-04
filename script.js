@@ -53,5 +53,13 @@ function selectColor(event) {
 
 }
 
+// Função para pintar 
 
-
+let pixel = document.getElementsByClassName('pixel');
+for (let i = 0; i < pixel.length; i += 1) {
+  pixel[i].addEventListener('click', (event) => {
+    let elementSelect = document.querySelector('.selected');
+    let backgroundColor = window.getComputedStyle(elementSelect).getPropertyValue('background-color');
+    event.target.style.backgroundColor = backgroundColor;
+  })
+}
