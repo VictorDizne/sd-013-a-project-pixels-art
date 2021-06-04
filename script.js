@@ -28,12 +28,17 @@ function criaLiCores(id, n) {
 
 function NumeroValidoInput() {
   let Inputvalor = document.querySelector('#board-size').value;
-  if (Inputvalor < 5 && Inputvalor > -1) {
+  if (Inputvalor < 5 && Inputvalor >= 1) {
     Inputvalor = 5;
+    return Inputvalor
   } else if (Inputvalor > 50) {
     Inputvalor = 50;
+    return Inputvalor
+  } else if (Inputvalor >= 5 && Inputvalor <= 50){
+    return Inputvalor
+  } else {
+    return false
   }
-  return Inputvalor;
 }
 
 function mudaCor(event) {
@@ -56,7 +61,33 @@ function mudaCorDoPixel() {
 criaLiCores(listaDeCor, 4);
 
 function AdicionaPixels() {
-  const quant = NumeroValidoInput();
+  let Inputvalor = document.querySelector('#board-size').value;
+  if (Inputvalor == "") {
+    alert('Board inválido!')
+  } else {
+    removePixels();
+    const quant = NumeroValidoInput();
+    const criarBoard = document.createElement('section');
+    document.body.appendChild(criarBoard);
+    criarBoard.setAttribute('id', 'pixel-board');
+    let pixelNumeroN = 0; for (let linha = 1; linha <= quant; linha += 1) {
+      const line = document.createElement('ul');
+      criarBoard.appendChild(line);
+      for (let coluna = 1; coluna <= quant; coluna += 1) {
+        const column = document.createElement('li');
+        line.appendChild(column);
+        column.className = 'pixel';
+        column.id = `pixel ${pixelNumeroN}`; column.style.backgroundColor = 'white';
+        column.addEventListener('click', mudaCor);
+        pixelNumeroN += 1;
+      }
+    }
+    mudaCorDoPixel();
+  }
+}
+
+function iniciaPixel() {
+  const quant = 5;
   const criarBoard = document.createElement('section');
   document.body.appendChild(criarBoard);
   criarBoard.setAttribute('id', 'pixel-board');
@@ -75,7 +106,7 @@ function AdicionaPixels() {
   mudaCorDoPixel();
 }
 
-AdicionaPixels();
+iniciaPixel()
 
 function removePixels() {
   const tabelaDePixel = document.querySelector(pixelBoard);
@@ -83,7 +114,6 @@ function removePixels() {
 }
 
 document.getElementById('generate-board').addEventListener('click', () => {
-  removePixels();
   AdicionaPixels();
 });
 

@@ -85,7 +85,6 @@ input {
 }
 
 .selected {
-  transform: scale(1.5);
   transition: 0.5s;
 }
 
