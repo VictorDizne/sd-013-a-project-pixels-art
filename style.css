@@ -13,7 +13,6 @@
 
 .pixel {
     width: 40px;
-    border: 1px;
     height: 40px;
     border: 1px solid black;
     background-color: white;
@@ -31,14 +30,44 @@
     background-color: blue;
 }
 
+.red {
+    width: 40px;
+    border: 1px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: red;
+}
+
+.green {
+    width: 40px;
+    border: 1px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: green;
+}
+
+.yellow {
+    width: 40px;
+    border: 1px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: yellow;
+}
 
 
+.black {
+    width: 40px;
+    border: 1px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: black;
+}
 .white {
     width: 40px;
     border: 1px;
     height: 40px;
     border: 1px solid black;
-    background-color: blue;
+    background-color: white;
 }
 
 #pixel-board {
