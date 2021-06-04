@@ -36,12 +36,16 @@ colorPalette.addEventListener('click', function(event) {
 
   function cleanAll() {
 
-    const button = document.querySelector("#clear-board")
-    const pixels = document.querySelectorAll('.pixel');
+    const button = document.getElementById("clear-board")
+    const pixels = document.getElementsByClassName('pixel');
     button.addEventListener('click', function() {
     for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].backgroundColor = "white";
+        pixels[index].style.backgroundColor = "white";
         };
     });
 };
         cleanAll();
+
+// Referencias 
+
+//Requisito 8 - Dica no Readme do projeto e call com Gabriel Gaspar
