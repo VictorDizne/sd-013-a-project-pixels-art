@@ -72,3 +72,13 @@ aside {
 #corVermelha {
     background-color: red;
 }
+
+
+#clear-board {
+    position: relative;
+    /* left: 350px;
+    top: 50px; */
+    padding: 10px 5px;
+    margin-left: 46%;
+    margin-top: 10px;
+}

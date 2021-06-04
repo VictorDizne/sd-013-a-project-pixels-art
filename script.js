@@ -45,7 +45,6 @@ function desmarcar() {
 function corPreta() {
   desmarcar();
   document.querySelector('.color:nth-child(1)').className = 'color selected';
-  
   document.querySelectorAll('.pixel').forEach((item) => {
     item.addEventListener('click', (_event) => {
       console.log('deu certo!');
@@ -86,3 +85,11 @@ function corVerde() {
     });
   });
 }
+
+// botão clear
+
+document.querySelector('#clear-board').addEventListener('click', (clear) => {
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.id = '';
+  });
+});
