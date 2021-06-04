@@ -57,8 +57,25 @@ function questionSeven() {
           colorDiv.classList.remove('selected');
         }
         event.target.classList.add('selected')
-
     }))
   }
 }
 questionSeven();
+
+function questionEight() {
+ let pixels = document.getElementsByClassName('pixel');
+ let selected = document.getElementsByClassName('selected')
+ for(let i = 0; i < pixels.length; i += 1) {
+  let pixel = pixels[i];
+  pixel.addEventListener('click',(() => {
+    for(let j = 0; j < selected.length; j += 1) {
+      select = selected[j];
+      pixel.style.backgroundColor = select.style.backgroundColor;
+    }
+
+  }))
+ }
+
+
+}
+questionEight();
