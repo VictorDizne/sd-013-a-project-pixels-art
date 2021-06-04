@@ -1,4 +1,6 @@
 #color-palette {
+    position: absolute;
+    left: 30px;
 }
 
 .color {
@@ -40,3 +42,7 @@
 }
 
 #pixel-board {
+   position: fixed;
+   left: 30px;
+   top: 150px;
+}
