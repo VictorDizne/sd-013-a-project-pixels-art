@@ -39,19 +39,19 @@ body{
     background-color: #FFFF00
 }
 
-table, th, td {
+table, td {
     margin:auto;
     margin-top: 60px;
     border-collapse: collapse;
     position:relative;
-    
+    z-index: 1;    
   }
 
 .pixel{ 
     border:1px solid rgb(0, 0, 0);
     width: 41px;
     height: 41px;
-    background-color: #FFFF;
+    background-color: rgb(252, 252, 252);
 }   
     
 #clear-board{
@@ -60,7 +60,7 @@ table, th, td {
     border-radius: 10px;    
     background-color: rgb(4, 250, 250);
     position: relative;
-    bottom:260px;
-    left:575px;
-    
+    bottom:-30px;
+    left:570px;
+    z-index: 2;     
 }
