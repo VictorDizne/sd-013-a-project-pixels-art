@@ -20,8 +20,7 @@ colorGreen.addEventListener('click', colorSelectGreen);
 clearBoard.addEventListener('click', changeBoardColor);
 
 function changeBoardColor() {
-  console.log('apagou');
-  for(let index = 0; index < getPixelOnBoard.length; index += 1){
+  for (let index = 0; index < getPixelOnBoard.length; index += 1){
     getPixelOnBoard[index].style.backgroundColor = 'white';
   }
 }
