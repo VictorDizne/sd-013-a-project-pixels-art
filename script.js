@@ -1,9 +1,8 @@
 let pixels = document.getElementsByTagName("td");
 let cores = document.getElementsByClassName("color");
-let corSelecionada = ("white");
+let limpar = document.getElementById("clear-board")
+let corSelecionada = ("black");
 let eraser = ("false")
-
-
 
 
   cores[0].addEventListener('click',changeColorBlack)
@@ -28,11 +27,7 @@ function changeColorGreen() {
 for (var i = 0 ; i < pixels.length; i+=1){
   pixels[i].addEventListener('click',pintar)
 }
-    
 
-function disablePintar(){
-  window.pintar = function(){};
-}
 
       function pintar(event) {
           if (corSelecionada == "blue"){
@@ -41,22 +36,27 @@ function disablePintar(){
           }
           else if (corSelecionada == "black"){
             let elementoClicado = event.target;
+            elementoClicado.classList.remove("red","yellow",'green','white');
             elementoClicado.classList.add('black')
           }
           else if (corSelecionada == "white"){
             let elementoClicado = event.target;
+            elementoClicado.classList.remove("red","yellow",'green','black');
             elementoClicado.classList.add('white')
           }
           else if (corSelecionada == "yellow"){
             let elementoClicado = event.target;
+            elementoClicado.classList.remove("red","white",'green','black');
             elementoClicado.classList.add('yellow')
           }
           else if (corSelecionada == "red"){
             let elementoClicado = event.target;
+            elementoClicado.classList.remove("yellow","white",'green','black');
             elementoClicado.classList.add('red')
           }
           else if (corSelecionada == "green"){
             let elementoClicado = event.target;
+            elementoClicado.classList.remove("red","white",'yellow','black');
             elementoClicado.classList.add('green')
           }
         else {console.log("nenhuma cor selecionada")}
