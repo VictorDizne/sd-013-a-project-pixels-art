@@ -56,7 +56,7 @@ for (let i = 0; i < pixel.length; i += 1) {
   })
 }
 
-// Função limpar boards
+// Função criar botão
 
 let fatherButton = document.querySelector('#container');
 
@@ -68,6 +68,8 @@ function createButton () {
 }
 
 createButton();
+
+// Função limpar board
 
 let btnBoard = document.querySelector('#clear-board');
 
