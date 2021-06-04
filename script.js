@@ -1,13 +1,13 @@
 function questionOne() {
-  let h1 = document.createElement('h1');
+  const h1 = document.createElement('h1');
   h1.innerText = 'Paleta de Cores';
-  h1.setAttribute('id','title');
+  h1.setAttribute('id', 'title');
   h1.style.textAlign = 'center'
   document.body.appendChild(h1);
 }
 questionOne();
 
-function questionTwoThree() {
+function questionTwoThreeSix() {
   let divPallet = document.createElement('div');
   divPallet.setAttribute('id', 'color-palette');
   let arrayCores = ['black', 'yellow', 'blue', 'red'];
@@ -15,6 +15,9 @@ function questionTwoThree() {
   for(let i = 0; i < 4; i += 1) {
     let div = document.createElement('div');
     div.style.backgroundColor = arrayCores[i];
+    if(div.style.backgroundColor == 'black') {
+      div.classList.add('selected');
+    }
     div.style.border = '1px solid black';
     div.style.display = 'inline-block'
     div.classList.add('color');
@@ -22,7 +25,7 @@ function questionTwoThree() {
     document.body.appendChild(divPallet);
   }
 }
-questionTwoThree();
+questionTwoThreeSix();
 
 function questionFour() {
   let divBoard = document.createElement('div');
