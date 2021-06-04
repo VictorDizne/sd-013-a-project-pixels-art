@@ -44,3 +44,21 @@ function questionFour() {
   document.body.appendChild(divBoard);
 }
 questionFour();
+
+function questionSeven() {
+
+  let colors = document.getElementsByClassName('color');
+  for(let i = 0; i < colors.length; i+= 1) {
+    color = colors[i];
+
+    color.addEventListener('click',((event) => {
+        for(let j = 0; j < colors.length; j += 1) {
+          let colorDiv = colors[j]
+          colorDiv.classList.remove('selected');
+        }
+        event.target.classList.add('selected')
+
+    }))
+  }
+}
+questionSeven();
