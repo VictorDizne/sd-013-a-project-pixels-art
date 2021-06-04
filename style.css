@@ -1,7 +1,6 @@
 
 body {
   background-color: grey
-  
 }
 
 #color-palette div{
@@ -27,7 +26,6 @@ body {
 
 .pixel-board-line {
   display: table-row;
-  
 }
 
 
