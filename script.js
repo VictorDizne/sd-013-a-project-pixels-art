@@ -40,15 +40,15 @@ function addClassSelect(event){
    event.target.classList.add('selected');
 }
 
-const corPreta= document.querySelector('.black')
-const corVerde= document.querySelector('.green')
-const corCinza= document.querySelector('.gray')
-const corVermelha= document.querySelector('.red')
+const cor1= document.querySelector('.um')
+const cor2= document.querySelector('.dois')
+const cor3= document.querySelector('.tres')
+const cor4= document.querySelector('.quatro')
 
-corPreta.addEventListener('click', addClassSelect);
-corVerde.addEventListener('click', addClassSelect);
-corCinza.addEventListener('click', addClassSelect);
-corVermelha.addEventListener('click', addClassSelect); 
+cor1.addEventListener('click', addClassSelect);
+cor2.addEventListener('click', addClassSelect);
+cor3.addEventListener('click', addClassSelect);
+cor4.addEventListener('click', addClassSelect); 
 
 /* addClassSelect foi baseado no bloco 5.3 do conteúdo parte 2, toda cor recebeu um evento, que ao clicar remove a classe de quem está e add a classe para o que é escolhido*/
 
@@ -81,3 +81,18 @@ function Limpar() {
 }
 Limpar();
 
+function DefineBoard(){
+if(number<5){
+return 5;
+}
+else if (number>50){
+return 50;
+}else {
+  return number;
+}
+}
+
+DefineBoard();
+
+/* Ajuda da Júlia nesse exercício, precisa dos ifs para que sempre que for maior que 50 ou menor que 5 fique nesses números
+*/
