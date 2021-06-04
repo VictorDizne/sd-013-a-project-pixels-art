@@ -33,24 +33,16 @@ function initialColor () {
 
 initialColor();
 
-// Função seleciona cor da paleta
-
-let paletaUm = document.querySelector('.black');
-let paletaDois = document.querySelector('.red');
-let paletaTres = document.querySelector('.green');
-let paletaQuatro = document.querySelector('.blue');
+// Função seleciona o selected
 
 
-paletaUm.addEventListener('click', selectColor);
-paletaDois.addEventListener('click', selectColor);
-paletaTres.addEventListener('click', selectColor);
-paletaQuatro.addEventListener('click', selectColor);
-
-function selectColor(event) {
-  let cores = document.querySelector('.selected');
-  cores.classList.remove('selected');
-  event.target.classList.add('selected');
-
+let colors = document.getElementsByClassName('color');
+for (let i = 0; i < colors.length; i += 1) {
+  colors[i].addEventListener('click', (event) => {
+    let cores = document.querySelector('.selected');
+    cores.classList.remove('selected');
+    event.target.classList.add('selected');
+  })
 }
 
 // Função para pintar 
@@ -63,3 +55,24 @@ for (let i = 0; i < pixel.length; i += 1) {
     event.target.style.backgroundColor = backgroundColor;
   })
 }
+
+// Função limpar boards
+
+let fatherButton = document.querySelector('#container');
+
+function createButton () {
+  let btn = document.createElement('button');
+  btn.id = 'clear-board';
+  fatherButton.appendChild(btn);
+  btn.innerHTML = 'Limpar';
+}
+
+createButton();
+
+let btnBoard = document.querySelector('#clear-board');
+
+btnBoard.addEventListener('click', () => {
+  for(let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+})
