@@ -1,3 +1,4 @@
+//Cria pixel Board.
 function createPixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
   for (let indexLine = 0; indexLine < 5; indexLine += 1) {
@@ -14,7 +15,49 @@ function createPixelBoard() {
 
 createPixelBoard();
 
-window.onload = function picBlack() {
-  const blackColor = document.querySelector('#first');
-  blackColor.classList.add('selected');
-}
+// window.onload = function picBlack() {
+//   const blackColor = document.querySelector('#first');
+//   blackColor.classList.add('selected');
+// };
+
+//Recupera as cores com classe 'color'.
+let getColors = document.getElementsByClassName('color');
+
+let getPaletteColor = document.querySelector('#color-palette');
+
+
+//Adiciona evento de click para selecionar a cor.
+getPaletteColor.addEventListener('click', function(event) {
+  let colorClicked = event.target;
+    if (colorClicked.className !== 'selected') {
+    colorClicked.classList.add('selected');
+    for (let index = 0; index < getColors.length; index += 1) {
+      if (getColors[index] !== colorClicked) {
+        getColors[index].classList.remove('selected');
+      }
+    }
+    }
+})
+
+//Recupera elemento pai dos pixels em branco.
+// let pixelChoose = document.getElementsByClassName('line');
+
+// for (let indexPixel = 0; indexPixel < pixelChoose.length; indexPixel += 1) {
+//   document.addEventListener('click', function(event) {
+//     let pixelClicked = event.target;
+//     let colorSelected = document.getElementsByClassName('selected').getAttribute('id');
+//     pixelClicked.setAttribute.id = colorSelected;  
+//   })
+// }
+
+
+
+
+
+// function useColor() {
+//   let getPixel = document.getElementsByClassName('pixel');
+//   let getColors = document.getElementsByClassName('color');
+//   document.addEventListener('click', function(event) {
+//     if (event.target.)
+//   })
+// }
