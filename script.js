@@ -1,3 +1,10 @@
+function setaCor() {
+  document.querySelectorAll('.pixel').forEach((att) => {
+    att.addEventListener('click', function() {
+      att.style.backgroundColor = color;
+    });
+  });
+}
 //Pega os elementos button
 let buttonBlack = document.querySelector('#black');
 let buttonRed = document.querySelector('#red');
@@ -38,30 +45,26 @@ buttonBlue.addEventListener('click', function () {
   color = window.getComputedStyle(buttonBlue).getPropertyValue('background-color');
 });
 
-function setaCor(){
-  document.querySelectorAll('.pixel').forEach((att) => {
-    att.addEventListener('click', function() {
-      att.style.backgroundColor = color;
-    });
-  });
-}
 let pixelBd = document.querySelector('#pixel-board');
 
-function geraBoard(linhas) {
+function geraBoard(num) {
   pixelBd.innerHTML = '';
-  for (let i = 0; i < linhas; i += 1) {
+  for (let i = 0; i < num; i += 1) {
     let linhaPixel = document.createElement('div');
     linhaPixel.className = 'linha';
     pixelBd.appendChild(linhaPixel);
-    for (let pix = 0; pix < linhas; pix += 1) {
+    for (let pix = 0; pix < num; pix += 1) {
       let pixel = document.createElement('div');
       pixel.className = 'pixel';
       linhaPixel.appendChild(pixel);
-    }
+    } 
     setaCor();
   }
 }
-geraBoard(5);
+
+window.onload = function () {
+  geraBoard(5);
+}
 
 // apagar
 let board = document.getElementsByClassName('pixel');
@@ -73,8 +76,8 @@ clearB.addEventListener('click', function () {
   }
 });
 
-function mudaPos(obj) {
-  obj.style.position = 'absolute';
-  obj.style.left = Math.random()*600+'px';
-  obj.style.top = Math.random()*400+'px';
-}
+//function mudaPos(obj) {
+//  obj.style.position = 'absolute';
+//  obj.style.left = Math.random()*600+'px';
+//  obj.style.top = Math.random()*400+'px';
+//}

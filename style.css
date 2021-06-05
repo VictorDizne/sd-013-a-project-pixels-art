@@ -6,8 +6,6 @@ body {
 .text {
   font-size: 50px;
   text-align: center;
-  color: red;
-  text-decoration: underline black;
 }
 
 
@@ -16,9 +14,8 @@ body {
 }
 
 #pixel-board {
+  margin-left: 580px;
   
-  margin-left: 150px;
-  margin-right: 150px;
 }
 
 #black {
@@ -37,22 +34,22 @@ body {
   background-color: blue;
 }
 
-.color{
+.color {
+  border: 1px solid black;
   border-radius: 50px;
   margin: 10px;
   margin-top: 120px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
- .pixel {
+.pixel {
+  background-color: white;
+  border: 1px solid black;
   display: table-cell;
   height: 40px;
-  border: 1px solid black;
-  background-color: white;
   padding: 0;
   width: 40px;
-  margin-top: 120px;
 }
 
 .linha {
@@ -60,7 +57,6 @@ body {
 }
 
 .bg {
-  border: 1px solid black;
   background-image: url(among.png);
   width: 500px;
   height: 500px;
@@ -69,7 +65,7 @@ body {
 }
 
 .button-clear {
-  margin-left: 220px;
+  margin-left: 650px;
   margin-bottom: 15px;
   margin-top: 10px;
   border: 5px dotted white;
@@ -79,9 +75,9 @@ body {
   font-size: 14px;
 }
 
-.among {
+/*.among {
   position: absolute;
   width: 150px;
   margin-left: 180px;
   margin-top: 250px;
-}
+}*/
