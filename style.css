@@ -13,12 +13,11 @@ body {
 #pixel-board {
   display: table;
   text-align: center;
-  width: 250px;
 }
 
 .pixel {
   border: 1px solid black;
-  display: table-cell;
+  display: inline-block;
   background-color: white;
   width: 40px;
   height: 40px;
@@ -26,8 +25,6 @@ body {
 
 .pixel-board-line {
   display: table-row;
-  width: 40px;
-  height: 40px;
 }
 
 
