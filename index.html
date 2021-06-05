@@ -2,70 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Projeto Pixel Art</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Projeto Pixel Art</title>
 </head>
 
 <body>
-    <!-- <ul id="color-palette">
-            <li class="color colorBlack"></li>
-            <li class="color colorRed"></li>
-            <li class="color colorYellow"></li>
-            <li class="color colorBlue"></li>
-        </ul> -->
-    <div id="header">
-        <h1 id="title">Paleta de Cores</h1>
-        <table id="color-palette">
-            <tr>
-                <td class="color selected"></td>
-                <td class="color"></td>
-                <td class="color"></td>
-                <td class="color"></td>
-            </tr>
-        </table>
-    </div>
-    <div id="body">
-        <table id="pixel-board">
-            <tr>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-            </tr>
-            <tr>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-            </tr>
-            <tr>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-            </tr>
-            <tr>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-            </tr>
-            <tr>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-                <td class="pixel"></td>
-            </tr>
-        </table>
-    </div>
+  <div id="header">
+    <h1 id="title">Paleta de Cores</h1>
+    <ul id="color-palette">
+      <li onclick="selectColor()" class="color color1 selected"></li>
+      <li onclick="selectColor()" class="color color2"></li>
+      <li onclick="selectColor()" class="color color3"></li>
+      <li onclick="selectColor()" class="color color4"></li>
+    </ul>
+  </div>
+  <div class="btn"><button id="clear-board">Limpar pixel board</button></div>
+  <div id="body">
+    <!-- ul#pixel-board>li(.pixel)*25 -->
+    <ul id="pixel-board">
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+      <li onclick="addColor()" class="pixel"></li>
+    </ul>
+  </div>
+  <!-- <table id="novo"></table> -->
 </body>
+<script type="text/javascript" src="script.js" defer></script>
 
 </html>
