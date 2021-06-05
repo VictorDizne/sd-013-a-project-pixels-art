@@ -7,11 +7,17 @@ function setCurrentColor(event) {
   currentColor = event.target.innerText;
 }
 
-const colors = document.getElementsByClassName('color');
 function setColors() {
+  const colors = document.getElementsByClassName('color');
   for (let i = 0; i < colors.length; i += 1) {
     colors[i].addEventListener('click', setCurrentColor);
-    colors[i].style.backgroundColor = colors[i].innerText;
+    if (i > 0) {
+      const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+      colors[i].style.backgroundColor = randomColor;
+      colors[i].innerText = randomColor;
+    } else {
+      colors[i].style.backgroundColor = colors[i].innerText;
+    }
   }
 }
 
