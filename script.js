@@ -39,6 +39,15 @@ getPaletteColor.addEventListener('click', function(event) {
     }
 })
 
+const getPixelBoard = document.getElementById('pixel-board');
+
+getPixelBoard.addEventListener('click', function(event) {
+  const pixelClicked = event.target;
+  const colorSelected = document.getElementsByClassName('selected');
+  const colorUsed = getComputedStyle(colorSelected[0]).getPropertyValue("background-color");
+  pixelClicked.style.backgroundColor = colorUsed;
+})
+
 //Recupera elemento pai dos pixels em branco.
 // let pixelChoose = document.getElementsByClassName('line');
 
@@ -54,10 +63,3 @@ getPaletteColor.addEventListener('click', function(event) {
 
 
 
-// function useColor() {
-//   let getPixel = document.getElementsByClassName('pixel');
-//   let getColors = document.getElementsByClassName('color');
-//   document.addEventListener('click', function(event) {
-//     if (event.target.)
-//   })
-// }
