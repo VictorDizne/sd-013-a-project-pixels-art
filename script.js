@@ -27,6 +27,7 @@ function createLines(number) {
 }
 createLines(5);
 
+// adicionar selected para classe selecionada
 function selectedClass() {
   const corInicial = document.querySelector('.color');
   corInicial.classList.add('selected');
@@ -42,6 +43,7 @@ for (let i = 0; i < color.length; i += 1) {
     event.target.classList.add('selected');
   });
 }
+//  colorir Pixel Board
 
 const pixel = document.getElementsByClassName('pixel');
 function colorPiker(event) {
@@ -53,3 +55,17 @@ function colorPiker(event) {
 for (let i = 0; i < pixel.length; i += 1) {
   pixel[i].addEventListener('click', colorPiker);
 }
+
+//  Limpar Pixel Board
+
+const buttomClear = document.getElementById('clear-board');
+const divPixel = document.getElementsByTagName('div');
+function clear() {
+  for (let i = 0; i < divPixel.length; i += 1) {
+    if (divPixel[i].classList.contains('pixel')) {
+      divPixel[i].style.backgroundColor = 'white';
+    }
+  }
+}
+
+buttomClear.addEventListener('click', clear);
