@@ -45,7 +45,8 @@ function setaCor(){
     });
   });
 }
-let pixelBd = document.querySelector('#pixel-board')                                    
+let pixelBd = document.querySelector('#pixel-board');
+
 function geraBoard(linhas) {
   pixelBd.innerHTML = '';
   for (let i = 0; i < linhas; i += 1) {
