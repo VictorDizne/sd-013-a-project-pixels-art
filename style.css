@@ -2,13 +2,7 @@
 text-align: center;
 color: darkslategrey;
 }
-.selected {
-    width: 60px;
-    height: 60px;
-    display: inline-block;
-    margin: 10px;
-    border: black solid 1px;
-}
+
 .color {
     width: 60px;
     height: 60px;
