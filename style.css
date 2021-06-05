@@ -26,6 +26,12 @@ h1 {
   background-color: #ff07de;
 }
 
+#clear-board {
+  margin-left: 150px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
 #pixel-board {
   margin-top: 25px;
   margin-left: 68px;
