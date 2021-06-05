@@ -3,7 +3,7 @@
  document.getElementsByClassName('color')[2].style.background = "red"
  document.getElementsByClassName('color')[3].style.background = "yellow"
 
-function botaoLimpar() {
+function LimpaTela() {
       document.getElementsById("clear-bord").style.color = "white";
 } 
 window.onload= iniciando
