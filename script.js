@@ -22,16 +22,16 @@ aprendi no plantao que nao posso por a classe pixel no primeiro for porque o pri
 requisito baseado no exercício da trybe bloco 4.3 exercício 1, lá tem 25 asteriscos também, fiz a troca pela div.
 joguei como filha para ficar embaixo */
 
-// function corAleatoria() {
-//   let r = Math.random() * 255;
-//   let g = Math.random() * 255;
-//   let b = Math.random() * 255;
-//   document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
-//   document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
-//   document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
-// };
+function corAleatoria() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
+  document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
+  document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
+};
 
-// corAleatoria();
+corAleatoria();
 
 function addClassSelect(event) {
   const corSelecionada = document.querySelector('.selected');
