@@ -11,44 +11,28 @@
 	line-height : 50px;
 }
 
+#color-palette {
+  display:inline-block;	
+}
+
 .color {
-	background-color: blue;
-	
+	border : 1px solid black;
+  height: 40px;
+  width: 40px;
+	display: inline-block;
+
 } 
 
-.color1 {
-	background-color: black;
-	
-} .color2 {
-	background-color: rgb(58, 169, 202);
-	
-} .color3 {
-	background-color: rgb(31, 32, 110);
-	
-} .color4 {
-	background-color: rgb(255, 0, 128);
-	
-} .white {
-	background-color: white;
-	
-} 
-
-.align {
-
+.pixel {
+	background : white;
+  border: 1px solid black;
 }
 
 .tamanhoqdd {
-	color : black ;
-	padding: 40px;
+	background : white;
+  height: 40px;
+  width: 40px;
 	display: inline-block;
-	margin: 2px;
-	border-width  : 1px;
-	border-style : solid;
-	
-}
-
-#pixel-board {
-
 }
 
 
