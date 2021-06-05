@@ -1,15 +1,12 @@
-
-
-
 let pixelBd = document.querySelector('#pixel-board')                                    
 
-function geraBoard(linhas){
+function geraBoard(linhas) {
   pixelBd.innerHTML = '';
-  for (let i = 0; i < linhas; i ++) {
+  for (let i = 0; i < linhas; i += 1) {
     let linhaPixel = document.createElement('div');
     linhaPixel.className = 'linha';
     pixelBd.appendChild(linhaPixel);
-    for (let pix = 0; pix < linhas; pix ++) {
+    for (let pix = 0; pix < linhas; pix += 1) {
       let pixel = document.createElement('div');
       pixel.className = 'pixel';
       linhaPixel.appendChild(pixel);
@@ -19,8 +16,9 @@ function geraBoard(linhas){
 }
 
 window.onload = function() {
-  geraBoard(10);
+  geraBoard(5);
 }
+
 //Pega os elementos button
 let buttonBlack = document.querySelector('#black');
 let buttonRed = document.querySelector('#red');
