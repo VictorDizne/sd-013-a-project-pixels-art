@@ -5,17 +5,23 @@ h1{
 body {
     text-align: center;
 }
-#cores-paleta{
-    margin-left: 20px;
-}
-
-.colors {
+.color {
 background-color: black;
-margin-left: 0px;
 text-align: center;
 display: inline-block;
 width: 80px;
 height: 80px;
-border: 1px, solid black;
+border-style: 1px, black;
+}
+.pixel{
+    background-color:black;
+    border: 1p; 
+    border-color: solid, black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    
+
 }
 
