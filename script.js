@@ -16,3 +16,27 @@ function rgbRadom(radomColor) {
   let randomColor = `rgb(${color1}, ${color2}, ${color3})`;
   return randomColor;
 }
+
+// function tableColumn() {
+//   let numeroUsuario = 
+//   let tabela = document.getElementById("#pixel-board");
+//   let colunas = "";
+//   for (let index = 0; index <= numeroUsuario )
+// }
+
+function selectColor() {
+  let td = 4;
+  for (let index = 0; index <= td; index += 1) {
+  let disponibleColors = document.querySelectorAll(".color")[index];
+  disponibleColors.addEventListener("click", clickPaleta);
+  }
+  function clickPaleta() {
+  console.log("teste");
+  }
+}
+selectColor();
+
+// function paintingTable() {
+//   let pixels = document.querySelectorAll(".pixel");
+
+// }
