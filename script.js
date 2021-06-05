@@ -12,6 +12,7 @@ let colorThree = document.getElementById('colorThree');
 let colorFour = document.getElementById('colorFour'); 
 let bigSquare = document.getElementById('pixel-board');
 let colorSelected;
+let clean = document.getElementById('clear-board');
 
 
 colorOne.addEventListener('click', selected);
@@ -24,7 +25,7 @@ function selected(event) {
   let colorChoose = document.querySelector('.selected');
   colorChoose.classList.remove('selected');
   event.target.classList.add('selected');
-  colorSelected = event.target;
+  //colorSelected = event.target;
 }
 
 bigSquare.addEventListener('click', Pixels);
@@ -57,6 +58,16 @@ function paintSquare () {
   }
   squareChoose.classList.add('pixel');
 }
+
+clean.addEventListener('click', eraseButton);
+
+function eraseButton () {
+  let pixelList = document.querySelectorAll('.pixel');
+  for (let j = 0; j < pixelList.length; j += 1) {
+    pixelList[j].className = 'pixel';
+  }; 
+}
+
 
 /* window.onload = function squaresEvent (){
   for (let i=0; i < squares.length; i += 1) {
