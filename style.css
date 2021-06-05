@@ -37,7 +37,7 @@ body {
   height: 40px;
 }
 
-#clear-board {
+.input-user {
   display: inline-block;
   border: 1px solid black;
   margin-top: 8px;

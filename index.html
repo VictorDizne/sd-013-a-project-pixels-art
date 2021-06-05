@@ -19,7 +19,11 @@
       <div class="color color-yellow"></div>
     </div>
     <div>
-      <button id="clear-board">Limpar</button>
+      <button class="input-user" id="clear-board">Limpar</button>
+    </div>
+    <div>
+      <input class="input-user" type="number" id="board-size" max="50" min="5" oninput="this.value = Math.abs(this.value)">
+      <button class="input-user" id="generate-board">VQV</button>
     </div>
   </nav> 
   <div id="pixel-board">

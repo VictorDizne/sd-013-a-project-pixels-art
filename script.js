@@ -54,6 +54,35 @@ function clearBoard() {
 
 clearBoard();
 
+// Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+function boardSize() {
+  const buttonVqv = document.querySelector('#generate-board');
+  buttonVqv.addEventListener('click', () => {
+    const sessions = document.querySelectorAll('section');
+    const input = document.querySelector('#board-size').value;
+    const valueInput = parseInt(input);
+    if (input === ''){
+      alert ("Board inválido!");
+    } else {
+      for (let i = 0; i < sessions.length; i += 1) {
+        sessions[i].remove();
+      } for (let i = 0; i < valueInput; i += 1){
+        const newContainer = document.querySelector('#pixel-board');
+        const lines = document.createElement('section');
+        lines.classList.add('lines');
+        newContainer.appendChild(lines);
+        for (let i = 0; i < valueInput; i += 1){
+          const collums = document.createElement('div');
+          collums.classList.add('pixel');
+          lines.appendChild(collums);
+        }
+      }
+    }
+  });
+}
+
+boardSize();
+
 // Ao carregar a página
 window.onload = function () {
   selectedBlack();
