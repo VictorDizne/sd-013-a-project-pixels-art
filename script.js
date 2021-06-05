@@ -1,36 +1,37 @@
-function selectCor() {
-  const colorir = document.getElementsByClassName('color');
-  for (let index = 0; index < colorir.length; index +=1) {
-    colorir[index].addEventListener('click', function () {
-      const selectedCor = document.querySelector('.selected');
-      selectedCor.classList.remove('selected');
-      const clickCor = event.target; 
-      clickCor.classList.add('selected');
-    });
-    } 
-  }
-  selectCor();
+// function selectCor() {
+//   const colorir = document.getElementsByClassName('color');
+//   for (let index = 0; index < colorir.length; index +=1) {
+//     colorir[index].addEventListener('click', function () {
+//       const selectedCor = document.querySelector('.selected');
+//       selectedCor.classList.remove('selected');
+//       const clickCor = event.target; 
+//       clickCor.classList.add('selected');
+//     });
+//     } 
+//   }
+//   selectCor();
   
-  function selectedBlack() {
-    const criaClasse = document.getElementById('black');
-    criaClasse.classList.add('selected');
+  function selectCor() {
+    const colorir = document.getElementById('a1');
+    colorir.classList.add('selected');
   }
 
-  function classeSelected () {
+  function corSelecionada() {
     const corPaleta = document.querySelector('#color-palette');
-    const selectedPaleta = document.querySelector('#color-palette .color');
-    corPaleta.addEventListener('click', function (evento) {
+    const corPaletaDois = document.querySelectorAll('#color-palette .color');
+    corPaleta.addEventListener('click', (evento) => {
       if (evento.target.classList.contains('color')) {
-      for (let index = 0; index < selectedPaleta.length; index += 1) {
-        selectedPaleta[index].remove('selected');
+        for (let index = 0; index < corPaletaDois.length; index += 1) {
+          corPaletaDois[index].classList.remove('selected');
+        }
+        evento.target.classList.add('selected');
       }
-      evento.target.classList.add('selected');
-      selectedPaleta();
-    }
     });
   }
 
-  window.onload = function pixels() {
-    selectedBlack();
-    criaClasse();
-  }
+  window.onload = function pixel()
+  {
+    selectCor();
+    corSelecionada();
+  };
+  

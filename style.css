@@ -1,19 +1,19 @@
-.a1 {
+#a1 {
   background-color: black;
   border: solid 1px;
 }
 
-.b2 {
+#b2 {
   background-color: rgb(168, 22, 22);
   border: solid 1px;
 }
 
-.c3 {
+#c3 {
   background-color: rgb(241, 238, 24);
   border: solid 1px;
 }
 
-.d4 {
+#d4 {
   background-color: rgb(110, 10, 255);
   border: solid 1px;
 }
