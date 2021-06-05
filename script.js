@@ -79,3 +79,23 @@ function questionEight() {
 
 }
 questionEight();
+
+function questionNine() {
+  let div = document.createElement('div');
+  let pixels = document.getElementsByClassName('pixel');
+  let pixelsBoard = document.getElementById('pixel-board');
+  let button = document.createElement('input');
+  button.setAttribute('type','button');
+  button.setAttribute('value','Limpar');
+  button.setAttribute('id','clear-board');
+
+  button.addEventListener('click',() => {
+    for(let i = 0; i < pixels.length; i += 1) {
+      let pixel = pixels[i];
+      pixel.style.backgroundColor = 'White';
+    }
+  })
+  div.appendChild(button);
+  document.body.insertBefore(div,pixelsBoard);
+}
+questionNine();
