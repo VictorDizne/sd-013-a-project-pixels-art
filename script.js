@@ -29,9 +29,20 @@
     });
   }
 
-  window.onload = function pixel()
-  {
+  window.onload = function pixel()  {
     selectCor();
     corSelecionada();
   };
-  
+
+  // function selectedPixel() {
+  //   const pixelBoard = document.getElementById('#pixel-board');
+  //   pixelBoard.addEventListener('click', (evento) => {
+  //     if (evento.target.classList.contains('pixel')) {
+  //       let pixelSel = document.querySelector('.selected');
+  //       let corPixel = window.getComputedStyle(selectedPixel).corPixel;
+  //       evento.target.style.corPixel = corPixel;
+  //     }
+  //   })
+  // }
+
+  // selectedPixel();
