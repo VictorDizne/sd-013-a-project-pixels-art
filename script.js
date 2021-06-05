@@ -1,24 +1,3 @@
-let pixelBd = document.querySelector('#pixel-board')                                    
-
-function geraBoard(linhas) {
-  pixelBd.innerHTML = '';
-  for (let i = 0; i < linhas; i += 1) {
-    let linhaPixel = document.createElement('div');
-    linhaPixel.className = 'linha';
-    pixelBd.appendChild(linhaPixel);
-    for (let pix = 0; pix < linhas; pix += 1) {
-      let pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      linhaPixel.appendChild(pixel);
-    }
-    setaCor();
-  }
-}
-
-window.onload = function() {
-  geraBoard(5);
-}
-
 //Pega os elementos button
 let buttonBlack = document.querySelector('#black');
 let buttonRed = document.querySelector('#red');
@@ -66,6 +45,23 @@ function setaCor(){
     });
   });
 }
+let pixelBd = document.querySelector('#pixel-board')                                    
+function geraBoard(linhas) {
+  pixelBd.innerHTML = '';
+  for (let i = 0; i < linhas; i += 1) {
+    let linhaPixel = document.createElement('div');
+    linhaPixel.className = 'linha';
+    pixelBd.appendChild(linhaPixel);
+    for (let pix = 0; pix < linhas; pix += 1) {
+      let pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      linhaPixel.appendChild(pixel);
+    }
+    setaCor();
+  }
+}
+geraBoard(5);
+
 // apagar
 let board = document.getElementsByClassName('pixel');
 let clearB = document.querySelector('#clear-board');
