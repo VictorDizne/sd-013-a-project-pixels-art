@@ -66,3 +66,18 @@ function setaCor(){
     });
   });
 }
+// apagar
+let board = document.getElementsByClassName('pixel');
+let clearB = document.querySelector('#clear-board');
+
+clearB.addEventListener('click', function () {
+  for (let i = 0; i < board.length; i += 1) {
+    board[i].style.backgroundColor = 'white';
+  }
+});
+
+function mudaPos(obj) {
+  obj.style.position = 'absolute';
+  obj.style.left = Math.random()*600+'px';
+  obj.style.top = Math.random()*400+'px';
+}

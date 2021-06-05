@@ -1,10 +1,13 @@
 body {
   margin: 0;
-  background-color: #bcf8f8;
+  background-color: #FFDE5A;
 }
 
 .text {
+  font-size: 50px;
   text-align: center;
+  color: #f00;
+  text-decoration: underline black;
 }
 
 .color {
@@ -21,11 +24,8 @@ body {
 }
 
 #pixel-board {
-  position: absolute;
-  top: 50%; 
-  margin-top: -25px; 
-  left: 50%; 
-  margin-left: -100px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 #black {
@@ -58,9 +58,28 @@ body {
 }
 
 .bg {
+  border: 1px solid #000;
   background-image: url(among.png);
   width: 500px;
   height: 500px;
   margin-left: 435px;
   border-radius: 50px;
+}
+
+.button-clear {
+  margin-left: 220px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border: 5px dotted #fff;
+  border-radius: 8px;
+  background-color: red;
+  color: #fff;
+  font-size: 14px;
+}
+
+.among {
+  position: absolute;
+  width: 150px;
+  margin-left: 180px;
+  margin-top: 250px;
 }
