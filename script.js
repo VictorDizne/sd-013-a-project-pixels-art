@@ -3,15 +3,21 @@
  document.getElementsByClassName('color')[2].style.background = "red"
  document.getElementsByClassName('color')[3].style.background = "yellow"
  
-let preto = getElementsByClassName["color"[0]];
-let azul = getElementsByClassName["color"[1]];
-let vermelho = getElementsByClassName["color"[2]];
-let amarelo = getElementsByClassName["color"[3]];
+let preto = getElementsByClassName("color")[0]; //tentando fazer funcionar o cod. com ajuda de ALINE HOSHINO.
+let azul = getElementsByClassName("color")[1];
+let vermelho = getElementsByClassName("color")[2];
+let amarelo = getElementsByClassName("color")[3];
 
-preto.addEventListener('click', ddClassSelect);
+preto.addEventListener('click', addClassSelect);
 azul.addEventListener('click', addClassSelect);
 vermelho.addEventListener('click', addClassSelect);
 amarelo.addEventListener('click', addClassSelect);
+
+function addClassSelect (event) {
+let corSelect = document.querySelector(".selected");
+corSelect.classlist.remove ("selected");
+event.target.classlist.add("selected");
+}
 
  //window.onload= iniciando
   // function iniciando(){
@@ -21,6 +27,7 @@ amarelo.addEventListener('click', addClassSelect);
 
 //window.onload = inicioCor();
   // function  inicioCor(){
+
    //document.getElementsByClassName('color')[0].classList.add('selected');
   // }
 
