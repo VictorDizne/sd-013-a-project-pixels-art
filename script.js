@@ -11,33 +11,41 @@ Paleta();
 
 function pret() {
   const cor = document.querySelector('#pixel-board');
+  let rece = document.querySelector(".preto")
+  let receCor = window.getComputedStyle(rece)
+  let corBack = receCor.getPropertyValue("background-color")
   cor.addEventListener('click', (event) => {
-    event.target.classList.remove('c4', 'c3', 'c1', 'c2');
-    event.target.classList.add('c1');
+    event.target.style.background = corBack
   });
 }
 
 function ver() {
   const cor = document.querySelector('#pixel-board');
+  let rece = document.querySelector(".vermelho")
+  let receCor = window.getComputedStyle(rece)
+  let corBack = receCor.getPropertyValue("background-color")
   cor.addEventListener('click', (event) => {
-    event.target.classList.remove('c4', 'c3', 'c1', 'c2');
-    event.target.classList.add('c2');
+    event.target.style.background = corBack
   });
 }
 
 function verd() {
   const cor = document.querySelector('#pixel-board');
+  let rece = document.querySelector(".verde")
+  let receCor = window.getComputedStyle(rece)
+  let corBack = receCor.getPropertyValue("background-color")
   cor.addEventListener('click', (event) => {
-    event.target.classList.remove('c4', 'c3', 'c1', 'c2');
-    event.target.classList.add('c3');
+    event.target.style.background = corBack
   });
 }
 
 function amarelo() {
   const cor = document.querySelector('#pixel-board');
+  let rece = document.querySelector(".amarelo")
+  let receCor = window.getComputedStyle(rece)
+  let corBack = receCor.getPropertyValue("background-color")
   cor.addEventListener('click', (event) => {
-    event.target.classList.remove('c4', 'c3', 'c1', 'c2');
-    event.target.classList.add('c4');
+    event.target.style.background = corBack
   });
 }
 
@@ -104,6 +112,7 @@ window.onload = function inicio() {
   elementoCor.classList.add('selected');
   pret();
   valorP();
+  dudu()
   function colorido() {
     const corMae = document.querySelectorAll('.color');
     const tabCor = document.querySelector('#color-palette');
@@ -137,17 +146,31 @@ function selecCores() {
 }
 selecCores();
 
+// Pinta os pixels de branco
 function clear() {
   const buton = document.querySelector('#clear-board');
   buton.innerHTML = 'Limpar';
   buton.addEventListener('click', () => {
-    const quadro = document.querySelectorAll('td');
+    const quadro = document.querySelectorAll('.pixel');
     for (let i = 0; i < quadro.length; i += 1) {
-      quadro[i].classList.remove('c4', 'c3', 'c1', 'c2');
+      quadro[i].style.background = "white"
     }
     console.log(quadro);
   });
 }
 clear();
 
-// APAGAR
+function sortCor(){
+  let r = Math.random() * 255
+  let g = Math.random() * 255
+  let b = Math.random() * 255
+  return `rgb(${r},${g},${b})`
+}
+
+function dudu(){
+  document.querySelector(".amarelo").style.background = sortCor()
+  document.querySelector(".verde").style.background = sortCor()
+  document.querySelector(".vermelho").style.background = sortCor()
+}
+const ButaoSort = document.querySelector("#random-cor")
+ButaoSort.addEventListener("click",dudu)
