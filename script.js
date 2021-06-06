@@ -15,15 +15,15 @@ amarelo.addEventListener('click', addClassSelect);
 
  //window.onload= iniciando
   // function iniciando(){
-    //  alert ("Crie a sua Arte");
-      //alert ("inicia com a cor preta selecionada");
+   //   alert ("Crie a sua Arte");
+     // alert ("inicia com a cor preta selecionada");
 //}
 
-window.onload = inicioCor();
-   function inicioCor() {
-   document.getElementsByClassName('color')[0].classList.add('selected')
+//window.onload = inicioCor();
+  // function  inicioCor(){
+   //document.getElementsByClassName('color')[0].classList.add('selected');
+  // }
 
-}
 
 //let pixels= document.getElementsByClassName("pixel");
 //let reInicio = document.getElementById("clear-bord");
