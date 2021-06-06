@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-body, input, textarea, button {
-  background-color: rgb(242 , 243 , 248);
+body , input , textarea , button {
+  background-color: rgb(242, 243, 248);
   border: none;
   outline: none;
 }
@@ -25,7 +25,6 @@ body, input, textarea, button {
 .color {
   width: 40px;
   height: 40px;
-  border: 1px solid black;
 }
 
 #pixel-board {
@@ -36,11 +35,9 @@ body, input, textarea, button {
   width: 40px;
   height: 40px;
   background-color: white;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid black;
 }
 
 .selected {
-
-  /* filter: brightness(0.7); */
-  border: 5px solid white;
+  filter: brightness(0.7);
 }

@@ -1,34 +1,28 @@
-const paletteLength = 4;
-const boardSize = 5;
-let currentColor = 'black';
-
-// FUNÇÃO RETIRADA DE https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
-
 function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i += 1) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
+  const red = Math.ceil(Math.random() * 255);
+  const green = Math.ceil(Math.random() * 255);
+  const blue = Math.ceil(Math.random() * 255);
+  const color = `rgb(${red}, ${green}, ${blue})`;
   return color;
 }
-//
 
-function createPalette() {
+function createPalette(paletteLength) {
   const table = document.querySelector('#color-palette');
   const line = document.createElement('tr');
   table.appendChild(line);
 
   for (let index = 0; index < paletteLength; index += 1) {
     const td = document.createElement('td');
-    td.classList.add('color');
-    td.style.border = '1px solid black';
+
     if (index === 0) {
       td.classList.add('selected');
-      td.style.backgroundColor = '#000';
+      td.style.backgroundColor = '#000000';
     } else {
       td.style.backgroundColor = getRandomColor();
     }
+
+    td.classList.add('color');
+    td.style.border = '1px solid black';
     line.appendChild(td);
   }
 }
@@ -38,7 +32,7 @@ function removePalette() {
   table.innerHTML = '';
 }
 
-function createPixels() {
+function createPixels(boardSize) {
   const table = document.querySelector('#pixel-board');
 
   for (let rowIndex = 0; rowIndex < boardSize; rowIndex += 1) {
@@ -48,7 +42,6 @@ function createPixels() {
     for (let columnIndex = 0; columnIndex < boardSize; columnIndex += 1) {
       const td = document.createElement('td');
       td.classList.add('pixel');
-      td.style.backgroundColor = 'white';
       line.appendChild(td);
     }
   }
@@ -75,11 +68,6 @@ function removeSelected(selected) {
   }
 }
 
-function setCurrentColor(item) {
-  currentColor = item.target.style.backgroundColor;
-  paintPixel(currentColor);
-}
-
 function selectColor() {
   const colors = document.querySelectorAll('.color');
 
@@ -87,7 +75,7 @@ function selectColor() {
     colors[colorIndex].addEventListener('click', (event) => {
       event.target.classList.add('selected');
       removeSelected(event);
-      setCurrentColor(event);
+      paintPixel(event.target.style.backgroundColor);
     });
   }
 }
@@ -108,19 +96,19 @@ function getNewPalette() {
 
   button.addEventListener('click', () => {
     removePalette();
-    createPalette();
+    createPalette(4);
     selectColor();
   });
 }
 
 getNewPalette();
 
-createPalette();
+createPalette(4);
 
-createPixels();
+createPixels(5);
 
 selectColor();
 
 clearPixels();
 
-paintPixel(currentColor);
+paintPixel('black');
