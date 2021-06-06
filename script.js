@@ -32,7 +32,7 @@ function removePalette() {
   table.innerHTML = '';
 }
 
-function createPixels(boardSize) {
+function createBoard(boardSize) {
   const table = document.querySelector('#pixel-board');
 
   for (let rowIndex = 0; rowIndex < boardSize; rowIndex += 1) {
@@ -101,11 +101,42 @@ function getNewPalette() {
   });
 }
 
+function getBoardSize() {
+  const boardInput = document.getElementById('board-size').value;
+  return boardInput;
+}
+
+function removePreviousBoard() {
+  const table = document.getElementById('pixel-board');
+  table.innerHTML = '';
+}
+
+function changeBoardSize() {
+  const button = document.querySelector('#generate-board');
+
+  button.addEventListener('click', () => {
+    let boardSize = getBoardSize();
+
+    if (boardSize === '') {
+      alert('Board inválido!');
+    } else if (boardSize < 5) {
+      boardSize = 5;
+    } else if (boardSize > 50) {
+      boardSize = 50;
+    }
+
+    removePreviousBoard();
+    createBoard(boardSize);
+  })
+}
+
+changeBoardSize();
+
 getNewPalette();
 
 createPalette(4);
 
-createPixels(5);
+createBoard(5);
 
 selectColor();
 
