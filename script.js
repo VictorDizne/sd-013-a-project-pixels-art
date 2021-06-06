@@ -103,9 +103,9 @@ function generateNewBoard() {
   const input = document.querySelector('#board-size');
   const table = document.querySelector('#pixel-board');
   buttonInput.addEventListener('click', function () {
-    if (input.value < 0) {
+    if (input.value <= 0) {
       alert('Board inválido!');
-    } else {
+    } else if (input.value > 0) {
       clearBoardSizer();
       if (input.value < 5) {
         input.value = 5;
