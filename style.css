@@ -9,7 +9,7 @@ body {
   position: absolute;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 200%;
   top: 0;
   right: 0;
   bottom: 0;
@@ -29,9 +29,11 @@ body {
   color: white;
   font-size: 3.5rem;
   font-weight: normal;
-  background: linear-gradient(225deg,
-      rgba(255, 153, 102, 1) 0%,
-      rgba(255, 94, 98, 1) 100%);
+  background: linear-gradient(
+    225deg,
+    rgba(255, 153, 102, 1) 0%,
+    rgba(255, 94, 98, 1) 100%
+  );
   border-bottom: 5px solid white;
 }
 
@@ -53,19 +55,19 @@ body {
 }
 
 .color1 {
-  background-color: #000;
+  background-color: black;
 }
 
 .color2 {
-  background-color: #6C77F0;
+  background-color: #6f77f0;
 }
 
 .color3 {
-  background-color: #60F089;
+  background-color: #60f089;
 }
 
 .color4 {
-  background-color: #FF0000;
+  background-color: red;
 }
 
 /* End Article */
@@ -74,14 +76,14 @@ body {
 
 #table-row {
   margin: 15px auto;
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
 }
 
 .pixel {
   border: 1px solid black;
   background-color: white;
-  height: 40px;
-  width: 40px;
+  height: 41px;
+  width: 41px;
   cursor: cell;
 }
 
@@ -92,15 +94,15 @@ body {
 }
 
 .pintou2 {
-  background-color: #6C77F0;
+  background-color: #6f77f0;
 }
 
 .pintou3 {
-  background-color: #60F089;
+  background-color: #60f089;
 }
 
 .pintou4 {
-  background-color: #FF0000;
+  background-color: red;
 }
 
 /* Botao */
@@ -123,3 +125,36 @@ body {
 }
 
 /* End Botao */
+
+/* Input board-size */
+
+#board-size {
+  margin: 10px auto;
+  display: inline;
+  padding: 10px;
+}
+
+.input {
+  text-align: center;
+}
+
+#generate-board {
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 3px 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-family: cursive;
+  font-size: 1.5rem;
+  transition: 0.5s ease;
+}
+
+#generate-board:hover {
+  background-color: lightyellow;
+  cursor: pointer;
+  border-radius: initial;
+  border: 2px solid black;
+}
+
+
+/* End Input board-size */

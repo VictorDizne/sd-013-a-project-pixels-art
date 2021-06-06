@@ -13,7 +13,7 @@ const granimInstance = new Granim({
   },
 });
 
-//Exercicio 7 - Coloca a classe selected na cor clicada
+// Exercicio 7 - Coloca a classe selected na cor clicada
 const escolheCor = document.querySelectorAll('.color');
 
 escolheCor.forEach((color) => {
@@ -25,7 +25,7 @@ escolheCor.forEach((color) => {
   });
 });
 
-//Exercicio 8 - Muda a cor dos pixels
+// Exercicio 8 - Muda a cor dos pixels
 
 const tabela = document.querySelector('#table-row');
 
@@ -47,12 +47,55 @@ function clicou(event) {
 
 tabela.addEventListener('click', clicou);
 
-//Requisito 9 - Botão limpar
-
-const pixels = document.querySelectorAll('.pixel');
+// Requisito 9 - Botão limpar
 
 function limpa() {
+  const pixels = document.querySelectorAll('.pixel');
   for (const i of pixels) {
     i.classList.remove('pintou', 'pintou2', 'pintou3', 'pintou4');
   }
 }
+
+//Requisito 10 - Menção honrosa a ROGERIO <3
+
+const vqv = document.querySelector('#generate-board');
+const imputNumber = document.querySelector('#board-size');
+const pixelBoard = document.querySelector('#pixel-board');
+
+function criaQuadro(value) {
+
+  tabela.innerHTML = null;
+  for (let tr = 0; tr < value; tr += 1) {
+    const trs = document.createElement('tr');
+    for(let td = 0; td < value; td += 1) {
+      const tds = document.createElement('td');
+      tds.classList.add('pixel');
+      trs.appendChild(tds);
+    }
+    tabela.appendChild(trs);
+  }
+}
+
+function gerarQuadro(input) {
+  if (input.value >= 50) {
+    criaQuadro(50);
+    alert('O tamanho máximo é 50');
+  }
+  if (input.value <= 5) {
+    criaQuadro(5);
+    alert('O tamanho mínimo é 5');
+  }
+  if (input.value >= 5 && input.value <= 50) {
+    criaQuadro(input.value);
+  }
+}
+
+function botaoVqv() {
+  if (imputNumber.value === '') {
+    alert('Board inválido!');
+  } else {
+    gerarQuadro(imputNumber);
+  }
+}
+
+vqv.addEventListener('click', botaoVqv);
