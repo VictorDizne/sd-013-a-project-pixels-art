@@ -15,3 +15,15 @@ function quadroDePixels() {
   }
 }
 quadroDePixels();
+
+const colors = document.getElementsByClassName('color');
+for (let i = 0; i < colors.length; i += 1) {
+  colors[i].addEventListener('click', mudaCores);
+}
+
+function mudaCores(event) {
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].classList.remove("selected");
+  }
+  event.target.classList.add("selected");
+}
