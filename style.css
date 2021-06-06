@@ -6,7 +6,8 @@ body {
 #title {
   font-family: monospace;
   text-align: center;
-  color: #e76f51;
+  color: crimson;
+  background-color: darkslategray;
 }
 
 .color {
@@ -40,15 +41,15 @@ body {
 }
 
 .cor2 {
-  background-color: #2a9d8f;
+  background-color: rgb(42, 157, 143);
 }
 
 .cor3 {
-  background-color: #e9c46a;
+  background-color: rgb(233, 196, 106);
 }
 
 .cor4 {
-  background-color: #f4a261;
+  background-color: rgb(244, 162, 97);
 }
 
 #color-palette {
@@ -69,5 +70,5 @@ body {
   font-size: 13px;
   padding: 6px 10px;
   text-decoration: none;
-  background-color: #6d597a;
+  background-color: rgb(109, 89, 122);
 }
