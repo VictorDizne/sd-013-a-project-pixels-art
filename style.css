@@ -1,0 +1,22 @@
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+}
+
+.black {
+  background-color: black;
+}
+
+.pink {
+  background-color: #ef476f;
+}
+
+.yellow {
+  background-color: #ffd166;
+}
+
+.green {
+  background-color: #90be6d;
+}
