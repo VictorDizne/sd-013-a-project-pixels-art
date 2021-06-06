@@ -1,69 +1,80 @@
 body {
-
+  text-align: center;
 }
+
 #cor {
   width: 230px;
   border: 1px solid black;
   height: 60px;
 }
-.preto{
+
+.preto {
   width: 50px;
   border: 1px solid black;
   height: 50px;
-  margin:1%;
+  margin: 1%;
   background-color: black;
   display: inline-block;
 }
-.vermelho{
+
+.vermelho {
   width: 50px;
   border: 1px solid black;
   height: 50px;
-  margin:1%;
+  margin: 1%;
   background-color: red;
   display: inline-block;
 }
-.verde{
+
+.verde {
   width: 50px;
   border: 1px solid black;
   height: 50px;
-  margin:1%;
+  margin: 1%;
   background-color: green;
   display: inline-block;
 }
-.amarelo{
+
+.amarelo {
   width: 50px;
   border: 1px solid black;
   height: 50px;
-  margin:1%;
+  margin: 1%;
   background-color: yellow;
   display: inline-block;
 }
-.pixel{
+
+.pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
   display: inline-block;
   background-color: white;
   margin: 0%;
+}
 
+
+table {
+  margin: auto;
+  border-collapse: collapse;
 }
-section div{
-  height: 42px;
-  width: 210px;
-  
-}
-section{
-  width: 210px;
-}
-.c1{
+
+.c1 {
   background-color: black;
 }
-.c2{
+
+.c2 {
   background-color: red;
 }
-.c3{
-  background-color:green;
+
+.c3 {
+  background-color: green;
 }
-.c4{
+
+.c4 {
   background-color: yellow;
+}
+
+button {
+  margin-bottom: 1%;
 }
