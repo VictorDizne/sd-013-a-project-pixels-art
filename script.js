@@ -11,7 +11,7 @@
 
 window.onload= inicioCor
 function inicioCor() {
-      document.getElementsByClassName('color')[0].clasList.add('selected')
+      document.getElementsByClassName('color')[0].classList.add('selected')
 
 }
 
