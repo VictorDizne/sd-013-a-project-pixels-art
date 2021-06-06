@@ -12,8 +12,8 @@ body {
 
 div.color{
   border: 1px black solid;
-  width: 150px;
-  height: 150px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   margin-left: 150px;
 }
@@ -32,4 +32,16 @@ div.color{
 
 #black {
   background-color: black;
+}
+
+table {
+  margin-left: 300px;
+}
+
+td {
+  border: 1px black solid;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  display: table-cell;
 }
