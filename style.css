@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
   margin: 0;
@@ -44,8 +44,8 @@ body {
 }
 
 .color {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border: 1px solid black;
   border-radius: 50px;
   display: inline-block;
@@ -74,6 +74,7 @@ body {
 
 #table-row {
   margin: 15px auto;
+  /* border-collapse: collapse; */
 }
 
 .pixel {
@@ -81,6 +82,44 @@ body {
   background-color: white;
   height: 40px;
   width: 40px;
+  cursor: cell;
 }
 
 /* End Pixel board */
+
+.pintou {
+  background-color: black;
+}
+
+.pintou2 {
+  background-color: #6C77F0;
+}
+
+.pintou3 {
+  background-color: #60F089;
+}
+
+.pintou4 {
+  background-color: #FF0000;
+}
+
+/* Botao */
+#clear-board {
+  display: block;
+  margin: 1rem auto;
+  padding: 3px 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-family: cursive;
+  font-size: 1.5rem;
+  transition: 0.5s ease;
+}
+
+#clear-board:hover {
+  background-color: lightyellow;
+  cursor: pointer;
+  border-radius: initial;
+  border: 2px solid black;
+}
+
+/* End Botao */
