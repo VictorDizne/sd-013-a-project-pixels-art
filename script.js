@@ -12,7 +12,7 @@ function questionTwoThreeSix() {
   divPallet.setAttribute('id', 'color-palette');
   let arrayCores = ['black', 'yellow', 'blue', 'red'];
 
-  for(let i = 0; i < 4; i += 1) {
+  for(let i = 0; i < arrayCores.length; i += 1) {
     let div = document.createElement('div');
     div.style.backgroundColor = arrayCores[i];
     if(div.style.backgroundColor == 'black') {
@@ -82,7 +82,7 @@ function questionNine() {
   let div = document.createElement('div');
   let pixels = document.getElementsByClassName('pixel');
   let pixelsBoard = document.getElementById('pixel-board');
-  button = document.getElementById('clear-board');
+  let button = document.getElementById('clear-board')
 
   button.addEventListener('click',() => {
     for(let i = 0; i < pixels.length; i += 1) {

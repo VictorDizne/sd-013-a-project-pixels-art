@@ -1,7 +1,53 @@
+@keyframes pallet {
+  0% {
+    background-color: blue;
+    border-top: 4px solid red;
+    border-left: 4px solid black;
+    border-right: 4px solid yellow;
+  }
+
+  25% {
+    background-color: black;
+    border-top: 4px solid blue;
+    border-left: 4px solid yellow;
+    border-right: 4px solid red;
+  }
+
+  50% {
+    background-color: 4px solid red;
+    border-top: 4px solid black;
+    border-left: 4px solid blue;
+    border-right: 4px solid blue;
+  }
+
+  75% {
+    background-color: yellow;
+    border-top: 4px solid yellow;
+    border-left: 4px solid  red;
+    border-right: 4px solid black;
+  }
+
+  100% {
+    background-color: blue;
+    border-top: 4px solid red;
+    border-left: 4px solid black;
+    border-right: 4px solid yellow;
+  }
+}
+
 
 #color-palette {
- margin-left: 42%;
+ margin-left: 41%;
  margin-bottom: 10px;
+ border-top: 4px solid red;
+ border-left: 4px solid black;
+ border-right: 4px solid yellow;
+ display: inline-block;
+ background-color: blue;
+ animation-name: pallet;
+ animation-iteration-count: infinite;
+ animation-delay: 2s;
+ animation-duration: 2s;
 }
 
 .color , .pixel {
@@ -14,14 +60,28 @@
   height: auto;
   margin-top: 10px;
 }
+
 div {
   margin: 0 auto;
 }
-.color {
+
+.color , .pixel {
   padding: 0;
 }
 
 #clear-board {
   margin-left: 44%;
   font-size: 30px;
+  border-radius: 10px;
+}
+
+.pixel {
+margin-bottom: -4px;
+}
+
+h1 {
+  margin-right: 3%;
+}
+#clear-board:hover {
+  color: blue;
 }
