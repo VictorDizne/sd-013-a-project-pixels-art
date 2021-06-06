@@ -1,4 +1,4 @@
-let granimInstance = new Granim({
+const granimInstance = new Granim({
   element: '#canvas-basic',
   direction: 'left-right',
   isPausedWhenNotInView: true,
@@ -13,13 +13,13 @@ let granimInstance = new Granim({
   },
 });
 
-// Exercicio 7 - Coloca a classe selected na cor clicada
+//Exercicio 7 - Coloca a classe selected na cor clicada
 const escolheCor = document.querySelectorAll('.color');
 
 escolheCor.forEach((color) => {
   color.addEventListener('click', function () {
-    escolheCor.forEach((color) => {
-      color.classList.remove('selected');
+    escolheCor.forEach((item) => {
+      item.classList.remove('selected');
     });
     this.classList.add('selected');
   });
@@ -49,12 +49,10 @@ tabela.addEventListener('click', clicou);
 
 //Requisito 9 - Botão limpar
 
-const botaoLimpa = document.querySelector('#clear-board');
-
 const pixels = document.querySelectorAll('.pixel');
 
 function limpa() {
-  for (let i of pixels) {
+  for (const i of pixels) {
     i.classList.remove('pintou', 'pintou2', 'pintou3', 'pintou4');
   }
 }
