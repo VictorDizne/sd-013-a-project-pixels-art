@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-identical-functions */
 /* eslint-disable no-var */
 /* eslint-disable max-len */
 /* eslint-disable complexity */
@@ -69,6 +70,16 @@ function setPixelColorSelected() {
 }
 setPixelColorSelected();
 
+function setEventForNewPixelGenerated(event) {
+  const targetColor = event.target.style.backgroundColor;
+  setColorByClass();
+  if (targetColor !== color) {
+    event.target.style.backgroundColor = color;
+  } else {
+    event.target.style.backgroundColor = 'white';
+  }
+}
+
 function clearBoard() {
   const board = document.getElementsByClassName('pixel');
   const button = document.querySelector('#clear-board');
@@ -79,3 +90,35 @@ function clearBoard() {
   });
 }
 clearBoard();
+
+function clearBoardSizer() {
+  const lineBoard = document.querySelectorAll('.line');
+  for (let index = 0; index < lineBoard.length; index += 1) {
+    lineBoard[index].remove();
+  }
+}
+
+function generateNewBoard() {
+  const buttonInput = document.querySelector('#generate-board');
+  const input = document.querySelector('#board-size');
+  const table = document.querySelector('#pixel-board');
+  buttonInput.addEventListener('click', function () {
+    if (input.value <= 0) {
+      alert('Board inválido!');
+    } else {
+      clearBoardSizer();
+      for (let index = 0; index < input.value; index += 1) {
+        const lineBoard = document.createElement('tr');
+        lineBoard.className = 'line';
+        table.appendChild(lineBoard);
+        for (let indexPixel = 0; indexPixel < input.value; indexPixel += 1) {
+          const pixel = document.createElement('td');
+          pixel.className = 'pixel';
+          pixel.addEventListener('click', setEventForNewPixelGenerated);
+          lineBoard.appendChild(pixel);
+        }
+      }
+    }
+  });
+}
+generateNewBoard();

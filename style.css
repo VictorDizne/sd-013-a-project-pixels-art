@@ -79,6 +79,21 @@
 #clear-board:hover {
   background-color: lightgray;
 }
+#board-size {
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 1em;
+}
+#generate-board {
+  background-color: rgb(202, 202, 202);
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#generate-board:hover {
+  background-color: lightgray;
+}
 .pixel-section {
   height: 32em;
   background-color: rgb(182, 204, 182);
