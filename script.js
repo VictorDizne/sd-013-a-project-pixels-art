@@ -3,12 +3,12 @@
  document.getElementsByClassName('color')[2].style.background = "red"
  document.getElementsByClassName('color')[3].style.background = "yellow"
  
-let preto = getElementsByClassName("color")[0];
-let azul = getElementsByClassName("color")[1];
-let vermelho = getElementsByClassName("color")[2];
-let amarelo = getElementsByClassName("color")[3];
+let preto = getElementsByClassName["color"[0]];
+let azul = getElementsByClassName["color"[1]];
+let vermelho = getElementsByClassName["color"[2]];
+let amarelo = getElementsByClassName["color"[3]];
 
-preto.addEventListener('click', addClassSelect);
+preto.addEventListener('click', ddClassSelect);
 azul.addEventListener('click', addClassSelect);
 vermelho.addEventListener('click', addClassSelect);
 amarelo.addEventListener('click', addClassSelect);
