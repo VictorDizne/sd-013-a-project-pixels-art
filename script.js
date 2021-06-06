@@ -1,3 +1,4 @@
+// cria a grade de pixels
 const quadroDePixel = document.querySelector('#pixel-board');
 
 function createDivs() {
@@ -11,27 +12,28 @@ function createNullDivs() {
   quadroDePixel.appendChild(criarLinha);
 }
 
-function createLines(number) {
-  let contador = 0;
-
+function count(number) {
   for (let i = 0; i < number; i += 1) {
-    for (let index = 0; index < number; index += 1) {
-      contador += 1;
-      if (contador > number) {
-        contador = 1;
-        createNullDivs();
-      }
-      createDivs();
-    }
+    createDivs();
   }
 }
+
+function createLines(number) {
+  for (let i = 1; i <= number; i += 1) {
+    count(number);
+    createNullDivs();
+  }
+}
+
 createLines(5);
 
-// adicionar selected para classe selecionada
+// adiciona selected para classe selecionada
+
 function selectedClass() {
   const corInicial = document.querySelector('.color');
   corInicial.classList.add('selected');
 }
+
 selectedClass();
 
 const color = document.getElementsByClassName('color');
@@ -43,14 +45,15 @@ for (let i = 0; i < color.length; i += 1) {
     event.target.classList.add('selected');
   });
 }
+
 //  colorir Pixel Board
 
 const pixel = document.getElementsByClassName('pixel');
-function colorPiker(event) {
+function colorPiker(e) {
   const selected = document.getElementsByClassName('selected')[0];
   const theCSSprop = window.getComputedStyle(selected).getPropertyValue('background-color');
   const colorPikers = theCSSprop;
-  event.target.style.backgroundColor = colorPikers;
+  e.target.style.backgroundColor = colorPikers;
 }
 for (let i = 0; i < pixel.length; i += 1) {
   pixel[i].addEventListener('click', colorPiker);
@@ -69,3 +72,29 @@ function clear() {
 }
 
 buttomClear.addEventListener('click', clear);
+
+// requisito 10 : imput
+
+function afterRefresh(input) {
+  quadroDePixel.innerHTML = null;
+  createLines(input);
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', colorPiker);
+  }
+}
+const submit = document.getElementById('generate-board');
+submit.addEventListener('click', () => {
+  let input = document.getElementById('board-size').value;
+  console.log(input);
+  if (input <= 5) {
+    input = 5;
+    alert('Board inválido!');
+    afterRefresh(input);
+  } else if (input >= 50) {
+    input = 50;
+    alert('Board inválido!');
+    afterRefresh(input);
+  } else {
+    afterRefresh(input);
+  }
+});
