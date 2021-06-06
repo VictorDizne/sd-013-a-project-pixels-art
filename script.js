@@ -8,44 +8,30 @@ function clickSelect(event){
   event.target.classList.add("selected");
 }
 // Requisito 8
-/*
-function paintpixel(colorpixel){
-  let selectColor = document.querySelector('.selected');
-  colorpixel.target.style.backgroundColor = selectColor;
-}
-let pixel = document.querySelectorAll('.pixel');
-for(index = 0; index < pixel.length; index += 1){
-  pixel[index].addEventListener('click', paintpixel);
-}
-*/
-// Requisito 9
 
-const botao = document.getElementById('clear-board');
+function paintpixel(evento){
 
-botao.addEventListener('click', function limpar() {
-  const pixels = document.getElementsByClassName("pixel");
+  let selectColor = document.querySelector('.selected').id;
+    
+  if(evento.target.className === 'pixel'){
+    console.log(evento.target.id = selectColor);
+  }
+}
+document.body.addEventListener('click', paintpixel);
+
+
+// Requisito 9 - Arrumar
+
+
+function limpar() {
+const botao = document.querySelector('button');
+const pixels = document.querySelectorAll(".pixel");
+
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = 'rgb(255,255,255)';
-  }
-});
-
-/*
-let botao = document.querySelector('#clear-board');
-botao.addEventListener('click', function limpa(){
-  let pixels = document.querySelectorAll(".pixel");
-  for(let i = 0; i < pixels.length; i += 0){
-    pixels[i].style.backgroundColor = 'white';
-  }
-});
-*/
-
-
-
-/*function limpaBoard(event){
-  let pixels = document.querySelectorAll('.pixel');
-  for(index = 0; index < pixels.length; index += 0){
-    document.querySelectorAll(".pixel")[index].style.backgroundColor = "white";
-  }
+    botao.addEventListener('click', function() {
+      let pinta = document.querySelector('#pixel-board');
+      pinta.classList.add('pixels');
+      pixels[index].style.backgroundColor = 'white';
+  })
 }
-let botao = document.querySelector("#clear-board");
-botao.addEventListener('click', limpaBoard);*/
+}
