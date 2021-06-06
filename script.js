@@ -1,24 +1,31 @@
-const board = document.querySelector("#pixel-board");
+const board = document.querySelector('#pixel-board');
 
-function createPixels() {
+function fillBoard(number) {
+  for (let row = 0; row < number; row += 1) {
 
-  //cria uma div e à atribui à variável "thePixel".
+    // cria uma row para ser preenchida por quadrados.
 
-  const thePixel = document.createElement("div");
+    let squareRow = document.createElement('div');
 
-  //add a classe "pixel" à variável "thePixel".
+    // preenche a row criada anteriormente com quadrados. 
 
-  thePixel.className = "pixel"; 
+    for (let column = 0; column < number; column += 1) {
+      let square = document.createElement('div');
+      square.className = 'pixel';
+      square.style.backgroundColor = 'white';
+      squareRow.appendChild(square);
+    }
 
-  //atribui a cor "white" à variável "thePixel".
-
-    thePixel.style.backgroundColor = "white";
-
-  //anexa o conteúdo da variável "thePixel" como filho do conteúdo da variável "board".
-
-  board.appendChild(thePixel);
-
+    // anexa a row preenchida ao board.
+    board.appendChild(squareRow);
+  }
 }
+
+fillBoard(5)
+
+
+
+
 
 
 
