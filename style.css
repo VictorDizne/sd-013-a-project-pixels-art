@@ -1,6 +1,6 @@
 @font-face {
   font-family: zcool;
-  src: url(fonts/ZCOOLKuaiLe-Regular.ttf);
+  src: url('fonts/ZCOOLKuaiLe-Regular.ttf');
 }
 
 * {
@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-body, header, #pixel-board {
+body , header , #pixel-board {
   margin: auto;
   text-align: center;
   color: rgb(104, 49, 90);
@@ -21,10 +21,11 @@ h1 {
 }
 
 body {
-  background-image: url(img/pixel-art.jpg);
+  background-image: url('img/pixel-art.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 40px;
-  font-family: zcool;
+  font-family: zcool, sans-serif;
 }
 
 header {
@@ -33,6 +34,10 @@ header {
 
 main {
   margin-top: 40px;
+}
+
+.pixel , .color {
+  cursor: url(cursors/eventidepaintbrush.cur), auto;
 }
 
 #color-palette .color {
@@ -80,8 +85,8 @@ main {
   margin: 20px;
 }
 
-#clear-board, #random {
-  margin: 0px 10px 0px 10px;
+#clear-board , #random {
+  margin: 0 10px;
   cursor: pointer;
   color: transparent;
 }
@@ -93,10 +98,10 @@ main {
 
 }
 
-#generate-board, #board-size {
-  padding: 3px 10px 3px 10px;
-  font-weight: bolder;
-  font-family: zcool;
+#generate-board , #board-size {
+  padding: 3px 10px;
+  font-weight: 1000;
+  font-family: zcool, sans-serif;
   font-size: 18px;
 }
 
@@ -106,7 +111,7 @@ main {
 }
 
 #board-size {
-  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(219, 12, 12));
+  background: -webkit-linear-gradient(rgb(1, 0, 0), rgb(219, 12, 12));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border: 2px solid rgb(85, 9, 85);
@@ -114,15 +119,11 @@ main {
   width: 53px;
 }
 
-#inputs, #size {
+#inputs , #size {
   margin: 10px;
 }
 
 input {
   text-align: center;
   width: 45px;
-}
-
-.pixel, .color {
-  cursor: url(cursors/eventidepaintbrush.cur), auto;
 }
