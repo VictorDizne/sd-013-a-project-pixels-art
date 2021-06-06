@@ -7,72 +7,32 @@
   <link rel="stylesheet" href="style.css">
   <title>Projeto Arte em Pixels</title>
 </head>
-  <h1 id="title">Paleta de Cores</h1>
-<main>
-  <section id="color-palette">
-    <div class="margin-left">
-      <div id="colorBlack" class="color selected"></div>
-      <div id="colorRed" class="color"></div>
-      <div id="colorBlue" class="color"></div>
-      <div id="colorGreen" class="color"></div>
-    </div>
-    
-  </section>
-
-  <button id="clear-board" type="button">Limpar</button>
-  <div>
-    <input id="board-size" type="text" placeholder="Informe um valor de 5 à 50">
-    <button id="generate-board" type="button">Aplicar</button>
-  </div>
-
-  <section id="box-container">
-      <table id="pixel-board">
-        <tr class="pixel-row">
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-        </tr>
-        <tr class="pixel-row">
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-        </tr>
-        <tr class="pixel-row">
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-        </tr>
-        <tr class="pixel-row">
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-        </tr>
-        <tr class="pixel-row">
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-        </tr>
-      </table>
-      
-  </section>
-
-
-
-
-</main>
-
-
 <body>
+
+    <h1 id="title">Paleta de Cores</h1>
+  <main>
+    <section id="color-palette">
+      <div class="margin-left">
+        <div id="colorBlack" class="color selected"></div>
+        <div id="colorRed" class="color"></div>
+        <div id="colorBlue" class="color"></div>
+        <div id="colorGreen" class="color"></div>
+      </div>
+      
+    </section>
+
+    <button id="clear-board" type="button">Limpar</button>
+    <div>
+      <input id="board-size" type="number" min="1"/>
+      <button id="generate-board" type="button">VQV</button>
+    </div>
+
+    <section id="box-container">
+        <table id="pixel-board">
+        </table>
+    </section>
+  </main>
+  
   <Script src="script.js"></Script>
 </body>
 </html>
