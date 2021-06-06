@@ -23,18 +23,18 @@ for (let i = 0; i < colors.length; i += 1) {
 
 function mudaCores(event) {
   for (let i = 0; i < colors.length; i += 1) {
-    colors[i].classList.remove("selected");
+    colors[i].classList.remove('selected');
   }
-  event.target.classList.add("selected");
+  event.target.classList.add('selected');
 }
 
 const qdrPixel = document.getElementsByClassName('pixel');
 for (let i = 0; i < qdrPixel.length; i += 1) {
-  qdrPixel[i].addEventListener('click', preencheQuadro)
+  qdrPixel[i].addEventListener('click', preencheQuadro);
 }
 
 function preencheQuadro(event) {
-  const corSelecionada = document.getElementsByClassName('selected')
-  const corParaPintar = getComputedStyle(corSelecionada[0]).getPropertyValue("background-color");
+  const corSelecionada = document.getElementsByClassName('selected');
+  const corParaPintar = getComputedStyle(corSelecionada[0]).getPropertyValue('background-color');
   event.target.style.backgroundColor = corParaPintar;
 }
