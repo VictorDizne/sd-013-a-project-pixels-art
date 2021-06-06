@@ -95,16 +95,15 @@
   background-color: lightgray;
 }
 .pixel-section {
-  height: 32em;
   background-color: rgb(182, 204, 182);
   border-top: 1px solid rgba(0, 0, 0, 0);
   border-left: 2px solid rgb(163, 163, 163);
   border-right: 2px solid rgb(163, 163, 163);
+  padding-bottom: 6em;
 }
 
 #pixel-board {
   text-align: center;
-  max-width: 60%;
   margin: auto;
   background-color: white;
   border-radius: 12px;

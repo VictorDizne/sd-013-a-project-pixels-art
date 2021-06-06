@@ -103,10 +103,15 @@ function generateNewBoard() {
   const input = document.querySelector('#board-size');
   const table = document.querySelector('#pixel-board');
   buttonInput.addEventListener('click', function () {
-    if (input.value <= 0) {
+    if (input.value < 0) {
       alert('Board inválido!');
     } else {
       clearBoardSizer();
+      if (input.value < 5) {
+        input.value = 5;
+      } else if (input.value > 50) {
+        input.value = 50;
+      }
       for (let index = 0; index < input.value; index += 1) {
         const lineBoard = document.createElement('tr');
         lineBoard.className = 'line';
