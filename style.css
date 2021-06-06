@@ -4,7 +4,7 @@
   height: 40px;
   display: inline-block;
 }
-/*#black{
+#black{
   background-color: black;
 }
 #red{
@@ -18,7 +18,7 @@
 #green{
   background-color: green;
 }
-*/
+
 #pixel-board{
   display: table;
 }

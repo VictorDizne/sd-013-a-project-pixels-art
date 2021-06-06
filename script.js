@@ -20,11 +20,22 @@ for(index = 0; index < pixel.length; index += 1){
 
 // Requisito 9
 
-function limpaBoard(){
+let botao = document.querySelector('#clear-board');
+botao.addEventListener('click', function limpa(){
+  let pixels = document.querySelectorAll(".pixel");
+  for(let i = 0; i < pixels.length; i += 0){
+    pixels[i].style.backgroundColor = 'white';
+  }
+});
+
+
+
+
+/*function limpaBoard(event){
   let pixels = document.querySelectorAll('.pixel');
   for(index = 0; index < pixels.length; index += 0){
     document.querySelectorAll(".pixel")[index].style.backgroundColor = "white";
   }
 }
-let buttom = document.querySelector("#clear-board");
-buttom.addEventListener('click', limpaBoard);
+let botao = document.querySelector("#clear-board");
+botao.addEventListener('click', limpaBoard);*/
