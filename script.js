@@ -10,6 +10,20 @@
 /* eslint-disable prefer-arrow-callback */
 var color = 'black';
 
+function setColorClass(event) {
+  const elementToClick = document.querySelectorAll('.color');
+  const classColor = 'color';
+  const classSelect = 'color selected';
+  if (event.target.className === classSelect) {
+    event.target.className = classColor;
+  } else {
+    for (let index = 0; index < elementToClick.length; index += 1) {
+      elementToClick[index].className = classColor;
+    }
+    event.target.className = classSelect;
+  }
+}
+
 function generatePalette() {
   const arrayPalette = ['black', 'red', 'green', 'blue'];
   for (let index = 0; index < arrayPalette.length; index += 1) {
@@ -28,27 +42,11 @@ function generatePalette() {
       newElement.className = 'color';
       newElement.style.backgroundColor = 'blue';
     }
+    newElement.addEventListener('click', setColorClass);
     element.appendChild(newElement);
   }
 }
 generatePalette();
-
-function setColorClass() {
-  const elementToClick = document.querySelectorAll('.color');
-  const selectedClass = document.getElementsByClassName('selected');
-  const classColor = 'color';
-  const classSelect = 'color selected';
-  for (let index = 0; index < elementToClick.length; index += 1) {
-    elementToClick[index].addEventListener('click', function(event) {
-      if (selectedClass.length === 0) {
-        event.target.className = classSelect;
-      } else {
-        event.target.className = classColor;
-      }
-    });
-  }
-}
-setColorClass();
 
 function setColorByClass() {
   const selectedClass = document.querySelector('.selected');
@@ -70,3 +68,14 @@ function setPixelColorSelected() {
   }
 }
 setPixelColorSelected();
+
+function clearBoard() {
+  const board = document.getElementsByClassName('pixel');
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', function () {
+    for (let index = 0; index < board.length; index += 1) {
+      board[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearBoard();
