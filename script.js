@@ -8,7 +8,7 @@ function clickSelect(event){
   event.target.classList.add("selected");
 }
 // Requisito 8
-
+/*
 function paintpixel(colorpixel){
   let selectColor = document.querySelector('.selected');
   colorpixel.target.style.backgroundColor = selectColor;
@@ -17,9 +17,19 @@ let pixel = document.querySelectorAll('.pixel');
 for(index = 0; index < pixel.length; index += 1){
   pixel[index].addEventListener('click', paintpixel);
 }
-
+*/
 // Requisito 9
 
+const botao = document.getElementById('clear-board');
+
+botao.addEventListener('click', function limpar() {
+  const pixels = document.getElementsByClassName("pixel");
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255,255,255)';
+  }
+});
+
+/*
 let botao = document.querySelector('#clear-board');
 botao.addEventListener('click', function limpa(){
   let pixels = document.querySelectorAll(".pixel");
@@ -27,7 +37,7 @@ botao.addEventListener('click', function limpa(){
     pixels[i].style.backgroundColor = 'white';
   }
 });
-
+*/
 
 
 
