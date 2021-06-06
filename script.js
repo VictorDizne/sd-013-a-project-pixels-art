@@ -18,8 +18,8 @@ const btnClearBoard = document.getElementById('clear-board');
 
 // Funções que criam a tabela com tamanho 5.
 // Função que cria células.
-function cellCreate(size, row){
-  for(let index = 0; index < size; index  += 1){
+function cellCreate(size, row) {
+  for(let index = 0; index < size; index += 1) {
     const cell = document.createElement('td');
     cell.classList = 'pixel';
     row.appendChild(cell);
@@ -27,8 +27,8 @@ function cellCreate(size, row){
 }
 
 // função criar linhas (row)
-function rowCreate (size){
-  for(let index = 0; index < size; index += 1){
+function rowCreate(size) {
+  for (let index = 0; index < size; index += 1) {
     const row = document.createElement('tr');
     accessTable.appendChild(row);
     row.classList.add('pixel-row');
@@ -40,7 +40,7 @@ const getPixelOnBoard = document.querySelectorAll('.pixel');
 
 // função para pintar o tabuleiro de branco
 function clearBoard() {
-  for (let index = 0; index < getPixelOnBoard.length; index += 1){
+  for (let index = 0; index < getPixelOnBoard.length; index += 1) {
     getPixelOnBoard[index].style.backgroundColor = 'white';
   }
 }
@@ -96,25 +96,26 @@ function colorSelectGreen(event) {
 }
 colorGreen.addEventListener('click', colorSelectGreen);
 
-// Obtêm novo tamanho do boarde n*n.
-function getPixelColor(){
-  const sizeClassPixel = document.querySelectorAll('.pixel');
-  pixelColorListener(sizeClassPixel);
-}
-
-function pixelColorListener(who) {
+function pixelColorListener(who, ) {
   for (let index = 0; index < who.length; index += 1) {
     who[index].addEventListener('click', function () {
     who[index].style.backgroundColor = appliedColor;
     });
   }
-} pixelColorListener(getPixelOnBoard);
+}
 
-function checkBoardLimits (){
-  if(inputSize.value < 5){
+pixelColorListener(getPixelOnBoard);
+
+function getPixelColor() {
+  const sizeClassPixel = document.querySelectorAll('.pixel');
+  pixelColorListener(sizeClassPixel);
+}
+
+function checkBoardLimits() {
+  if (inputSize.value < 5) {
     inputSize.value = 5;
   }
-  if(inputSize.value > 50){
+  if (inputSize.value > 50) {
     inputSize.value = 50;
   }
 }
@@ -126,9 +127,9 @@ function boardSizeChange() {
     accessTable.innerHTML = '';
     rowCreate(inputSize.value);
     getPixelColor();
-  }else {
-    alert('Board Inválido!');
-  }
+  } else {
+     alert('Board Inválido!');
+    }
 }
 
 btnGenerateBorder.addEventListener('click', boardSizeChange);
