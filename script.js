@@ -4,8 +4,6 @@ const paletaDeCor = 'color-palette';
 const ListaHasDeCor = '#lista-de-cor';
 const selected = document.getElementsByClassName('selected');
 const input = document.querySelector('#board-size');
-const criarBoard = document.createElement('section');
-
 
 function criaUlDeCor(id) {
   const ul = document.createElement('ul');
@@ -38,9 +36,7 @@ function NumeroValidoInput() {
     Inputvalor = 50;
   } else if (Inputvalor === '') {
     return false;
-  } else {
-    return Inputvalor;
-  }
+  } return Inputvalor;
 }
 
 function mudaCor(event) {
@@ -60,14 +56,14 @@ function AdicionaPixels() {
   if (input.value === '') {alert('Board inválido!');
   } else { removePixels();
     const criarBoard = document.createElement('section');
-    const quant = NumeroValidoInput();
     document.body.appendChild(criarBoard);
     criarBoard.setAttribute('id', 'pixel-board');
+    const quant = NumeroValidoInput();
     for (let linha = 1; linha <= quant; linha += 1) {
       const line = document.createElement('ul');
       criarBoard.appendChild(line);
-      for (let coluna = 1; coluna <= quant; coluna += 1)
-      { const column = document.createElement('li');
+      for (let coluna = 1; coluna <= quant; coluna += 1) {
+        const column = document.createElement('li');
         line.appendChild(column);
         column.className = 'pixel';
         column.style.backgroundColor = 'white';
@@ -79,6 +75,7 @@ function AdicionaPixels() {
 
 function iniciaPixel() {
   const quant = 5;
+  const criarBoard = document.createElement('section');
   document.body.appendChild(criarBoard);
   criarBoard.setAttribute('id', 'pixel-board');
   for (let linha = 1; linha <= quant; linha += 1) {
@@ -95,8 +92,6 @@ function iniciaPixel() {
 }
 
 iniciaPixel();
-
-
 
 document.getElementById('generate-board').addEventListener('click', () => {
   AdicionaPixels();
