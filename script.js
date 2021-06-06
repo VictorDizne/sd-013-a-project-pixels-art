@@ -2,6 +2,10 @@ const listaDeCor = 'lista-de-cor';
 const pixelBoard = '#pixel-board';
 const paletaDeCor = 'color-palette';
 const ListaHasDeCor = '#lista-de-cor';
+const selected = document.getElementsByClassName('selected');
+const input = document.querySelector('#board-size');
+const criarBoard = document.createElement('section');
+
 
 function criaUlDeCor(id) {
   const ul = document.createElement('ul');
@@ -17,7 +21,7 @@ function criaLiCores(id, n) {
   for (let index = 1; index <= n; index += 1) {
     const li = document.createElement('li');
     ul.appendChild(li);
-    if (document.getElementsByClassName('selected')[0] === undefined) {
+    if (selected[0] === undefined) {
       li.className = 'color';
       li.classList.add('selected');
     } else {
@@ -30,88 +34,69 @@ function NumeroValidoInput() {
   let Inputvalor = document.querySelector('#board-size').value;
   if (Inputvalor < 5 && Inputvalor >= 1) {
     Inputvalor = 5;
-    return Inputvalor
   } else if (Inputvalor > 50) {
     Inputvalor = 50;
-    return Inputvalor
-  } else if (Inputvalor >= 5 && Inputvalor <= 50){
-    return Inputvalor
+  } else if (Inputvalor === '') {
+    return false;
   } else {
-    return false
+    return Inputvalor;
   }
 }
 
 function mudaCor(event) {
   const pixelClicado = event.target;
-  const corBase = document.getElementsByClassName('selected');
-  pixelClicado.style.backgroundColor = corBase[0].style.backgroundColor;
+  pixelClicado.style.backgroundColor = selected[0].style.backgroundColor;
   pixelClicado.setAttribute('id', 'colorido');
 }
 
-function mudaCorDoPixel() {
-  let pixelNumeroN = 0;
-  const quantidade = NumeroValidoInput();
-  for (let i = 0; i < quantidade; i += 1) {
-    const elementoDaTabelaPixelada = document.getElementById(`pixel ${pixelNumeroN}`);
-    elementoDaTabelaPixelada.addEventListener('click', mudaCor);
-    pixelNumeroN += 1;
-  }
+function removePixels() {
+  const tabelaDePixel = document.querySelector(pixelBoard);
+  tabelaDePixel.parentNode.removeChild(tabelaDePixel);
 }
 
 criaLiCores(listaDeCor, 4);
 
 function AdicionaPixels() {
-  let Inputvalor = document.querySelector('#board-size').value;
-  if (Inputvalor == "") {
-    alert('Board inválido!')
-  } else {
-    removePixels();
-    const quant = NumeroValidoInput();
+  if (input.value === '') {alert('Board inválido!');
+  } else { removePixels();
     const criarBoard = document.createElement('section');
+    const quant = NumeroValidoInput();
     document.body.appendChild(criarBoard);
     criarBoard.setAttribute('id', 'pixel-board');
-    let pixelNumeroN = 0; for (let linha = 1; linha <= quant; linha += 1) {
+    for (let linha = 1; linha <= quant; linha += 1) {
       const line = document.createElement('ul');
       criarBoard.appendChild(line);
-      for (let coluna = 1; coluna <= quant; coluna += 1) {
-        const column = document.createElement('li');
+      for (let coluna = 1; coluna <= quant; coluna += 1)
+      { const column = document.createElement('li');
         line.appendChild(column);
         column.className = 'pixel';
-        column.id = `pixel ${pixelNumeroN}`; column.style.backgroundColor = 'white';
+        column.style.backgroundColor = 'white';
         column.addEventListener('click', mudaCor);
-        pixelNumeroN += 1;
       }
     }
-    mudaCorDoPixel();
   }
 }
 
 function iniciaPixel() {
   const quant = 5;
-  const criarBoard = document.createElement('section');
   document.body.appendChild(criarBoard);
   criarBoard.setAttribute('id', 'pixel-board');
-  let pixelNumeroN = 0; for (let linha = 1; linha <= quant; linha += 1) {
+  for (let linha = 1; linha <= quant; linha += 1) {
     const line = document.createElement('ul');
     criarBoard.appendChild(line);
     for (let coluna = 1; coluna <= quant; coluna += 1) {
       const column = document.createElement('li');
       line.appendChild(column);
       column.className = 'pixel';
-      column.id = `pixel ${pixelNumeroN}`; column.style.backgroundColor = 'white';
+      column.style.backgroundColor = 'white';
       column.addEventListener('click', mudaCor);
-      pixelNumeroN += 1;
     }
   }
-  mudaCorDoPixel();
 }
 
-iniciaPixel()
+iniciaPixel();
 
-function removePixels() {
-  const tabelaDePixel = document.querySelector(pixelBoard);
-  tabelaDePixel.parentNode.removeChild(tabelaDePixel);
-}
+
 
 document.getElementById('generate-board').addEventListener('click', () => {
   AdicionaPixels();
@@ -119,15 +104,12 @@ document.getElementById('generate-board').addEventListener('click', () => {
 
 function changeColor(event) {
   const NovaCor = event.target;
-  const CorAntiga = document.getElementsByClassName('selected');
-  CorAntiga[0].classList.remove('selected');
+  selected[0].classList.remove('selected');
   NovaCor.classList.add('selected');
 }
 
 const classSelecionada = document.querySelector(ListaHasDeCor);
 classSelecionada.addEventListener('click', changeColor);
-
-mudaCorDoPixel();
 
 document.querySelector('#clear-board').addEventListener('click', () => {
   const pixelsColoridos = document.querySelectorAll('.pixel');
