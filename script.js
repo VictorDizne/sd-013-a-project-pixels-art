@@ -32,17 +32,16 @@
   window.onload = function pixel()  {
     selectCor();
     corSelecionada();
+    selectPixel();
   };
-
-  // function selectedPixel() {
-  //   const pixelBoard = document.getElementById('#pixel-board');
-  //   pixelBoard.addEventListener('click', (evento) => {
-  //     if (evento.target.classList.contains('pixel')) {
-  //       let pixelSel = document.querySelector('.selected');
-  //       let corPixel = window.getComputedStyle(selectedPixel).corPixel;
-  //       evento.target.style.corPixel = corPixel;
-  //     }
-  //   })
-  // }
-
-  // selectedPixel();
+     
+  function selectPixel(click) {
+    const selectCor = document.querySelector('.selected');
+    const selecionado = click;
+    if (selecionado.target.classList.contains('color') && selecionado.target != selectCor) {
+      selectCor.classList.remove('selected');
+    } else if (selecionado.target.classList.contains('pixel')) {
+      const corAtual = selectCor.style.backgroundColor;
+      selecionado.target.style.backgroundColor = corAtual;
+    }
+  }
