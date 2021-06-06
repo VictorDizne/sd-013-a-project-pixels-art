@@ -19,7 +19,7 @@ const btnClearBoard = document.getElementById('clear-board');
 // Funções que criam a tabela com tamanho 5.
 // Função que cria células.
 function cellCreate(size, row) {
-  for(let index = 0; index < size; index += 1) {
+  for (let index = 0; index < size; index += 1) {
     const cell = document.createElement('td');
     cell.classList = 'pixel';
     row.appendChild(cell);
@@ -96,10 +96,10 @@ function colorSelectGreen(event) {
 }
 colorGreen.addEventListener('click', colorSelectGreen);
 
-function pixelColorListener(who, ) {
+function pixelColorListener(who) {
   for (let index = 0; index < who.length; index += 1) {
     who[index].addEventListener('click', function () {
-    who[index].style.backgroundColor = appliedColor;
+      who[index].style.backgroundColor = appliedColor;
     });
   }
 }
@@ -128,8 +128,8 @@ function boardSizeChange() {
     rowCreate(inputSize.value);
     getPixelColor();
   } else {
-     alert('Board Inválido!');
-    }
+    alert('Board Inválido!');
+  }
 }
 
 btnGenerateBorder.addEventListener('click', boardSizeChange);
