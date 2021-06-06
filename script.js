@@ -64,10 +64,10 @@ function selecionaEPinta() {
   const recoverPixelBoard = document.querySelectorAll('.pixel');
   for (let i = 0; i < recoverPixelBoard.length; i += 1) {
     recoverPixelBoard[i].addEventListener('click', function(event) {
-    const whereIsSelectedClass = document.querySelector('.selected');
-    const backgroundColorSelectedClass = window.getComputedStyle(whereIsSelectedClass, null).getPropertyValue("background-color");
-        event.target.style.backgroundColor = backgroundColorSelectedClass;
-      });
+      const whereIsSelectedClass = document.querySelector('.selected');
+      const backgroundColorSelectedClass = window.getComputedStyle(whereIsSelectedClass, null).getPropertyValue("background-color");
+      event.target.style.backgroundColor = backgroundColorSelectedClass;
+    });
   }
 }
 
@@ -80,13 +80,13 @@ function botaoReset() {
   const recoverPixelBoard = document.querySelectorAll('.pixel');
   const buttonClearBoard = document.querySelector('#clear-board');
   const colorWhite = 'rgb(255, 255, 255)';
-  buttonClearBoard.addEventListener('click', function () {
+  buttonClearBoard.addEventListener('click', () => {
     for (let index = 0; index < recoverPixelBoard.length; index += 1) {
-      let onePixel = recoverPixelBoard[index];
+      const onePixel = recoverPixelBoard[index];
       onePixel.style.backgroundColor = colorWhite;
     }
   });
-  }
+}
 
 botaoReset();
 

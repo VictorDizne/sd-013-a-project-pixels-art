@@ -1,6 +1,49 @@
+* {
+  font-family: 'DotGothic16', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(background.png);
+}
+
+#title {
+  color: rgb(148,148,180);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 1%;
+  margin-top: 2%;
+  font-size: 250%;
+  
+}
+
+#section1 {
+  padding-top: 2%;
+  padding-bottom: 1%;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 1%;  
+}
+
+button {
+  background-color: rgb(11,11,35);
+  color: rgb(148,148,180);
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 0 1em rgb(148,148,180);
+  padding: 0.5%;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
 #color-palette {
   width: 100%;
-  margin-bottom: 3%;
+  text-align: center;
+  background-color: rgb(148,148,180);
+  box-shadow: inset 0 0 1em rgb(41,41,123);
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .color {
@@ -12,29 +55,45 @@
 
 #color1 {
   background-color: black;
-  margin: 1%;
+  margin: 2%;
+  box-shadow: 3px 3px 3px rgb(41,41,123);
+  cursor: pointer;
 }
 
 #color2 {
   background-color: yellow;
-  margin: 1%;
+  margin: 2%;
+  box-shadow: 3px 3px 3px rgb(41,41,123);
+  cursor: pointer;
 }
 
 #color3 {
   background-color: red;
-  margin: 1%;
+  margin: 2%;
+  box-shadow: 3px 3px 3px rgb(41,41,123);
+  cursor: pointer;
 }
 
 #color4 {
   background-color: green;
-  margin: 1%;
+  margin: 2%;
+  box-shadow: 3px 3px 3px rgb(41,41,123);
+  cursor: pointer;
 }
 
 #pixel-board {
   display: table;
   padding: 5px;
   position: absolute;
-  margin-top: 5%;
+  margin-top: 3%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(148,148,180);
+  padding: 1%;
+  box-shadow: 10px 10px 10px rgb(41,41,123);
+  cursor: pointer;
+
 }
 
 .tr {
@@ -54,4 +113,22 @@
 
 #clear-board {
   margin-right: 3%;
+  position: absolute;
+  left: 60%;
+}
+
+#generate-board{
+  margin-right: 3%;
+  position: absolute;
+  left: 47%;
+}
+
+#board-size {
+  background-color: rgb(148,148,180);
+  border: 0;
+  box-shadow: 3px 3px 3px rgb(41,41,123);
+  padding: 0.5%;
+  width: 10%;
+  position: absolute;
+  left: 35%;
 }
