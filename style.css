@@ -7,7 +7,10 @@ div {
   width: 40px;
   border: black solid 1px;
   display: inline-block;
-  margin-right: 11px;
+}
+
+#color-palette div {
+  margin: 0 5px 30px;
 }
 
 #black {
@@ -24,4 +27,9 @@ div {
 
 #green {
   background-color: green;
+}
+
+.pixel {
+  background-color: white;
+  margin-bottom: -4px;
 }
