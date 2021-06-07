@@ -17,3 +17,16 @@ let appliedColor = 'black';
 
 const btnClearBoard = document.getElementById('clear-board');
 
+// função criar linhas 
+function rowCreate(size) {
+    for (let index = 0; index < size; index += 1) {
+      const row = document.createElement('tr');
+      accessTable.appendChild(row);
+      row.classList.add('pixel-row');
+      cellCreate(size, row);
+    }
+  }rowCreate(5);
+  
+  const getPixelOnBoard = document.querySelectorAll('.pixel');
+  
+
