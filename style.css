@@ -1,10 +1,19 @@
 body {
   text-align: center;
   background-image: url(./steven.jpg);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-title {
-  font-family:fantasy;
-  font-weight: 900;
+
+h1 {
+  background: linear-gradient(to right, #7d0581, #ffd6a5,  #ddd9c7, #caffbf, #d8a8a8, #caffbf, #ddd9c7, #ffd6a5, #7d0581);
+  width: 1600px;
+  margin: auto;
+  border: solid rgb(142, 8, 219);
+  border-radius: 30px;
+  border-top-width: 1px;
+  border-right-width: 10px;
+  border-bottom-width: 10px;
+  margin-bottom: 30px;
 }
 .color {
   width: 40px;
@@ -13,16 +22,11 @@ title {
   display: inline-block;
   margin-left: -5px;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .linha {
   height: 42px;
-}
-
-#pixel-board {
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .pixel {
@@ -36,29 +40,79 @@ title {
 
 #black {
   background-color: black;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 #red {
   background-color: red;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 #yellow {
   background-color: yellow;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 #green {
-  background-color: green
+  background-color: green;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 #clear-board {
   padding: 5px;
   margin-bottom: 20px;
+  border: solid rgb(142, 8, 219);
+  border-radius: 20px;
+  border-top-width: 0px;
+  border-right-width: 3px;
+  border-bottom-width: 6px;
+  font-size: 15px;
+  font-family:'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  position: relative;
+  left: 30px;
 }
 
 #generate-board {
-  padding: 2px;
+  padding: 5px;
+  border: solid rgb(142, 8, 219);
+  border-radius: 20px;
+  border-top-width: 0px;
+  border-right-width: 3px;
+  border-bottom-width: 6px;
+  font-size: 15px;
+  font-family:'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  position: relative;
+  bottom: 30px;
+  right: 40px;
 }
 
 #board-size {
-  width: 50px;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid;
+  font-family:'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  position: relative;
+  left: 150px;
+  top: 13px;
+}
+
+#board-size:hover {
+  background-color: #d1e7cd;
+}
+
+#generate-board:hover {
+  background-color: #caffbf;
+  cursor: pointer;
+}
+
+#clear-board:hover {
+  background-color: #caffbf;
+  cursor: pointer;
 }
