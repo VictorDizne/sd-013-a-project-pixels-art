@@ -4,25 +4,18 @@ body {
 
 .color {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border: black solid 1px;
+  padding: 4px;  
+  margin-left: 4px;
 }
 
-#color-black {
-  background-color: black;
-}
-
-#color-red {
-  background-color: red;
-}
-
-#color-green {
-  background-color: green;
-}
-
-#color-blue {
-  background-color: blue;
+.pixel-board {
+  display: table ;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pixel {
@@ -30,9 +23,11 @@ body {
   height: 40px;
   border: 1px solid black;
   background-color: white;
-  display: inline-block;
-  padding: 15px;
-  margin-bottom: -5px;
-  margin-left: -5px;
+  display: table-cell;
+  text-align: center;
+}
 
+.line {  
+  display: table-row;
+  text-align: center;
 }
