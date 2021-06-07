@@ -98,3 +98,12 @@ function backgroundPixel() {
 }
 
 backgroundPixel()
+
+let btnLimpar = document.querySelector("#clear-board");
+btnLimpar.addEventListener("click", clearBoard)
+
+function clearBoard(){
+  for ( let i= 0; i < pixels.length; i++){
+    pixels[i].style.backgroundColor = "white";
+  }
+}
