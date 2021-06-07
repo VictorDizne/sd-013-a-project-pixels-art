@@ -57,7 +57,7 @@ exercicio8()
   // }
 function exercicio9 (){
       let pixels = document.getElementsByClassName("pixel");
-      let reInicio = document.getElementById("clear-bord");
+      let reInicio = document.getElementById("clear-board");
       reInicio.addEventListener('click', limpaCor);
       function limpaCor() {
             for (let i = 0; i < pixels.length; i += 1) {
