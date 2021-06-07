@@ -1,26 +1,29 @@
 // Requisito 7
-window.onload = colorSelection;
 
+const colorBlack = document.querySelector("#black");
+colorBlack.classList.add("selected");
+const colors = document.getElementsByClassName("color");
 
+function colorSelection(event) {
+    const colorSelected = document.querySelector(".selected");
+    colorSelected.classList.remove("selected");
+    event.target.classList.add("selected");
+}
 
-function colorSelection() {
-    let colorBlack = document.querySelector("#black");
-    let colorSelected = colorBlack;
-    colorSelected.classList.add("selected");
-    const palette = document.querySelector("#color-palette");
-    const colors = document.querySelectorAll(".color");
-    palette.addEventListener("click", function (event) {
-        if (event.target.classList.contains("color")) {
-            colors.forEach((item, index ) => {
-                colors[index].classList.remove("selected");
-            })
-            event.target.classList.add("selected");
-        } 
-    })
+for (let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener("click", colorSelection);
 }
 
 // Requisito 8
-// function paintTable () {
-// const colors = document.querySelectorAll(".color");
-// const colorToPaint = window.getComputedStyle(colors).getPropertyValue("background-color");
-// }
+
+const pixels = document.getElementsByClassName("pixel");
+
+function paintPixel(event) {
+    const colorSelected = document.querySelector(".selected");
+    const colorToPaint = window.getComputedStyle(colorSelected, null).getPropertyValue("background-color");
+    event.target.style.backgroundColor = colorToPaint;
+}
+
+for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener("click", paintPixel);
+}
