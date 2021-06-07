@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicated-branches */
 /* eslint-disable sonarjs/no-identical-functions */
 /* eslint-disable no-var */
 /* eslint-disable max-len */
@@ -10,6 +11,15 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-arrow-callback */
 var color = 'black';
+
+function getNewColor() {
+  const symbols = '0123456789ABCDEF';
+  let randomColor = '#';
+  for (let index = 0; index < 6; index += 1) {
+    randomColor += symbols[Math.floor(Math.random() * 16)];
+  }
+  return randomColor;
+}
 
 function setColorClass(event) {
   const elementToClick = document.querySelectorAll('.color');
@@ -26,22 +36,20 @@ function setColorClass(event) {
 }
 
 function generatePalette() {
-  const arrayPalette = ['black', 'red', 'green', 'blue'];
+  const arrayPalette = [];
+  for (let index = 0; index < 4; index += 1) {
+    const newColor = getNewColor();
+    arrayPalette.push(newColor);
+  }
   for (let index = 0; index < arrayPalette.length; index += 1) {
     const element = document.getElementById('color-palette');
     const newElement = document.createElement('li');
-    if (arrayPalette[index] === 'black') {
+    if (arrayPalette[index] === arrayPalette[0]) {
       newElement.className = 'color selected';
       newElement.style.backgroundColor = 'black';
-    } else if (arrayPalette[index] === 'red') {
+    } else {
       newElement.className = 'color';
-      newElement.style.backgroundColor = 'red';
-    } else if (arrayPalette[index] === 'green') {
-      newElement.className = 'color';
-      newElement.style.backgroundColor = 'green';
-    } else if (arrayPalette[index] === 'blue') {
-      newElement.className = 'color';
-      newElement.style.backgroundColor = 'blue';
+      newElement.style.backgroundColor = arrayPalette[index];
     }
     newElement.addEventListener('click', setColorClass);
     element.appendChild(newElement);
