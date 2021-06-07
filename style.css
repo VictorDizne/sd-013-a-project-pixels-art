@@ -3,13 +3,34 @@
   margin: 0;
 }
 
+#color-palette {
+  list-style: none;
+}
+
+#color-palette li {
+  display: inline-block;
+}
+
+
 .color {
   width: 80px;
   height: 80px;
   border: 1px solid black;
-  float: left;
   margin-right: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
+}
+
+#pixel-board {
+  margin-top: 9px;
+}
+
+.linha {
+  height: 40px;
+}
+
+.pixel {
+  width: 40px;
+  display: inline-block;
 }
 
 #black {
@@ -30,8 +51,8 @@
 
 .pixel {
   border: 1px solid black;
-  width: 39px;
-  height: 39px;
+  width: 40px;
+  height: 40px;
   background-color: white;
 }
 
@@ -53,13 +74,11 @@ table {
 
 button {
   display: block;
-  margin-bottom: 12px;
   width: 90px;
   height: 20px;
   border-radius: 8px;
   border: none;
   margin-right: 8px;
-  float: left;
   background-color: #FD6747;
   color: white;
   font-weight: bold;

@@ -6,9 +6,10 @@ function boardSquad(n) {
   const table = document.createElement('table');
   document.getElementById('pixel-board').appendChild(table);
   for (let line = 0; line < n; line++) {
-    const pixelLine = document.createElement('tr');
-    for (let colum = 0; colum < n; colum ++) {
-      const pixelData = document.createElement('td');
+    const pixelLine = document.createElement('div');
+    pixelLine.className = 'linha';
+    for (let colum = 0; colum < n; colum++) {
+      const pixelData = document.createElement('div');
       pixelData.className = 'pixel';
       pixelLine.appendChild(pixelData);
     }
@@ -18,9 +19,9 @@ function boardSquad(n) {
 
 boardSquad(5);
 // Falta criar o botão que seleciona o tamanho do board
-generateBoard.onclick = function myClick() {
+/* generateBoard.onclick = function myClick() {
   // Code ...
-};
+}; */
 
 // Variaveis da Paleta de Cores
 const black = document.getElementById('black');
@@ -101,7 +102,7 @@ blue.onclick = function colorBlue() {
 };
 
 // Selecionar elementos do quadrado de pixel
-const pData = document.querySelectorAll('td');
+const pData = document.querySelectorAll('.pixel');
 for (let index = 0; index < pData.length; index++) {
   pData[index].onclick = function selectedPixel() {
     if (black.className === 'color selected') {
