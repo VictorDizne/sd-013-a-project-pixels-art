@@ -9,16 +9,11 @@ body {
 }
 
 .container {
-	display: grid;
-	grid-template-columns: 2fr 1fr 2fr;
-	grid-template-rows: 20vh 10vh 50vh 10vh 10vh;
 }
 
 header {
 	background-color: #333;
 	color: aliceblue;
-	grid-column: 1/4;
-	grid-row: 1/2;
 }
 
 .header1 {
@@ -26,11 +21,15 @@ header {
 	font-size: xx-large;
 }
 
+main {
+	background-color: tomato;
+	padding: 10px;
+	line-height: 0;
+}
+
 footer {
 	background-color: #333;
 	color: aliceblue;
-	grid-column: 1/4;
-	grid-row: 5/6;
 }
 
 .palette-name {
@@ -48,25 +47,17 @@ footer {
 	display: inline-block;
 }
 
-main {
-	background-color: tomato;
-	grid-column: 2/3;
-	grid-row: 3/4;
-	padding: 10px;
-	cursor: pointer;
-	display: table;
-}
-
 .pixel {
 	border: black solid 1px;
 	background-color: white;
 	height: 40px;
 	width: 40px;
-	display: table-cell;
+	display: inline-block;
+	cursor: pointer;
 }
 
-.tr {
-	display: table-row;
+.td {
+	width: auto;
 }
 
 #clear-board {

@@ -29,18 +29,14 @@ createPaletteDivs();
 // cria as divs da main que serão pintadas
 function createMainDivs () {
 	for (let index = 0; index < 5; index++) {
-		let div1 = document.createElement('div');
-		div1.className = 'tr';
-		pixelBoard.appendChild(div1);
+		let td = document.createElement('div');
+		td.className = 'td';
+		pixelBoard.appendChild(td);
 		for (let index = 0; index < 5; index++) {
-			let div1 = document.createElement('div');
-			div1.className = 'pixel';
-			pixelBoard.appendChild(div1);
-			div1 = document.querySelector('#pixel-board').lastElementChild;
+			let div = document.createElement('div');
+			div.className = 'pixel';
+			td.appendChild(div);
 		}
-		div1 = document.querySelector('#pixel-board').lastElementChild;
-		// div1.style.gridColumn = (index + 2)/(index + 3);
-		// div1.style.gridRow = 2/3;
 	}
 }
 
@@ -83,7 +79,7 @@ for (let index = 0; index < 25; index++){
 
 // 'Apaga' a cor das divs da main que foram pintadas, retornando para a cor de background original (white)
 eraser.addEventListener('click', () => {
-	let squares = document.getElementsByClassName('pixel');
+	let squares = document.querySelectorAll('.pixel');
 	for (let index of squares) {
 		index.style.backgroundColor = 'white';
 	}
