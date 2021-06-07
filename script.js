@@ -1,5 +1,9 @@
-const size = 5;
+
+
+
+
 const paletaDeCores = document.querySelectorAll('.pallete');
+
 
 function colorgen() {
   const blackColor = document.querySelector('#first-color');
@@ -19,6 +23,8 @@ function randomColors() {
   return `rgb(${red},${green},${blue})`;
 
 }
+
+
 
 
 function createPaleta() {
@@ -65,15 +71,19 @@ function fillPaleta() {
   }
 }
 
-function createTable(size) {
+function initTable() {
+  var size = 5;
+
+
+  
   let table = document.createElement('table')
   table.className = "tabela"
   table.id = "pixel-board"
   document.getElementById('pixelart').appendChild(table)
+  
 
-}
 
-function tamanhoPixel() {
+
   for (let index = 0; index < size; index++) {
     let tr = document.createElement('tr')
     tr.className = "coluna"
@@ -90,6 +100,51 @@ function tamanhoPixel() {
 
     }
   }
+
+}
+
+
+function createTable() {
+
+  var size = document.getElementById('board-size').value
+  if (size > 0) {
+    document.querySelectorAll('.tabela')[0].remove()
+  }
+
+  if (size <= 50) {
+  let table = document.createElement('table')
+  table.className = "tabela"
+  table.id = "pixel-board"
+  document.getElementById('pixelart').appendChild(table)
+  
+
+
+
+  for (let index = 0; index < size; index++) {
+    let tr = document.createElement('tr')
+    tr.className = "coluna"
+    document.getElementById('pixel-board').appendChild(tr)
+  }
+
+
+  for (let index = 0; index < size; index++) {
+    for (let index = 0; index < size; index++) {
+      let td = document.createElement('td')
+      td.className = "pixel"
+      td.style.width = '41px'
+      document.querySelector('body').children[2].children[0].children[index].appendChild(td)
+
+    }
+  }
+} else if (size < 4) {
+  alert('Valor menor que 5 (limite)')
+  document.location.reload(true);
+} else if (size > 50) {
+  alert('Valor maior que 50 (limite)')
+  document.location.reload(true);
+}
+
+ 
 
 
   let cor = 'black';
@@ -119,15 +174,6 @@ function createButton() {
   btn.addEventListener('click', clean)
 }
 
-function createInput() {
-  let btn = document.createElement('button')
-  btn.className = 'btn'
-  btn.id = 'generate-board'
-  document.getElementById('paleta').appendChild(btn)
-  let input = document.createElement('input')
-  input.className = 'input'
-  input.id = 'generate-board'
-}
 
 function clean() {
   const pixelSquare = document.querySelectorAll('.pixel')
@@ -139,13 +185,12 @@ function clean() {
 
 
 window.onload = function() {
+  initTable();
   createTable();
-  tamanhoPixel();
   createPaleta();
   createPaleta2();
   fillPaleta();
   colorgen();
   randomColors();
   createButton();
-  createInput()
 };

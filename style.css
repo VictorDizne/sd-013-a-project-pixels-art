@@ -1,17 +1,24 @@
 body {
   margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-image: url('51687.jpg');
 }
 
 .icone {
   margin-top: 10px;
   width: 60px;
-  float: inline-start;
+  float: left;
+}
+
+.mike {
+  padding-top: 30px;
 }
 
 .center {
   margin: auto;
   width: 80%;
-  border: 3px solid green;
+  border: 3px solid rgb(240, 255, 175);
+  background-color: rgb(255, 158, 31);
   padding: 10px;
 }
 
@@ -25,13 +32,15 @@ header {
   height: 80px;
   top: 0;
   margin-bottom: 10px;
-  background-color: turquoise;
+  background-color: rgb(255, 219, 16);
 }
 
 .colors {
   margin: auto;
   width: 80%;
-  border: 3px solid rgb(128, 0, 100);
+  border: 3px solid rgb(240, 255, 175);
+  background-color: rgb(255, 158, 31);
+  border-radius: 20px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -72,5 +81,14 @@ header {
   top: 50%;
   position: relative;
   left: 47%;
+  border-radius: 20px;
+}
+
+
+.btn2 {
+  margin: 0;
+  top: 50%;
+  position: relative;
+  left: 38%;
   border-radius: 20px;
 }

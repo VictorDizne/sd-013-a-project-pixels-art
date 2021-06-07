@@ -2,14 +2,19 @@
     <head>
         <title></title>
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <img class='icone' src="pixelart.png">
-            <p>Projeto Pixel Arts - Guilherme Bezzuoli</p>
+            <p class="mike">Projeto Pixel Arts - Guilherme Bezzuoli</p>
         </header>
-        <div id="paleta" class="colors">
+        <div id="paletaa" class="colors">
             <h1 id='title' class="titulo">Paleta de Cores</h1>
+            <div id='paleta'></div>
+            <input type="number" id="board-size" class="btn2" placeholder="Numero de pixels" min="1"></input>
+            <button onclick="createTable()" id="generate-board" class="btn2">VQV</button>
         </div>
         <div id="pixelart" class="center">
 
