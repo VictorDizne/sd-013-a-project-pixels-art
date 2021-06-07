@@ -29,4 +29,13 @@ function rowCreate(size) {
   
   const getPixelOnBoard = document.querySelectorAll('.pixel');
   
+  // função pinta o tabuleiro de branco
+function clearBoard() {
+    for (let index = 0; index < getPixelOnBoard.length; index += 1) {
+      getPixelOnBoard[index].style.backgroundColor = 'white';
+    }
+  }
+  
+  btnClearBoard.addEventListener('click', clearBoard);
+  
 
