@@ -1,14 +1,17 @@
 * {
   margin: 0;
 }
+
 .background {
   background-color: rgb(201, 201, 201);
 }
+
 .all-content {
   max-width: 80%;
   margin: auto;
   border-radius: 12px;
 }
+
 .header {
   height: 6em;
   margin: auto;
@@ -19,16 +22,19 @@
   border-radius: 12px;
   box-shadow: 4px 4px 4px rgb(162, 207, 162);
 }
+
 .box-title {
   text-align: center;
   padding-top: 2em;
 }
+
 #title {
   font-size: 30px;
   color: rgb(164, 212, 212);
   text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .position-pallete {
   height: 16em;
   background-color: rgb(182, 204, 182);
@@ -37,6 +43,7 @@
   border-right: 2px solid rgb(163, 163, 163);
   padding-top: 1em;
 }
+
 #color-palette {
   text-align: center;
   max-width: 80%;
@@ -47,6 +54,7 @@
   padding-right: 2em;
   height: 10em;
 }
+
 .color {
   height: 4em;
   width: 4em;
@@ -57,11 +65,13 @@
   display: inline-block;
   border-radius: 4px;
 }
+
 .selected {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
   transition: 0.5s;
   border-radius: 4px;
 }
+
 .box-button {
   background-color: rgb(182, 204, 182);
   text-align: center;
@@ -69,6 +79,7 @@
   border-left: 2px solid rgb(163, 163, 163);
   border-right: 2px solid rgb(163, 163, 163);
 }
+
 #clear-board {
   background-color: rgb(202, 202, 202);
   font-size: 16px;
@@ -76,14 +87,17 @@
   padding: 6px 18px;
   border-radius: 8px;
 }
+
 #clear-board:hover {
   background-color: lightgray;
 }
+
 #board-size {
   padding: 4px 10px;
   border-radius: 8px;
   margin-left: 1em;
 }
+
 #generate-board {
   background-color: rgb(202, 202, 202);
   padding: 4px 10px;
@@ -91,9 +105,11 @@
   margin-left: 1em;
   margin-right: 1em;
 }
+
 #generate-board:hover {
   background-color: lightgray;
 }
+
 .pixel-section {
   background-color: rgb(182, 204, 182);
   border-top: 1px solid rgba(0, 0, 0, 0);
@@ -116,6 +132,6 @@
   width: 40px;
   background-color: white;
   border: 1px solid black;
-  margin: 4px;
+  margin: 1px;
   display: inline-block;
 }

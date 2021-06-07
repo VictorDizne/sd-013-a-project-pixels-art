@@ -57,17 +57,12 @@ function generatePalette() {
 }
 generatePalette();
 
-function setColorByClass() {
-  const selectedClass = document.querySelector('.selected');
-  color = selectedClass.style.backgroundColor;
-}
-
 function setPixelColorSelected() {
   const pixelTable = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelTable.length; index += 1) {
     pixelTable[index].addEventListener('click', function(event) {
       const targetColor = event.target.style.backgroundColor;
-      setColorByClass();
+      color = document.querySelector('.selected').style.backgroundColor;
       if (targetColor !== color) {
         event.target.style.backgroundColor = color;
       } else {
@@ -80,7 +75,7 @@ setPixelColorSelected();
 
 function setEventForNewPixelGenerated(event) {
   const targetColor = event.target.style.backgroundColor;
-  setColorByClass();
+  color = document.querySelector('.selected').style.backgroundColor;
   if (targetColor !== color) {
     event.target.style.backgroundColor = color;
   } else {
