@@ -38,4 +38,89 @@ function clearBoard() {
   
   btnClearBoard.addEventListener('click', clearBoard);
   
+  // Funções que recebem a cor selecionada
+function colorSelectBlack(event) {
+    colorRed.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorGreen.classList.remove('selected');
+    colorBlack.classList.remove('selected');
+    colorBlack.classList.add('selected');
+    // Captura com 'event.target' a cor do background.
+    const colorToApply = event.target.style.backgroundColor;
+    appliedColor = colorToApply;
+    console.log(colorToApply);
+  }
+  colorBlack.addEventListener('click', colorSelectBlack);
+  
+  function colorSelectRed(event) {
+    colorBlack.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorGreen.classList.remove('selected');
+    colorRed.classList.remove('selected');
+    colorRed.classList.add('selected');
+    const colorToApply = event.target.style.backgroundColor;
+    appliedColor = colorToApply;
+    console.log(colorToApply);
+  }
+  colorRed.addEventListener('click', colorSelectRed);
+  
+  function colorSelectBlue(event) {
+    colorBlack.classList.remove('selected');
+    colorRed.classList.remove('selected');
+    colorGreen.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorBlue.classList.add('selected');
+    const colorToApply = event.target.style.backgroundColor;
+    appliedColor = colorToApply;
+    console.log(colorToApply);
+  }
+  colorBlue.addEventListener('click', colorSelectBlue);
+  
+  function colorSelectGreen(event) {
+    colorBlack.classList.remove('selected');
+    colorRed.classList.remove('selected');
+    colorBlue.classList.remove('selected');
+    colorGreen.classList.add('selected');
+    const colorToApply = event.target.style.backgroundColor;
+    appliedColor = colorToApply;
+    console.log(colorToApply);
+  }
+  colorGreen.addEventListener('click', colorSelectGreen);
+  
+  function pixelColorListener(who) {
+    for (let index = 0; index < who.length; index += 1) {
+      who[index].addEventListener('click', function () {
+        who[index].style.backgroundColor = appliedColor;
+      });
+    }
+  }
+  
+  pixelColorListener(getPixelOnBoard);
+  
+  function getPixelColor() {
+    const sizeClassPixel = document.querySelectorAll('.pixel');
+    pixelColorListener(sizeClassPixel);
+  }
+  
+  function checkBoardLimits() {
+    if (inputSize.value < 5) {
+      inputSize.value = 5;
+    }
+    if (inputSize.value > 50) {
+      inputSize.value = 50;
+    }
+  }
+// Cria um novo board a partir do input do usuário.
+function boardSizeChange() {
+    if (inputSize.value) {
+      checkBoardLimits();
+      accessTable.innerHTML = '';
+      rowCreate(inputSize.value);
+      getPixelColor();
+    } else {
+      alert('Board Inválido!');
+    }
+  }
+  
+  btnGenerateBorder.addEventListener('click', boardSizeChange);  
 
