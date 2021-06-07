@@ -7,9 +7,16 @@ cores[3].style.backgroundColor="#1abc9c";
 
 cores[0].classList.add('selected');
 
-/* for (let index = 0; index <cores.length; index +=1) {
+for (let index = 0; index <cores.length; index +=1) {
 	cores[index].addEventListener('click', () => {
+		removeAllSelectors();
 		cores[index].classList.add('selected');
 	});
-} */
+};
+
+function removeAllSelectors() {
+	for (let index = 0; index <cores.length; index +=1) {
+			cores[index].classList.remove('selected');
+	};
+};
 
