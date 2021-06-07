@@ -49,7 +49,7 @@
   display: block;
 }
 
-#setInpute {
+#board-size {
   display: inline;
   width: 30px;
   height: 25px;
@@ -58,7 +58,7 @@
   border-bottom: black solid 2px;
 }
 
-#inputar {
+#generate-board {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   border: black solid 1px;

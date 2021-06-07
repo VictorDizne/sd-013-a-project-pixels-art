@@ -70,3 +70,10 @@ function clearFunc() {
 }
 
 clearButton.addEventListener('click', clearFunc);
+
+
+// let boardSize = n * n;
+// let buttonSetBoardSize = document.getElementById('generate-board');
+// buttonSetBoardSize.addEventListener('click', function changeBoardSize() {
+//   let n = document.getElementById('board-size').innerText;
+// });
