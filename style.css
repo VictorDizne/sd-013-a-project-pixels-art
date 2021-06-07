@@ -13,18 +13,7 @@ color: darkslategrey;
 #color-palette {
     text-align: center;
 }
-#black {
-    background-color: black;
-}
-#blue {
-    background-color: blue;
-}
-#orange {
-    background-color: rgb(255, 115, 0);
-}
-#green {
-    background-color: rgb(3, 158, 3);
-}
+
 .pixel {
     width: 40px;
     height: 40px;
