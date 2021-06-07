@@ -5,21 +5,39 @@ let corSelecionada = ("black");
 let eraser = ("false")
 
 
-  cores[0].addEventListener('click',changeColorBlack)
+
+
+cores[0].addEventListener('click',changeColorBlack)
 function changeColorBlack() {
   corSelecionada = ("black");
+  cores[0].classList.add('selected');  
+  cores[1].classList.remove('selected');
+  cores[2].classList.remove('selected');
+  cores[3].classList.remove('selected');
 }
 cores[1].addEventListener('click',changeColorRed)
 function changeColorRed() {
   corSelecionada = ("red");
+  cores[1].classList.add('selected');
+  cores[2].classList.remove('selected');
+  cores[3].classList.remove('selected');
+  cores[0].classList.remove('selected');
 }
 cores[2].addEventListener('click',changeColorYellow)
 function changeColorYellow() {
   corSelecionada = ("yellow");
+  cores[2].classList.add('selected');
+  cores[1].classList.remove('selected');
+  cores[3].classList.remove('selected');
+  cores[0].classList.remove('selected');
 }
 cores[3].addEventListener('click',changeColorGreen)
 function changeColorGreen() {
   corSelecionada = ("green");
+  cores[3].classList.add('selected');
+  cores[0].classList.remove('selected');
+  cores[1].classList.remove('selected');
+  cores[2].classList.remove('selected');
 }
     
 
@@ -36,8 +54,8 @@ for (var i = 0 ; i < pixels.length; i+=1){
           }
           else if (corSelecionada == "black"){
             let elementoClicado = event.target;
-            elementoClicado.classList.remove("red","yellow",'green','white');
-            elementoClicado.classList.add('black')
+            elementoClicado.classList.remove("red","yellow",'green','white','selected');
+            elementoClicado.classList.add('black','selected')
           }
           else if (corSelecionada == "white"){
             let elementoClicado = event.target;
