@@ -66,15 +66,22 @@ function boardSize() {
     } else {
       for (let i = 0; i < sessions.length; i += 1) {
         sessions[i].remove();
+      } 
+      if (valueInput < 5) {
+        valueInput = 5;
+      } else if (valueInput > 50) {
+        valueInput = 50;
       } for (let i = 0; i < valueInput; i += 1){
         const newContainer = document.querySelector('#pixel-board');
         const lines = document.createElement('section');
         lines.classList.add('lines');
         newContainer.appendChild(lines);
+        lines.style.backgroundColor = 'white';
         for (let i = 0; i < valueInput; i += 1){
           const collums = document.createElement('div');
           collums.classList.add('pixel');
           lines.appendChild(collums);
+          collums.style.backgroundColor = 'white';
         }
       }
     }
