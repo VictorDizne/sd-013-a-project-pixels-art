@@ -40,6 +40,30 @@ const board = document.querySelector('#pixel-board')
 buttonBoard.addEventListener('click', function() {
   if (input.value === '') {
     alert('Board inválido!');
+  } else if (input.value <= 5) {
+    board.innerHTML = '';
+    for (let index = 1; index <= 5; index += 1) {
+      let divTr = document.createElement('div');
+      divTr.classList.add('tr');
+      for (let index2 = 1; index2 <= 5; index2 += 1) {
+        let divPixelTd = document.createElement('div');
+        divPixelTd.classList.add('pixel', 'td');
+        divTr.appendChild(divPixelTd);
+      }
+      board.appendChild(divTr);
+    }
+  } else if (input.value >= 50) {
+    board.innerHTML = '';
+    for (let index = 1; index <= 50; index += 1) {
+      let divTr = document.createElement('div');
+      divTr.classList.add('tr');
+      for (let index2 = 1; index2 <= 50; index2 += 1) {
+        let divPixelTd = document.createElement('div');
+        divPixelTd.classList.add('pixel', 'td');
+        divTr.appendChild(divPixelTd);
+      }
+      board.appendChild(divTr);
+    }
   } else {
     board.innerHTML = '';
     for (let index = 1 ; index <= input.value; index += 1) {
@@ -61,4 +85,4 @@ buttonBoard.addEventListener('click', function() {
       event.target.style.backgroundColor = backgroundColor;
     })
   }
-})
+});
