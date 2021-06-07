@@ -60,19 +60,17 @@ function createPixels(number) {
   }
 }
 
-createPixels(5);
+createPixels(10);
 
 const pixels = document.querySelectorAll('.pixel')
 const color1 = document.querySelectorAll('.color')[0].style.backgroundColor;
-let colorSelected;
+let colorSelected = document.querySelector('.selected');
 
 document.body.addEventListener ('click', function (event){
   colorSelected = document.querySelector('.selected');
 
   if (event.target.classList == 'pixel') {
-
     event.target.style.backgroundColor = window.getComputedStyle(colorSelected).backgroundColor;
-
   }
 });
 
