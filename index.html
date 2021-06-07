@@ -7,13 +7,13 @@
   <body>
     <h1 id="title">Paleta de Cores</h1>
 
-    <div id="color-palette" onclick="addSelected(event)">
-      <div class="color selected" id="preto"></div>
-      <div class="color" id="vermelho"></div>
-      <div class="color" id="azul"></div>
-      <div class="color" id="verde"></div>
+    <div id="color-palette">
+      <div class="color selected" style="background-color:black;" onclick="addSelected(event)"></div>
+      <div class="color" style="background-color: red;" onclick="addSelected(event)"></div>
+      <div class="color" style="background-color:blue;" onclick="addSelected(event)"></div>
+      <div class="color" style="background-color:green;" onclick="addSelected(event)"></div>
     </div>
-
+    <button id="clear-board">Limpar</button>
     <div id="pixel-board">
       <div class="pb-line">
         <div class="pixel"></div>
@@ -51,6 +51,7 @@
         <div class="pixel"></div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
