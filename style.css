@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap') ;
 
 body {
   margin: 0;
@@ -17,7 +17,7 @@ body {
   z-index: -1;
 }
 
-/*Cabeçalho */
+/* Cabeçalho */
 #head {
   margin-top: -38px;
   width: 100%;
@@ -28,13 +28,13 @@ body {
   font-family: Pacifico, cursive;
   color: white;
   font-size: 3.5rem;
-  font-weight: normal;
+  font-weight: 500;
   background: linear-gradient( 225deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100% );
   border-bottom: 5px solid white;
 }
 
-/*End Cabeçalho */
-/*Article */
+/* End Cabeçalho */
+/* Article */
 #color-palette {
   width: 100%;
   text-align: center;
@@ -49,9 +49,9 @@ body {
   cursor: pointer;
 }
 
-/*End Article */
+/* End Article */
 
-/*Pixel Board */
+/* Pixel Board */
 #table-row {
   margin: 15px auto;
   border-collapse: collapse;
@@ -65,8 +65,8 @@ body {
   cursor: cell;
 }
 
-/*End Pixel board */
-/*Botao */
+/* End Pixel board */
+/* Botao */
 #clear-board {
   display: block;
   margin: 1rem auto;
@@ -85,7 +85,7 @@ body {
   border: 2px solid black;
 }
 
-/*End Botao */
+/* End Botao */
 
 /*Input board-size */
 #board-size {
@@ -116,4 +116,4 @@ body {
   border: 2px solid black;
 }
 
-/*End Input board-size */
+/* End Input board-size */

@@ -16,7 +16,7 @@ const granimInstance = new Granim({
 // Requisito 12 - Com Ajuda do Matheus Duarte <3
 
 function corAleatoria() {
-  let letras = '0123456789ABCDEF';
+  const letras = '0123456789ABCDEF';
   let color = '#';
   for (let i = 0; i < 6; i += 1) {
     color += letras[Math.floor(Math.random() * 16)];
@@ -24,10 +24,10 @@ function corAleatoria() {
   return color;
 }
 
-const black = (document.querySelector('.color1').style.backgroundColor = 'black');
-const cor2 = (document.querySelector('.color2').style.backgroundColor = corAleatoria());
-const cor3 = (document.querySelector('.color3').style.backgroundColor = corAleatoria());
-const cor4 = (document.querySelector('.color4').style.backgroundColor = corAleatoria());
+document.querySelector('.color1').style.backgroundColor = 'black';
+document.querySelector('.color2').style.backgroundColor = corAleatoria();
+document.querySelector('.color3').style.backgroundColor = corAleatoria();
+document.querySelector('.color4').style.backgroundColor = corAleatoria();
 
 // Exercicio 7 - Coloca a classe selected na cor clicada
 const escolheCor = document.querySelectorAll('.color');
@@ -66,11 +66,10 @@ function limpa() {
   }
 }
 
-//Requisito 10 - Menção honrosa a ROGERIO <3
+// Requisito 10 - Menção honrosa a ROGERIO <3
 
 const vqv = document.querySelector('#generate-board');
 const imputNumber = document.querySelector('#board-size');
-const pixelBoard = document.querySelector('#pixel-board');
 
 function criaQuadro(value) {
   tabela.innerHTML = null;
