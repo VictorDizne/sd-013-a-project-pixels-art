@@ -4,16 +4,26 @@
   padding: 0;
   margin: 0;
 }
+body {
+  background-color: black;
+}
+
+main {
+  background-image: url("https://i.pinimg.com/474x/b1/83/10/b183105738e0b0da6f6f2016babb2734.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 h1 {
   text-align: center;
   padding: 20px;
+  color: brown;
+  font-size: 50px;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
-  border: solid 1px black;
 }
 
 
@@ -25,9 +35,14 @@ h1 {
 
 .color {
   border: 1px solid black;
+  border-radius: 50%;
   height: 60px;
   width: 60px;
   margin: 0 30px;
+}
+
+.color:hover{
+  border-radius: 5px;
 }
 
 .container-pixel-board{
@@ -58,4 +73,36 @@ h1 {
   height: 40px;
   border: solid black 1px;
   background-color: white;
+}
+
+.container-button {
+padding-top: 20px;
+}
+
+.btn {
+  background-color: rgb(25, 25, 25, 0.9);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: brown;
+  font-weight: 900;
+}
+
+.btn:hover {
+  background-color: red;
+  font-weight: 900;
+  color: black;
+}
+
+.btn-input{
+  background-color: rgb(25, 25, 25, 0.9);
+  width: 50px;
+  border-radius: 10px;
+  color: brown;
+  font-weight: 900;
+}
+
+.btn-input:hover {
+  background-color: red;
+  font-weight: 900;
+  color: black;
 }
