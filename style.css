@@ -6,22 +6,18 @@
   width: 100px;
 }
 
-#color-orange {
-  background-color: rgb(255, 214, 165);
-  color: rgb(255, 214, 165);
+#color1 {
+  background-color: rgb(0, 48, 73);
 }
 
-#color-yellow {
-  background-color: rgb(253, 255, 182);
-  color: rgb(253, 255, 182);
+#color2 {
+  background-color: rgb(214, 40, 40);
 }
 
-#color-green {
-  background-color: rgb(202, 255, 191);
-  color: rgb(202, 255, 191);
+#color3 {
+  background-color: rgb(247, 127, 0);
 }
 
-#color-blue {
-  background-color: rgb(155, 246, 255);
-  color: rgb(155, 246, 255);
+#color4 {
+  background-color: rgb(252, 191, 73);
 }
