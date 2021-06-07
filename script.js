@@ -35,17 +35,17 @@ function setColorClass(event) {
 }
 
 function generatePalette() {
-  const arrayPalette = [];
-  for (let index = 0; index < 4; index += 1) {
+  const arrayPalette = ['#000000'];
+  for (let index = 0; index < 3; index += 1) {
     const newColor = getNewColor();
     arrayPalette.push(newColor);
   }
   for (let index = 0; index < arrayPalette.length; index += 1) {
     const element = document.getElementById('color-palette');
     const newElement = document.createElement('li');
-    if (arrayPalette[index] === arrayPalette[0]) {
+    if (arrayPalette[index] === '#000000') {
       newElement.className = 'color selected';
-      newElement.style.backgroundColor = 'black';
+      newElement.style.backgroundColor = arrayPalette[index];
     } else {
       newElement.className = 'color';
       newElement.style.backgroundColor = arrayPalette[index];
