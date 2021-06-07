@@ -86,3 +86,14 @@ buttonBoard.addEventListener('click', function() {
     })
   }
 });
+
+// Gera cor aleatória para a paleta
+let otherColors = document.querySelectorAll('.other-color');
+for (let index = 0; index < otherColors.length; index += 1) {
+  randomColor(otherColors[index]);
+};
+
+function randomColor (color) {
+  let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  color.style.backgroundColor = `#${randomColor}`
+}
