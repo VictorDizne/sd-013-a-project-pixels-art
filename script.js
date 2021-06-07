@@ -12,12 +12,15 @@
 /* eslint-disable prefer-arrow-callback */
 
 function getNewColor() {
-  const symbols = '0123456789ABCDEF';
-  let randomColor = '#';
-  for (let index = 0; index < 6; index += 1) {
-    randomColor += symbols[Math.floor(Math.random() * 16)];
+  const min = Math.ceil(0);
+  const max = Math.floor(255);
+  const rgb = [];
+  for (let index = 0; index < 3; index += 1) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    rgb.push(randomNumber);
   }
-  return randomColor;
+  const content = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+  return content;
 }
 
 function setColorClass(event) {
@@ -35,7 +38,7 @@ function setColorClass(event) {
 }
 
 function generatePalette() {
-  const arrayPalette = ['#000000'];
+  const arrayPalette = ['rgb(0, 0, 0)'];
   for (let index = 0; index < 3; index += 1) {
     const newColor = getNewColor();
     arrayPalette.push(newColor);
@@ -43,7 +46,7 @@ function generatePalette() {
   for (let index = 0; index < arrayPalette.length; index += 1) {
     const element = document.getElementById('color-palette');
     const newElement = document.createElement('li');
-    if (arrayPalette[index] === '#000000') {
+    if (arrayPalette[index] === 'rgb(0, 0, 0)') {
       newElement.className = 'color selected';
       newElement.style.backgroundColor = arrayPalette[index];
     } else {
@@ -60,7 +63,8 @@ function setPixelColorSelected() {
   const pixelTable = document.querySelector('#pixel-board');
   pixelTable.addEventListener('click', function(event) {
     const targetColor = event.target.style.backgroundColor;
-    const color = document.querySelector('.selected').style.backgroundColor;
+    const auxColor = document.querySelector('.selected');
+    const color = window.getComputedStyle(auxColor).backgroundColor;
     if (targetColor !== color) {
       event.target.style.backgroundColor = color;
     } else {
