@@ -29,7 +29,7 @@ body {
   color: white;
   font-size: 3.5rem;
   font-weight: 500;
-  background: linear-gradient( 225deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100% );
+  background: linear-gradient(225deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100%);
   border-bottom: 5px solid white;
 }
 
@@ -87,7 +87,7 @@ body {
 
 /* End Botao */
 
-/*Input board-size */
+/* Input board-size */
 #board-size {
   margin: 10px auto;
   display: inline;
