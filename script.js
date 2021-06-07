@@ -1,6 +1,22 @@
 window.onload = () =>{
   let palette = document.querySelector("#color-palette");
   let black = false;
+  let board = document.querySelector("#pixel-board");
+
+  createBoard();
+
+  function createBoard (){
+    for(let i = 0; i < 5; i += 1){
+      let tableLine = document.createElement('tr');
+      board.appendChild(tableLine);
+      for(let j = 0; j < 5; j += 1){
+        let tableSquares = document.createElement('td');
+        tableSquares.className = "pixel";
+        tableSquares.style.backgroundColor = 'white';
+        tableLine.appendChild(tableSquares);        
+      }
+    }
+  }
   
   //start the pallete
   for(index = 1; index <= 4; index += 1){    
