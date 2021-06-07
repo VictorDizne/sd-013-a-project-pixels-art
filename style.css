@@ -3,11 +3,11 @@
 }
 
 body {
-width: 800px;
-height: 100vh;
-text-align: center;
-margin: auto;
-background-color: rgb(120, 79, 65);
+  width: 800px;
+  height: 100vh;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(120, 79, 65);
 }
 
 #artSpace {
@@ -36,15 +36,15 @@ background-color: rgb(120, 79, 65);
 .pixel {
   width: 40px;
   height: 40px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border-style: solid;
-  border-color: rgb(0, 0, 0);
+  border-color: black;
   border-width: 1px;
 }
 
 .row {
   display: table-row;
-  padding: 0; 
+  padding: 0;
 }
 
 .column {
@@ -55,7 +55,7 @@ background-color: rgb(120, 79, 65);
 .color {
   width: 40px;
   height: 40px;
-  border-color: rgb(0, 0, 0);
+  border-color: black;
   border-width: 1px;
   border-style: solid;
 }
@@ -64,15 +64,15 @@ input {
   width: 50px;
   height: 30px;
   background-color: rgb(212, 195, 194);
-  color: rgb(120 , 79 , 65);
+  color: rgb(120, 79, 65);
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 button {
   background-color: rgb(214, 209, 138);
-  color: rgb(120 , 79 , 65);
+  color: rgb(120, 79, 65);
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 900;
   height: 40px;
 }
