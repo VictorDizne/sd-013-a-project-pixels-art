@@ -1,12 +1,3 @@
-function correction(){
-  let corrigir = document.querySelectorAll('.color');
-  corrigir[0].style.backgroundColor = 'black';
-  corrigir[1].style.backgroundColor = 'blue';
-  corrigir[2].style.backgroundColor = 'red';
-  corrigir[3].style.backgroundColor = 'green';
-}
-
-correction();
 
 function req41() {
   let box1 = document.querySelector('#pixel-board');
@@ -29,18 +20,32 @@ req41();
 function req4() {
 
   let makebox = document.querySelector('#generate-board');
-
   
   makebox.addEventListener('click', function () {
 
   let box1 = document.querySelector('#pixel-board');
   let areaofbox = document.querySelector('#board-size').value;
   let number = areaofbox;
-  
+
+  box1.innerHTML = '';
+
+  if (document.querySelector('#board-size').value == false){
+    alert('Board inválido!')
+  }
+  if (document.querySelector('#board-size').value < 5 ){
+    alert('Board inválido!');
+    number = 5;
+  }  
+  if (document.querySelector('#board-size').value > 50  ){
+    alert('Board inválido!');
+    number = 50;
+  }
+
   for (let i = 0; i < number; i += 1) {
   let row = document.createElement('div');
   row.className = 'row';
   box1.appendChild(row);
+
     for (let i = 0; i < number; i += 1) {
     let pixels = document.createElement('div');
     pixels.className = 'pixel';
@@ -49,13 +54,22 @@ function req4() {
    }
   }
  })
+ req9();
 }
 req4();
 
 window.onload = function(){
+  let corrigir = document.querySelectorAll('.color');
+
+  corrigir[0].style.backgroundColor = 'black';
+  corrigir[1].style.backgroundColor = 'green';
+  corrigir[2].style.backgroundColor = 'blue';
+  corrigir[3].style.backgroundColor = 'red';
+
   let blackcolor = document.querySelector('#black');
   blackcolor.classList.add('selected'); 
-};
+
+}
 
 function req7() {
   let seleciona = document.querySelector('#color-palette');
@@ -89,19 +103,18 @@ document.addEventListener('click', function (event) {
 
 req8();
 
-// function req9(){
-//   let clearall = document.querySelector('#clear-board')
- 
-//   document.addEventListener('click', (event) => {
-//     if(event.target.classList.contains('limpar') == true)
-//     for (let i = 0; i < 25; i +=1) {
-//     let clearpixels = document.querySelectorAll('.pixel');
+function req9() {
 
-//     clearpixels.style.backgroundColor = 'white';
-//     }
+  let clearbutton = document.querySelector('#clear-board');
+
+  clearbutton.addEventListener('click', function (event) {
+    let pix = document.querySelectorAll('.pixel');
+    let limits = document.querySelectorAll('.pixel').length;
     
-//   }, false);
-// }
+    for(let i = 0; i < limits; i +=1){
+      pix[i].style.backgroundColor = 'white';
+    }
 
-// req9();
+  })}
 
+req9();
