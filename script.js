@@ -50,7 +50,14 @@ window.onload = function () {
    }
    selected();
    
-
+   let buttonClear = document.querySelector("button[name=button-clear");
+   buttonClear.addEventListener("click", function(){
+        let pixel = document.getElementsByClassName("pixel");
+        for (let index = 0; index < pixel.length; index+=1) {            
+            pixel[index].style.backgroundColor="rgb(255,255,255)";
+            
+        }     
+   })
 
 
 
@@ -91,6 +98,7 @@ window.onload = function () {
                 let newCol = document.createElement("div");
                 newCol.className = "pixel";   
                 colum[index].appendChild(newCol);  
+                
             }
                             
                    
@@ -101,7 +109,7 @@ window.onload = function () {
      let pixel = document.getElementsByClassName("pixel");
     for (let index = 4; index < pixel.length; index+=1) {
         pixel[index].addEventListener("click",colorir);
-        
+        pixel[index].style.backgroundColor="rgb(255,255,255)";
     }      
    
 }
@@ -113,16 +121,19 @@ function gerarBoard2(boxSize){
        line.appendChild(newDiv);
        let colum = document.getElementsByClassName("line");
        for (let index2 = 0; index2 < boxSize; index2+=1){
-           let newCol = document.createElement("div");
+           let newCol = document.createElement("div");           
            newCol.className = "pixel";            
-           colum[index].appendChild(newCol);            
-                     
+           colum[index].appendChild(newCol); 
+                                     
         }          
     }
+   
+    
 
-    let pixel = document.getElementsByClassName("pixel");
+   let pixel = document.getElementsByClassName("pixel");
    for (let index = 0; index < pixel.length; index+=1) {
        pixel[index].addEventListener("click",colorir);
+       pixel[index].style.backgroundColor="rgb(255,255,255)";
        
    }      
   
@@ -147,7 +158,7 @@ function gerarBoard2(boxSize){
     function colorir(){
         this.setAttribute("style",`background-color:${selectorColor()}`);//
     }
-
+    
     
      
    
