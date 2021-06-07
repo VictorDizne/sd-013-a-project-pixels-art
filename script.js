@@ -10,7 +10,6 @@
 /* eslint-disable func-names */
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-arrow-callback */
-var color = 'black';
 
 function getNewColor() {
   const symbols = '0123456789ABCDEF';
@@ -62,7 +61,7 @@ function setPixelColorSelected() {
   for (let index = 0; index < pixelTable.length; index += 1) {
     pixelTable[index].addEventListener('click', function(event) {
       const targetColor = event.target.style.backgroundColor;
-      color = document.querySelector('.selected').style.backgroundColor;
+      const color = document.querySelector('.selected').style.backgroundColor;
       if (targetColor !== color) {
         event.target.style.backgroundColor = color;
       } else {
@@ -75,7 +74,7 @@ setPixelColorSelected();
 
 function setEventForNewPixelGenerated(event) {
   const targetColor = event.target.style.backgroundColor;
-  color = document.querySelector('.selected').style.backgroundColor;
+  const color = document.querySelector('.selected').style.backgroundColor;
   if (targetColor !== color) {
     event.target.style.backgroundColor = color;
   } else {
