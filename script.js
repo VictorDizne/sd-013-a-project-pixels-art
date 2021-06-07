@@ -1,8 +1,8 @@
 const pixels = document.getElementsByTagName("td");
 const cores = document.getElementsByClassName("color");
-let limpar = document.getElementById("clear-board");
+const limpar = document.getElementById("clear-board");
 let corSelecionada = ("black");
-let eraser = ("false")
+
 
 
 
@@ -80,6 +80,12 @@ for (var i = 0 ; i < pixels.length; i+=1){
         else {console.log("nenhuma cor selecionada")}
       }
 
+     limpar.addEventListener('click',limpando)
+
+     function limpando () {
+       for (let i = 0; i <= pixels.length; i += 1)
+       pixels[i].classList.remove("red","white",'green','black','yellow');
+     }
 
     
 
