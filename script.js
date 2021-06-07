@@ -42,6 +42,7 @@ colors[2].addEventListener('click', function (event) {
 colors[3].addEventListener('click', function (event) {
   event.target.classList.add('selected');
 
+
   colors[0].classList.remove('selected')
   colors[1].classList.remove('selected')
   colors[2].classList.remove('selected')
@@ -62,11 +63,27 @@ function createPixels(number) {
 createPixels(5);
 
 const pixels = document.querySelectorAll('.pixel')
-const colorSelected = document.querySelector('.selected');
-const color1 = document.querySelectorAll('.color')[0];
+const color1 = document.querySelectorAll('.color')[0].style.backgroundColor;
+let colorSelected;
 
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', function (event) {
-    event.target.style.backgroundColor = "black";
-  })
+document.body.addEventListener ('click', function (event){
+  colorSelected = document.querySelector('.selected');
+
+  if (event.target.classList == 'pixel') {
+
+    event.target.style.backgroundColor = window.getComputedStyle(colorSelected).backgroundColor;
+
+  }
+});
+
+function pixelsColor (event) {
+  
 }
+
+const buttonClear = document.querySelector('#clear-board');
+
+buttonClear.addEventListener('click', function () {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
