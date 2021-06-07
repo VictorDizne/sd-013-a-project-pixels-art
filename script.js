@@ -62,7 +62,7 @@ fillBoard(5);
 
 localStorage.setItem('corInicial', palette[0].style.backgroundColor);
 let corInicial = localStorage.getItem('corInicial');
-if (corInicial) corPixel(corInicial);
+if (corInicial) coloreQuadrado(corInicial);
 
 // ------------------------------------------------------------
 
@@ -74,12 +74,14 @@ if (corInicial) corPixel(corInicial);
 for (let index = 0; index < palette.length; index += 1) {
   palette[index].addEventListener
     (
-      'click', function (aSelecao) {
+      'click', function (aSelecao) 
+      {
         let corSelecionada = document.querySelector('.selected');
-        if (aSelecao.target.className !== 'color selected') {
+        if (aSelecao.target.className !== 'color selected') 
+        {
           aSelecao.target.classList.add('selected');
           corSelecionada.classList.remove('selected');
-          corPixel(aSelecao.target.style.backgroundColor);
+          coloreQuadrado(aSelecao.target.style.backgroundColor);
         }
       }
     );
@@ -91,14 +93,41 @@ for (let index = 0; index < palette.length; index += 1) {
 
 // Define função para colorir os quadrados dentro do quadro:
 
-function corPixel(cor) {
-  const pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener
-      (
-        'click', function (event) {
-          event.target.style.backgroundColor = cor;
-        }
-      );
+function coloreQuadrado(cor) {
+  const quadrado = document.querySelectorAll('.pixel');
+  for (let index = 0; index < quadrado.length; index += 1) 
+  {
+    quadrado[index].addEventListener
+    (
+     'click', function (event) 
+      {
+       event.target.style.backgroundColor = cor;
+      }
+    );
   }
 }
+
+// ------------------------------------------------------------
+
+//THE CLEAR BUTTON -> DESAFIO 9
+
+// Cria variável alvo (botão) para o evento de limpar o quadro:
+
+const botaoLimpar = document.querySelector('#clear-board');
+botaoLimpar.innerHTML = 'Limpar';
+
+// Define função para limpar o quadro:
+
+function limpaQuadro() {
+botaoLimpar.addEventListener('click', quadradoBranco);
+}
+
+// Define função para colorir os quadrados de branco:
+
+function quadradoBranco() {
+const whiteSquare = document.querySelectorAll('.pixel');
+for (let index = 0; index < whiteSquare.length; index += 1) {
+whiteSquare[index].style.backgroundColor = 'white';
+}
+}
+limpaQuadro();
