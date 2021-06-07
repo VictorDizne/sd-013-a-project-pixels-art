@@ -1,13 +1,13 @@
-let pixels = document.getElementsByTagName("td");
-let cores = document.getElementsByClassName("color");
-let limpar = document.getElementById("clear-board")
+const pixels = document.getElementsByTagName("td");
+const cores = document.getElementsByClassName("color");
+let limpar = document.getElementById("clear-board");
 let corSelecionada = ("black");
 let eraser = ("false")
 
 
 
 
-cores[0].addEventListener('click',changeColorBlack)
+cores[0].addEventListener('click', changeColorBlack)
 function changeColorBlack() {
   corSelecionada = ("black");
   cores[0].classList.add('selected');  
