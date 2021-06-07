@@ -30,9 +30,9 @@ createPaletteDivs();
 function createMainDivs () {
 	for (let index = 0; index < 5; index++) {
 		let div1 = document.createElement('div');
-		div1.className = 'pixel';
+		div1.className = 'tr';
 		pixelBoard.appendChild(div1);
-		for (let index = 0; index < 4; index++) {
+		for (let index = 0; index < 5; index++) {
 			let div1 = document.createElement('div');
 			div1.className = 'pixel';
 			pixelBoard.appendChild(div1);
@@ -83,10 +83,9 @@ for (let index = 0; index < 25; index++){
 
 // 'Apaga' a cor das divs da main que foram pintadas, retornando para a cor de background original (white)
 eraser.addEventListener('click', () => {
-	let squares = document.querySelectorAll('.pixel');
-	for (index in squares) {
-		let square = squares[index];
-		square.style.backgroundColor = 'white'
+	let squares = document.getElementsByClassName('pixel');
+	for (let index of squares) {
+		index.style.backgroundColor = 'white';
 	}
 })
 
