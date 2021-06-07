@@ -13,8 +13,8 @@
 
 .pixel {
     width: 40px;
-    height: 40px;
-    border: 1px solid black;
+    height: 44px;
+    border: 1px solid;
     background-color: white;
 }
 

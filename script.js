@@ -55,7 +55,7 @@ for (var i = 0 ; i < pixels.length; i+=1){
           else if (corSelecionada == "black"){
             let elementoClicado = event.target;
             elementoClicado.classList.remove("red","yellow",'green','white','selected');
-            elementoClicado.classList.add('black','selected')
+            elementoClicado.classList.add('black')
           }
           else if (corSelecionada == "white"){
             let elementoClicado = event.target;
@@ -80,13 +80,18 @@ for (var i = 0 ; i < pixels.length; i+=1){
         else {console.log("nenhuma cor selecionada")}
       }
 
-     limpar.addEventListener('click',limpando)
+     limpar.addEventListener('click',limpando);
+     limpar.addEventListener('click',adicionandoBranco);
 
-     function limpando () {
+     function adicionandoBranco () {
        for (let i = 0; i <= pixels.length; i += 1)
-       pixels[i].classList.remove("red","white",'green','black','yellow');
+       pixels[i].classList.add('white');
      }
 
+     function limpando () {
+      for (let i = 0; i <= pixels.length; i += 1)
+     pixels[i].classList.remove('red','green','black','yellow')
+     }
     
 
 
