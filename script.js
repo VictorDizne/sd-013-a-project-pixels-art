@@ -36,14 +36,28 @@ function buttomClear() {
 function colorPallete(){
   const colorPixel1 = document.getElementsByClassName('color')[0];
   colorPixel1.style.backgroundColor = 'black';
-  const colorPixel2 = document.getElementsByClassName('color')[1];
-  colorPixel2.style.backgroundColor = 'green';
-  const colorPixel3 = document.getElementsByClassName('color')[2];
-  colorPixel3.style.backgroundColor = 'blue';
-  const colorPixel4 = document.getElementsByClassName('color')[3];
-  colorPixel4.style.backgroundColor = 'yellow';
+  const colorPixel = document.getElementsByClassName('color');
+  for (index = 1; index < colorPixel.length; index += 1){
+    colorPixel[index].style.backgroundColor = Math.floor(Math.random() * 16777215).toString(16);
+    if (colorPixel[1].backgroundColor === colorPixel[2].backgroundColor || colorPixel[1].backgroundColor === colorPixel[3].backgroundColor){
+      colorPixel[index].style.backgroundColor = Math.floor(Math.random() * 16777215).toString(16);
+    }
+    else if (colorPixel[index].backgroundColor === '#ffffff'){
+      colorPixel[index].style.backgroundColor = Math.floor(Math.random() * 16777215).toString(16);
+    } 
+  }
 };
 
+/* function getRandomColor() {
+  let color;
+  do {
+    
+    color = Math.floor(Math.random() * 16777215).toString(16);
+  } while (color.length !== 6 || color === 'ffffff');
+
+  return `#${color}`;
+}  */
+ 
 window.onload = function () {
   colorPallete()
   setPixelColor();
