@@ -24,8 +24,16 @@
         <button onclick="refreshColors()">Gerar cores novas</button>
         <div class="aux">
           <p>Escolha o tamanho do quadro</p>
-          <input type="number" id="board-size" placeholder="5 a 50" min="1" max="50"/>
-          <button onclick="numberPixelBoard()" id="generate-board">Gerar quadro VQV</button>
+          <input 
+            type="number"
+            id="board-size"
+            placeholder="5 a 50"
+            min="1"
+            max="50"
+          />
+          <button onclick="numberPixelBoard()" id="generate-board">
+            Gerar quadro VQV
+          </button>
         </div>
         <button onclick="refreshBoard()" id="clear-board">Limpar Quadro</button>
         <div id="pixel-board">

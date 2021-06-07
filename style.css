@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 html {
-  background: url(Background.jpg) no-repeat center center fixed;
+  background: url(Background.jpg) no-repeat
+    center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
+main {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 header {
   text-align: center;
 }
@@ -14,19 +21,19 @@ header {
   margin: 10px;
 }
 .centro h1 {
-  color:#ffffff;
+  color: black;
+  font-family: Sacramento, sans-serif, monospace;
+  font-size: 50px;
 }
 .centro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(34, 50, 153);
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 535px;
   min-width: 400px;
   border-radius: 4%;
-  
 }
 .color {
   border: 1px solid black;
@@ -54,6 +61,9 @@ header {
 
 button {
   margin: 10px;
+  background-color: transparent;
+  font-size: 18px;
+  color: white;
 }
 
 .pixel {
@@ -66,6 +76,11 @@ button {
 
 .aux p {
   text-align: center;
-  font-size: large;
-  color: #ffffff;
+  color: white;
+  font-family: Sacramento, sans-serif, monospace;
+  font-size: 55px;
+  margin: 0;
+}
+#board-size {
+  margin-left: 10px;
 }
