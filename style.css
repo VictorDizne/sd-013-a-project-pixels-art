@@ -30,22 +30,6 @@ h1 {
   margin: 0 30px;
 }
 
-.black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 .container-pixel-board{
   display: flex;
   justify-content: center;
