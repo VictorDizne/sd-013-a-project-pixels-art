@@ -1,4 +1,4 @@
-//THE TITLE -> DESAFIO 1
+// THE TITLE -> DESAFIO 1
 
 // Coloca o título 'Paleta de Cores' na página:
 
@@ -11,16 +11,16 @@ title.innerHTML = 'Paleta de Cores';
 
 // Cria um array com as li's  de classe .color:
 const palette = document.querySelectorAll('.color');
-palette[0].style.backgroundColor = 'black'
-palette[1].style.backgroundColor = 'lightgreen'
-palette[2].style.backgroundColor = 'yellow'
-palette[3].style.backgroundColor = 'violet'
+palette[0].style.backgroundColor = 'black';
+palette[1].style.backgroundColor = 'lightgreen';
+palette[2].style.backgroundColor = 'yellow';
+palette[3].style.backgroundColor = 'violet';
 
 // ------------------------------------------------------------
 
 // THE BOARD -> DESAFIO 4
 
-// Cria um quadro 
+// Cria um quadro
 // (para conter todos os quadrados a serem coloridos pelo usuário):
 
 const board = document.querySelector('#pixel-board');
@@ -30,13 +30,12 @@ const board = document.querySelector('#pixel-board');
 
 function fillBoard(number) {
   for (let row = 0; row < number; row += 1) {
-
     // Cria uma linha para ser preenchida por quadrados.
-    let squareRow = document.createElement('div');
+    const squareRow = document.createElement('div');
 
-    // Preenche a linha criada anteriormente com quadrados. 
+    // Preenche a linha criada anteriormente com quadrados.
     for (let column = 0; column < number; column += 1) {
-      let square = document.createElement('div');
+      const square = document.createElement('div');
       square.className = 'pixel';
       square.style.backgroundColor = 'white';
       squareRow.appendChild(square);
@@ -56,78 +55,69 @@ fillBoard(5);
 
 // ------------------------------------------------------------
 
-// THE FIRST COLOR -> DESAFIO 6
-
-// Coloca 'black' como cor inicial:
-
-localStorage.setItem('corInicial', palette[0].style.backgroundColor);
-let corInicial = localStorage.getItem('corInicial');
-if (corInicial) coloreQuadrado(corInicial);
-
-// ------------------------------------------------------------
-
-// THE COLOR SELECTION -> DESAFIO 7
-
-// Define função para selecionar uma cor específica 
-// (pelo mouse, ao clicar na cor desejada na paleta de cores):
-
-for (let index = 0; index < palette.length; index += 1) {
-  palette[index].addEventListener
-    (
-      'click', function (aSelecao) 
-      {
-        let corSelecionada = document.querySelector('.selected');
-        if (aSelecao.target.className !== 'color selected') 
-        {
-          aSelecao.target.classList.add('selected');
-          corSelecionada.classList.remove('selected');
-          coloreQuadrado(aSelecao.target.style.backgroundColor);
-        }
-      }
-    );
-}
-
-// ------------------------------------------------------------
-
 // THE SQUARE COLORATION -> DESAFIO 8
 
 // Define função para colorir os quadrados dentro do quadro:
 
 function coloreQuadrado(cor) {
   const quadrado = document.querySelectorAll('.pixel');
-  for (let index = 0; index < quadrado.length; index += 1) 
-  {
-    quadrado[index].addEventListener
-    (
-     'click', function (event) 
-      {
-       event.target.style.backgroundColor = cor;
-      }
-    );
+  for (let index = 0; index < quadrado.length; index += 1) {
+    quadrado[index].addEventListener('click', function oColorimento(event) {
+      event.target.style.backgroundColor = cor;
+    });
   }
 }
 
 // ------------------------------------------------------------
 
-//THE CLEAR BUTTON -> DESAFIO 9
+// THE FIRST COLOR -> DESAFIO 6
 
-// Cria variável alvo (botão) para o evento de limpar o quadro:
+// Coloca 'black' como cor inicial:
+
+localStorage.setItem('corInicial', palette[0].style.backgroundColor);
+const corInicial = localStorage.getItem('corInicial');
+if (corInicial) coloreQuadrado(corInicial);
+
+// ------------------------------------------------------------
+
+// THE COLOR SELECTION -> DESAFIO 7
+
+// Define função para selecionar uma cor específica
+// (pelo mouse, ao clicar na cor desejada na paleta de cores):
+
+for (let index = 0; index < palette.length; index += 1) {
+  palette[index].addEventListener('click', function aSelecao(event) {
+    const corSelecionada = document.querySelector('.selected');
+    if (event.target.className !== 'color selected') {
+      event.target.classList.add('selected');
+      corSelecionada.classList.remove('selected');
+      coloreQuadrado(event.target.style.backgroundColor);
+    }
+  });
+}
+
+// ------------------------------------------------------------
+
+// THE CLEAR BUTTON -> DESAFIO 9
+
+// Cria variável alvo (botão) para a função de limpar o quadro:
 
 const botaoLimpar = document.querySelector('#clear-board');
 botaoLimpar.innerHTML = 'Limpar';
 
-// Define função para limpar o quadro:
-
-function limpaQuadro() {
-botaoLimpar.addEventListener('click', quadradoBranco);
-}
-
 // Define função para colorir os quadrados de branco:
 
 function quadradoBranco() {
-const whiteSquare = document.querySelectorAll('.pixel');
-for (let index = 0; index < whiteSquare.length; index += 1) {
-whiteSquare[index].style.backgroundColor = 'white';
+  const whiteSquare = document.querySelectorAll('.pixel');
+  for (let index = 0; index < whiteSquare.length; index += 1) {
+    whiteSquare[index].style.backgroundColor = 'white';
+  }
 }
+
+// Define função para limpar o quadro:
+
+function limpaQuadro() {
+  botaoLimpar.addEventListener('click', quadradoBranco);
 }
+
 limpaQuadro();
