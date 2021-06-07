@@ -1,0 +1,27 @@
+.color {
+  border: solid 1px;
+  border-color: black;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+#color-orange {
+  background-color: rgb(255, 214, 165);
+  color: rgb(255, 214, 165);
+}
+
+#color-yellow {
+  background-color: rgb(253, 255, 182);
+  color: rgb(253, 255, 182);
+}
+
+#color-green {
+  background-color: rgb(202, 255, 191);
+  color: rgb(202, 255, 191);
+}
+
+#color-blue {
+  background-color: rgb(155, 246, 255);
+  color: rgb(155, 246, 255);
+}
