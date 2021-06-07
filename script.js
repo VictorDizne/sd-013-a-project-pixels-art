@@ -1,17 +1,28 @@
-// Cria quadrado de pixels 5 x 5
-const table = document.createElement('table');
-table.id = 'table';
-document.getElementById('pixel-board').appendChild(table);
-for (let line = 0; line < 5; line++) {
-  const pixelLine = document.createElement('tr');
-  for (let colum = 0; colum < 5; colum ++) {
-    const pixelData = document.createElement('td');
-    pixelData.className = 'pixel';
-    pixelLine.appendChild(pixelData);
+// Controle de tamanho
+const boardSize = document.getElementById('board-size');
+const generateBoard = document.getElementById('generate-board');
+
+function boardSquad(n) {
+  const table = document.createElement('table');
+  document.getElementById('pixel-board').appendChild(table);
+  for (let line = 0; line < n; line++) {
+    const pixelLine = document.createElement('tr');
+    for (let colum = 0; colum < n; colum ++) {
+      const pixelData = document.createElement('td');
+      pixelData.className = 'pixel';
+      pixelLine.appendChild(pixelData);
+    }
+    table.appendChild(pixelLine);
   }
-  table.appendChild(pixelLine);
 }
 
+boardSquad(5);
+// Falta criar o botão que seleciona o tamanho do board
+generateBoard.onclick = function myClick() {
+  // Code ...
+};
+
+// Variaveis da Paleta de Cores
 const black = document.getElementById('black');
 const red = document.getElementById('red');
 const green = document.getElementById('green');
@@ -114,4 +125,4 @@ clearButton.onclick = function clearPixels() {
   for (let index = 0; index < pData.length; index++) {
     pData[index].style.backgroundColor = 'white';
   }
-}
+};
