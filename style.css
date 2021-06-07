@@ -10,12 +10,17 @@ body {
   font-size: 25px;
 }
 
+div#color-palette {
+  display: inline-flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+
 div.color{
   border: 1px black solid;
   width: 40px;
   height: 40px;
-  display: inline-block;
-  margin-left: 150px;
 }
 
 #red {
@@ -34,8 +39,13 @@ div.color{
   background-color: black;
 }
 
-table {
-  margin-left: 300px;
+button{
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td {
@@ -44,4 +54,9 @@ td {
   width: 40px;
   height: 40px;
   display: table-cell;
+}
+
+div#tabela {
+  display: flex;
+  justify-content: center
 }
