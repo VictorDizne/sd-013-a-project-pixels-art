@@ -57,18 +57,16 @@ function generatePalette() {
 generatePalette();
 
 function setPixelColorSelected() {
-  const pixelTable = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixelTable.length; index += 1) {
-    pixelTable[index].addEventListener('click', function(event) {
-      const targetColor = event.target.style.backgroundColor;
-      const color = document.querySelector('.selected').style.backgroundColor;
-      if (targetColor !== color) {
-        event.target.style.backgroundColor = color;
-      } else {
-        event.target.style.backgroundColor = 'white';
-      }
-    });
-  }
+  const pixelTable = document.querySelector('#pixel-board');
+  pixelTable.addEventListener('click', function(event) {
+    const targetColor = event.target.style.backgroundColor;
+    const color = document.querySelector('.selected').style.backgroundColor;
+    if (targetColor !== color) {
+      event.target.style.backgroundColor = color;
+    } else {
+      event.target.style.backgroundColor = 'white';
+    }
+  });
 }
 setPixelColorSelected();
 
