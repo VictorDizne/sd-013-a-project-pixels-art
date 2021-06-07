@@ -32,11 +32,13 @@ function fillPalette () {
   }
 }
 fillPalette();
+let selectedColor = 'rgb(0, 0, 0)';
 // Colore a pixel-board em preto quando carrega página
 pixelBoard.addEventListener('click' , (event) => {
-  event.target.style.backgroundColor = palette[0].style.backgroundColor;
+  event.target.style.backgroundColor = selectedColor;
 })
 // Colore a pixel-board com a cor selecionada da paleta
+
 function colorBoard (){
 // Seleciona a cor
   paletteDois.addEventListener('click', (event) => {
