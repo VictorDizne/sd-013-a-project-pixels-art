@@ -24,3 +24,14 @@ function colorPrint() {
   });
 }
 colorPrint();
+
+function erase() {
+  const apagar = document.getElementById('clear-board');
+  const pixel = document.getElementsByClassName('pixel');
+  apagar.addEventListener('click', () => {
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+erase();
