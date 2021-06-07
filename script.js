@@ -54,7 +54,6 @@ function req4() {
    }
   }
  })
- req9();
 }
 req4();
 
@@ -62,9 +61,9 @@ window.onload = function(){
   let corrigir = document.querySelectorAll('.color');
 
   corrigir[0].style.backgroundColor = 'black';
-  corrigir[1].style.backgroundColor = 'green';
-  corrigir[2].style.backgroundColor = 'blue';
-  corrigir[3].style.backgroundColor = 'red';
+  corrigir[1].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
+  corrigir[2].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
+  corrigir[3].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
 
   let blackcolor = document.querySelector('#black');
   blackcolor.classList.add('selected'); 
@@ -115,6 +114,6 @@ function req9() {
       pix[i].style.backgroundColor = 'white';
     }
 
-  })}
-
+  })
+}
 req9();

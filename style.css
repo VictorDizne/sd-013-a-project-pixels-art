@@ -1,4 +1,6 @@
-
+body{
+  background-color: royalblue;
+}
 .color {
   border: solid black 1px;
   width: 50px;
@@ -13,7 +15,7 @@
 }
 
 #color-palette {
-  border: solid violet 1px;
+  
   width: 223.4px;
 }
 
