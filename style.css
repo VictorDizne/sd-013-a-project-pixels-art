@@ -17,7 +17,7 @@ body {
   z-index: -1;
 }
 
-/* Cabeçalho */
+/*Cabeçalho */
 #head {
   margin-top: -38px;
   width: 100%;
@@ -25,21 +25,16 @@ body {
 
 #title {
   text-align: center;
-  font-family: 'Pacifico', cursive;
+  font-family: Pacifico, cursive;
   color: white;
   font-size: 3.5rem;
   font-weight: normal;
-  background: linear-gradient(
-    225deg,
-    rgba(255, 153, 102, 1) 0%,
-    rgba(255, 94, 98, 1) 100%
-  );
+  background: linear-gradient( 225deg, rgba(255, 153, 102, 1) 0%, rgba(255, 94, 98, 1) 100% );
   border-bottom: 5px solid white;
 }
 
-/* End Cabeçalho */
-/* Article */
-
+/*End Cabeçalho */
+/*Article */
 #color-palette {
   width: 100%;
   text-align: center;
@@ -54,26 +49,9 @@ body {
   cursor: pointer;
 }
 
-.color1 {
-  background-color: black;
-}
+/*End Article */
 
-.color2 {
-  background-color: #6f77f0;
-}
-
-.color3 {
-  background-color: #60f089;
-}
-
-.color4 {
-  background-color: red;
-}
-
-/* End Article */
-
-/* Pixel Board */
-
+/*Pixel Board */
 #table-row {
   margin: 15px auto;
   border-collapse: collapse;
@@ -87,25 +65,8 @@ body {
   cursor: cell;
 }
 
-/* End Pixel board */
-
-.pintou {
-  background-color: black;
-}
-
-.pintou2 {
-  background-color: #6f77f0;
-}
-
-.pintou3 {
-  background-color: #60f089;
-}
-
-.pintou4 {
-  background-color: red;
-}
-
-/* Botao */
+/*End Pixel board */
+/*Botao */
 #clear-board {
   display: block;
   margin: 1rem auto;
@@ -124,10 +85,9 @@ body {
   border: 2px solid black;
 }
 
-/* End Botao */
+/*End Botao */
 
-/* Input board-size */
-
+/*Input board-size */
 #board-size {
   margin: 10px auto;
   display: inline;
@@ -156,5 +116,4 @@ body {
   border: 2px solid black;
 }
 
-
-/* End Input board-size */
+/*End Input board-size */

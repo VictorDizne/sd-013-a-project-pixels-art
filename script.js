@@ -13,15 +13,31 @@ const granimInstance = new Granim({
   },
 });
 
+// Requisito 12 - Com Ajuda do Matheus Duarte <3
+
+function corAleatoria() {
+  let letras = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i += 1) {
+    color += letras[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const black = (document.querySelector('.color1').style.backgroundColor = 'black');
+const cor2 = (document.querySelector('.color2').style.backgroundColor = corAleatoria());
+const cor3 = (document.querySelector('.color3').style.backgroundColor = corAleatoria());
+const cor4 = (document.querySelector('.color4').style.backgroundColor = corAleatoria());
+
 // Exercicio 7 - Coloca a classe selected na cor clicada
 const escolheCor = document.querySelectorAll('.color');
 
 escolheCor.forEach((color) => {
-  color.addEventListener('click', function () {
+  color.addEventListener('click', (cor) => {
     escolheCor.forEach((item) => {
       item.classList.remove('selected');
     });
-    this.classList.add('selected');
+    cor.target.classList.add('selected');
   });
 });
 
@@ -30,18 +46,12 @@ escolheCor.forEach((color) => {
 const tabela = document.querySelector('#table-row');
 
 function clicou(event) {
-  if (document.querySelector('.color1').classList.contains('selected')) {
-    event.target.classList.remove('pintou4', 'pintou2', 'pintou3');
-    event.target.classList.toggle('pintou');
-  } else if (document.querySelector('.color2').classList.contains('selected')) {
-    event.target.classList.remove('pintou', 'pintou3', 'pintou4');
-    event.target.classList.toggle('pintou2');
-  } else if (document.querySelector('.color3').classList.contains('selected')) {
-    event.target.classList.remove('pintou', 'pintou2', 'pintou4');
-    event.target.classList.toggle('pintou3');
-  } else if (document.querySelector('.color4').classList.contains('selected')) {
-    event.target.classList.remove('pintou', 'pintou3', 'pintou2');
-    event.target.classList.toggle('pintou4');
+  const pixelSelecionado = event.target;
+  const corElementoSelecionado = document.querySelector('.selected').style.backgroundColor;
+  if (pixelSelecionado.style.backgroundColor === corElementoSelecionado) {
+    pixelSelecionado.style.backgroundColor = 'white';
+  } else {
+    pixelSelecionado.style.backgroundColor = corElementoSelecionado;
   }
 }
 
@@ -52,7 +62,7 @@ tabela.addEventListener('click', clicou);
 function limpa() {
   const pixels = document.querySelectorAll('.pixel');
   for (const i of pixels) {
-    i.classList.remove('pintou', 'pintou2', 'pintou3', 'pintou4');
+    i.style.backgroundColor = null;
   }
 }
 
@@ -63,11 +73,10 @@ const imputNumber = document.querySelector('#board-size');
 const pixelBoard = document.querySelector('#pixel-board');
 
 function criaQuadro(value) {
-
   tabela.innerHTML = null;
   for (let tr = 0; tr < value; tr += 1) {
     const trs = document.createElement('tr');
-    for(let td = 0; td < value; td += 1) {
+    for (let td = 0; td < value; td += 1) {
       const tds = document.createElement('td');
       tds.classList.add('pixel');
       trs.appendChild(tds);
