@@ -27,3 +27,14 @@ function paintPixel(event) {
 for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener("click", paintPixel);
 }
+
+// Requisito 9
+
+const button = document.getElementById("clear-board");
+
+function clearPixels (){
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "white";
+    }
+}
+    button.addEventListener("click", clearPixels);
