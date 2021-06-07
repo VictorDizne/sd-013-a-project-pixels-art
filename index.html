@@ -8,58 +8,27 @@
   <title>Project Pixels Art</title>
 </head>
 <body>
-    <header>
-        <h1 id="title">Paleta de Cores</h1>
-      </header>
-        <section id="color-palette">
-          <div class="color black selected"></div>
-          <div class="color blue"></div>
-          <div class="color grey"></div>
-          <div class="color pink"></div>
-        </section>
-        <section>
-          <button id="clear-board">Limpar</button>
-        </section>
-        <div>
-          <table id="pixel-board">
-            <tr>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-            </tr>
-            <tr>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-            </tr>
-            <tr>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-            </tr>
-            <tr>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-            </tr>
-            <tr>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-              <td class="pixel"></td>
-            </tr>
-          </table>
-        </div>
+  <header class="topo">
+    <h1 id="title">Paleta de Cores</h1>
+  </header>
+  <div id="menu-colors">
+    <menu id="color-palette"></menu>
+  </div>
+  <div class="choices" id="boardgenerator">
+    <Label class="label">
+      Escolha a sua quantidade de pixels <br>
+      <input id="board-size" type="number" min="1" oninput="validity.valid||(value='')">
+    </Label> 
+    <button class="button" id="generate-board">VQV</button>
+    <br><br>
+    <button class="button" id="clear-board">Limpar</button> 
+  </div> 
   
+  <section class="board" id="pixel-board"></section>
+  <footer class="foot">
+    
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
