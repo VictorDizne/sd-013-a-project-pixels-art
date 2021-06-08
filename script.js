@@ -27,14 +27,10 @@ function setColorClass(event) {
   const elementToClick = document.querySelectorAll('.color');
   const classColor = 'color';
   const classSelect = 'color selected';
-  if (event.target.className === classSelect) {
-    event.target.className = classColor;
-  } else {
-    for (let index = 0; index < elementToClick.length; index += 1) {
-      elementToClick[index].className = classColor;
-    }
-    event.target.className = classSelect;
+  for (let index = 0; index < elementToClick.length; index += 1) {
+    elementToClick[index].className = classColor;
   }
+  event.target.className = classSelect;
 }
 
 function generatePalette() {
@@ -58,21 +54,6 @@ function generatePalette() {
   }
 }
 generatePalette();
-
-function setPixelColorSelected() {
-  const pixelTable = document.querySelector('#pixel-board');
-  pixelTable.addEventListener('click', function(event) {
-    const targetColor = event.target.style.backgroundColor;
-    const auxColor = document.querySelector('.selected');
-    const color = window.getComputedStyle(auxColor).backgroundColor;
-    if (targetColor !== color) {
-      event.target.style.backgroundColor = color;
-    } else {
-      event.target.style.backgroundColor = 'white';
-    }
-  });
-}
-setPixelColorSelected();
 
 function setEventForNewPixelGenerated(event) {
   const targetColor = event.target.style.backgroundColor;
@@ -131,3 +112,18 @@ function generateNewBoard() {
   });
 }
 generateNewBoard();
+
+function setPixelColorSelected() {
+  const pixelTable = document.querySelector('#pixel-board');
+  pixelTable.addEventListener('click', function(event) {
+    const targetColor = event.target.style.backgroundColor;
+    const auxColor = document.querySelector('.selected');
+    const color = window.getComputedStyle(auxColor).getPropertyValue('background-color');
+    if (targetColor !== color) {
+      event.target.style.backgroundColor = color;
+    } else {
+      event.target.style.backgroundColor = 'white';
+    }
+  });
+}
+setPixelColorSelected();
