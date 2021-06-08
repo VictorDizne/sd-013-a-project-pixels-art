@@ -1,53 +1,19 @@
+const cor = document.querySelector('#pixel-board');
+const divMain = document.querySelector('#color-palette');
+const botaoClear = document.querySelector('#clear-board');
+const ButaoSort = document.querySelector('#random-cor');
+
+botaoClear.innerHTML = 'Limpar';
+
 function Paleta() {
   const nCores = 4;
-  const divMain = document.querySelector('#color-palette');
   for (let i = 0; i < nCores; i += 1) {
-    const cor = document.createElement('div');
-    divMain.appendChild(cor);
-    cor.className = 'color';
+    const cor1 = document.createElement('div');
+    divMain.appendChild(cor1);
+    cor1.className = 'color';
   }
 }
 Paleta();
-
-function pret() {
-  const cor = document.querySelector('#pixel-board');
-  let rece = document.querySelector(".preto")
-  let receCor = window.getComputedStyle(rece)
-  let corBack = receCor.getPropertyValue("background-color")
-  cor.addEventListener('click', (event) => {
-    event.target.style.background = corBack
-  });
-}
-
-function ver() {
-  const cor = document.querySelector('#pixel-board');
-  let rece = document.querySelector(".vermelho")
-  let receCor = window.getComputedStyle(rece)
-  let corBack = receCor.getPropertyValue("background-color")
-  cor.addEventListener('click', (event) => {
-    event.target.style.background = corBack
-  });
-}
-
-function verd() {
-  const cor = document.querySelector('#pixel-board');
-  let rece = document.querySelector(".verde")
-  let receCor = window.getComputedStyle(rece)
-  let corBack = receCor.getPropertyValue("background-color")
-  cor.addEventListener('click', (event) => {
-    event.target.style.background = corBack
-  });
-}
-
-function amarelo() {
-  const cor = document.querySelector('#pixel-board');
-  let rece = document.querySelector(".amarelo")
-  let receCor = window.getComputedStyle(rece)
-  let corBack = receCor.getPropertyValue("background-color")
-  cor.addEventListener('click', (event) => {
-    event.target.style.background = corBack
-  });
-}
 
 function tabela() {
   const n = document.querySelector('#board-size').value;
@@ -60,13 +26,12 @@ function tabela() {
   } else if (linhas > 50) {
     linhas = 50;
   }
-  const divB = document.querySelector('#pixel-board');
-  while (divB.firstChild) { // apaga todos os filhos de divB antes de criar.
-    divB.removeChild(divB.firstChild);
+  while (cor.firstChild) { // apaga todos os filhos de cor antes de criar.
+    cor.removeChild(cor.firstChild);
   }
   for (let i = 0; i < linhas; i += 1) {
     const caixa = document.createElement('tr');
-    divB.appendChild(caixa);
+    cor.appendChild(caixa);
     for (let j = 0; j < linhas; j += 1) {
       const pixel = document.createElement('td');
       caixa.appendChild(pixel);
@@ -79,10 +44,9 @@ entraNum.addEventListener('click', tabela);
 
 function valorP() {
   const linhas = 5;
-  const divB = document.querySelector('#pixel-board');
   for (let i = 0; i < linhas; i += 1) {
     const caixa = document.createElement('tr');
-    divB.appendChild(caixa);
+    cor.appendChild(caixa);
     for (let j = 0; j < linhas; j += 1) {
       const pixel = document.createElement('td');
       caixa.appendChild(pixel);
@@ -96,6 +60,7 @@ function cores() {
   for (let j = 0; j < listaC.length; j += 1) {
     if (listaC[j] === listaC[0]) {
       listaC[j].classList.add('preto');
+      listaC[j].classList.add('selected');
     } else if (listaC[j] === listaC[1]) {
       listaC[j].classList.add('vermelho');
     } else if (listaC[j] === listaC[2]) {
@@ -107,70 +72,49 @@ function cores() {
 }
 cores();
 
-window.onload = function inicio() {
-  const elementoCor = document.querySelector('.preto');
-  elementoCor.classList.add('selected');
-  pret();
-  valorP();
-  dudu()
-  function colorido() {
-    const corMae = document.querySelectorAll('.color');
-    const tabCor = document.querySelector('#color-palette');
-    tabCor.addEventListener('click', () => {
-      for (let i = 0; i < corMae.length; i += 1) {
-        const element = corMae[i];
-        if (element.classList.contains('selected')) {
-          if (element.classList.contains('preto')) {
-            pret();
-          } else if (element.classList.contains('vermelho')) {
-            ver();
-          } else if (element.classList.contains('verde')) {
-            verd();
-          } else if (element.classList.contains('amarelo')) {
-            amarelo();
-          }
-        }
-      }
-    });
-  }
-  colorido();
-};
+function ver() {
+  const rece = document.querySelector('.selected');
+  const receCor = window.getComputedStyle(rece);
+  const corBack = receCor.getPropertyValue('background-color');
+  cor.addEventListener('click', (event) => {
+    event.target.style.background = corBack;
+  });
+}
 
 function selecCores() {
-  const corMae = document.querySelector('#color-palette');
-  corMae.addEventListener('click', (event) => {
+  divMain.addEventListener('click', (event) => {
     const apaga = document.querySelector('.selected');
     apaga.classList.remove('selected');
     event.target.classList.add('selected');
+    ver();
   });
 }
 selecCores();
 
 // Pinta os pixels de branco
 function clear() {
-  const buton = document.querySelector('#clear-board');
-  buton.innerHTML = 'Limpar';
-  buton.addEventListener('click', () => {
-    const quadro = document.querySelectorAll('.pixel');
-    for (let i = 0; i < quadro.length; i += 1) {
-      quadro[i].style.background = "white"
-    }
-    console.log(quadro);
-  });
-}
-clear();
-
-function sortCor(){
-  let r = Math.random() * 255
-  let g = Math.random() * 255
-  let b = Math.random() * 255
-  return `rgb(${r},${g},${b})`
+  const quadro = document.querySelectorAll('.pixel');
+  for (let i = 0; i < quadro.length; i += 1) {
+    quadro[i].style.background = 'white';
+  }
 }
 
-function dudu(){
-  document.querySelector(".amarelo").style.background = sortCor()
-  document.querySelector(".verde").style.background = sortCor()
-  document.querySelector(".vermelho").style.background = sortCor()
+function sortCor(opacidade = 1) {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  return `rgb(${r},${g},${b}, ${opacidade})`;
 }
-const ButaoSort = document.querySelector("#random-cor")
-ButaoSort.addEventListener("click",dudu)
+
+function dudu() {
+  document.querySelector('.amarelo').style.background = sortCor();
+  document.querySelector('.verde').style.background = sortCor();
+  document.querySelector('.vermelho').style.background = sortCor();
+}
+
+botaoClear.addEventListener('click', clear);
+ButaoSort.addEventListener('click', dudu);
+
+ver();//
+valorP();//
+dudu();//
