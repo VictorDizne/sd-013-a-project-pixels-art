@@ -36,3 +36,8 @@
   border: black solid 1px;
   display: inline-block;
 }
+
+#pixel-board {
+  max-width: 20%;
+  margin-top: 10px;
+}
