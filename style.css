@@ -1,13 +1,29 @@
-.color{
-    border: solid 1px black;
-    height: 40px;
-    width: 40px; 
+#title {
+  text-align: center;
+}
+.color {
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
 }
 
-.pixel{
-    border: solid 1px black;
-    height: 40px;
-    width: 40px; 
-    background-color: white;
+.pixel {
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
 
+#clear-board {
+  margin-left: 47%;
+}
+
+#pixel-board {
+  display: block;
+  margin-left: 40%;
+}
+
+#color-palette{
+    display: block;
+    margin-left: 42%;
 }
