@@ -1,7 +1,8 @@
+const firstColor = document.querySelector(".selected");
+let otherColors = document.querySelectorAll(".color");
+
 function colorsTable() {
-  const firstColor = document.querySelector(".selected");
   firstColor.style.backgroundColor = "black";
-  let otherColors = document.querySelectorAll(".color");
   for (let index = 1; index < 4; index += 1) {
     otherColors[index].style.backgroundColor = rgbRadom();
   }
@@ -24,19 +25,34 @@ function rgbRadom(radomColor) {
 //   for (let index = 0; index <= numeroUsuario )
 // }
 
-function selectColor() {
-  let td = 4;
-  for (let index = 0; index <= td; index += 1) {
-  let disponibleColors = document.querySelectorAll(".color")[index];
-  disponibleColors.addEventListener("click", clickPaleta);
-  }
-  function clickPaleta() {
-  console.log("teste");
+let colors = document.getElementsByClassName('color');
+for (let i = 0; i < colors.length; i += 1) {
+  colors[i].addEventListener('click', () => {
+    removeSelected();
+    colors[i].classList.add('selected');
+  });
+}
+function removeSelected() {
+  for (let i = 0; i < colors.length; i += 1) {
+    if (colors[i].classList.contains('selected')) {
+      colors[i].classList.remove('selected');
+    }
   }
 }
-selectColor();
 
-// function paintingTable() {
-//   let pixels = document.querySelectorAll(".pixel");
 
-// }
+let allColors = document.getElementsByClassName('color');
+let pixels = document.getElementsByClassName('pixel');
+
+function extractBackground() {
+  for (let i = 0; i < allColors.length; i += 1) {
+    if (allColors[i].classList.contains('selected')) {
+      return allColors[i].style.backgroundColor;
+    }
+  }
+}
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', () => {
+    pixels[i].style.backgroundColor = extractBackground();
+  })
+}
