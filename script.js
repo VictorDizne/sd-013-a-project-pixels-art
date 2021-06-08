@@ -52,7 +52,7 @@ function pincel(event) {
   if (evento.target.classList.contains('pixel')) {
     const selectedElement = document.querySelector('.selected');
     const SelectColor = window.getComputedStyle(selectedElement, null)
-    .getPropertyValue('background-color');
+      .getPropertyValue('background-color');
     evento.target.style.backgroundColor = SelectColor;
   }
 }
