@@ -49,11 +49,10 @@ div4.addEventListener('click', mudaDiv);
 const pixelBoard = document.querySelector('#pixel-board');
 
 function pincel(event) {
-  const evento = event;
-  if (evento.target.classList.contains('pixel')) {
+  if (event.target.classList.contains('pixel')) {
     const selectedElement = document.querySelector('.selected');
     const SelectColor = window.getComputedStyle(selectedElement, null).getPropertyValue('background-color');
-    evento.target.style.backgroundColor = SelectColor;
+    event.target.style.backgroundColor = SelectColor;
   }
 }
 pixelBoard.addEventListener('click', pincel);
