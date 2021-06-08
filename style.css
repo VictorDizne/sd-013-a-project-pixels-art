@@ -29,3 +29,10 @@
   width: 40px;
   height: 40px;
 }
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
+  display: inline-block;
+}
