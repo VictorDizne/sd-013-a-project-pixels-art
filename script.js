@@ -26,3 +26,19 @@ function pixelBoard() {
   });
 }
 pixelBoard();
+
+// buscar elemento pela classe selected
+// cor selecionada getcomputedstyle em selected pra pegar o estilo , especificar background color
+
+function makeColorInPixel() {
+  const getPixelBoard = document.querySelector('#pixel-board');
+  getPixelBoard.addEventListener('click', (event) => {
+    if (event.target.classList.contains('pixel')) {
+      const getSelected = document.querySelector('.selected');
+      const putColor = window.getComputedStyle(getSelected, null).getPropertyValue('background-color');
+      event.target.style.backgroundColor = putColor;
+    }
+  });
+}
+
+makeColorInPixel();
