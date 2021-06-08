@@ -1,4 +1,4 @@
-//Cria pixel Board.
+// Requisito 4;
 function createPixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
   for (let indexLine = 0; indexLine < 5; indexLine += 1) {
@@ -15,18 +15,12 @@ function createPixelBoard() {
 
 createPixelBoard();
 
-// window.onload = function picBlack() {
-//   const blackColor = document.querySelector('#first');
-//   blackColor.classList.add('selected');
-// };
-
-//Recupera as cores com classe 'color'.
+// Recupera as cores com classe 'color';
 let getColors = document.getElementsByClassName('color');
-
 let getPaletteColor = document.querySelector('#color-palette');
 
 
-//Adiciona evento de click para selecionar a cor.
+// Requisito 7;
 getPaletteColor.addEventListener('click', function(event) {
   let colorClicked = event.target;
     if (colorClicked.className !== 'selected') {
@@ -39,8 +33,10 @@ getPaletteColor.addEventListener('click', function(event) {
     }
 })
 
+// Recupera quadro de pixels em branco;
 const getPixelBoard = document.getElementById('pixel-board');
 
+// Requisito 8;
 getPixelBoard.addEventListener('click', function(event) {
   const pixelClicked = event.target;
   const colorSelected = document.getElementsByClassName('selected');
@@ -48,18 +44,19 @@ getPixelBoard.addEventListener('click', function(event) {
   pixelClicked.style.backgroundColor = colorUsed;
 })
 
-//Recupera elemento pai dos pixels em branco.
-// let pixelChoose = document.getElementsByClassName('line');
+// Requisito 9;
+function createBtn() {
+  const clearBtn = document.createElement('button');
+  clearBtn.setAttribute('id', 'clear-board');
+  clearBtn.innerText = 'Limpar';
+  document.body.insertBefore(clearBtn, getPixelBoard);
 
-// for (let indexPixel = 0; indexPixel < pixelChoose.length; indexPixel += 1) {
-//   document.addEventListener('click', function(event) {
-//     let pixelClicked = event.target;
-//     let colorSelected = document.getElementsByClassName('selected').getAttribute('id');
-//     pixelClicked.setAttribute.id = colorSelected;  
-//   })
-// }
+  clearBtn.addEventListener('click', function() {
+    const getPixels = document.getElementsByClassName('pixel');
+    for (let index = 0; index < getPixels.length; index += 1) {
+      getPixels[index].style.backgroundColor = 'white';
+    }
+  })
+}
 
-
-
-
-
+createBtn();
