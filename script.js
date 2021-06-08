@@ -47,18 +47,18 @@ div4.addEventListener('click', mudaDiv);
 
 // AQUI QUE A MAGICA ACONTECE
 const pixelBoard = document.querySelector('#pixel-board');
-
 function pincel(event) {
-  if (event.target.classList.contains('pixel')) {
+  const evento = event;
+  if (evento.target.classList.contains('pixel')) {
     const selectedElement = document.querySelector('.selected');
-    const SelectColor = window.getComputedStyle(selectedElement, null).getPropertyValue('background-color');
-    event.target.style.backgroundColor = SelectColor;
+    const SelectColor = window.getComputedStyle(selectedElement, null)
+                              .getPropertyValue('background-color');
+    evento.target.style.backgroundColor = SelectColor;
   }
 }
 pixelBoard.addEventListener('click', pincel);
 
 // limpa pixels
-
 const button = document.getElementById('clear-board');
 button.innerHTML = 'Limpar';
 button.addEventListener('click', () => {
