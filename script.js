@@ -46,7 +46,6 @@ div3.addEventListener('click', mudaDiv);
 div4.addEventListener('click', mudaDiv);
 
 // AQUI QUE A MAGICA ACONTECE
-const pixels = document.querySelectorAll('.pixel');
 const pixelBoard = document.querySelector('#pixel-board');
 
 function pincel(event) {
@@ -74,8 +73,8 @@ button.addEventListener('click', () => {
 const buttonVqv = document.getElementById('generate-board');
 
 buttonVqv.addEventListener('click', () => {
-  const pixelBoard = document.getElementById('pixel-board');
-  pixelBoard.innerHTML = '';
+  const boardPixel = document.getElementById('pixel-board');
+  boardPixel.innerHTML = '';
   const inputField = document.getElementById('board-size');
   createPixels(inputField.value);
 });
