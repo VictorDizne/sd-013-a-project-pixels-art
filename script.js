@@ -10,10 +10,9 @@ window.onload = function () {
   }
     boardCreator();
 
-  function selectCollor() {
+  function colors() {
     let pallete = document.getElementsByClassName('color');
     let otherColors = ['blue', 'red', 'yellow'];
-    console.log(pallete);
       for (let i = 0; i < pallete.length; i+=1) {
       pallete[0].style.background = 'black';
       pallete[0].id = 'black';
@@ -24,7 +23,21 @@ window.onload = function () {
       }
       }
   }
-  selectCollor();
+  colors();
+  function selectColors() {
+  const paletaDeCores = document.getElementById('color-palette');
+  paletaDeCores.addEventListener('click', function(i) {
+  clicar(i.target.id); 
+  });
+  }
+  selectColors()
+
+  function clicar(idColor) {
+  const classeSelecionada = document.querySelector('.selected');  
+  classeSelecionada.classList.remove('selected');
+  const itenSelector = document.getElementById(idColor);
+  itenSelector.classList.add('selected');
+  }
 }
 
 
