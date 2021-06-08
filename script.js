@@ -56,3 +56,13 @@ for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = extractBackground();
   })
 }
+
+let clearButton = document.getElementById('clear-board');
+function clearPixels() {
+  for (let i = 0; i < pixels.length; i += 1) {
+  clearButton.addEventListener('click', () => {
+    pixels[i].style.backgroundColor = 'white';
+    })
+  }
+}
+clearPixels();
