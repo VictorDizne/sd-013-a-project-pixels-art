@@ -1,9 +1,9 @@
-#color-palette {
-  padding-bottom: 20px;
-}
-
 body {
   text-align: center;
+}
+
+#color-palette {
+  padding-bottom: 10px;
 }
 
 .color {
