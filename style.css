@@ -31,8 +31,8 @@
 }
 
 .pixel {
-  width: 50vw;
-  height: 50vw;
+  width: 50px;
+  height: 50px;
   border: black solid 1px;
   display: inline-block;
 }
