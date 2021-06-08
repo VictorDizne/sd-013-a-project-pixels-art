@@ -4,6 +4,7 @@ window.onload = function () {
         for (let i = 1; i <= todosPixels; i+=1) {
             let pixelBoard = document.getElementById('pixel-board'); 
             let divPixel = document.createElement('div');
+            divPixel.id = i;
             divPixel.className = "pixel";
             pixelBoard.appendChild(divPixel);   
         }
@@ -34,7 +35,22 @@ selectColor ()
   function clicar(idColor) {
       const classeSelecionada = document.querySelector('.selected'); 
       classeSelecionada.classList.remove('selected');
-    const itenSelector = document.getElementById(idColor);
+      const itenSelector = document.getElementById(idColor);
     itenSelector.classList.add('selected');     
 }
-} 
+   function selectPix () {
+      const boardOfPixels = document.getElementById('pixel-board');
+      boardOfPixels.addEventListener('click', function(p) {colorir (p.target.id);
+    });
+   }
+
+   selectPix();
+
+   function colorir(p) {
+   const corSelecionada = document.querySelector('.selected');
+   const pixel = document.getElementById(p);
+   pixel.style.background = corSelecionada.id;
+   console.log(p);
+   }    
+}
+ 
