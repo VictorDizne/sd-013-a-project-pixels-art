@@ -15,3 +15,15 @@ function colors() {
     });
 } 
 colors();
+
+function getColor() {
+    const pixels = document.querySelector('#pixel-board');
+    pixels.addEventListener('click', (event) => {
+        if (event.target.classList.contains('pixel')) {
+        const selected = document.querySelector('.selected');
+        const style = window.getComputedStyle(selected, null).getPropertyValue('background-color');
+        event.target.style.backgroundColor = style;
+            }
+        }); 
+    }
+getColor();
