@@ -1,7 +1,6 @@
 body {
   text-align: center;
   background-image: url(./steven.jpg);
-  
 }
 
 h1 {
@@ -75,8 +74,7 @@ h1 {
   font-size: 15px;
   font-family:'Courier New', Courier, monospace;
   letter-spacing: 2px;
-  position: relative;
-  left: 30px;
+  
 }
 
 #generate-board {
@@ -89,9 +87,7 @@ h1 {
   font-size: 15px;
   font-family:'Courier New', Courier, monospace;
   letter-spacing: 2px;
-  position: relative;
-  bottom: 30px;
-  right: 40px;
+ 
 }
 
 #board-size {
@@ -100,9 +96,6 @@ h1 {
   border: 1px solid;
   font-family:'Courier New', Courier, monospace;
   letter-spacing: 2px;
-  position: relative;
-  left: 150px;
-  top: 13px;
 }
 
 #board-size:hover {
