@@ -12,3 +12,10 @@ function pixelBoard() {
   }
 }
 pixelBoard();
+
+function initialBlackColor() {
+  const blackColor = document.querySelector('.black');
+  blackColor.classList.add('selected');
+}
+
+window.onload = initialBlackColor;
