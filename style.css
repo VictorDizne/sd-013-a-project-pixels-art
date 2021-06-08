@@ -7,12 +7,12 @@ body {
   width: 40px;
   height: 40px;
   border: black solid 1px;
-  padding: 4px;  
+  padding: 4px;
   margin-left: 4px;
 }
 
 .pixel-board {
-  display: table ;
+  display: table;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +27,7 @@ body {
   text-align: center;
 }
 
-.line {  
+.line {
   display: table-row;
   text-align: center;
 }
