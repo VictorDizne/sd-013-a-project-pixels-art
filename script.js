@@ -46,4 +46,12 @@ function paint() {
 
 paint();
 
+// recupera o botao btnClear e depois percorre no array dos pixels para setar o bg pra white
+let btnClear = document.getElementById('btnClear');
+btnClear.addEventListener('click', function(){
+	console.log("teste");
+	for(let index = 0; index < pixels.length; index +=1 ){
+		pixels[index].style.backgroundColor = "white";
+	};
+});
 //agradecimento ao Luiz Furtado por ter resolvido comigo 2 bugs do projeto.
