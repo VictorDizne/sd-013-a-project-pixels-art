@@ -10,7 +10,17 @@ h1 {
 
 #color-palette {
   text-align: center;
-  margin: 30px;
+  margin: 10px;
+}
+
+#aling {
+  padding: 15px;
+  text-align: center;
+}
+#clear-board {
+  border-radius: 3px;
+  padding: 10px;
+  border: solid 1px black;
 }
 
 .color {
@@ -26,7 +36,7 @@ h1 {
 
 #pixel-board {
   display: inline-flex;
-  padding: 5%;
+  border: black solid 1px;
 }
 
 .pixel {
