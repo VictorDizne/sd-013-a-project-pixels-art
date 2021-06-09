@@ -5,9 +5,11 @@ body {
 
 .color {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 50px;
   border: 1px solid black;
+  width: 78px;
+  height: 78px;
 }
 
 #color-palette {
@@ -15,12 +17,6 @@ body {
   justify-content: space-around;
   flex-direction: row;
   width: 50%;
-}
-
-.color {
-  border: 1px black solid;
-  width: 38px;
-  height: 38px;
 }
 
 #black {
@@ -42,15 +38,25 @@ body {
 td {
   border: 1px black solid;  
   display: table-cell;
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
+  background-color: white;
+  text-align: center;
 }
 
 button {
-  cursor: s-resize;
+  cursor: grab;
   padding: 15px;
   border-radius: 10px;
   display: flex;
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
+#table {
+  display: flex;
+  justify-content: center;
+}
+
