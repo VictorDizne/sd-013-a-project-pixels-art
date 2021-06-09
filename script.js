@@ -4,7 +4,7 @@ function pixelBoard() {
     line.className = 'row';
     document.querySelector('#pixel-board').appendChild(line);
 
-    for (let index = 0; index < 5; index += 1) {
+    for (let index0 = 0; index0 < 5; index0 += 1) {
       const col = document.createElement('div');
       col.className = 'pixel';
       line.appendChild(col);
@@ -19,3 +19,20 @@ function initialBlackColor() {
 }
 
 window.onload = initialBlackColor;
+
+function select() {
+  const color = document.getElementsByClassName('color');
+  const palette = document.getElementById('color-palette');
+
+  function colorSelect(event) {
+    for (let index1 = 0; index1 < color.length; index1 += 1) {
+      if (color[index1].classList.contains('selected')) {
+        color[index1].classList.remove('selected');
+      }
+    }
+    event.target.classList.add('selected');
+  }
+
+  palette.addEventListener('click', colorSelect);
+}
+select();
