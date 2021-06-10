@@ -1,9 +1,10 @@
 // Função para deixar pixels brancos
 function whiteColor() {
-let divs = document.querySelectorAll(".pixel");
-for (let indice = 0; indice < divs.length; indice += 1) {
-  if (divs[indice] !== 'white')
-    divs[indice].style.backgroundColor = 'white';
+  const divs = document.querySelectorAll(".pixel");
+  for (let indice = 0; indice < divs.length; indice += 1) {
+    if (divs[indice] !== 'white') {
+      divs[indice].style.backgroundColor = 'white';
+    }
   }
 }
 
