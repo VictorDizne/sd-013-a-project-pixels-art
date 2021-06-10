@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Pixels art</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <header>
-      <h1 id="title">Paleta de Cores</h1>
-    </header>
-    <div id="color-palette">
-      <div class="color" class="selected" style="background-color: black;" onclick="setPenColour('black')" selected ></div>
-      <div class="color" style="background-color: orange;" onclick="setPenColour('orange')"></div>
-      <div class="color" style="background-color: blue;" onclick="setPenColour('blue')"></div>
-      <div class="color" style="background-color: green;" onclick="setPenColour('green')"></div>
-    </div>
-    <div id="aling">
-      <button id="clear-board" onclick="whiteColor()">Limpar</button>
-    </div>
-    <div class="containerDePixels">
-      <div id="pixel-board">
-        <div class="table">
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-        </div>
-        <div class="table">
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-            <div class="pixel" onclick="setPixelColour(this)"></div>
-        </div>
-        <div class="table">
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-        </div>
-        <div class="table">
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-        </div>
-        <div class="table">
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
-            <div class="pixel"onclick="setPixelColour(this)"></div>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Project Pixels art</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
+  </head>
+  <body>
+      <header>
+        <h1 id="title">Paleta de Cores</h1>
+      </header>
+      <div id="color-palette">
+        <button class="color" style="background-color: black;" onclick="setPenColour('black')" ></button>
+        <button class="color" style="background-color: orange;" onclick="setPenColour('orange')"></button>
+        <button class="color" style="background-color: blue;" onclick="setPenColour('blue')"></button>
+        <button class="color" style="background-color: green;" onclick="setPenColour('green')"></button>
+      </div>
+      <div id="aling">
+        <button id="clear-board" onclick="whiteColor()">Limpar</button>
+      </div>
+      <div class="containerDePixels">
+        <div id="pixel-board">
+          <!-- Por meio do uso do 'this' foi possível pintar os pixels, pois nele fica contodo o valor do objeto que invocou a função. -->
+          <div class="table">
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+          </div>
+          <div class="table">
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+          </div>
+          <div class="table">
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+          </div>
+          <div class="table">
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+          </div>
+          <div class="table">
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+              <div class="pixel" onclick="setPixelColour(this)" ></div>
+          </div>
         </div>
       </div>
-    </div>
 
-</body>
+  </body>
 </html>
