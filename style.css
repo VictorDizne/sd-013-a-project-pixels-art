@@ -1,6 +1,8 @@
-#title {}
-
-#color-palette{
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box
 }
 .color{
   border: 1px solid black;
@@ -25,14 +27,29 @@
 }
 
 .pixel{
+  background-color: white;
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  display: inline-block;
+  display: table-cell;
 }
 #pixel-board{
-  width: 240px;
-  height: 240px;
+  display: table;
+  padding: 5px;
+}
+#color-palette{
+  margin-left: 10px;
+  padding: 5px;
+  display: table-row;
+}
+#title{
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.pixelBorder{
+  display: table-row;
+  padding: 5px;
+
 }
 
 
