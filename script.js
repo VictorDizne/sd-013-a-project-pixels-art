@@ -2,8 +2,14 @@ const paletaCores = document.getElementsByClassName('color');
 const colorArray = ['black', 'red', 'blue', 'green'];
 let bgColor = 'black';
 
-for (let i = 0; i < 4; i += 1) {
+for (let i = 0; i < paletaCores.length; i += 1) {
   paletaCores[i].style.backgroundColor = colorArray[i];
+  paletaCores[i].addEventListener('click', (e) => {
+    for (let paleta of paletaCores) {
+      paleta.classList.remove('selected');
+    }
+    e.target.classList.add('selected');
+  });
 }
 
 function criaElemento(nome) {
