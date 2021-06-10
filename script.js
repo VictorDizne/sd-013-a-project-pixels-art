@@ -1,5 +1,5 @@
 
-function gradePixel(){
+/* function gradePixel(){
 let board = document.querySelector("#pixel-board");
 let quadrado = 5;
 
@@ -18,17 +18,44 @@ for(index =0; index< quadrado; index+=1){
   }
 }
 
-}
+} */
+
+function gradePixel(quadrado){
+  let board = document.querySelector("#pixel-board");
+  //let quadrado = 5;
+
+  inputTexto = document.querySelector("#board-size");
+
+  for(index =0; index< quadrado; index+=1){
+  
+    let linha = document.createElement("div");
+    linha.className = "linha";
+    board.appendChild(linha);
+  
+  
+    for(let i=0; i< quadrado ; i+=1){
+  
+      let blocos = document.createElement("div");
+      blocos.className = "pixel";
+      blocos.addEventListener("click", pintaPixel);
+      linha.appendChild(blocos);
+    }
+  }
+  
+  }
+
+gradePixel(5);
 
 
-gradePixel();
+
 
 function classSelect(event){
 
 let selectedELement = document.querySelector(".selected");
     selectedELement.classList.remove("selected");
 
-    event.target.classList.add("selected");    
+    event.target.classList.add("selected");
+           
 
 }
 
@@ -63,7 +90,10 @@ function pintaPixel(event){
   else if( selectedELement === cor4){
     event.target.style.backgroundColor ="red";
   }
-
+ /*  else if( event.target.style.backgroundColor ="red" && selectedELement === cor4){
+    event.target.style.backgroundColor ="white";
+  }  PERGUNTAR PRA ALGUEM DPS;
+ */
 }
 
 /* let listaPixel = document.querySelectorAll(".pixel")[0];
@@ -83,6 +113,7 @@ function addPixel(){
 
   }
 }
+
 addPixel();
 
  function resetaTela(event){
@@ -101,3 +132,40 @@ addPixel();
 
 let botao = document.querySelector("#clear-board");
 botao.addEventListener("click", resetaTela);
+
+// funcão pra alterar o tamanho do board
+
+function mudaGradePixel(){
+
+  let inputTexto = document.querySelector("#board-size");
+  let linhaLista = document.querySelectorAll(".linha");
+  let listaPixels = document.querySelectorAll(".pixel");
+
+  for(let index = 0 ; index < listaPixels.length  ; index +=1){
+    listaPixels[index].remove();
+  }   
+  for( let i=0; i<linhaLista.length; i+=1){
+    linhaLista[i].remove();
+  }
+
+  if(inputTexto.value < 5 ){
+    gradePixel(5);
+    inputTexto.value =""; 
+    alert("Board inválido!");
+  }
+
+  else if(inputTexto.value > 50){
+    gradePixel(50);
+    inputTexto.value =""; 
+    alert("Board inválido!");
+  }
+
+  else{
+    gradePixel(inputTexto.value);
+    inputTexto.value =""; 
+  }
+
+}
+
+let botaoGenerate = document.querySelector("#generate-board");
+botaoGenerate.addEventListener("click", mudaGradePixel);

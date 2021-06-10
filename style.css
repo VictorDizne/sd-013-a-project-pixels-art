@@ -1,8 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .color{
   display: inline-block;
   width: 50px;
   height: 50px;
   border: solid 1px black;
+  margin-left: 20px;
 }
 
 #color-1{
@@ -21,6 +27,12 @@
   background-color: red;
 }
 
+#pixel-board{
+  margin-left: 20px;
+  margin-top: 15px;
+  
+}
+
 .pixel {
 
   border: solid 1px black;
@@ -28,6 +40,17 @@
   width: 40px;
   display: inline-block;
   background-color: white;
-
 }
 
+.linha{
+  height:40px;
+}
+
+#clear-board{
+  margin-left:20px;
+}
+
+#board-size{
+  width: 76px;
+  margin-left: 20px;
+}
