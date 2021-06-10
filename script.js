@@ -2,6 +2,7 @@ const paletaCores = document.getElementsByClassName('color');
 const colorArray = ['black', 'red', 'blue', 'green'];
 let bgColor = 'black';
 
+
 for (let i = 0; i < paletaCores.length; i += 1) {
   paletaCores[i].style.backgroundColor = colorArray[i];
   paletaCores[i].addEventListener('click', (e) => {
@@ -42,3 +43,15 @@ for (let classColor of pixelColor) {
 function pintaPixel(e) {
   e.target.style.backgroundColor = bgColor;
 }
+
+
+const botao = document.getElementById('clear-board');
+let quadroCor = document.querySelectorAll('#pixel-board .pixel');
+botao.addEventListener('click', () => {
+  for (let cor of quadroCor) {
+    cor.style.backgroundColor = 'white' 
+  } 
+});
+
+
+
