@@ -1,10 +1,14 @@
+*{
+  text-align: center;
+  margin: auto;
+}
 #title{
   font-size: 40px;
   color: green;
 }
 #color-pallete{
-  height: 400px;
-  width: 600px;
+  height: 100PX;
+  width: 50%;
 }
 .color{
   display: inline-block;
@@ -14,8 +18,7 @@
   margin: 5px;
 }
 #pixel-board{
-  margin-top: 50px;
-  margin-left: 5px;
+  margin-top: 40px;
 }
 .row{
   height: 40px;
@@ -25,4 +28,16 @@
   height: 40px;
   width: 40px;
   border: 1px solid black;
+}
+#acoes{
+  width: 50%;
+  height: 10%;
+  padding: 20px;
+  border: black solid 2px;
+  background-color: grey;
+}
+.acao{
+  display: inline-block;
+  margin: 5px;
+  font-size: 20px;
 }

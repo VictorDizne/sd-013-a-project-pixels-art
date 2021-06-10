@@ -11,21 +11,27 @@
   <h1 id="title">Paleta de Cores</h1>
   <section id="color-palette">
     <div class="color">
-
     </div>
     <div class="color">
-
     </div>
     <div class="color">
-
     </div>
     <div class="color">
-
     </div>
   </section>
-  <button id="clear-board">Limpar</button>
-  <input id="board-size" type="number" min="1">
-  <button id="generate-board">VQV</button>
+  <section id="acoes">
+    <label class="acao" for="clear-board">
+      Apagar o tabuleiro:
+      <button class="acao" id="clear-board">Limpar</button>
+    </label>
+    <label class="acao" for="board-size">Tamanho do novo tabuleiro:
+      <input id="board-size" type="number" min="1" placeholder="5 a 50">
+    </label>
+    <br>
+    <label class="acao" for="generate-board">Gerar Tabuleiro:
+      <button id="generate-board">VQV</button>
+    </label>
+  </section>
   <section id="pixel-board">
   </section>
   <script src="script.js"></script>

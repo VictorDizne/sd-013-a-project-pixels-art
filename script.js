@@ -118,7 +118,9 @@ function setButtonCreateBoard(){
     }
   })
 }
-setButtonCreateBoard();
-setButtonCleanBoard();
-setColors();
-createBoard(5);
+window.onload = function (){
+  setButtonCreateBoard();
+  setButtonCleanBoard();
+  setColors();
+  createBoard(5);
+}
