@@ -47,7 +47,7 @@ function paint() {
 paint();
 
 // recupera o botao btnClear e depois percorre no array dos pixels para setar o bg pra white
-let btnClear = document.getElementById('btnClear');
+let btnClear = document.getElementById('clear-board');
 btnClear.addEventListener('click', function(){
 	console.log("teste");
 	for(let index = 0; index < pixels.length; index +=1 ){
