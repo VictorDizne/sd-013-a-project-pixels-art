@@ -44,7 +44,6 @@ function pintaPixel(e) {
   e.target.style.backgroundColor = bgColor;
 }
 
-
 const botao = document.getElementById('clear-board');
 let quadroCor = document.querySelectorAll('#pixel-board .pixel');
 botao.addEventListener('click', () => {

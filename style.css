@@ -1,5 +1,4 @@
 body {
-  background-color: aqua;
   padding: 0;
   margin: 0;
 }
@@ -20,29 +19,32 @@ body {
   height: 40px;
   border: 1px solid black;
   display: inline-block;
+
 }
 #pixel-boar {
   width: 200px;
 }
+
 .pixel {
   background-color: white;
-}
-.pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
 }
+
 .section {
   margin-left: 10px;
 }
 
-.clear-board{
+#clear-board {
+  color: white;
   padding: 3px;
+  margin-bottom: 10px;
   margin-top: 10px;
   margin-left: 10px;
   line-height: 3px;
   text-align: center;
-  background-color: rgb(141, 141, 158);
+  background-color: rgb(41, 41, 66);
   width: 80px;
   height: 25px;
   border-radius: 4px;
@@ -60,7 +62,4 @@ body {
   height: 25px;
   border-radius: 4px;
   cursor: pointer;
-}
-.cor {
-  background-color: white;
 }
