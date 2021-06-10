@@ -27,8 +27,7 @@ function pixelBoard() {
 }
 pixelBoard();
 
-// buscar elemento pela classe selected
-// cor selecionada getcomputedstyle em selected pra pegar o estilo , especificar background color
+// Requisito 8
 
 function makeColorInPixel() {
   const getPixelBoard = document.querySelector('#pixel-board');
@@ -42,3 +41,16 @@ function makeColorInPixel() {
 }
 
 makeColorInPixel();
+
+// Requisito 9
+
+function clearAllPixels() {
+  const buttonClearBoard = document.querySelector('#clear-board');
+  const getPixelFromBoard = document.querySelectorAll('#pixel-board .pixel');
+  buttonClearBoard.addEventListener('click', () => {
+    for (let index = 0; index < getPixelFromBoard.length; index += 1) {
+      getPixelFromBoard[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearAllPixels();
