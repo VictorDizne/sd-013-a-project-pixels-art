@@ -1,0 +1,42 @@
+body {
+  background-color: #282A36;
+  color: #F8F8F2;
+  font-family: "monaco", monospace;
+}
+
+#color-palette {
+  display: flex;
+  gap: 10px;
+}
+
+.color, .pixel {
+  display: block;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: #FF5555;
+}
+
+.green {
+  background-color: #50FA7B;
+}
+
+.blue {
+  background-color: #8BE9FD;
+}
+
+#pixel-board {
+  display: grid;
+  grid-template-columns: repeat(5, 42px);
+}
+
+.pixel {
+  background-color: white;
+}
