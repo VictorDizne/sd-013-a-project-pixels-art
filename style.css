@@ -1,14 +1,31 @@
 body { 
-    text-align: center;
+    text-align: center; 
 }
 
-#title { 
-    text-align: center;
-}
-
-.color{ 
+.color { 
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     height: 50px;
     width: 50px;
+}
+
+#black { 
+    background-color: rgb(0, 0, 0);
+}
+
+#red { 
+    background-color: rgb(250, 44, 44);
+}
+
+#blue { 
+    background-color: rgb(70, 70, 255);
+}
+
+#green { 
+    background-color: rgb(50, 173, 50);
+}
+
+#pixel-board {
+    display: table;
+    border: 1px solid rgb(0, 0, 0);
 }
