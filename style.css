@@ -58,3 +58,7 @@ button {
   justify-content: center;
 }
 
+#pixel-board {
+  border: 1px black solid; ;
+}
+
