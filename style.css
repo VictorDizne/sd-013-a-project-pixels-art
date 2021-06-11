@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-.color{
+.color {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -11,30 +11,28 @@
   margin-left: 20px;
 }
 
-#color-1{
+#color-1 {
   background-color: black;
 }
 
-#color-2{
-  background-color:blue;
+#color-2 {
+  background-color: blue;
 }
 
-#color-3{
+#color-3 {
   background-color: green;
 }
 
-#color-4{
+#color-4 {
   background-color: red;
 }
 
-#pixel-board{
+#pixel-board {
   margin-left: 20px;
   margin-top: 15px;
-  
 }
 
 .pixel {
-
   border: solid 1px black;
   height: 40px;
   width: 40px;
@@ -42,15 +40,15 @@
   background-color: white;
 }
 
-.linha{
-  height:40px;
+.linha {
+  height: 40px;
 }
 
-#clear-board{
-  margin-left:20px;
+#clear-board {
+  margin-left: 20px;
 }
 
-#board-size{
+#board-size {
   width: 76px;
   margin-left: 20px;
 }
