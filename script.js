@@ -144,7 +144,7 @@ function mudaGradePixel(){
     alert("Board inválido!");
   }
 
-  else if(inputTexto.value > 50){
+   if(inputTexto.value > 50){
     gradePixel(50);
     inputTexto.value =""; 
     alert("Board inválido!");
