@@ -18,7 +18,7 @@ window.onload = function whiteColor () {
 // Função que pinta o pixel conforme a cor selecionada
 function setPixelColour(event) {
   let pixelDiv = event.target;
-  pixelDiv.classList.add('red');
+  pixelDiv.classList.toggle('red');
 }
 
 let pixels = document.querySelectorAll('.table');
