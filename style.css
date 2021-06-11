@@ -30,6 +30,8 @@
 #pixel-board {
   margin-left: 20px;
   margin-top: 15px;
+  line-height: 0;
+  white-space: nowrap;
 }
 
 .pixel {
@@ -40,9 +42,6 @@
   background-color: white;
 }
 
-.linha {
-  height: 40px;
-}
 
 #clear-board {
   margin-left: 20px;

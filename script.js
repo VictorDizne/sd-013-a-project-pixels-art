@@ -1,16 +1,11 @@
-
 function gradePixel(quadrado){
   let board = document.querySelector("#pixel-board");
-  //let quadrado = 5;
-
-  inputTexto = document.querySelector("#board-size");
-
+  //inputTexto = document.querySelector("#board-size");
   for(index =0; index< quadrado; index+=1){
   
     let linha = document.createElement("div");
     linha.className = "linha";
     board.appendChild(linha);
-  
   
     for(let i=0; i< quadrado ; i+=1){
   
@@ -130,13 +125,15 @@ function mudaGradePixel(){
   let inputTexto = document.querySelector("#board-size");
   let linhaLista = document.querySelectorAll(".linha");
   let listaPixels = document.querySelectorAll(".pixel");
+  let board = document.querySelector("#pixel-board");
 
-  for(let index = 0 ; index < listaPixels.length  ; index +=1){
+    board.innerHTML ="";
+ /*  for(let index = 0 ; index < listaPixels.length  ; index +=1){
     listaPixels[index].remove();
   }   
   for( let i=0; i<linhaLista.length; i+=1){
     linhaLista[i].remove();
-  }
+  } */
 
   if(inputTexto.value < 5 ){
     gradePixel(5);
@@ -157,5 +154,5 @@ function mudaGradePixel(){
 
 }
 
-let botaoGenerate = document.querySelector("#generate-board");
+const botaoGenerate = document.querySelector("#generate-board");
 botaoGenerate.addEventListener("click", mudaGradePixel);
