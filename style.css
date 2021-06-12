@@ -1,19 +1,32 @@
-.box {
+.color {
+    height: 100px;
+    width: 100px;
     border: 1px solid black;
-}
+    display: inline-block;
+  }
+  
+.black {
+    background-color: black;
+  }
 
-#b1{
-    background-color: cadetblue;
-}
+.red {
+    background-color: red;
+    
+  }
+  
+.green {
+    background-color: green;
+  }
+  
+.blue {
+    background-color: blue;
+  }
 
-#b2{
-    background-color: rgb(255, 196, 1);
-}
+.pink {
+    background-color: rgb(245, 13, 226);
+  }
 
-#b3{
-    background-color: rgb(156, 44, 134);
-}
-
-#b4{
-    background-color: rgb(10, 153, 29);
+#pixel-board {
+    width: 5px;
+    height: 5px;
 }
