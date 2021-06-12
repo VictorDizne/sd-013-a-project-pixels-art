@@ -5,9 +5,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-image: url(sory2.jpeg);
-
+  font-family: Poppins, sans-serif;
+  background-image: url('background-story.jpg');
 }
 
 #title {
@@ -16,7 +15,8 @@ body {
 
 .header {
   margin: 20px 0;
-  font-family: 'Merienda', cursive;
+  font-family: Merienda, cursive;
+  color: yellow;
 }
 
 #color-palette {
@@ -26,7 +26,7 @@ body {
 }
 
 .color {
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid black;
   border-radius: 4px;
   display: inline-block;
   width: 40px;
@@ -35,7 +35,7 @@ body {
   cursor: pointer;
 }
 
-.color:nth-of-type(1) {
+.color:nth-of-type( 1 ) {
   background-color: black;
 }
 

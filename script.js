@@ -56,7 +56,7 @@ function coloredPixels() {
 
 // Cria a função de limpar o pixel board.
 function boardCleaner() {
-  const clearButton = document.getElementsByTagName('button')[0];
+  const clearButton = document.getElementById('clear-board');
   const pixels = document.getElementsByClassName('pixel');
 
   clearButton.addEventListener('click', () => {
