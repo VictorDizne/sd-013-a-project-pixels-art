@@ -1,126 +1,118 @@
-//adiciona paleta de cores a página
-const colorBlack = document.getElementById('colorBlack');
-colorBlack.style.backgroundColor = 'black';
-const colorRed = document.getElementById('colorRed');
-colorRed.style.backgroundColor = 'Red';
-const colorBlue = document.getElementById('colorGreen');
-colorBlue.style.backgroundColor = 'Green';
-const colorGreen = document.getElementById('colorBlue');
-colorGreen.style.backgroundColor = 'Blue';
+function req41() {
+  let box1 = document.querySelector('#pixel-board');
+ 
+  for (let i = 0; i < 5; i += 1) {
+    let row = document.createElement('div');
+    row.className = 'row';
+    box1.appendChild(row);
+    for (let i = 0; i < 5; i += 1) {
+      let pixels = document.createElement('div');
+      pixels.className = 'pixel';
+      pixels.style.backgroundColor = 'white';
+      row.appendChild(pixels);
+  
+   }
+  }
+}
+req41();
 
-//escolhe o tamanho da borda
-const inputSize = document.getElementById('board-size');
-const btnGenerateBorder = document.getElementById('generate-board');
-const accessTable = document.getElementById('pixel-board');
+function req4() {
 
-let appliedColor = 'black';
+  let makebox = document.querySelector('#generate-board');
+  
+  makebox.addEventListener('click', function () {
 
-const btnClearBoard = document.getElementById('clear-board');
+  let box1 = document.querySelector('#pixel-board');
+  let areaofbox = document.querySelector('#board-size').value;
+  let number = areaofbox;
 
-// função criar linhas 
-function rowCreate(size) {
-    for (let index = 0; index < size; index += 1) {
-      const row = document.createElement('tr');
-      accessTable.appendChild(row);
-      row.classList.add('pixel-row');
-      cellCreate(size, row);
-    }
-  }rowCreate(5);
-  
-  const getPixelOnBoard = document.querySelectorAll('.pixel');
-  
-  // função pinta o tabuleiro de branco
-function clearBoard() {
-    for (let index = 0; index < getPixelOnBoard.length; index += 1) {
-      getPixelOnBoard[index].style.backgroundColor = 'white';
-    }
+  box1.innerHTML = '';
+
+  if (document.querySelector('#board-size').value == false){
+    alert('Board inválido!')
   }
-  
-  btnClearBoard.addEventListener('click', clearBoard);
-  
-  // Funções que recebem a cor selecionada
-function colorSelectBlack(event) {
-    colorRed.classList.remove('selected');
-    colorBlue.classList.remove('selected');
-    colorGreen.classList.remove('selected');
-    colorBlack.classList.remove('selected');
-    colorBlack.classList.add('selected');
-    // Captura com 'event.target' a cor do background.
-    const colorToApply = event.target.style.backgroundColor;
-    appliedColor = colorToApply;
-    console.log(colorToApply);
+  if (document.querySelector('#board-size').value < 5 ){
+    alert('Board inválido!');
+    number = 5;
+  }  
+  if (document.querySelector('#board-size').value > 50  ){
+    alert('Board inválido!');
+    number = 50;
   }
-  colorBlack.addEventListener('click', colorSelectBlack);
+
+  for (let i = 0; i < number; i += 1) {
+  let row = document.createElement('div');
+  row.className = 'row';
+  box1.appendChild(row);
+
+    for (let i = 0; i < number; i += 1) {
+    let pixels = document.createElement('div');
+    pixels.className = 'pixel';
+    row.appendChild(pixels);
   
-  function colorSelectRed(event) {
-    colorBlack.classList.remove('selected');
-    colorBlue.classList.remove('selected');
-    colorGreen.classList.remove('selected');
-    colorRed.classList.remove('selected');
-    colorRed.classList.add('selected');
-    const colorToApply = event.target.style.backgroundColor;
-    appliedColor = colorToApply;
-    console.log(colorToApply);
+   }
   }
-  colorRed.addEventListener('click', colorSelectRed);
-  
-  function colorSelectBlue(event) {
-    colorBlack.classList.remove('selected');
-    colorRed.classList.remove('selected');
-    colorGreen.classList.remove('selected');
-    colorBlue.classList.remove('selected');
-    colorBlue.classList.add('selected');
-    const colorToApply = event.target.style.backgroundColor;
-    appliedColor = colorToApply;
-    console.log(colorToApply);
-  }
-  colorBlue.addEventListener('click', colorSelectBlue);
-  
-  function colorSelectGreen(event) {
-    colorBlack.classList.remove('selected');
-    colorRed.classList.remove('selected');
-    colorBlue.classList.remove('selected');
-    colorGreen.classList.add('selected');
-    const colorToApply = event.target.style.backgroundColor;
-    appliedColor = colorToApply;
-    console.log(colorToApply);
-  }
-  colorGreen.addEventListener('click', colorSelectGreen);
-  
-  function pixelColorListener(who) {
-    for (let index = 0; index < who.length; index += 1) {
-      who[index].addEventListener('click', function () {
-        who[index].style.backgroundColor = appliedColor;
-      });
-    }
-  }
-  
-  pixelColorListener(getPixelOnBoard);
-  
-  function getPixelColor() {
-    const sizeClassPixel = document.querySelectorAll('.pixel');
-    pixelColorListener(sizeClassPixel);
-  }
-  
-  function checkBoardLimits() {
-    if (inputSize.value < 5) {
-      inputSize.value = 5;
-    }
-    if (inputSize.value > 50) {
-      inputSize.value = 50;
-    }
-  }
-// Cria um novo board a partir do input do usuário.
-function boardSizeChange() {
-    if (inputSize.value) {
-      checkBoardLimits();
-      accessTable.innerHTML = '';
-      rowCreate(inputSize.value);
-      getPixelColor();
+ })
+}
+req4();
+
+window.onload = function(){
+  let corrigir = document.querySelectorAll('.color');
+
+  corrigir[0].style.backgroundColor = 'black';
+  corrigir[1].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
+  corrigir[2].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
+  corrigir[3].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
+
+  let blackcolor = document.querySelector('#black');
+  blackcolor.classList.add('selected'); 
+
+}
+
+function req7() {
+  let seleciona = document.querySelector('#color-palette');
+  let selected = document.querySelector('.color');
+
+
+  seleciona.addEventListener('click', (event) => {
+    if (selected.classList.contains('selected') == false && event.target.classList.contains('color-palette') == false) {
+      event.target.classList.add('selected');
+      selected = document.querySelector('.selected');
     } else {
-      alert('Board Inválido!');
+      selected.classList.remove('selected');
+      event.target.classList.add('selected');
+      selected = document.querySelector('.selected');
     }
-  }
-  
-  btnGenerateBorder.addEventListener('click', boardSizeChange);  
 
+  })
+}
+req7();
+
+function req8() {
+
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('pixel') == true) {
+
+    event.target.style.backgroundColor =  document.querySelector('.selected').style.backgroundColor;
+      
+  }
+}, false);
+}
+
+req8();
+
+function req9() {
+
+  let clearbutton = document.querySelector('#clear-board');
+
+  clearbutton.addEventListener('click', function (event) {
+    let pix = document.querySelectorAll('.pixel');
+    let limits = document.querySelectorAll('.pixel').length;
+    
+    for(let i = 0; i < limits; i +=1){
+      pix[i].style.backgroundColor = 'white';
+    }
+
+  })
+}
+req9();

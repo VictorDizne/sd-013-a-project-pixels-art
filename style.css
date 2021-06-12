@@ -1,35 +1,35 @@
-body {
-    text-align: center;
-    margin: 0;
-  }
+body{
+  background-color: royalblue;
+}
+.color {
+  border: solid black 1px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+}
+
+#pixel-board{
+  display: table;
+}
+
+#color-palette {
   
-  .color , .pixel {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
-  }
-  
-  .color {
-    margin-right: 2px;
-  }
-  
-  #palette-button {
-    margin: 5px 0;
-  }
-  
-  .linha {
-    height: 42px;
-  }
-  
-  .pixel {
-    margin: 0;
-  }
-  
-  #inputs {
-    margin-bottom: 6px;
-  }
-  
-  #board-size {
-    width: 35px;
-  }
+  width: 223.4px;
+}
+
+.pixel {
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  color: white;
+  margin: 3px 3px 3px 3px;
+ 
+}
+
+#color-palette {
+  background-color: solid white;
+}
