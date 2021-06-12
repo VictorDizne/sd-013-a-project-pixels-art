@@ -1,9 +1,14 @@
 body {
   text-align: center;
+  background-color: #a7b8f5;
 }
 
 #title {
+  color: #fff;
   text-align: center;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+  text-transform: uppercase;
 }
 
 #color-palette {
@@ -23,15 +28,15 @@ body {
 }
 
 #pink {
-  background-color: #e54a79;
+  background-color: #ef9af3;
 }
 
 #purple {
-  background-color: #293b79;
+  background-color: #6448e8;
 }
 
 #green {
-  background-color: #86ae35;
+  background-color: #f6b149;
 }
 
 #pixel-board {
@@ -48,3 +53,34 @@ body {
   background-color: white;
 }
 
+button {
+  border:1px solid #25692A;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Verdana;
+  font-weight:bold;
+  font-size:13px;
+  padding:6px 10px;
+  text-decoration:none;
+  background-color: #6448e8;
+  color: #fff;
+}
+
+.bottom {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  background-color: #f6b149;
+  font-family:Verdana;
+  color: #ed4e33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight:thin;
+}
+
+.rainbow-gif {
+  width: 100px;
+}
