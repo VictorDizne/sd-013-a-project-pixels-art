@@ -1,0 +1,19 @@
+.box {
+    border: 1px solid black;
+}
+
+#b1{
+    background-color: cadetblue;
+}
+
+#b2{
+    background-color: rgb(255, 196, 1);
+}
+
+#b3{
+    background-color: rgb(156, 44, 134);
+}
+
+#b4{
+    background-color: rgb(10, 153, 29);
+}
