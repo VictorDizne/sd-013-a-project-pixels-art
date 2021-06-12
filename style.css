@@ -31,5 +31,20 @@
   height: 40px;
   border: black solid 1px;
   display: inline-block;
-  transition: all .5s;
+  transition: all 0.5s;
+}
+
+#clear-board {
+  display: block;
+  margin-left: 85px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#color-palette {
+  margin-left: 20px;
+}
+
+#title {
+  margin-left: 10px;
 }
