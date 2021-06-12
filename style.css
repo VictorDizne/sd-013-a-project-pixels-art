@@ -1,8 +1,15 @@
+body {
+  background-image:linear-gradient( to left, rgb(80, 168, 72) 0%, white 100% );
+  padding:200px 450px
+  
+}
 .color {
     height: 50px;
     width: 50px;
     border: 1px solid black;
     display: inline-block;
+    margin: 0;
+    padding:0;
   }
   
 .black {
@@ -22,13 +29,6 @@
     background-color: blue;
   }
 
-.pink {
-    background-color: rgb(245, 13, 226);
-  }
-
-#pixel-board {
-
-}
 .pixel {
     display: inline-block;
     width: 40px;
@@ -37,3 +37,27 @@
     margin: 0;
     background-color: white;
   }
+button {
+    background-color: rgb(207, 22, 22);
+    color: rgb(245, 245, 245);
+    border-radius: 10px;
+    border: 0px;
+    padding: 5px 15px 5px 15px;
+    margin-left: 74px ;
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 900 ; 
+}
+
+#icon {
+    width:60px;
+    padding: 10 px;
+}
+
+.line {
+    height:42px;
+}
+
+#pixel-board {
+    padding: 8px;
+}

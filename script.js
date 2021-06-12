@@ -1,5 +1,8 @@
 const board = document.getElementById('pixel-board');
 const numPallets = document.getElementById('color-palette').getElementsByClassName('color');
+const linhas = 5;
+const colunas = 5;
+const cleanButton = document.getElementById('clear-board');
 
 function fillBoard(linha, coluna) {
   for (let i = 0; i < linha; i += 1) {
@@ -14,7 +17,7 @@ function fillBoard(linha, coluna) {
     board.appendChild(line);
   }
 }
-fillBoard(5, 5);
+fillBoard(linhas, colunas);
 
 function selectColor(e) {
   console.log(e.target,"antes");
@@ -24,6 +27,20 @@ function selectColor(e) {
   console.log(e.target,"depois e lastselected = ",lastSelect);
 }
 
+function paintSquare(e) {
+  if (e.target.classList.contains('pixel')) {
+    const lastSelected = document.querySelector('.selected');
+    e.target.style.backgroundColor = getComputedStyle(lastSelected).backgroundColor;
+  }
+}
+
+function clearBoard() {
+  board.innerHTML = '';
+  fillBoard(linhas, colunas);
+}
+
 for (let i = 0; i < numPallets.length; i += 1) {
   numPallets[i].addEventListener('click', selectColor);
 }
+board.addEventListener('click', paintSquare);
+cleanButton.addEventListener('click', clearBoard);
