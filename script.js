@@ -14,22 +14,53 @@ function recebeClick(e) {
 }
 
 // Requisito 8
-let pixel = document.querySelectorAll('.pixel');
+const pixel = document.querySelectorAll('.pixel');
 
 for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener('click', clicar);
+  pixel[index].addEventListener('click', clicar);
 }
 function clicar(event) {
-  let colorToPaint = document.getElementsByClassName('selected');
-  let colorTarget = getComputedStyle(colorToPaint[0]).getPropertyValue("background-color");
+  const colorToPaint = document.getElementsByClassName('selected');
+  const colorTarget = getComputedStyle(colorToPaint[0]).getPropertyValue('background-color');
   event.target.style.backgroundColor = colorTarget;
 }
 
 // Requisito 9 pesquisado em https://cursos.alura.com.br/forum/topico-duvida-criar-botao-para-voltar-ao-estado-anterior-de-uma-pagina-87729
-let botao = document.querySelector("#clear-board");
+const botao = document.querySelector("#clear-board");
 
 botao.addEventListener('click', clicaBotao);
 
 function clicaBotao() {
-  location.reload()
+  location.reload();
 }
+
+function corAleatoria1 () {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+
+ return `rgb(${r}, ${g}, ${b})`;
+ }
+
+ let cor1 = document.getElementById('color-2');
+cor1.style.backgroundColor = corAleatoria1();
+
+function corAleatoria2 () {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+
+ return `rgb(${r}, ${g}, ${b})`;
+ }
+let cor2 = document.getElementById('color-3');
+cor2.style.backgroundColor = corAleatoria2();
+
+function corAleatoria3 () {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+
+ return `rgb(${r}, ${g}, ${b})`;
+ }
+let cor3 = document.getElementById('color-4');
+cor3.style.backgroundColor = corAleatoria3();
