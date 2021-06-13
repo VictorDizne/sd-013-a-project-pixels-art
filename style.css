@@ -1,63 +1,83 @@
 body {
   background-image:linear-gradient( to left, rgb(80, 168, 72) 0%, white 100% );
-  padding:200px 450px
-  
+  /*padding:200px 450px;*/
+  overflow: auto;
 }
 .color {
-    height: 50px;
-    width: 50px;
-    border: 1px solid black;
-    display: inline-block;
-    margin: 0;
-    padding:0;
-  }
-  
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0;
+  padding:0;
+}
+
 .black {
-    background-color: black;
-  }
+  background-color: black;
+}
 
 .red {
-    background-color: red;
-    
-  }
-  
+  background-color: red;
+}
+
 .green {
-    background-color: green;
-  }
-  
+  background-color: green;
+}
+
 .blue {
-    background-color: blue;
-  }
+  background-color: blue;
+}
 
 .pixel {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
-    margin: 0;
-    background-color: white;
-  }
-button {
-    background-color: rgb(207, 22, 22);
-    color: rgb(245, 245, 245);
-    border-radius: 10px;
-    border: 0px;
-    padding: 5px 15px 5px 15px;
-    margin-left: 74px ;
-    margin-top: 7px;
-    font-size: 15px;
-    font-weight: 900 ; 
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 0;
+  background-color: white;
+}
+
+#clear-board {
+  background-color: rgb(207, 22, 22);
+  color: rgb(245, 245, 245);
+  border-radius: 10px;
+  border: 0px;
+  padding: 5px 15px 5px 15px;
+  margin-left: 74px ;
+  margin-top: 7px;
+  font-size: 15px;
+  font-weight: 900 ; 
 }
 
 #icon {
-    width:60px;
-    padding: 10 px;
+  width:60px;
+  padding: 10 px;
 }
 
 .line {
-    height:42px;
+  height:42px;
 }
 
 #pixel-board {
-    padding: 8px;
+  padding: 8px;
+  width: 2100px;
+  height: 2100px;
 }
+
+#generate-board {
+  display: inline;
+  background-color: rgb(207, 22, 22);
+  color: rgb(245, 245, 245);
+  border-radius: 10px;
+  border: 0px;
+  padding: 5px 15px 5px 15px;
+  font-size: 15px;
+}
+
+#board-size {
+  padding: 5px;
+  width: 40px;
+  margin: 10px;
+  font-weight: 900 ; 
+}
+
