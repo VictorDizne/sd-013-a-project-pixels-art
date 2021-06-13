@@ -3,24 +3,19 @@
     padding: 5px;
 }
 
-.tr {
-    display: table-row;
-    padding: 5px;
-}
-
 .color {
     display: table-cell;
-    padding: 30px;
     border: black solid 1px;
-    margin: 10px;
+    width: 40px;
+    height: 40px;
 }
 
 #blackColor {
   background-color: black;
 }
 
-#redColor {
-  background-color: red;
+#yellowColor {
+  background-color: yellow;
 }
 
 #blueColor {
@@ -29,4 +24,12 @@
 
 #greenColor {
   background-color: green;
+}
+
+.pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
+  display: table-cell;
 }
