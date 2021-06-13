@@ -26,7 +26,7 @@ function clicar(event) {
 }
 
 // Requisito 9 pesquisado em https://cursos.alura.com.br/forum/topico-duvida-criar-botao-para-voltar-ao-estado-anterior-de-uma-pagina-87729
-const botao = document.querySelector("#clear-board");
+const botao = document.querySelector('#clear-board');
 
 botao.addEventListener('click', clicaBotao);
 
@@ -34,33 +34,33 @@ function clicaBotao() {
   location.reload();
 }
 
-function corAleatoria1 () {
-  let r = Math.random() * 255;
-  let g = Math.random() * 255;
-  let b = Math.random() * 255;
+function corAleatoria1() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
 
- return `rgb(${r}, ${g}, ${b})`;
- }
+  return `rgb(${r}, ${g}, ${b})`;
+}
 
- let cor1 = document.getElementById('color-2');
+const cor1 = document.getElementById('color-2');
 cor1.style.backgroundColor = corAleatoria1();
 
-function corAleatoria2 () {
-  let r = Math.random() * 255;
-  let g = Math.random() * 255;
-  let b = Math.random() * 255;
+function corAleatoria2() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
 
- return `rgb(${r}, ${g}, ${b})`;
- }
-let cor2 = document.getElementById('color-3');
+  return `rgb(${r}, ${g}, ${b})`;
+}
+const cor2 = document.getElementById('color-3');
 cor2.style.backgroundColor = corAleatoria2();
 
-function corAleatoria3 () {
-  let r = Math.random() * 255;
-  let g = Math.random() * 255;
-  let b = Math.random() * 255;
+function corAleatoria3() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
 
- return `rgb(${r}, ${g}, ${b})`;
- }
-let cor3 = document.getElementById('color-4');
+  return `rgb(${r}, ${g}, ${b})`;
+}
+const cor3 = document.getElementById('color-4');
 cor3.style.backgroundColor = corAleatoria3();
