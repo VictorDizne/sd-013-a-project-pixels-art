@@ -6,9 +6,9 @@ let pixels = document.getElementsByClassName('pixel');
 
 // seto as cores em cada indice do array
 cores[0].style.backgroundColor="black" 
-cores[1].style.backgroundColor="#2c3e50";
-cores[2].style.backgroundColor="#7f8c8d";
-cores[3].style.backgroundColor="#1abc9c";
+cores[1].style.backgroundColor=ramdomColor();
+cores[2].style.backgroundColor=ramdomColor();
+cores[3].style.backgroundColor=ramdomColor();
 
 // adiciono a classe selected na cor preta
 cores[0].classList.add('selected');
@@ -54,4 +54,12 @@ btnClear.addEventListener('click', function(){
 		pixels[index].style.backgroundColor = "white";
 	};
 });
+
+
+//https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+function ramdomColor(){
+  return '#' + parseInt((Math.random() * 0xFFFFFF))
+    .toString(16)
+    .padStart(6, '0');
+}
 //agradecimento ao Luiz Furtado por ter resolvido comigo 2 bugs do projeto.
