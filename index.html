@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <link rel="stylesheet" href="style.css">  
-  <title>Pixel Art Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixels Art Project</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1 id="title">Paleta de Cores</h1>
-  <div id="color-palette"></div>
-  <div id="btn-place"></div>
-  <div id="pixel-board"></div>  
-  <script src="script.js"></script>
+  <h1 id='title'>Paleta de Cores</h1>
+  <div id='color-palette'>
+    <div id = 'black' class='color'></div>
+    <div id = 'blue' class='color'></div>
+    <div id = 'red' class='color'></div>
+    <div id = 'green' class='color'></div>
+
+  </div>
+
+  <section id='buttons'>
+
+    <button id='clear-board' >Limpar</button>
+
+    <input id='board-size' type='number' max='50' min='1'>
+
+    <button id='generate-board'>VQV</button>
+
+  </section>
+
+  <table id='pixel-board'></table>
+ 
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
