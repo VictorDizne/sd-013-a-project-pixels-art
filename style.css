@@ -1,6 +1,14 @@
 
 body {
-  background-color: grey
+  background-image: url(/montainback.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  padding: 10px;
+  border: 5px solid #d34;
 }
 
 #color-palette div{
@@ -32,9 +40,11 @@ body {
   align-items: center;
   justify-content: center;
   margin: 10px 0;
+  height: 100%;
 }
 
 .color {
   margin: 10px 2px;
+  border-radius: 100%;
 }
 
