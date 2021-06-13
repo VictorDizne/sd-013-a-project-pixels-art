@@ -1,7 +1,7 @@
 const board = document.getElementById('pixel-board');
 const numPallets = document.getElementById('color-palette').getElementsByClassName('color');
-const linhas = 5;
-const colunas = 5;
+let linhas = 5;
+let colunas = 5;
 const cleanButton = document.getElementById('clear-board');
 const generateButton = document.getElementById('generate-board');
 
@@ -51,6 +51,8 @@ function generateBoard() {
     }
     board.innerHTML = '';
     fillBoard(n, n);
+    linhas = n;
+    colunas = n;
   } else {
     alert('Board inválido!');
   }
