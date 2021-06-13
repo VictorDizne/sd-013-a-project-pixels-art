@@ -1,34 +1,16 @@
-#a1 {
-  background-color: black;
-  border: solid 1px;
-}
-
-#b2 {
-  background-color: rgb(168, 22, 22);
-  border: solid 1px;
-}
-
-#c3 {
-  background-color: rgb(241, 238, 24);
-  border: solid 1px;
-}
-
-#d4 {
-  background-color: rgb(110, 10, 255);
-  border: solid 1px;
-}
-
 .color {
-  border: 1px solid black;
+  border: 1px solid;
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  padding: 21px;
+  border-radius: 15%;
+  margin-left: 5px;
 }
 
 .pixel {
-  background-color: white;
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  border: 1px solid;
   display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15%;
 }
