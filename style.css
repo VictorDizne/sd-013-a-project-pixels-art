@@ -8,8 +8,8 @@ main div {
 
 .pixel {
   display: table-cell;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   background-color: white;
 }
