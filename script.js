@@ -38,6 +38,7 @@ if(color != '#ffffff'){
   if(black == false){
   black = true; 
   li.style.backgroundColor = '#000000';
+  li.classList.add('selected');
   return palette.appendChild(li)
   }
    
@@ -53,6 +54,23 @@ li.style.backgroundColor = color;
 palette.appendChild(li);
 
 }
+
+function pickColor(e){
+  const colorsPalette = document.querySelectorAll('.color');
+  for(let colors of colorsPalette){
+    colors.classList.remove('selected');
+  }
+  e.target.classList.add('selected');
+}
+
+palette.addEventListener('click',pickColor);
+
+function paint(e){
+  const colorPaint = document.querySelector('.selected');
+  e.target.style.backgroundColor = colorPaint.style.backgroundColor;  
+}
+
+board.addEventListener('click',paint);
 }
 
 
