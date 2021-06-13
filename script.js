@@ -6,7 +6,7 @@ function setSelected() {
     if (colorIndex === color[i]) {
       colorIndex.addEventListener('click', () => {
         color.forEach((element) => {
-          element.classList.remove("selected")
+          element.classList.remove('selected');
         });
         colorIndex.classList.add('selected');
       });
