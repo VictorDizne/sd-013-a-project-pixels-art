@@ -2,6 +2,46 @@ main div {
   display: inline-block;
 }
 
+.row {
+  display: block;
+}
+
+.pixel {
+  display:table-cell;
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+#a1, #b1, #c1, #d1 {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+#a2, #b2, #c2, #d2 {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+#a3, #b3, #c3, #d3 {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+#a4, #b4, #c4, #d4 {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+#a5, #b5, #c5, #d5 {
+  border-right: 0px;
+}
+
+#e1, #e2, #e3, #e4 {
+  border-bottom: 0px;
+}
+
 #black {
   width: 80px;
   height: 80px;
