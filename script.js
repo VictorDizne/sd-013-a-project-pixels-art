@@ -71,6 +71,17 @@ function paint(e){
 }
 
 board.addEventListener('click',paint);
+
+let bttClear = document.querySelector('#clear-board');
+
+function clearBoard(){
+  let tableSquares = document.querySelectorAll('.pixel');
+  for(let littleSquare of tableSquares){
+    littleSquare.style.backgroundColor = 'white';
+  }  
+}
+
+bttClear.addEventListener('click', clearBoard);
 }
 
 
