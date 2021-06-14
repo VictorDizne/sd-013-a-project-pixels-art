@@ -2,10 +2,12 @@ body {
   background-color: #282A36;
   color: #F8F8F2;
   font-family: "monaco", monospace;
+  text-align: center;
 }
 
 #color-palette {
   display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -17,26 +19,36 @@ body {
 }
 
 .black {
-  background-color: black;
+  background-color: black !important;
 }
 
 .red {
-  background-color: #FF5555;
+  background-color: #FF5555 !important;
 }
 
 .green {
-  background-color: #50FA7B;
+  background-color: #50FA7B !important;
 }
 
 .blue {
-  background-color: #8BE9FD;
+  background-color: #8BE9FD !important;
 }
 
 #pixel-board {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(5, 42px);
 }
 
 .pixel {
   background-color: white;
+}
+
+.button {
+  display: block;
+  margin: 1em auto;
+  width: fit-content;
+  padding: .5em 1em;
+  border-radius: 5px;
+  background-color: #44475A;
 }
