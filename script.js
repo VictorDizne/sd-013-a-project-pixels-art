@@ -48,3 +48,11 @@ for (let i of pixel) {
     i.classList.add(selectedColor);
   })
 }
+
+let clrBtn = document.getElementById("clear-board");
+
+clrBtn.addEventListener('click', function() {
+  for (let i of pixel) {
+    i.classList.remove('black', 'red', 'green', 'blue');
+  }
+})
