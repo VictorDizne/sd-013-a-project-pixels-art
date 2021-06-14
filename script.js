@@ -2,6 +2,7 @@ const paleta = document.querySelector('#color-palette');
 paleta.addEventListener('click', selecionar);
 const clear = document.querySelectorAll('#clear-board')
 const pixel = document.querySelector('.pixel')
+const pixelBoard = document.querySelector('#pixel-board')
 
 function selecionar(event) {
   const cores = document.querySelectorAll('.color');
@@ -10,3 +11,12 @@ function selecionar(event) {
   }
   event.target.classList.add('selected')
 }
+
+function trocarCor(event) {
+  let pintar = document.querySelector('.color.selected');
+  let cor = pintar.getAttribute('id')
+  event.target.setAttribute('id', cor)
+}
+  pixelBoard.addEventListener('click',trocarCor);
+
+  
