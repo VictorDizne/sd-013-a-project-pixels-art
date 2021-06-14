@@ -48,8 +48,8 @@
 }
 
 .container {
-  background-color: rgb(230,230,230);
-  border: 1px solid rgb(214,217,220);
+  background-color: rgb(230, 230, 230);
+  border: 1px solid rgb(214, 217, 220);
   border-radius: 10px;
   width: 210px;
   margin: 10px;
@@ -62,7 +62,7 @@
   display: flex;
   justify-content: center;
 }
-.center2 {
 
+.center2 {
   text-align: center;
 }
