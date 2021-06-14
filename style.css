@@ -46,3 +46,23 @@
   border-color: black;
   display: inline-block;
 }
+
+.container {
+  background-color: rgb(230,230,230);
+  border: 1px solid rgb(214,217,220);
+  border-radius: 10px;
+  width: 210px;
+  margin: 10px;
+  padding: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.center1 {
+  display: flex;
+  justify-content: center;
+}
+.center2 {
+
+  text-align: center;
+}
