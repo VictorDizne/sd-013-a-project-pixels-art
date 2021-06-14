@@ -12,10 +12,7 @@ for (let count1 = 0; count1 < 5; count1++) {
 function getColor(color) {
   let colorG = window.getComputedStyle(color).getPropertyValue('background-color');
   let qr = document.querySelectorAll('.selected');
-  for (count = 0; count < qr.length; count++) {
-    if (qr[count].classList.contains("selected"))
-     qr[count].classList.remove("selected")
+  qr.forEach(e => e.classList.remove('selected'));
+  color.classList.add('selected');
   }
-  console.log(colorG);
-  console.log(qr);  
-  } 
+
