@@ -103,6 +103,7 @@ function changeColor(eventPixel) {
   var theCSSprop = window.getComputedStyle(classeSelected, null).getPropertyValue("background-color");
   console.log(theCSSprop);
   eventPixel.target.style.backgroundColor = theCSSprop;
+  console.log(document.body);
 
 }
 
@@ -112,7 +113,12 @@ let clickB = document.getElementById('clear-board');
 clickB.addEventListener('click', recebeClick);
 
 function recebeClick() {
-  console.log('botão');
+  const recuperaPixel = document.getElementsByClassName('pixel');
+  
+  for (let index = 0; index < recuperaPixel.length; index += 1){
+  recuperaPixel[index].style.backgroundColor = 'white';
+  }
+  console.log(recuperaPixel);
 }
 
 //=======================================================================
