@@ -25,3 +25,16 @@ function addColor(event) {
   const cor = window.getComputedStyle(selecionaCor);
   event.target.style.backgroundColor = cor.backgroundColor;
 }
+
+const botaoLimpa = document.getElementById('clear-board')
+
+function limparTabela() {
+  const pixels = document.getElementsByClassName('pixel');
+  botaoLimpa.addEventListener ('click', () => {
+    for (index = 0; index < pixels.length; index +=1) {
+      pixels[index].style.backgroundColor = 'white';
+
+    }
+  })
+}
+limparTabela();
