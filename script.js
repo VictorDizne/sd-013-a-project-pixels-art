@@ -1,5 +1,15 @@
-function doDemo() {
-  let minhaDiv = document.getElementById("fire");
-  minhaDiv.style.backgroundColor = "black";
-};
+
+let buttonClear = document.getElementById("clear-board");
+
+buttonClear.addEventListener("click", umClick);
+
+function umClick() {
+alert("O botão foi clicado!");
+}
+
+
+
+
+
+
 
