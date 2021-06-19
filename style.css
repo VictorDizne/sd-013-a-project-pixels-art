@@ -10,6 +10,11 @@
   background-color: #000000;
 }
 
+#clear-board {
+  margin: 10px 0 10px 0;
+  width: 150px;
+}
+
 .selected {
 
 }

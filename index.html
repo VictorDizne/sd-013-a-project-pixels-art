@@ -9,11 +9,12 @@
 <body>
 <h1 id="title">Paleta de Cores</h1>
 <div id="color-palette">
-  <div id ="selected" class="color black selected" onclick="getColor(this)"></div>
-  <div id ="selected" class="color red" onclick="getColor(this)"></div>
-  <div id ="selected" class="color blue" onclick="getColor(this)"></div>
-  <div id ="selected" class="color green" onclick="getColor(this)"></div>
+  <div id ="selected" class="color black selected" onclick="getColor(this); printColor();"></div>
+  <div id ="selected" class="color red" onclick="getColor(this); printColor();"></div>
+  <div id ="selected" class="color blue" onclick="getColor(this); printColor();"></div>
+  <div id ="selected" class="color green" onclick="getColor(this); printColor();"></div>
 </div>
+<button id="clear-board" onclick="cleanBtn()">Limpar</button>
 <div id="pixel-board">
 </div>
 <script type="text/javascript" src="script.js"></script>
