@@ -31,3 +31,16 @@ for (let i = 0; i < pixels.length; i += 1) {
   const pixel = pixels[i];
   pixel.addEventListener('click', paint);
 }
+
+const button = document.createElement('button');
+button.id = 'clear-board';
+button.innerHTML = 'Limpar';
+document.querySelector('.menu').appendChild(button);
+
+function limpar() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+
+button.addEventListener('click', limpar);
