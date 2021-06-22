@@ -62,3 +62,28 @@ function limpaTudo () {
   });
 }
 limpaTudo();
+
+function tamanhoMaximo (number) {
+  if(number < 5) {
+    return 5
+  } else if(number > 50) {
+    return 50
+  } else {
+    return number
+  }
+}
+const botaoVqv = document.querySelector('#generate-board')  
+botaoVqv.addEventListener('click', tamanhoQuadro)
+function tamanhoQuadro () {
+  const input = document.querySelector('#board-size')
+    if(input.value === '') {
+      alert("Board inválido!")
+    } else {
+      pixelBoard.innerHTML = ''
+      const number = input.value
+      const novoTamanho = tamanhoMaximo(number)
+      createPixel(novoTamanho)
+      input.value = ''
+    }
+  };
+
