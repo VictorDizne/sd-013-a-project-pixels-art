@@ -1,10 +1,8 @@
-
-
 // function pixelBoard() {
 //   const pixelPalette = document.querySelector('#pixel-board');
 
 //   for (let index = 0; index < 25; index += 1) {
-  
+
 //     const board = document.createElement('div');
 //     board.classList.add('pixel');
 //     pixelPalette.appendChild(board);
@@ -13,7 +11,6 @@
 // }
 
 // pixelBoard();
-
 
 const selectedCor = document.querySelector('#color-palette');
 
@@ -34,14 +31,12 @@ function changeColor(event) {
 
 pixelBoard.addEventListener('click', changeColor);
 
-
 const limpar = document.querySelector('#clear-board');
 
 function clearPixels() {
   const pixelFilhos = document.querySelectorAll('.pixel');
-  for (const iterator of pixelFilhos) {
-    iterator.removeAttribute('id');
-  }
+
+  pixelFilhos.forEach((elemento) => { elemento.removeAttribute('id'); });
 }
 
 limpar.addEventListener('click', clearPixels);
