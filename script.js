@@ -4,17 +4,22 @@ const colorTwo = document.getElementsByClassName('color')[2];
 const colorThree = document.getElementsByClassName('color')[3];
 const initialSize = 5;
 
+// A função foi baseada no site: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+function colorGeneret() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  return `rgba(${r}, ${g}, ${b})`;
+}
 
 colorBlack.style.backgroundColor = 'black';
-colorOne.style.backgroundColor = 'green';
-colorTwo.style.backgroundColor = 'darkblue';
-colorThree.style.backgroundColor = 'yellow';
+colorOne.style.backgroundColor = colorGeneret();
+colorTwo.style.backgroundColor = colorGeneret();
+colorThree.style.backgroundColor = colorGeneret();
 
 colorBlack.classList.add('selected');
 
-
-function generateBoard (size) {
-
+function generateBoard(size) {
   for (let i = 0; i < size; i += 1) {
     const line = document.createElement('div');
     line.classList.add('line');
@@ -27,7 +32,7 @@ function generateBoard (size) {
   }
 }
 
-function cleanBoard () {
+function cleanBoard() {
   const line = document.querySelectorAll('.line');
   for (let i = 0; i < line.length; i += 1) {
     document.querySelector('.line').remove();
@@ -42,14 +47,14 @@ function selectedColor(color) {
   color.target.classList.add('selected');
 }
 
-colorBlack.addEventListener('click',selectedColor);
-colorOne.addEventListener('click',selectedColor);
-colorTwo.addEventListener('click',selectedColor);
-colorThree.addEventListener('click',selectedColor);
+colorBlack.addEventListener('click', selectedColor);
+colorOne.addEventListener('click', selectedColor);
+colorTwo.addEventListener('click', selectedColor);
+colorThree.addEventListener('click', selectedColor);
 
-function paint(pixel) {
+function paint(targetPixel) {
   const colorSelected = document.querySelector('.selected').style.backgroundColor;
-  pixel.target.style.backgroundColor = colorSelected;
+  targetPixel.target.style.backgroundColor = colorSelected;
 }
 
 const pixels = document.getElementsByClassName('pixel');
@@ -89,13 +94,12 @@ function changeSize() {
     input.value = 5;
   }
 
-  if (input.value == '') {
+  if (input.value === '') {
     alert('Board inválido!');
-  }
-  else {
+  } else {
     cleanBoard();
     generateBoard(input.value);
   }
 }
 
-bt2.addEventListener('click',changeSize);
+bt2.addEventListener('click', changeSize);
