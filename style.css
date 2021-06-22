@@ -6,7 +6,6 @@ h1 {
 }
 
 #color-palette {
-  border: 1px solid green;
   padding: 2px;
   text-align: center;
   margin-left: auto;
@@ -26,7 +25,6 @@ h1 {
 }
 
 #pixel-board {
-  border: 1px solid green;
   padding: 3px;
   text-align: center;
   margin-left: auto;
@@ -46,9 +44,8 @@ h1 {
   background-color: white;
 }
 
-
-
 .menu {
+  display: flex;
   padding: 2px;
   text-align: center;
   margin-left: auto;
@@ -56,4 +53,14 @@ h1 {
   margin-bottom: 10px;
   width: fit-content;
   height: fit-content;
+}
+
+#board-size {
+  align-self: center;
+  margin: 0 5px;
+  width: 80px;
+  height: 30px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
 }
