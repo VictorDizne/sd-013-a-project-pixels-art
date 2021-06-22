@@ -43,14 +43,16 @@ for (pixel of qdrPixels) {
     let selectedColor = selected.classList.item(1);
     this.classList.remove("black", "red", "blue", "yellow");
     this.classList.add(selectedColor);
-  })
-}
+  });
+};
 
 btnClear.addEventListener("click", function () {
   for (pixel of qdrPixels) {
     pixel.classList.remove("black", "red", "yellow", "blue");
   }
-})
+});
+
+
 
 
 
