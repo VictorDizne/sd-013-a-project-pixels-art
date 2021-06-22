@@ -30,7 +30,9 @@ function generateBoard(size) {
       line.appendChild(pixel);
     }
   }
+  console.log('PAgina carregada');
 }
+generateBoard(initialSize);
 
 function cleanBoard() {
   const line = document.querySelectorAll('.line');
@@ -38,8 +40,6 @@ function cleanBoard() {
     document.querySelector('.line').remove();
   }
 }
-
-window.onload = generateBoard(initialSize);
 
 function selectedColor(color) {
   const currentSelected = document.querySelector('.selected');
@@ -53,8 +53,9 @@ colorTwo.addEventListener('click', selectedColor);
 colorThree.addEventListener('click', selectedColor);
 
 function paint(targetPixel) {
+  const pixel = targetPixel.target;
   const colorSelected = document.querySelector('.selected').style.backgroundColor;
-  targetPixel.target.style.backgroundColor = colorSelected;
+  pixel.style.backgroundColor = colorSelected;
 }
 
 const pixels = document.getElementsByClassName('pixel');
