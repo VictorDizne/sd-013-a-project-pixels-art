@@ -20,3 +20,14 @@ colorBlack.addEventListener('click',selectedColor);
 colorOne.addEventListener('click',selectedColor);
 colorTwo.addEventListener('click',selectedColor);
 colorThree.addEventListener('click',selectedColor);
+
+function paint(pixel) {
+  const colorSelected = document.querySelector('.selected').style.backgroundColor;
+  pixel.target.style.backgroundColor = colorSelected;
+}
+
+const pixels = document.getElementsByClassName('pixel');
+for (let i = 0; i < pixels.length; i += 1) {
+  const pixel = pixels[i];
+  pixel.addEventListener('click', paint);
+}
