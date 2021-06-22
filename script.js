@@ -1,7 +1,22 @@
-document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-document.getElementsByClassName('color')[1].style.backgroundColor = 'green';
-document.getElementsByClassName('color')[2].style.backgroundColor = 'darkblue';
-document.getElementsByClassName('color')[3].style.backgroundColor = 'yellow';
+const colorBlack = document.getElementsByClassName('color')[0];
+const colorOne = document.getElementsByClassName('color')[1];
+const colorTwo = document.getElementsByClassName('color')[2];
+const colorThree = document.getElementsByClassName('color')[3];
 
-window.onload = function () {
+colorBlack.style.backgroundColor = 'black';
+colorOne.style.backgroundColor = 'green';
+colorTwo.style.backgroundColor = 'darkblue';
+colorThree.style.backgroundColor = 'yellow';
+
+colorBlack.classList.add('selected');
+
+function selectedColor(color) {
+  const currentSelected = document.querySelector('.selected');
+  currentSelected.classList.remove('selected');
+  color.target.classList.add('selected');
 }
+
+colorBlack.addEventListener('click',selectedColor);
+colorOne.addEventListener('click',selectedColor);
+colorTwo.addEventListener('click',selectedColor);
+colorThree.addEventListener('click',selectedColor);
