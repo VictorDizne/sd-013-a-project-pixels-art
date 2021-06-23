@@ -7,19 +7,15 @@
 }
 
 .black {
-  background-color: #000000;
+  background-color: black;
 }
 
 #clear-board {
-  margin: 10px 0 10px 0;
+  margin: 10px 0;
   width: 150px;
 }
 
-.selected {
-
-}
-
-.red { 
+.red {
   background-color: red;
 }
 
