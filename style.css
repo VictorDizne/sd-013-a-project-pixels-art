@@ -44,7 +44,7 @@ body {
   cursor: pointer;
 }
 
-#pallete {
+#palette {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,26 +66,10 @@ body {
   background-color: white;
 }
 
-#black {
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#yellow {
-  background-color: yellow;
-}
-
-#selected {
+/* #selected {
   margin-left: 20px;
   cursor: default;
-}
+} */
 
 #button-align {
   display: flex;
