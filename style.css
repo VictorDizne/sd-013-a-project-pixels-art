@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+#topper {
+  background: rgb(0,23,255);
+  background: linear-gradient(90deg, rgba(0,23,255,1) 9%, rgba(1,255,0,1)
+  19%, rgba(255,239,0,1) 39%, rgba(255,125,0,1) 55%, rgba(202,0,255,1)
+  81%, rgba(255,0,33,1) 95%);
+}
+
+#title {
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  color: aliceblue;
+  font-weight: 500;
+  font-size: xxx-large;
+}
+
+#color-palette {
+  list-style: none;
+  display: flex;
+}
+
+.color {
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  width: 40px;
+  height: 40px;
+}
