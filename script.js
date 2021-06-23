@@ -31,3 +31,24 @@ const desafio2e3 = () => {
   }
 };
 desafio2e3();
+
+const desafio4 = () => {
+  const section = document.createElement('section');
+  const ul = document.createElement('ul');
+  section.setAttribute('id', 'pixels');
+  ul.setAttribute('id', 'pixel-board');
+  for (i = 0; i < 5; i += 1) {
+    const div = document.createElement('div');
+    for (let j = 0; j < 25; j += 1) {
+      const li = document.createElement('li');
+      li.setAttribute('class', 'pixel');
+      if (j % 5 === 0) {
+        div.appendChild(li);
+        ul.appendChild(div);
+        section.appendChild(ul);
+        document.body.appendChild(section);
+      }
+    }
+  }
+};
+desafio4();
