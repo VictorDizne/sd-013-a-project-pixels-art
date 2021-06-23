@@ -1,11 +1,13 @@
 const pixel1 = document.getElementsByClassName('pixel');
-const generateBoard = function () {
-const linesN = document.getElementById('board-size').value;
-let lines = document.getElementById("pixel-board");
+const btnGenerate = document.getElementById('generate-board');
+const inputNumber = document.getElementById('board-size');
+
+
+function generateBoard(linesN) {
+let lines = document.getElementById('pixel-board');
+
 lines.innerHTML = '';
-if (linesN == '') { 
-  return alert('Board inválido!'); 
-}
+
   for (let count1 = 0; count1 < linesN; count1++) {
     let lines1 = lines.appendChild(document.createElement("div"))
     lines1.className = "lines";
@@ -49,20 +51,21 @@ function getColor(color) {
   return colorG;
   }
 
-  function printColor() {
+function printColor() {
   const selected = document.querySelector('.selected');
   const color1 = getColor(selected);
   console.log(pixel1);
-  for (let i = 0, len = pixel1.length; i < len; i++)
-  {
+    for (let i = 0, len = pixel1.length; i < len; i++)
+    {
     (function(index){
         pixel1[i].onclick = function(){
               pixel1[i].style.backgroundColor = color1;
         }    
     })(i);
 
-  }
-  }
+    }
+}
+
 function cleanBtn() {
   for (let i = 0, len = pixel1.length; i < len; i++)
   {
@@ -70,7 +73,26 @@ function cleanBtn() {
   }
 }
 
-window.onload = generateBoard;
+function customBoard(input) {
+  if (input.value > 50) {
+    alert('O tamanho máximo é 50');
+    generateBoard(50);
+  }
+  if (input.value < 5) {
+    alert('O tamanho mínimo é 5');
+    generateBoard(5);
+  } if (input.value >= 5 && input.value <= 50) {
+    generateBoard(input.value);
+  }
+}
 
-const btnGenerate = document.getElementById('generate-board');
-btnGenerate.onclick = generateBoard;
+function btnVqv() {
+  if (inputNumber.value === '') {
+    alert('Board inválido!');
+  } else {
+    customBoard(inputNumber);
+  }
+}
+
+btnGenerate.addEventListener('click', btnVqv);
+window.onload = generateBoard(5);
