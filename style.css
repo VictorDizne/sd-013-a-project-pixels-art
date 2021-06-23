@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  font-size: large;
+}
+
+.color {
+  width: 50px;
+  height: 50px;
+  display: table-cell;
+  border: 1px solid black;
+}
+
+#color-palete{
+  display: table;
+}
+
+#color4 {
+  background-color: rgb(256,0,0);
+}
+
+#color2 {
+  background-color: rgb(0,256,0);
+}
+
+#color3 {
+  background-color: rgb(0,0,256);
+}
+
+#color1 {
+  background-color: rgb(0,0,0);
+}
+
+.pixel {
+  background-color: white;
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#pixel-table {
+  display: table;
+}
+
+#pixel-board {
+  width: 210px;
+  height: 210px;
+  margin-top: 15px;
+}
