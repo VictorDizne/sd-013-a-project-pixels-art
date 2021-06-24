@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: aliceblue;
@@ -33,8 +37,7 @@ body {
   font-size: xxx-large;
 }
 
-#color-palette,
-#pixel-board {
+#color-palette, #pixel-board {
   list-style: none;
   display: flex;
   padding: 0px;

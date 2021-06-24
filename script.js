@@ -23,7 +23,7 @@ const desafio2e3e6 = () => {
     const li = document.createElement('li');
     li.setAttribute('class', 'color');
     li.style.backgroundColor = color;
-    if(li.style.backgroundColor === 'black') {
+    if (li.style.backgroundColor === 'black') {
       li.classList.add('selected');
     }
     ul.appendChild(li);
@@ -38,7 +38,7 @@ const desafio4e5 = () => {
   const ul = document.createElement('ul');
   section.setAttribute('id', 'pixels');
   ul.setAttribute('id', 'pixel-board');
-  for (i = 0; i < 5; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     const div = document.createElement('div');
     for (let j = 0; j < 25; j += 1) {
       const li = document.createElement('li');
@@ -53,3 +53,19 @@ const desafio4e5 = () => {
   }
 };
 desafio4e5();
+
+const desafio7 = () => {
+  const colors = document.getElementsByClassName('color');
+  const selecteds = document.getElementsByClassName('selected');
+  for (let i = 0; i < colors.length; i += 1) {
+    const color = colors[i];
+    color.addEventListener('click', (event) => {
+      for (let j = 0; j < selecteds.length; j += 1) {
+        const selected = selecteds[j];
+        selected.classList.remove('selected');
+      }
+      event.target.classList.add('selected');
+    });
+  }
+};
+desafio7();
