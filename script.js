@@ -42,7 +42,7 @@ const desafio4e5 = () => {
     const div = document.createElement('div');
     for (let j = 0; j < 25; j += 1) {
       const li = document.createElement('li');
-      li.setAttribute('class', 'pixel');
+      li.classList.add('pixel');
       if (j % 5 === 0) {
         div.appendChild(li);
         ul.appendChild(div);
@@ -67,5 +67,24 @@ const desafio7 = () => {
       event.target.classList.add('selected');
     });
   }
+  //  const pixels = document.getElementsByClassName ('pixel');
+  //  for (let h = 0; h < pixels.length; h += 1){
+
+  //  }
 };
 desafio7();
+
+const desafio8 = () => {
+  const selecteds = document.getElementsByClassName('selected');
+  const pixels = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    const pixel = pixels[i];
+    pixel.addEventListener('click', () => {
+      for (let j = 0; j < selecteds.length; j += 1) {
+        const selected = selecteds[j];
+        pixel.style.backgroundColor = selected.style.backgroundColor;
+      }
+    });
+  }
+};
+desafio8();
