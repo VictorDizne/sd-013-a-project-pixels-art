@@ -1,13 +1,19 @@
 body {
   margin: 0;
-  background-color:aliceblue;
+  background-color: aliceblue;
 }
 
 #topper {
-  background: rgb(0,23,255);
-  background: linear-gradient(90deg, rgba(0,23,255,1) 9%, rgba(1,255,0,1)
-  19%, rgba(255,239,0,1) 39%, rgba(255,125,0,1) 55%, rgba(202,0,255,1)
-  81%, rgba(255,0,33,1) 95%);
+  background: rgb(0, 23, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 23, 255, 1) 9%,
+    rgba(1, 255, 0, 1) 19%,
+    rgba(255, 239, 0, 1) 39%,
+    rgba(255, 125, 0, 1) 55%,
+    rgba(202, 0, 255, 1) 81%,
+    rgba(255, 0, 33, 1) 95%
+  );
   display: table;
   width: 100%;
   height: 100px;
@@ -27,12 +33,12 @@ body {
   font-size: xxx-large;
 }
 
-#color-palette , #pixel-board {
+#color-palette,
+#pixel-board {
   list-style: none;
   display: flex;
   padding: 0px;
 }
-
 
 .color {
   border: solid;
@@ -73,6 +79,6 @@ body {
 
 #button-align {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }

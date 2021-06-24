@@ -12,9 +12,7 @@ const desafio1 = () => {
 };
 desafio1();
 
-// eslint-disable-next-line no-unused-vars
-const desafio2e3 = () => {
-  // eslint-disable-next-line no-unused-vars
+const desafio2e3e6 = () => {
   const section = document.createElement('section');
   const ul = document.createElement('ul');
   ul.setAttribute('id', 'color-palette');
@@ -25,14 +23,17 @@ const desafio2e3 = () => {
     const li = document.createElement('li');
     li.setAttribute('class', 'color');
     li.style.backgroundColor = color;
+    if(li.style.backgroundColor === 'black') {
+      li.classList.add('selected');
+    }
     ul.appendChild(li);
     section.appendChild(ul);
     document.body.appendChild(section);
   }
 };
-desafio2e3();
+desafio2e3e6();
 
-const desafio4 = () => {
+const desafio4e5 = () => {
   const section = document.createElement('section');
   const ul = document.createElement('ul');
   section.setAttribute('id', 'pixels');
@@ -51,4 +52,4 @@ const desafio4 = () => {
     }
   }
 };
-desafio4();
+desafio4e5();
