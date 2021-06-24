@@ -67,10 +67,6 @@ const desafio7 = () => {
       event.target.classList.add('selected');
     });
   }
-  //  const pixels = document.getElementsByClassName ('pixel');
-  //  for (let h = 0; h < pixels.length; h += 1){
-
-  //  }
 };
 desafio7();
 
@@ -88,3 +84,24 @@ const desafio8 = () => {
   }
 };
 desafio8();
+
+const desafio9 = () => {
+  const div = document.createElement('div');
+  const button = document.createElement('button');
+  const pixels = document.getElementById('pixels');
+  button.setAttribute('id', 'clear-board');
+  button.innerHTML = 'Limpar';
+  div.style.display = 'flex';
+  div.style.justifyContent = 'center';
+  div.style.alignItems = 'center';
+  div.appendChild(button);
+  document.body.insertBefore(div, pixels);
+  button.addEventListener('click', () => {
+    const pixels = document.getElementsByClassName('pixel');
+    for (let i = 0; i < pixels.length; i += 1) {
+      const pixel = pixels[i];
+      pixel.style.backgroundColor = 'white';
+    }
+  });
+};
+desafio9();
