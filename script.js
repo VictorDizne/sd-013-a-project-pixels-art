@@ -5,7 +5,7 @@ let clearButton = document.getElementById("clear-board");
 let pixels =  document.querySelectorAll(".pixel");
 let boardSize = document.getElementById("board-size");
 let generateButton = document.getElementById("generate-board")
-
+let boardSizeNum = parseInt(boardSize.value)
 
 generateButton.addEventListener("click", generateBoardFunc())
 
@@ -35,7 +35,7 @@ function clearBoard (){
 }
 
 function generateBoardFunc(){
-    let boardSizeNum =  parseInt(boardSize.value,10)
+    
     for(i=1;i<=boardSizeNum;i++){
         let lineCreated = document.createElement("div")
             lineCreated.id = "line"
