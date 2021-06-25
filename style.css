@@ -4,7 +4,8 @@
 }
 
 #title {
-  font-size: large;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
 }
 
 .color {
@@ -14,8 +15,9 @@
   border: 1px solid black;
 }
 
-#color-palete {
+#color-palette {
   display: table;
+  margin: 15px 0 15px 0;
 }
 
 #color1 {
