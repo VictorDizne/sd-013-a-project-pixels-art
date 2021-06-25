@@ -40,6 +40,7 @@ const desafio4e5 = () => {
   ul.setAttribute('id', 'pixel-board');
   for (let i = 0; i < 5; i += 1) {
     const div = document.createElement('div');
+    div.setAttribute('class', 'flex');
     for (let j = 0; j < 25; j += 1) {
       const li = document.createElement('li');
       li.classList.add('pixel');
@@ -88,14 +89,14 @@ desafio8();
 const desafio9 = () => {
   const div = document.createElement('div');
   const button = document.createElement('button');
-  const pixels = document.getElementById('pixels');
+  const pixels1 = document.getElementById('pixels');
   button.setAttribute('id', 'clear-board');
   button.innerHTML = 'Limpar';
   div.style.display = 'flex';
   div.style.justifyContent = 'center';
   div.style.alignItems = 'center';
   div.appendChild(button);
-  document.body.insertBefore(div, pixels);
+  document.body.insertBefore(div, pixels1);
   button.addEventListener('click', () => {
     const pixels = document.getElementsByClassName('pixel');
     for (let i = 0; i < pixels.length; i += 1) {
