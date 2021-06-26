@@ -19,6 +19,12 @@ colorThree.style.backgroundColor = colorGeneret();
 
 colorBlack.classList.add('selected');
 
+function paint(targetPixel) {
+  const pixel = targetPixel.target;
+  const colorSelected = document.querySelector('.selected').style.backgroundColor;
+  pixel.style.backgroundColor = colorSelected;
+}
+
 function generateBoard(size) {
   for (let i = 0; i < size; i += 1) {
     const line = document.createElement('div');
@@ -28,6 +34,7 @@ function generateBoard(size) {
       const pixel = document.createElement('div');
       pixel.classList.add('pixel');
       line.appendChild(pixel);
+      pixel.addEventListener('click', paint);
     }
   }
   console.log('PAgina carregada');
@@ -52,17 +59,11 @@ colorOne.addEventListener('click', selectedColor);
 colorTwo.addEventListener('click', selectedColor);
 colorThree.addEventListener('click', selectedColor);
 
-function paint(targetPixel) {
-  const pixel = targetPixel.target;
-  const colorSelected = document.querySelector('.selected').style.backgroundColor;
-  pixel.style.backgroundColor = colorSelected;
-}
-
 const pixels = document.getElementsByClassName('pixel');
-for (let i = 0; i < pixels.length; i += 1) {
-  const pixel = pixels[i];
-  pixel.addEventListener('click', paint);
-}
+// for (let i = 0; i < pixels.length; i += 1) {
+//   const pixel = pixels[i];
+//   pixel.addEventListener('click', paint);
+// }
 
 const bt1 = document.createElement('button');
 bt1.id = 'clear-board';
