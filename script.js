@@ -1,9 +1,7 @@
 const paleta = document.querySelector('#color-palette');
 paleta.addEventListener('click', selecionar);
-const clear = document.querySelectorAll('#clear-board')
-const pixel = document.querySelector('.pixel')
-const pixelBoard = document.querySelector('#pixel-board')
-
+const pixelBoard = document.querySelector('#pixel-board');
+const clearButton = document.getElementById('clear-board');
 function selecionar(event) {
   const cores = document.querySelectorAll('.color');
   for (let index = 0; index < cores.length; index += 1) {
@@ -19,4 +17,14 @@ function trocarCor(event) {
 }
   pixelBoard.addEventListener('click',trocarCor);
 
-  
+function clear () {
+  const pixel = document.getElementsByClassName('pixel');
+  clearButton.addEventListener('click', () => {
+    for (let i = 0; i < pixel.length; i += 1) {
+      pixel[i].style.backgroundColor = 'white';
+    }
+  })
+}
+clear();
+
+// Tamanho dinamico
