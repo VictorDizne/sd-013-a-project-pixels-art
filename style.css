@@ -16,3 +16,12 @@
     background : white;
     border: 1px solid black;
   }
+  
+  td {
+    border: 1px black solid;  
+    display: table-cell;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    text-align: center;
+  }
