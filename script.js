@@ -8,13 +8,6 @@ const requisito1 = () => {
 };
 
 const requisito2 = () => {
-  /*    let r = Math.floor(Math.random()*256);
-  let g = Math.floor(Math.random()*256);
-  let b = Math.floor(Math.random()*256);
-  let rgb = `rgb(${r}, ${g}, ${b})`;
-  let bgr = `rgb(${b}, ${g}, ${r})`;
-  let grb = `rgb(${g}, ${b}, ${r})`;
-  const cores = ['black',rgb, bgr, grb]; */
   const rgbAleatorio = () => `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
   const cores = ['black', rgbAleatorio(), rgbAleatorio(), rgbAleatorio()];
   const divCores = document.createElement('div');
