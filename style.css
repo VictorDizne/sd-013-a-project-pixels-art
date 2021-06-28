@@ -37,7 +37,6 @@ body {
  #pixel-board {
    display: table;
    margin: auto;
-   background-color: aqua;
  }
 
 .pixel {
@@ -55,4 +54,8 @@ body {
 
 .column {
   display: table-cell;
+}
+
+.slected {
+
 }
