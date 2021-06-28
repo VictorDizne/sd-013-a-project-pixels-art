@@ -10,10 +10,10 @@ function createBoard(boardSize) {
     pixelBoard.appendChild(newRow);
     // Cria as colunas.
     for (let index = 0; index < boardSize; index += 1) {
-    const newColum = document.createElement('div');
-    newColum.classList.add('column');
-    newColum.classList.add('pixel');
-    pixelBoard.appendChild(newColum);
+    const newColumn = document.createElement('div');
+    newColumn.classList.add('column');
+    newColumn.classList.add('pixel');
+    pixelBoard.appendChild(newColumn);
     }
   }
 }
