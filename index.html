@@ -6,54 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Art</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <h1 id="title">Paleta de Cores</h1>
     <nav id="color-palette">
-        <div class="color selected" id="black"></div>
-        <div class="color" id="red"></div>
-        <div class="color" id="green"></div>
-        <div class="color" id="blue"></div>
+        <div class="color selected" id="color1"></div>
+        <div class="color" id="color2"></div>
+        <div class="color" id="color3"></div>
+        <div class="color" id="color4"></div>
     </nav>
     <div>
         <button id="clear-board">Limpar</button>
     </div>
     <div>
-        <input type="text" id="board-size" min="1" max="50" type="number">
+        <input type= 'number' id = 'board-size' min= '1' max= '50'></input>
         <button id="generate-board">VQV</button>
     </div>
         
     <section id="pixel-board">
-        <div id="line">
+        <div class="line">
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
         </div>
-        <div id="line">
+        <div class="line">
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
         </div>
-        <div id="line">
+        <div class="line">
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
         </div>
-        <div id="line">
+        <div class="line">
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
         </div>
-        <div id="line">
+        <div class="line">
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
@@ -63,6 +62,6 @@
         
     </section>
 
-
+    <script src="script.js"></script>
 </body>
 </html>

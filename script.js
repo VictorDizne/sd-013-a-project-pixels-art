@@ -1,13 +1,21 @@
-
 let colorPalette = document.getElementById("color-palette");
 let pixelSelected =  document.getElementById("pixel-board");
 let clearButton = document.getElementById("clear-board");
 let pixels =  document.querySelectorAll(".pixel");
 let boardSize = document.getElementById("board-size");
 let generateButton = document.getElementById("generate-board")
-let boardSizeNum = parseInt(boardSize.value)
 
-generateButton.addEventListener("click", generateBoardFunc())
+generateButton.addEventListener("click", () => {
+    let size = parseInt(boardSize.value, 10)
+    if (boardSize.value.length === 0) {
+      window.alert('Board inválido!');
+    } else {
+        console.log (size)
+        generateBoardFunc(size);
+    }
+}
+
+)
 
 colorPalette.addEventListener("click",selectColor);
 pixelSelected.addEventListener("click", paintBoard)
@@ -33,17 +41,26 @@ function clearBoard (){
         pixels[i].style.backgroundColor = "white"
     }
 }
-
-function generateBoardFunc(){
-    
-    for(i=1;i<=boardSizeNum;i++){
-        let lineCreated = document.createElement("div")
-            lineCreated.id = "line"
-            lineCreated.appendChild(pixelSelected)
-        for(j=1;j<=boardSizeNum;j++){
-            let pixelCreated =  document.createElement("div")
-            pixelCreated.className = "pixel"
-            lineCreated.appendChild(pixelCreated)
+function generateBoardFunc(boardSizeNum){
+        if(boardSizeNum>50){
+            boardSizeNum = 50
+        }else if(boardSizeNum<5){
+            boardSizeNum = 5
+        }
+            let lines = document.querySelectorAll(".line")
+            for (let x = 0; x<lines.length; x++){
+                lines[x].remove()
+            }
+            for(let y = 1;y<=boardSizeNum;y++){
+                let lineCreated = document.createElement("div")
+                    lineCreated.className = "line"
+                    pixelSelected.appendChild(lineCreated)
+                for(j=1;j<=boardSizeNum;j++){
+                    let pixelCreated =  document.createElement("div")
+                    pixelCreated.className = "pixel"
+                    lineCreated.appendChild(pixelCreated)
+                    }
             }
     }
-    }
+
+
