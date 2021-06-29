@@ -4,8 +4,11 @@ const pixelBoard = document.getElementById('pixel-board');
 // Pega a id color-palette da section da paleta.
 const sectionColorPalette = document.getElementById('color-palette');
 
-// Pega a classe color das divs da paleta.
+// Pega a classe color das div da paleta.
 const divColorPalette = document.getElementsByClassName('color');
+
+// Pega o botão de limpar
+const cleanButton = document.getElementById('clear-board');
 
 // Função responsável por criar as linhas e colunas.
 function createBoard(boardSize) {
@@ -26,22 +29,46 @@ function createBoard(boardSize) {
 // Executa a função.
 createBoard(5);
 
-// Função responsável por percorrer toda a extenção do array da paleta, a partir da posição 1 e verifica se existe algum elemento com a classe selected. Se houver, o laço remove a classe.
-function selectedDiv() {
+function randomColorPalette() {
   divColorPalette[0].style.backgroundColor = 'rgb(0, 0, 0)';
   divColorPalette[0].classList.add('selected');
-  sectionColorPalette.addEventListener('click', (event) => {
-    console.log(event.target);
-    const allDivColor = document.getElementsByClassName('color');
-    for (let index = 0; index < allDivColor.length; index += 1) {
-      if (allDivColor[index].classList.contains('selected')) {
-        allDivColor[index].classList.remove('selected');
-      }
-    }
-    // Adiciona a classe selected no elemento que sofrer a ação de click declarada anteriormente.
-    event.target.classList.add('selected');
-   //console.log();
-  })
+  for (let i = 1; i < divColorPalette.length; i += 1) {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const randomColor = `rgb(${r},${g},${b})`;
+    divColorPalette[i].style.backgroundColor = randomColor;
+  }
 }
-// Executa a função.
-selectedDiv();
+randomColorPalette();
+
+let colorSelected = 'rgb(0, 0, 0)';
+
+// Função responsável por, de fato, colocar a cor selecionada na paleta no board.
+function colorBoard() {
+  // Seleciona a cor.
+  sectionColorPalette.addEventListener('click', (event) => {
+    for (let index = 0; index < divColorPalette.length; index += 1) {
+      divColorPalette[index].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+    colorSelected = event.target.style.backgroundColor;
+  });
+  // Coloca a cor selecionada no board.
+  pixelBoard.addEventListener('click', (event) => {
+    const pixelSelected = event.target;
+    pixelSelected.style.backgroundColor = colorSelected;
+  });
+}
+colorBoard();
+
+// Limpa a tabela
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  cleanButton.addEventListener('click', () => {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearBoard()

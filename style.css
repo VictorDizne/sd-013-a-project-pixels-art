@@ -16,18 +16,18 @@ body {
 }
 
 #firstColor {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 #secondColor {
-  background-color: brown;
+  background-color: rgb(121, 19, 19);
 }
 
 #thirdColor {
-  background-color: blueviolet;
+  background-color: rgb(77, 26, 126);
 }
 
 #fourthColor {
-  background-color: greenyellow;
+  background-color: rgb(117, 185, 15);
 }
 
 #title {
@@ -56,6 +56,6 @@ body {
   display: table-cell;
 }
 
-.slected {
-
+#clear-board {
+  display: inline-flex;
 }
