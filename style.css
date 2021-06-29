@@ -51,9 +51,12 @@ td {
 }
 
 #color-palette {
-  display: inline-flex
+  display: inline-flex;
   border-radius: 10px;
   text-align: center;
+}
+
+.botoes {
 }
 
 button {
