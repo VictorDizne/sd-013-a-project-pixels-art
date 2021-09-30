@@ -3,9 +3,30 @@
   padding: 0;
 }
 
-body {
-  background-color: rgb(141, 173, 233);
+#title {
+  color: azure;
+  margin-bottom: 15px;
 }
+
+.countainer-img1 {
+  display: flex;
+  justify-content: end;
+
+}
+
+.backImage {
+  position:fixed;
+}
+
+.countainer-input {
+  justify-content: space-around;
+  border: 1px solid rebeccapurple;
+ 
+}
+
+body {
+  background-color: rgb(58, 92, 156);
+} 
 
 .color {
   display: inline-block;
@@ -40,6 +61,12 @@ body {
   margin-top: 15px;
   line-height: 0;
   white-space: nowrap;
+  position:absolute;
+}
+
+#pixel-board div:hover {
+  border-color: rgb(211, 159, 159);
+
 }
 
 .pixel {
@@ -52,12 +79,50 @@ body {
 
 
 #clear-board {
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80px;
+  padding: 5px;
+  border-radius: 10px ;
+  border-style: none;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: rgb(83, 60, 104);
+  color: aliceblue;
+
+}
+
+#clear-board:hover {
+  color: rgb(197, 197, 44);
+  background-color: rgb(53, 20, 145);
 }
 
 #board-size {
-  width: 76px;
-  margin-left: 20px;
+  width: 120px;
+  border-radius: 3px;
+  border-style: none;
 }
 
+#generate-board {
+  background-color: rgb(83, 60, 104);
+  border-radius: 5px;
+  border-style: none;
+  color: aliceblue;
+  margin-left: 20px;
+  font-size: 15px;
+  padding: 2px;
+  width: 50px;
+}
+
+#generate-board:hover {
+  color: rgb(197, 197, 44);
+  background-color: rgb(53, 20, 145);
+}
+
+#color-palette div {
+  border-radius: 5px;
+}
+
+#color-palette div:hover {
+  border-color: rgb(122, 122, 15);
+} 

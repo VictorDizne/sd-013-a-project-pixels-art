@@ -50,16 +50,16 @@ elementColor2.addEventListener('click', classSelect);
 elementColor3.addEventListener('click', classSelect);
 elementColor4.addEventListener('click', classSelect);
 
-function pintaPixel(event) {
+function pintaPixel({ target }) {
   const selectedELement = document.querySelector('.selected');
   if (selectedELement === cor1) {
-    event.target.style.backgroundColor = 'black';
+    target.style.backgroundColor = 'black';
   } else if (selectedELement === cor2) {
-    event.target.style.backgroundColor = color2;
+    target.style.backgroundColor = color2;
   } else if (selectedELement === cor3) {
-    event.target.style.backgroundColor = color3;
+    target.style.backgroundColor = color3;
   } else if (selectedELement === cor4) {
-    event.target.style.backgroundColor = color4;
+    target.style.backgroundColor = color4;
   }
 }
 
