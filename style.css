@@ -18,12 +18,6 @@
   position:fixed;
 }
 
-.countainer-input {
-  justify-content: space-around;
-  border: 1px solid rebeccapurple;
- 
-}
-
 body {
   background-color: rgb(58, 92, 156);
 } 
