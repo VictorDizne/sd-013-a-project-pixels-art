@@ -38,14 +38,15 @@ elementColor4.addEventListener('click', classSelect);
 
 function pintaPixel({ target }) {
   const selectedELement = document.querySelector('.selected');
+  const a = target;
   if (selectedELement === cor1) {
-    target.style.backgroundColor = 'black';
+    a.style.backgroundColor = 'black';
   } else if (selectedELement === cor2) {
-    target.style.backgroundColor = color2;
+    a.style.backgroundColor = color2;
   } else if (selectedELement === cor3) {
-    target.style.backgroundColor = color3;
+    a.style.backgroundColor = color3;
   } else if (selectedELement === cor4) {
-    target.style.backgroundColor = color4;
+    a.style.backgroundColor = color4;
   }
 }
 
