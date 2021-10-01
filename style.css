@@ -83,6 +83,7 @@ body {
   font-size: 15px;
   background-color: rgb(83, 60, 104);
   color: aliceblue;
+  position: relative;
 
 }
 
@@ -95,6 +96,7 @@ body {
   width: 120px;
   border-radius: 3px;
   border-style: none;
+  position: relative;
 }
 
 #generate-board {
@@ -106,11 +108,16 @@ body {
   font-size: 15px;
   padding: 2px;
   width: 50px;
+  position: relative;
 }
 
 #generate-board:hover {
   color: rgb(197, 197, 44);
   background-color: rgb(53, 20, 145);
+}
+
+#color-palette {
+  position:relative;
 }
 
 #color-palette div {

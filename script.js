@@ -1,22 +1,3 @@
-function gradePixel(quadrado) {
-  const board = document.querySelector('#pixel-board');
-  // inputTexto = document.querySelector("#board-size");
-  for (let index = 0; index < quadrado; index += 1) {
-    const linha = document.createElement('div');
-    linha.className = 'linha';
-    board.appendChild(linha);
-
-    for (let i = 0; i < quadrado; i += 1) {
-      const blocos = document.createElement('div');
-      blocos.className = 'pixel';
-      blocos.addEventListener('click', pintaPixel);
-      linha.appendChild(blocos);
-    }
-  }
-}
-
-gradePixel(5);
-
 function gera() {
   const a = parseInt(Math.random() * 255, 10);
   const b = parseInt(Math.random() * 255, 10);
@@ -25,13 +6,18 @@ function gera() {
   return `rgb(${a},${b},${c})`;
 }
 
+// cor preta sempre fixa
 const cor1 = document.getElementById('color-1');
+// cor de 2 a 4 sempre random
 const cor2 = document.getElementById('color-2');
-const color2 = cor2.style.backgroundColor = gera();
+cor2.style.backgroundColor = gera();
+const color2 = cor2.style.backgroundColor;
 const cor3 = document.getElementById('color-3');
-const color3 = cor3.style.backgroundColor = gera();
+cor3.style.backgroundColor = gera();
+const color3 = cor3.style.backgroundColor;
 const cor4 = document.getElementById('color-4');
-const color4 = cor4.style.backgroundColor = gera();
+cor4.style.backgroundColor = gera();
+const color4 = cor4.style.backgroundColor;
 
 function classSelect(event) {
   const selectedELement = document.querySelector('.selected');
@@ -62,6 +48,24 @@ function pintaPixel({ target }) {
     target.style.backgroundColor = color4;
   }
 }
+
+function gradePixel(quadrado) {
+  const board = document.querySelector('#pixel-board');
+  for (let index = 0; index < quadrado; index += 1) {
+    const linha = document.createElement('div');
+    linha.className = 'linha';
+    board.appendChild(linha);
+
+    for (let i = 0; i < quadrado; i += 1) {
+      const blocos = document.createElement('div');
+      blocos.className = 'pixel';
+      blocos.addEventListener('click', pintaPixel);
+      linha.appendChild(blocos);
+    }
+  }
+}
+
+gradePixel(5);
 
 function addPixel() {
   let listaPixel = document.querySelectorAll('.pixel');
